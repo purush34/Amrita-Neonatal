@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include amrita_neonet *.css
+recursive-include amrita_neonet *.csv
+recursive-include amrita_neonet *.html
+recursive-include amrita_neonet *.ico
+recursive-include amrita_neonet *.js
+recursive-include amrita_neonet *.json
+recursive-include amrita_neonet *.md
+recursive-include amrita_neonet *.png
+recursive-include amrita_neonet *.py
+recursive-include amrita_neonet *.svg
+recursive-include amrita_neonet *.txt
+recursive-exclude amrita_neonet *.pyc
