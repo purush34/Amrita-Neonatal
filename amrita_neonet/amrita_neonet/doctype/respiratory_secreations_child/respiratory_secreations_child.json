@@ -1,0 +1,41 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-03-06 16:44:05.423194",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "date_done",
+  "report"
+ ],
+ "fields": [
+  {
+   "fieldname": "date_done",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date done",
+   "reqd": 1
+  },
+  {
+   "fieldname": "report",
+   "fieldtype": "Text Editor",
+   "in_list_view": 1,
+   "label": "Report",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-03-06 17:16:45.295290",
+ "modified_by": "Administrator",
+ "module": "Amrita Neonet",
+ "name": "Respiratory secreations_child",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,203 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-03-06 17:35:19.648753",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+"field_order": [
+    "facies",
+    "scalp",
+    "hairline",
+    "mouth",
+    "cry",
+    "column_break_05ypn",
+    "anterior_fontanelle",
+    "posterior_fontanelle",
+    "palate",
+    "abdomen",
+    "tone",
+    "column_break_vkx22",
+    "neck",
+    "chest",
+    "genitalia",
+    "spine",
+    "activity",
+    "anus",
+    "section_break_3aw4c",
+    "eyes",
+    "right_eye",
+    "left_eye",
+    "column_break_hlmlp",
+    "right_ear",
+    "left_ear",
+    "hips_column",
+    "right_hip",
+    "left_hip"
+],
+"fields": [
+    {
+        "fieldname": "facies",
+        "fieldtype": "Data",
+        "label": "Facies"
+    },
+    {
+        "fieldname": "scalp",
+        "fieldtype": "Data",
+        "label": "Scalp"
+    },
+    {
+        "fieldname": "hairline",
+        "fieldtype": "Data",
+        "label": "Hairline"
+    },
+    {
+        "fieldname": "mouth",
+        "fieldtype": "Data",
+        "label": "Mouth"
+    },
+    {
+        "fieldname": "cry",
+        "fieldtype": "Data",
+        "label": "Cry"
+    },
+    {
+        "fieldname": "column_break_05ypn",
+        "fieldtype": "Column Break"
+    },
+    {
+        "fieldname": "anterior_fontanelle",
+        "fieldtype": "Data",
+        "label": "Anterior Fontanelle"
+    },
+    {
+        "fieldname": "posterior_fontanelle",
+        "fieldtype": "Data",
+        "label": "Posterior Fontanelle"
+    },
+    {
+        "fieldname": "palate",
+        "fieldtype": "Data",
+        "label": "Palate"
+    },
+    {
+        "fieldname": "abdomen",
+        "fieldtype": "Data",
+        "label": "Abdomen"
+    },
+    {
+        "fieldname": "tone",
+        "fieldtype": "Data",
+        "label": "Tone"
+    },
+    {
+        "fieldname": "column_break_vkx22",
+        "fieldtype": "Column Break"
+    },
+    {
+        "fieldname": "neck",
+        "fieldtype": "Data",
+        "label": "Neck"
+    },
+    {
+        "fieldname": "chest",
+        "fieldtype": "Data",
+        "label": "Chest"
+    },
+    {
+        "fieldname": "genitalia",
+        "fieldtype": "Select",
+        "label": "Genitalia",
+        "options": "Male\nFemale"
+    },
+    {
+        "fieldname": "spine",
+        "fieldtype": "Data",
+        "label": "Spine"
+    },
+    {
+        "fieldname": "activity",
+        "fieldtype": "Data",
+        "label": "Activity"
+    },
+    {
+        "fieldname": "anus",
+        "fieldtype": "Data",
+        "label": "Anus"
+    },
+    {
+        "fieldname": "section_break_3aw4c",
+        "fieldtype": "Section Break"
+    },
+    {
+        "fieldname": "eyes",
+        "fieldtype": "Column Break",
+        "label": "Eyes"
+    },
+    {
+        "fieldname": "right_eye",
+        "fieldtype": "Data",
+        "label": "Right Eye"
+    },
+    {
+        "fieldname": "left_eye",
+        "fieldtype": "Data",
+        "label": "Left Eye"
+    },
+    {
+        "fieldname": "column_break_hlmlp",
+        "fieldtype": "Column Break",
+        "label": "Ears"
+    },
+    {
+        "fieldname": "right_ear",
+        "fieldtype": "Data",
+        "label": "Right Ear"
+    },
+    {
+        "fieldname": "left_ear",
+        "fieldtype": "Data",
+        "label": "Left Ear"
+    },
+    {
+        "fieldname": "hips_column",
+        "fieldtype": "Column Break",
+        "label": "Hips"
+    },
+    {
+        "fieldname": "right_hip",
+        "fieldtype": "Data",
+        "label": "Right Hip"
+    },
+    {
+        "fieldname": "left_hip",
+        "fieldtype": "Data",
+        "label": "Left Hip"
+    }
+],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-03-06 17:35:19.648753",
+ "modified_by": "Administrator",
+ "module": "Amrita Neonet",
+ "name": "Discharge examination",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

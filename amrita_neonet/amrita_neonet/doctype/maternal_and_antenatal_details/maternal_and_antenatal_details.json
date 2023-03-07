@@ -1,0 +1,1072 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-03-07 19:56:56.290661",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+"field_order": [
+    "demographic_information_section",
+    "name1",
+    "hospital_number",
+    "ddob",
+    "age_now",
+    "education",
+    "address",
+    "house_no",
+    "city",
+    "district",
+    "state",
+    "pin_code",
+    "email",
+    "phone_number",
+    "occupation",
+    "no_of_years_of_marriage",
+    "consangunity",
+    "family_history",
+    "previous_marriages",
+    "parental_details_section",
+    "paternal_name",
+    "p_hospitalnumber",
+    "p_dob",
+    "p_age",
+    "p_education",
+    "p_addr",
+    "h_no",
+    "city_1",
+    "dist",
+    "state_p",
+    "p_code",
+    "p_email",
+    "p_phno",
+    "p_occu",
+    "p_familyhyst",
+    "p_prev_marr",
+    "maternal_medical_history_section",
+    "_hypothyroidism",
+    "hypothyroidism_report",
+    "any_malignancises",
+    "any_malignancises_report",
+    "cardiac_conditions",
+    "cardiac_conditions_report",
+    "pah",
+    "pah_report",
+    "hypertension",
+    "hypertension_report",
+    "sle",
+    "sle_report",
+    "apla",
+    "apla_report",
+    "any_surgeries",
+    "any_surgeries_before",
+    "previous_pregnancies_section",
+    "prev_preg",
+    "gravida",
+    "year_of_gravida",
+    "para",
+    "year_of_para",
+    "live",
+    "year_of_live",
+    "abortions",
+    "year_of_abortion",
+    "miscarriages",
+    "year_of_miscarriage",
+    "any_neonatal_death",
+    "cardiac",
+    "metabolic",
+    "seizures",
+    "undiagnosed",
+    "current_pregnancy_section",
+    "conception",
+    "lmp",
+    "edd_by_dates",
+    "maternal_serology_column",
+    "blood_group",
+    "any_antibodies",
+    "torch",
+    "hiv",
+    "tt",
+    "vdrl",
+    "hepatitis_b",
+    "mmr_vaccination",
+    "covid_immunisations",
+    "one_dose",
+    "date_of_first_dose",
+    "two_dose",
+    "year_of_2nd_dose",
+    "booster",
+    "year_of_booster",
+    "scans",
+    "anomaly_scan",
+    "an_dos",
+    "an_ga",
+    "an_dopplers",
+    "an_findings",
+    "growth__scan",
+    "gs_dos",
+    "gs_ga",
+    "gs_doplers",
+    "gs_findings",
+    "additional_scans",
+    "ad_dos",
+    "ad_gestational",
+    "ad_dopplers",
+    "ad_findings",
+    "edd_column",
+    "by_scan",
+    "by_dates",
+    "history_of_column",
+    "pih",
+    "explain_pih",
+    "gdm",
+    "select_gdm_type",
+    "hypothyroidism",
+    "select_type",
+    "reason",
+    "antibodies",
+    "medicatioin",
+    "labour_and_delivery_column",
+    "pre_term_labour",
+    "prolonged_rupture_of_membranes",
+    "rupture_of_membranes",
+    "steroids",
+    "duration_of_prom",
+    "ste",
+    "betamethasone",
+    "no_of_courses_of_steroids",
+    "meconium_staining_of_liquor",
+    "risk_factors_for_sepsis",
+    "peripartum_antibiotics",
+    "onset_of_labour",
+    "mode_of_delivery",
+    "mode_of_delivery_column",
+    "anaesthesia",
+    "birth_and_resuscitation_column",
+    "cried_soon_after_birth",
+    "need_for_resuscitation",
+    "stimulation",
+    "bag_and_mask",
+    "intubation",
+    "c_comp",
+    "noc",
+    "age_in_min",
+    "size",
+    "fixed_at",
+    "chest_compressions",
+    "started_at_age_in_min",
+    "no_of_cycles",
+    "adrenaline_doses",
+    "apgars",
+    "spontaneous_breathin",
+    "heart_rate",
+    "color",
+    "tone",
+    "reflexes",
+    "total"
+],
+"fields": [
+    {
+        "fieldname": "demographic_information_section",
+        "fieldtype": "Tab Break",
+        "label": "Demographic Information"
+    },
+    {
+        "fieldname": "name1",
+        "fieldtype": "Data",
+        "label": "Name",
+        "length": 100,
+        "print_width": "10",
+        "width": "10"
+    },
+    {
+        "fieldname": "hospital_number",
+        "fieldtype": "Data",
+        "label": "Hospital Number",
+        "length": 50
+    },
+    {
+        "fieldname": "ddob",
+        "fieldtype": "Date",
+        "label": "Date of Birth",
+        "length": 50
+    },
+    {
+        "depends_on": "var dob = new Date(frm.doc.ddob);\r\nvar now = new Date();\r\nvar age_now = now.getFullYear() - dob.getFullYear();\r\n\r\ncur_frm.set_value(\"age\", age_now);\r\ncur_frm.refresh();",
+        "fieldname": "age_now",
+        "fieldtype": "Autocomplete",
+        "label": "Age"
+    },
+    {
+        "fieldname": "education",
+        "fieldtype": "Select",
+        "label": "Education",
+        "length": 50,
+        "options": "No education\n10th\n12th\nDegree\nPost graduation"
+    },
+    {
+        "fieldname": "address",
+        "fieldtype": "Section Break",
+        "label": "Address"
+    },
+    {
+        "fieldname": "house_no",
+        "fieldtype": "Data",
+        "label": "House No",
+        "length": 20
+    },
+    {
+        "fieldname": "city",
+        "fieldtype": "Data",
+        "label": "City",
+        "length": 20
+    },
+    {
+        "fieldname": "district",
+        "fieldtype": "Data",
+        "label": "District",
+        "length": 30
+    },
+    {
+        "fieldname": "state",
+        "fieldtype": "Data",
+        "label": "State",
+        "length": 30
+    },
+    {
+        "fieldname": "pin_code",
+        "fieldtype": "Data",
+        "label": "Pin code",
+        "length": 6
+    },
+    {
+        "fieldname": "email",
+        "fieldtype": "Data",
+        "label": "Email",
+        "length": 50
+    },
+    {
+        "fieldname": "phone_number",
+        "fieldtype": "Phone",
+        "label": "Phone number"
+    },
+    {
+        "fieldname": "occupation",
+        "fieldtype": "Data",
+        "label": "Occupation",
+        "length": 30
+    },
+    {
+        "fieldname": "no_of_years_of_marriage",
+        "fieldtype": "Int",
+        "label": "No of years of marriage"
+    },
+    {
+        "fieldname": "consangunity",
+        "fieldtype": "Select",
+        "label": "Consangunity",
+        "options": "Yes\nNo"
+    },
+    {
+        "fieldname": "family_history",
+        "fieldtype": "Small Text",
+        "label": "Family History"
+    },
+    {
+        "fieldname": "previous_marriages",
+        "fieldtype": "Small Text",
+        "label": "Previous marriages"
+    },
+    {
+        "fieldname": "parental_details_section",
+        "fieldtype": "Tab Break",
+        "label": "Parental details"
+    },
+    {
+        "fieldname": "paternal_name",
+        "fieldtype": "Data",
+        "label": "Paternal Name",
+        "length": 50
+    },
+    {
+        "fieldname": "p_hospitalnumber",
+        "fieldtype": "Data",
+        "label": "Hospital Number",
+        "length": 30
+    },
+    {
+        "fieldname": "p_dob",
+        "fieldtype": "Data",
+        "label": "Date of birth"
+    },
+    {
+        "depends_on": "var dob = new Date(frm.doc.p_dob);\r\nvar now = new Date();\r\nvar age_now = now.getFullYear() - dob.getFullYear();\r\n\r\ncur_frm.set_value(\"age\", p_age);\r\ncur_frm.refresh();",
+        "fieldname": "p_age",
+        "fieldtype": "Autocomplete",
+        "label": "Age"
+    },
+    {
+        "fieldname": "p_education",
+        "fieldtype": "Select",
+        "label": "Education",
+        "length": 30,
+        "options": "No education\n10th\n12th\nDegree\nPost graduation"
+    },
+    {
+        "fieldname": "p_addr",
+        "fieldtype": "Section Break",
+        "label": "Address"
+    },
+    {
+        "fieldname": "h_no",
+        "fieldtype": "Data",
+        "label": "House No",
+        "length": 20
+    },
+    {
+        "fieldname": "city_1",
+        "fieldtype": "Data",
+        "label": "City",
+        "length": 20
+    },
+    {
+        "fieldname": "dist",
+        "fieldtype": "Data",
+        "label": "District",
+        "length": 20
+    },
+    {
+        "fieldname": "state_p",
+        "fieldtype": "Data",
+        "label": "State",
+        "length": 30
+    },
+    {
+        "fieldname": "p_code",
+        "fieldtype": "Data",
+        "label": "Pin code",
+        "length": 6
+    },
+    {
+        "fieldname": "p_email",
+        "fieldtype": "Data",
+        "label": "Email",
+        "length": 60
+    },
+    {
+        "fieldname": "p_phno",
+        "fieldtype": "Phone",
+        "label": "Phone Number"
+    },
+    {
+        "fieldname": "p_occu",
+        "fieldtype": "Data",
+        "label": "Occupation",
+        "length": 30
+    },
+    {
+        "fieldname": "p_familyhyst",
+        "fieldtype": "Small Text",
+        "label": "Family history"
+    },
+    {
+        "fieldname": "p_prev_marr",
+        "fieldtype": "Small Text",
+        "label": "Previous marriages"
+    },
+    {
+        "fieldname": "maternal_medical_history_section",
+        "fieldtype": "Tab Break",
+        "label": "Maternal Medical History"
+    },
+    {
+        "fieldname": "_hypothyroidism",
+        "fieldtype": "Select",
+        "label": "Hypothyroidism",
+        "options": "No\nYes"
+    },
+    {
+        "depends_on": "eval:in_list([\"Yes\"],doc._hypothyroidism)",
+        "fieldname": "hypothyroidism_report",
+        "fieldtype": "Small Text",
+        "label": "Hypothyroidism report"
+    },
+    {
+        "fieldname": "any_malignancises",
+        "fieldtype": "Select",
+        "label": "Any malignancises",
+        "options": "No\nYes"
+    },
+    {
+        "depends_on": "eval:in_list([\"Yes\"],doc.any_malignancises)",
+        "fieldname": "any_malignancises_report",
+        "fieldtype": "Small Text",
+        "label": "Any malignancises report"
+    },
+    {
+        "fieldname": "cardiac_conditions",
+        "fieldtype": "Select",
+        "label": "Cardiac conditions",
+        "options": "No\nYes"
+    },
+    {
+        "depends_on": "eval:in_list([\"Yes\"],doc.cardiac_conditions)",
+        "fieldname": "cardiac_conditions_report",
+        "fieldtype": "Small Text",
+        "label": "Cardiac conditions report"
+    },
+    {
+        "fieldname": "pah",
+        "fieldtype": "Select",
+        "label": "PAH",
+        "options": "No\nYes"
+    },
+    {
+        "depends_on": "eval:in_list([\"Yes\"],doc.pah)",
+        "fieldname": "pah_report",
+        "fieldtype": "Small Text",
+        "label": "PAH report"
+    },
+    {
+        "fieldname": "hypertension",
+        "fieldtype": "Select",
+        "label": "Hypertension",
+        "options": "No\nYes"
+    },
+    {
+        "depends_on": "eval:in_list([\"Yes\"],doc.hypertension)",
+        "fieldname": "hypertension_report",
+        "fieldtype": "Small Text",
+        "label": "Hypertension report"
+    },
+    {
+        "fieldname": "sle",
+        "fieldtype": "Select",
+        "label": "SLE",
+        "options": "No\nYes"
+    },
+    {
+        "depends_on": "eval:in_list([\"Yes\"],doc.sle)",
+        "fieldname": "sle_report",
+        "fieldtype": "Data",
+        "label": "SLE report"
+    },
+    {
+        "fieldname": "apla",
+        "fieldtype": "Select",
+        "label": "APLA",
+        "options": "No\nYes"
+    },
+    {
+        "depends_on": "eval:in_list([\"Yes\"],doc.apla)",
+        "fieldname": "apla_report",
+        "fieldtype": "Small Text",
+        "label": "APLA report"
+    },
+    {
+        "fieldname": "any_surgeries",
+        "fieldtype": "Select",
+        "label": "ANy surgeries",
+        "options": "No\nYes"
+    },
+    {
+        "depends_on": "eval:in_list([\"Yes\"],doc.any_surgeries)",
+        "fieldname": "any_surgeries_before",
+        "fieldtype": "Small Text",
+        "label": "Any surgeries before"
+    },
+    {
+        "fieldname": "previous_pregnancies_section",
+        "fieldtype": "Tab Break",
+        "label": "Previous pregnancies"
+    },
+    {
+        "fieldname": "prev_preg",
+        "fieldtype": "Select",
+        "label": "Previous pregneancies",
+        "options": "No\nYes"
+    },
+    {
+        "default": "0",
+        "depends_on": "eval:in_list([\"Yes\"],doc.prev_preg)",
+        "fieldname": "gravida",
+        "fieldtype": "Int",
+        "label": "Gravida"
+    },
+    {
+        "depends_on": "eval:doc.gravida >0",
+        "fieldname": "year_of_gravida",
+        "fieldtype": "Date",
+        "label": "Year of gravida"
+    },
+    {
+        "default": "0",
+        "depends_on": "eval:in_list([\"Yes\"],doc.prev_preg)",
+        "fieldname": "para",
+        "fieldtype": "Int",
+        "label": "Para"
+    },
+    {
+        "depends_on": "eval:doc.para >0",
+        "fieldname": "year_of_para",
+        "fieldtype": "Data",
+        "label": "Year of para"
+    },
+    {
+        "default": "0",
+        "depends_on": "eval:in_list([\"Yes\"],doc.prev_preg)",
+        "fieldname": "live",
+        "fieldtype": "Int",
+        "label": "Live"
+    },
+    {
+        "depends_on": "eval:doc.live >0",
+        "fieldname": "year_of_live",
+        "fieldtype": "Data",
+        "label": "Year of live"
+    },
+    {
+        "depends_on": "eval:in_list([\"Yes\"],doc.prev_preg)",
+        "fieldname": "abortions",
+        "fieldtype": "Select",
+        "label": "Abortions",
+        "options": "No\nYes"
+    },
+    {
+        "depends_on": "eval:doc.abortions >0",
+        "fieldname": "year_of_abortion",
+        "fieldtype": "Date",
+        "label": "Year of abortion"
+    },
+    {
+        "depends_on": "eval:in_list([\"Yes\"],doc.prev_preg)",
+        "fieldname": "miscarriages",
+        "fieldtype": "Int",
+        "label": "Miscarriages"
+    },
+    {
+        "depends_on": "eval:doc.miscarriages >0",
+        "fieldname": "year_of_miscarriage",
+        "fieldtype": "Date",
+        "label": "Year of miscarriage"
+    },
+    {
+        "depends_on": "eval:in_list([\"Yes\"],doc.prev_preg)",
+        "fieldname": "any_neonatal_death",
+        "fieldtype": "Select",
+        "label": "Any Neonatal death",
+        "options": "No\nYes"
+    },
+    {
+        "depends_on": "eval:in_list([\"Yes\"],doc.prev_preg)",
+        "fieldname": "cardiac",
+        "fieldtype": "Small Text",
+        "label": "Cardiac"
+    },
+    {
+        "depends_on": "eval:in_list([\"Yes\"],doc.prev_preg)\n",
+        "fieldname": "metabolic",
+        "fieldtype": "Small Text",
+        "label": "Metabolic"
+    },
+    {
+        "depends_on": "eval:in_list([\"Yes\"],doc.prev_preg)",
+        "fieldname": "seizures",
+        "fieldtype": "Small Text",
+        "label": "Seizures"
+    },
+    {
+        "depends_on": "eval:in_list([\"Yes\"],doc.prev_preg)",
+        "fieldname": "undiagnosed",
+        "fieldtype": "Small Text",
+        "label": "Undiagnosed"
+    },
+    {
+        "fieldname": "current_pregnancy_section",
+        "fieldtype": "Tab Break",
+        "label": "Current pregnancy"
+    },
+    {
+        "fieldname": "conception",
+        "fieldtype": "Data",
+        "label": "Conception"
+    },
+    {
+        "fieldname": "lmp",
+        "fieldtype": "Data",
+        "label": "LMP"
+    },
+    {
+        "fieldname": "edd_by_dates",
+        "fieldtype": "Data",
+        "label": "EDD by dates"
+    },
+    {
+        "fieldname": "maternal_serology_column",
+        "fieldtype": "Tab Break",
+        "label": "Maternal Serology"
+    },
+    {
+        "fieldname": "blood_group",
+        "fieldtype": "Select",
+        "label": "Blood Group",
+        "options": "A positive\nA negative\nB positive\nB negative\nAB positive\nAB negative"
+    },
+    {
+        "fieldname": "any_antibodies",
+        "fieldtype": "Small Text",
+        "label": "Any antibodies"
+    },
+    {
+        "fieldname": "torch",
+        "fieldtype": "Small Text",
+        "label": "TORCH"
+    },
+    {
+        "fieldname": "hiv",
+        "fieldtype": "Small Text",
+        "label": "HIV"
+    },
+    {
+        "fieldname": "tt",
+        "fieldtype": "Select",
+        "label": "TT",
+        "options": "No\nYes"
+    },
+    {
+        "fieldname": "vdrl",
+        "fieldtype": "Small Text",
+        "label": "VDRL"
+    },
+    {
+        "fieldname": "hepatitis_b",
+        "fieldtype": "Small Text",
+        "label": "Hepatitis B"
+    },
+    {
+        "fieldname": "mmr_vaccination",
+        "fieldtype": "Select",
+        "label": "MMR vaccination",
+        "options": "No\nYes"
+    },
+    {
+        "fieldname": "covid_immunisations",
+        "fieldtype": "Select",
+        "label": "COVID immunisations",
+        "options": "No\nYes"
+    },
+    {
+        "depends_on": "eval:in_list([\"Yes\"],doc.covid_immunisations)",
+        "fieldname": "one_dose",
+        "fieldtype": "Select",
+        "label": "1st dose",
+        "options": "No\nYes"
+    },
+    {
+        "depends_on": "eval:in_list([\"Yes\"],doc.one_dose)",
+        "fieldname": "date_of_first_dose",
+        "fieldtype": "Date",
+        "label": "Date of first dose"
+    },
+    {
+        "depends_on": "eval:in_list([\"Yes\"],doc.covid_immunisations)",
+        "fieldname": "two_dose",
+        "fieldtype": "Select",
+        "label": "2nd dose",
+        "options": "No\nYes"
+    },
+    {
+        "depends_on": "eval:in_list([\"Yes\"],doc.two_dose)",
+        "fieldname": "year_of_2nd_dose",
+        "fieldtype": "Data",
+        "label": "Year of 2nd dose"
+    },
+    {
+        "depends_on": "eval:in_list([\"Yes\"],doc.covid_immunisations)",
+        "fieldname": "booster",
+        "fieldtype": "Select",
+        "label": "Booster",
+        "options": "No\nYes"
+    },
+    {
+        "depends_on": "eval:in_list([\"Yes\"],doc.booster)",
+        "fieldname": "year_of_booster",
+        "fieldtype": "Data",
+        "label": "Year of booster"
+    },
+    {
+        "fieldname": "scans",
+        "fieldtype": "Tab Break",
+        "label": "Scans",
+        "options": "No\nYes"
+    },
+    {
+        "fieldname": "anomaly_scan",
+        "fieldtype": "Section Break",
+        "label": "Anomaly scan "
+    },
+    {
+        "fieldname": "an_dos",
+        "fieldtype": "Date",
+        "label": "Date of scan"
+    },
+    {
+        "fieldname": "an_ga",
+        "fieldtype": "Int",
+        "label": "Gestational Age"
+    },
+    {
+        "fieldname": "an_dopplers",
+        "fieldtype": "Select",
+        "label": "Dopplers",
+        "options": "Normal\nAbsent"
+    },
+    {
+        "fieldname": "an_findings",
+        "fieldtype": "Small Text",
+        "label": "Findings"
+    },
+    {
+        "fieldname": "growth__scan",
+        "fieldtype": "Section Break",
+        "label": "Growth  scan "
+    },
+    {
+        "fieldname": "gs_dos",
+        "fieldtype": "Date",
+        "label": "Date of scan"
+    },
+    {
+        "fieldname": "gs_ga",
+        "fieldtype": "Int",
+        "label": "Gestational Age"
+    },
+    {
+        "fieldname": "gs_doplers",
+        "fieldtype": "Select",
+        "label": "Dopplers",
+        "options": "Normal\nAbsent"
+    },
+    {
+        "fieldname": "gs_findings",
+        "fieldtype": "Small Text",
+        "label": "Findings"
+    },
+    {
+        "fieldname": "additional_scans",
+        "fieldtype": "Small Text",
+        "label": "Additional scans"
+    },
+    {
+        "fieldname": "ad_dos",
+        "fieldtype": "Date",
+        "label": "Date of scan"
+    },
+    {
+        "fieldname": "ad_gestational",
+        "fieldtype": "Int",
+        "label": "Gestational Age"
+    },
+    {
+        "fieldname": "ad_dopplers",
+        "fieldtype": "Select",
+        "label": "Dopplers",
+        "options": "Normal\nAbsent"
+    },
+    {
+        "fieldname": "ad_findings",
+        "fieldtype": "Small Text",
+        "label": "Findings"
+    },
+    {
+        "fieldname": "edd_column",
+        "fieldtype": "Section Break",
+        "label": "EDD"
+    },
+    {
+        "fieldname": "by_scan",
+        "fieldtype": "Date",
+        "label": "by scan"
+    },
+    {
+        "fieldname": "by_dates",
+        "fieldtype": "Date",
+        "label": "by dates"
+    },
+    {
+        "fieldname": "history_of_column",
+        "fieldtype": "Tab Break",
+        "label": "History of"
+    },
+    {
+        "fieldname": "pih",
+        "fieldtype": "Select",
+        "label": "PIH",
+        "options": "No\nYes"
+    },
+    {
+        "depends_on": "eval:in_list([\"Yes\"],doc.pih)",
+        "fieldname": "explain_pih",
+        "fieldtype": "Small Text",
+        "label": "Explain PIH"
+    },
+    {
+        "fieldname": "gdm",
+        "fieldtype": "Select",
+        "label": "GDM",
+        "options": "No\nYes"
+    },
+    {
+        "depends_on": "eval:in_list([\"Yes\"],doc.gdm)",
+        "fieldname": "select_gdm_type",
+        "fieldtype": "Select",
+        "label": "Select GDM type",
+        "options": "Diet\nOHA\nInsuline"
+    },
+    {
+        "fieldname": "hypothyroidism",
+        "fieldtype": "Select",
+        "label": "Hypothyroidism",
+        "options": "No\nYes"
+    },
+    {
+        "depends_on": "eval:in_list([\"Yes\"],doc.hypothyroidism)",
+        "fieldname": "select_type",
+        "fieldtype": "Select",
+        "label": "Select type",
+        "options": "Pre- pregnancy\nGestational\nPost  Thyroidectomy"
+    },
+    {
+        "depends_on": "eval:in_list([\"Post  Thyroidectomy\"],doc.hypothyroidism)",
+        "fieldname": "reason",
+        "fieldtype": "Small Text",
+        "label": "Reason"
+    },
+    {
+        "depends_on": "eval:in_list([\"Post  Thyroidectomy\"],doc.hypothyroidism)",
+        "fieldname": "antibodies",
+        "fieldtype": "Small Text",
+        "label": "Antibodies"
+    },
+    {
+        "depends_on": "eval:in_list([\"Post  Thyroidectomy\"],doc.hypothyroidism)",
+        "fieldname": "medicatioin",
+        "fieldtype": "Small Text",
+        "label": "Medicatioin"
+    },
+    {
+        "fieldname": "labour_and_delivery_column",
+        "fieldtype": "Tab Break",
+        "label": "Labour and delivery"
+    },
+    {
+        "fieldname": "pre_term_labour",
+        "fieldtype": "Data",
+        "label": "Pre_term labour"
+    },
+    {
+        "fieldname": "prolonged_rupture_of_membranes",
+        "fieldtype": "Data",
+        "label": "Prolonged Rupture of membranes"
+    },
+    {
+        "fieldname": "rupture_of_membranes",
+        "fieldtype": "Data",
+        "label": "Rupture of Membranes"
+    },
+    {
+        "fieldname": "steroids",
+        "fieldtype": "Data",
+        "label": "Steroids"
+    },
+    {
+        "fieldname": "duration_of_prom",
+        "fieldtype": "Data",
+        "label": "Duration of PROM"
+    },
+    {
+        "fieldname": "ste",
+        "fieldtype": "Data",
+        "label": "Steroids"
+    },
+    {
+        "fieldname": "betamethasone",
+        "fieldtype": "Data",
+        "label": "Betamethasone"
+    },
+    {
+        "fieldname": "no_of_courses_of_steroids",
+        "fieldtype": "Data",
+        "label": "No of courses of steroids"
+    },
+    {
+        "fieldname": "meconium_staining_of_liquor",
+        "fieldtype": "Data",
+        "label": "Meconium staining of liquor"
+    },
+    {
+        "fieldname": "risk_factors_for_sepsis",
+        "fieldtype": "Data",
+        "label": "Risk factors for sepsis"
+    },
+    {
+        "fieldname": "peripartum_antibiotics",
+        "fieldtype": "Data",
+        "label": "Peripartum antibiotics"
+    },
+    {
+        "fieldname": "onset_of_labour",
+        "fieldtype": "Data",
+        "label": "Onset of labour"
+    },
+    {
+        "fieldname": "mode_of_delivery",
+        "fieldtype": "Data",
+        "label": "Mode of delivery"
+    },
+    {
+        "fieldname": "mode_of_delivery_column",
+        "fieldtype": "Section Break",
+        "label": "Mode of delivery"
+    },
+    {
+        "fieldname": "anaesthesia",
+        "fieldtype": "Data",
+        "label": "Anaesthesia"
+    },
+    {
+        "fieldname": "birth_and_resuscitation_column",
+        "fieldtype": "Section Break",
+        "label": "Birth and resuscitation"
+    },
+    {
+        "fieldname": "cried_soon_after_birth",
+        "fieldtype": "Data",
+        "label": "Cried soon after birth"
+    },
+    {
+        "fieldname": "need_for_resuscitation",
+        "fieldtype": "Data",
+        "label": "Need for resuscitation"
+    },
+    {
+        "fieldname": "stimulation",
+        "fieldtype": "Data",
+        "label": "Stimulation"
+    },
+    {
+        "fieldname": "bag_and_mask",
+        "fieldtype": "Data",
+        "label": "Bag and Mask"
+    },
+    {
+        "fieldname": "intubation",
+        "fieldtype": "Data",
+        "label": "Intubation"
+    },
+    {
+        "fieldname": "c_comp",
+        "fieldtype": "Data",
+        "label": "Chest compressions"
+    },
+    {
+        "fieldname": "noc",
+        "fieldtype": "Data",
+        "label": "No of cycles"
+    },
+    {
+        "fieldname": "age_in_min",
+        "fieldtype": "Data",
+        "label": "Age in min"
+    },
+    {
+        "fieldname": "size",
+        "fieldtype": "Data",
+        "label": "Size"
+    },
+    {
+        "fieldname": "fixed_at",
+        "fieldtype": "Data",
+        "label": "Fixed at"
+    },
+    {
+        "fieldname": "chest_compressions",
+        "fieldtype": "Data",
+        "label": "Chest compressions"
+    },
+    {
+        "fieldname": "started_at_age_in_min",
+        "fieldtype": "Data",
+        "label": "Started at age in min"
+    },
+    {
+        "fieldname": "no_of_cycles",
+        "fieldtype": "Data",
+        "label": "No of cycles"
+    },
+    {
+        "fieldname": "adrenaline_doses",
+        "fieldtype": "Data",
+        "label": "Adrenaline doses"
+    },
+    {
+        "fieldname": "apgars",
+        "fieldtype": "Data",
+        "label": "APGARS"
+    },
+    {
+        "fieldname": "spontaneous_breathin",
+        "fieldtype": "Data",
+        "label": "Spontaneous breathin"
+    },
+    {
+        "fieldname": "heart_rate",
+        "fieldtype": "Data",
+        "label": "Heart rate"
+    },
+    {
+        "fieldname": "color",
+        "fieldtype": "Data",
+        "label": "Color"
+    },
+    {
+        "fieldname": "tone",
+        "fieldtype": "Data",
+        "label": "Tone"
+    },
+    {
+        "fieldname": "reflexes",
+        "fieldtype": "Data",
+        "label": "Reflexes"
+    },
+    {
+        "fieldname": "total",
+        "fieldtype": "Data",
+        "label": "Total "
+    }
+],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-03-07 19:56:56.290661",
+ "modified_by": "Administrator",
+ "module": "Amrita Neonet",
+ "name": "Maternal And Antenatal Details",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

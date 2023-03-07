@@ -1,0 +1,312 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-03-06 17:35:30.349338",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+"field_order": [
+    "gestational_age34_weeks",
+    "current_weight__13_kg",
+    "discharge",
+    "name_of_hospital",
+    "consultant_name",
+    "handover_given_to",
+    "section_break_5ucd2",
+    "team_around_child",
+    "oxygen_requirement",
+    "home_o2_cylinder_with_transport_cylinder",
+    "home_saturation_monitor",
+    "bag_and_mask",
+    "nrp_training_done",
+    "suction_needed",
+    "suction_equipment_ready",
+    "section_break_dvv5n",
+    "tracheostomy",
+    "insertion_of_tracheostomy_taught",
+    "trachestomy_care_taught",
+    "suction_taught",
+    "home__manual_suction_equipment_procured",
+    "spare_traceostomy_procured",
+    "section_break_4woiu",
+    "nasogastric_feeding",
+    "siting_of_ng_tube_taught",
+    "section_break_mciyd",
+    "hearing_screen_done",
+    "predischarge_speciality_consultations",
+    "cardiology",
+    "echo_done",
+    "surgery",
+    "neurology",
+    "endocrinology",
+    "ophthalmology",
+    "neurosurgery",
+    "ent",
+    "swallow_team",
+    "section_break_i5k6t",
+    "discharge_examination_done"
+],
+"fields": [
+    {
+        "fieldname": "gestational_age34_weeks",
+        "fieldtype": "Select",
+        "label": "Gestational age>34 weeks",
+        "options": "Yes\nNo"
+    },
+    {
+        "fieldname": "current_weight__13_kg",
+        "fieldtype": "Select",
+        "label": "Current weight > 1.3 kg",
+        "options": "Yes\nNo"
+    },
+    {
+        "fieldname": "discharge",
+        "fieldtype": "Select",
+        "label": "Discharge",
+        "options": "Home\nOther Hospital\nDeath"
+    },
+    {
+        "depends_on": "eval:in_list([\"Other Hospital\"],doc.discharge)",
+        "fieldname": "name_of_hospital",
+        "fieldtype": "Text",
+        "label": "Name of Hospital"
+    },
+    {
+        "depends_on": "eval:in_list([\"Other Hospital\"],doc.discharge)",
+        "fieldname": "consultant_name",
+        "fieldtype": "Text",
+        "label": "Consultant Name"
+    },
+    {
+        "depends_on": "eval:in_list([\"Other Hospital\"],doc.discharge)",
+        "fieldname": "handover_given_to",
+        "fieldtype": "Text",
+        "label": "Handover Given To"
+    },
+    {
+        "fieldname": "section_break_5ucd2",
+        "fieldtype": "Section Break"
+    },
+    {
+        "fieldname": "team_around_child",
+        "fieldtype": "Select",
+        "label": "Team around Child",
+        "options": "Neonatology\nPaediatric Surgery Neurology\nNeurosurgery\nOphthalmology"
+    },
+    {
+        "fieldname": "oxygen_requirement",
+        "fieldtype": "Select",
+        "label": "Oxygen requirement",
+        "options": "Yes\nNo"
+    },
+    {
+        "depends_on": "eval:in_list([\"Yes\"],doc.oxygen_requirement)",
+        "fieldname": "home_o2_cylinder_with_transport_cylinder",
+        "fieldtype": "Select",
+        "label": "Home O2 cylinder with Transport Cylinder",
+        "options": "Yes\nNo"
+    },
+    {
+        "depends_on": "eval:in_list([\"Yes\"],doc.oxygen_requirement)",
+        "fieldname": "home_saturation_monitor",
+        "fieldtype": "Select",
+        "label": "Home saturation monitor",
+        "options": "Yes\nNo"
+    },
+    {
+        "depends_on": "eval:in_list([\"Yes\"],doc.oxygen_requirement)",
+        "fieldname": "bag_and_mask",
+        "fieldtype": "Select",
+        "label": "Bag and Mask",
+        "options": "Yes\nNo"
+    },
+    {
+        "depends_on": "eval:in_list([\"Yes\"],doc.oxygen_requirement)",
+        "fieldname": "nrp_training_done",
+        "fieldtype": "Select",
+        "label": "NRP training done",
+        "options": "Yes\nNo"
+    },
+    {
+        "depends_on": "eval:in_list([\"Yes\"],doc.oxygen_requirement)",
+        "fieldname": "suction_needed",
+        "fieldtype": "Select",
+        "label": " Suction Needed",
+        "options": "Yes\nNo"
+    },
+    {
+        "depends_on": "eval:in_list([\"Yes\"],doc.suction_needed )",
+        "fieldname": "suction_equipment_ready",
+        "fieldtype": "Select",
+        "label": "Suction equipment ready",
+        "options": "Yes\nNo"
+    },
+    {
+        "fieldname": "section_break_dvv5n",
+        "fieldtype": "Section Break"
+    },
+    {
+        "fieldname": "tracheostomy",
+        "fieldtype": "Select",
+        "label": "Tracheostomy",
+        "options": "Yes\nNo"
+    },
+    {
+        "depends_on": "eval:in_list([\"Yes\"],doc.tracheostomy)",
+        "fieldname": "insertion_of_tracheostomy_taught",
+        "fieldtype": "Select",
+        "label": "Insertion of tracheostomy taught",
+        "options": "Yes\nNo"
+    },
+    {
+        "depends_on": "eval:in_list([\"Yes\"],doc.tracheostomy)",
+        "fieldname": "trachestomy_care_taught",
+        "fieldtype": "Select",
+        "label": "Trachestomy care taught",
+        "options": "Yes\nNo"
+    },
+    {
+        "depends_on": "eval:in_list([\"Yes\"],doc.tracheostomy)",
+        "fieldname": "suction_taught",
+        "fieldtype": "Select",
+        "label": "Suction taught",
+        "options": "Yes\nNo"
+    },
+    {
+        "depends_on": "eval:in_list([\"Yes\"],doc.tracheostomy)",
+        "fieldname": "home__manual_suction_equipment_procured",
+        "fieldtype": "Select",
+        "label": "Home  manual suction equipment procured",
+        "options": "Yes\nNo"
+    },
+    {
+        "depends_on": "eval:in_list([\"Yes\"],doc.tracheostomy)",
+        "fieldname": "spare_traceostomy_procured",
+        "fieldtype": "Select",
+        "label": "Spare Traceostomy procured",
+        "options": "Yes\nNo"
+    },
+    {
+        "fieldname": "section_break_4woiu",
+        "fieldtype": "Section Break"
+    },
+    {
+        "fieldname": "nasogastric_feeding",
+        "fieldtype": "Select",
+        "label": "Nasogastric feeding",
+        "options": "Yes\nNo"
+    },
+    {
+        "depends_on": "eval:in_list([\"Yes\"],doc.nasogastric_feeding)",
+        "fieldname": "siting_of_ng_tube_taught",
+        "fieldtype": "Select",
+        "label": "Siting of NG tube taught",
+        "options": "Yes\nNo"
+    },
+    {
+        "fieldname": "section_break_mciyd",
+        "fieldtype": "Section Break"
+    },
+    {
+        "fieldname": "hearing_screen_done",
+        "fieldtype": "Select",
+        "label": "Hearing Screen done",
+        "options": "Yes\nNo"
+    },
+    {
+        "fieldname": "predischarge_speciality_consultations",
+        "fieldtype": "Heading",
+        "label": "Predischarge Speciality Consultations"
+    },
+    {
+        "fieldname": "cardiology",
+        "fieldtype": "Select",
+        "label": "Cardiology",
+        "options": "Yes\nNot needed"
+    },
+    {
+        "depends_on": "eval:in_list([\"Yes\"],doc.cardiology)",
+        "fieldname": "echo_done",
+        "fieldtype": "Select",
+        "label": "ECHO done",
+        "options": "Yes\nNo"
+    },
+    {
+        "fieldname": "surgery",
+        "fieldtype": "Select",
+        "label": "Surgery",
+        "options": "Yes\nNot needed"
+    },
+    {
+        "fieldname": "neurology",
+        "fieldtype": "Select",
+        "label": "Neurology",
+        "options": "Yes\nNot needed"
+    },
+    {
+        "fieldname": "endocrinology",
+        "fieldtype": "Select",
+        "label": "Endocrinology",
+        "options": "Yes\nNot needed"
+    },
+    {
+        "fieldname": "ophthalmology",
+        "fieldtype": "Select",
+        "label": "Ophthalmology",
+        "options": "Yes\nNot needed"
+    },
+    {
+        "fieldname": "neurosurgery",
+        "fieldtype": "Select",
+        "label": "Neurosurgery",
+        "options": "Yes\nNot needed"
+    },
+    {
+        "fieldname": "ent",
+        "fieldtype": "Select",
+        "label": "ENT ",
+        "options": "Yes\nNot needed"
+    },
+    {
+        "fieldname": "swallow_team",
+        "fieldtype": "Select",
+        "label": "Swallow Team",
+        "options": "Yes\nNot needed"
+    },
+    {
+        "fieldname": "section_break_i5k6t",
+        "fieldtype": "Section Break"
+    },
+    {
+        "fieldname": "discharge_examination_done",
+        "fieldtype": "Select",
+        "label": "Discharge Examination done",
+        "options": "Yes\nNo"
+    }
+],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-03-06 17:35:30.349338",
+ "modified_by": "Administrator",
+ "module": "Amrita Neonet",
+ "name": "Discharge checklist",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

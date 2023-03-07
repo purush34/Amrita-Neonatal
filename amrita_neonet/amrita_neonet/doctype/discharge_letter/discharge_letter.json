@@ -1,0 +1,302 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-03-06 17:35:46.514125",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+"field_order": [
+    "date_and_time__of_birth",
+    "discharge",
+    "name_of_hospital",
+    "column_break_kytrq",
+    "consultant_name",
+    "column_break_afxkk",
+    "handover_given_to",
+    "section_break_9odlb",
+    "gestational_age_at_admission",
+    "column_break_pfjrd",
+    "gestational_age_at_discharge",
+    "column_break_wivzr",
+    "length_of_hospital_stay",
+    "section_break_pomhq",
+    "admission_weight",
+    "column_break_d4reb",
+    "admission_length",
+    "column_break_bwycp",
+    "admission_height",
+    "section_break_wfhhv",
+    "discharge_weight",
+    "column_break_aybvk",
+    "discharge_length",
+    "column_break_psza2",
+    "discharge_ofc",
+    "section_break_mdplu",
+    "diagnosis_at_discharge",
+    "investigations_done_during_stay",
+    "summary_of_stay",
+    "respiratory",
+    "cvs",
+    "gi",
+    "cns",
+    "endocrine",
+    "sepsis",
+    "ophthalmology",
+    "ent_and_swallow",
+    "haematology",
+    "renal",
+    "genetic",
+    "any_genetic_samples_sent",
+    "samples_stored",
+    "medications_at_discharge",
+    "advise_at_discharge",
+    "follow_up"
+],
+"fields": [
+    {
+        "fieldname": "date_and_time__of_birth",
+        "fieldtype": "Datetime",
+        "label": "Date and Time  of Birth "
+    },
+    {
+        "fieldname": "discharge",
+        "fieldtype": "Select",
+        "label": "Discharge",
+        "options": "Home\nOther Hospital"
+    },
+    {
+        "depends_on": "eval:in_list([\"Home\"],doc.discharge)",
+        "fieldname": "name_of_hospital",
+        "fieldtype": "Text",
+        "label": "Name of Hospital"
+    },
+    {
+        "fieldname": "column_break_kytrq",
+        "fieldtype": "Column Break"
+    },
+    {
+        "depends_on": "eval:in_list([\"Home\"],doc.discharge)",
+        "fieldname": "consultant_name",
+        "fieldtype": "Text",
+        "label": "Consultant Name"
+    },
+    {
+        "fieldname": "column_break_afxkk",
+        "fieldtype": "Column Break"
+    },
+    {
+        "depends_on": "eval:in_list([\"Home\"],doc.discharge)",
+        "fieldname": "handover_given_to",
+        "fieldtype": "Text",
+        "label": "Handover Given To"
+    },
+    {
+        "fieldname": "section_break_9odlb",
+        "fieldtype": "Section Break"
+    },
+    {
+        "fieldname": "gestational_age_at_admission",
+        "fieldtype": "Data",
+        "label": "Gestational Age at admission"
+    },
+    {
+        "fieldname": "column_break_pfjrd",
+        "fieldtype": "Column Break"
+    },
+    {
+        "fieldname": "gestational_age_at_discharge",
+        "fieldtype": "Data",
+        "label": "Gestational age at Discharge"
+    },
+    {
+        "fieldname": "column_break_wivzr",
+        "fieldtype": "Column Break"
+    },
+    {
+        "fieldname": "length_of_hospital_stay",
+        "fieldtype": "Data",
+        "label": "Length of Hospital Stay"
+    },
+    {
+        "fieldname": "section_break_pomhq",
+        "fieldtype": "Section Break"
+    },
+    {
+        "fieldname": "admission_weight",
+        "fieldtype": "Text",
+        "label": "Admission Weight"
+    },
+    {
+        "fieldname": "column_break_d4reb",
+        "fieldtype": "Column Break"
+    },
+    {
+        "fieldname": "admission_length",
+        "fieldtype": "Text",
+        "label": "Admission Length"
+    },
+    {
+        "fieldname": "column_break_bwycp",
+        "fieldtype": "Column Break"
+    },
+    {
+        "fieldname": "admission_height",
+        "fieldtype": "Text",
+        "label": "Admission Height"
+    },
+    {
+        "fieldname": "section_break_wfhhv",
+        "fieldtype": "Section Break"
+    },
+    {
+        "fieldname": "discharge_weight",
+        "fieldtype": "Text",
+        "label": "Discharge weight"
+    },
+    {
+        "fieldname": "column_break_aybvk",
+        "fieldtype": "Column Break"
+    },
+    {
+        "fieldname": "discharge_length",
+        "fieldtype": "Text",
+        "label": "Discharge Length"
+    },
+    {
+        "fieldname": "column_break_psza2",
+        "fieldtype": "Column Break"
+    },
+    {
+        "fieldname": "discharge_ofc",
+        "fieldtype": "Text",
+        "label": "Discharge OFC"
+    },
+    {
+        "fieldname": "section_break_mdplu",
+        "fieldtype": "Section Break"
+    },
+    {
+        "fieldname": "diagnosis_at_discharge",
+        "fieldtype": "Heading",
+        "label": "Diagnosis at Discharge"
+    },
+    {
+        "fieldname": "investigations_done_during_stay",
+        "fieldtype": "Heading",
+        "label": "Investigations done during stay"
+    },
+    {
+        "fieldname": "summary_of_stay",
+        "fieldtype": "Heading",
+        "label": "Summary of Stay"
+    },
+    {
+        "fieldname": "respiratory",
+        "fieldtype": "Heading",
+        "label": "Respiratory"
+    },
+    {
+        "fieldname": "cvs",
+        "fieldtype": "Heading",
+        "label": "CVS"
+    },
+    {
+        "fieldname": "gi",
+        "fieldtype": "Heading",
+        "label": "GI"
+    },
+    {
+        "fieldname": "cns",
+        "fieldtype": "Heading",
+        "label": "CNS"
+    },
+    {
+        "fieldname": "endocrine",
+        "fieldtype": "Heading",
+        "label": "Endocrine"
+    },
+    {
+        "fieldname": "sepsis",
+        "fieldtype": "Heading",
+        "label": "Sepsis"
+    },
+    {
+        "fieldname": "ophthalmology",
+        "fieldtype": "Heading",
+        "label": "Ophthalmology"
+    },
+    {
+        "fieldname": "ent_and_swallow",
+        "fieldtype": "Heading",
+        "label": "ENT and Swallow"
+    },
+    {
+        "fieldname": "haematology",
+        "fieldtype": "Heading",
+        "label": "Haematology"
+    },
+    {
+        "fieldname": "renal",
+        "fieldtype": "Heading",
+        "label": "Renal"
+    },
+    {
+        "fieldname": "genetic",
+        "fieldtype": "Heading",
+        "label": "Genetic"
+    },
+    {
+        "fieldname": "any_genetic_samples_sent",
+        "fieldtype": "Select",
+        "label": "Any Genetic samples sent",
+        "options": "Yes\nNo"
+    },
+    {
+        "depends_on": "eval:in_list([\"Yes\"],doc.any_genetic_samples_sent)",
+        "fieldname": "samples_stored",
+        "fieldtype": "Select",
+        "label": "Samples Stored",
+        "options": "Yes\nNo"
+    },
+    {
+        "fieldname": "medications_at_discharge",
+        "fieldtype": "Heading",
+        "label": "Medications at discharge"
+    },
+    {
+        "fieldname": "advise_at_discharge",
+        "fieldtype": "Text",
+        "label": "Advise at discharge"
+    },
+    {
+        "fieldname": "follow_up",
+        "fieldtype": "Text",
+        "label": "Follow Up"
+    }
+],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-03-06 17:35:46.514125",
+ "modified_by": "Administrator",
+ "module": "Amrita Neonet",
+ "name": "Discharge letter",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

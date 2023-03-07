@@ -1,0 +1,436 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-03-06 17:28:47.045750",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+    "new_diagnosis",
+    "column_break_swyin",
+    "hours",
+    "column_break_9jsdu",
+    "cchd",
+    "ahd",
+    "tachy_brady",
+    "section_break_9qu1h",
+    "discharge",
+    "column_break_d3uos",
+    "discharge_diag",
+    "column_break_63os5",
+    "cchd_dis",
+    "ahd_dis",
+    "tachy_brady_dis",
+    "section_break_9ibrx",
+    "inotropic_support",
+    "column_break_fjehq",
+    "dopamine",
+    "dobutamine",
+    "adrenaline",
+    "noradrenaline",
+    "hydroocortisone",
+    "section_break_olkkg",
+    "echo",
+    "column_break_dwl0j",
+    "bedside_detailed",
+    "section_break_xbk4f",
+    "rpp",
+    "column_break_ztwsv",
+    "pphn",
+    "pah",
+    "section_break_1nqrx",
+    "need_for_prostin",
+    "section_break_2rttz",
+    "hs_pda",
+    "column_break_0zjor",
+    "hs_type",
+    "column_break_wvobx",
+    "medicine",
+    "column_break_vo8ni",
+    "number_of_courses",
+    "section_break_fhd6c",
+    "cardiac_surgery",
+    "column_break_oivdk",
+    "card_type",
+    "column_break_chx1l",
+    "pda",
+    "palliation",
+    "section_break_bomgp",
+    "pacing",
+    "column_break_r8zis",
+    "if_pacing",
+    "section_break_z9qa6",
+    "arrhythmia",
+    "column_break_d3mnf",
+    "if_arr",
+    "section_break_spa2g",
+    "feed_intolerence",
+    "section_break_yjodg",
+    "cardiac_nec",
+    "column_break_vefz3",
+    "nec_stage",
+    "section_break_njiej",
+    "text_for_discharge_letter"
+],
+"fields": [
+    {
+        "fieldname": "new_diagnosis",
+        "fieldtype": "Select",
+        "label": "New Diagnosis last 24 hours",
+        "options": "Yes\nNo"
+    },
+    {
+        "fieldname": "column_break_swyin",
+        "fieldtype": "Column Break"
+    },
+    {
+        "depends_on": "eval:in_list([\"Yes\"],doc.new_diagnosis)",
+        "fieldname": "hours",
+        "fieldtype": "Select",
+        "options": "Cyanotic Congenital Heart Disease\nAcyanotci Heart Disease\nHypotension\nPersistent Pulmonary Hpertension of Newborn\nHeart failure\nHypertension\nAberrant right sub-clavian artery\nVascular ring\nPremature Atrial Contraction\nPremature Ventricular Contraction\nTachy arrythmias\nBrady Arrythmias\nOther"
+    },
+    {
+        "fieldname": "column_break_9jsdu",
+        "fieldtype": "Column Break"
+    },
+    {
+        "depends_on": "eval:in_list([\"Cyanotic Congenital Heart Disease\"],doc.hours)",
+        "fieldname": "cchd",
+        "fieldtype": "Select",
+        "options": "TGA\nTGA+IVS\nDORV\nTetology\nTAPVC\nPAPVC\nTruncus Arteriosus\nEbstein Anomaly\nInterruption of the Aorta"
+    },
+    {
+        "depends_on": "eval:in_list([\"Acyanotci Heart Disease\"],doc.hours)",
+        "fieldname": "ahd",
+        "fieldtype": "Select",
+        "options": "ASD\nVSD\nPDA\nPDA-heamodynamically significant\nCoarctation of Aorta"
+    },
+    {
+        "depends_on": "eval:in_list([\"Tachy arrythmias\",\"Brady Arrythmias\",\"Others\"],doc.hours)",
+        "fieldname": "tachy_brady",
+        "fieldtype": "Text"
+    },
+    {
+        "fieldname": "section_break_9qu1h",
+        "fieldtype": "Section Break"
+    },
+    {
+        "fieldname": "discharge",
+        "fieldtype": "Select",
+        "label": "New Diagnosis for discharge",
+        "options": "Yes\nNo"
+    },
+    {
+        "fieldname": "column_break_d3uos",
+        "fieldtype": "Column Break"
+    },
+    {
+        "depends_on": "eval:in_list([\"Yes\"],doc.discharge)",
+        "fieldname": "discharge_diag",
+        "fieldtype": "Select",
+        "options": "Cyanotic Congenital Heart Disease\nAcyanotci Heart Disease\nHypotension\nPersistent Pulmonary Hpertension of Newborn\nHeart failure\nHypertension\nAberrant right sub-clavian artery\nVascular ring\nPremature Atrial Contraction\nPremature Ventricular Contraction\nTachy arrythmias\nBrady Arrythmias\nOther"
+    },
+    {
+        "fieldname": "column_break_63os5",
+        "fieldtype": "Column Break"
+    },
+    {
+        "depends_on": "eval:in_list([\"Cyanotic Congenital Heart Disease\"],doc.discharge_diag)",
+        "fieldname": "cchd_dis",
+        "fieldtype": "Select",
+        "label": "Cyanotic Congenital Heart Disease",
+        "options": "TGA\nTGA+IVS\nDORV\nTetology\nTAPVC\nPAPVC\nTruncus Arteriosus\nEbstein Anomaly\nInterruption of the Aorta"
+    },
+    {
+        "depends_on": "eval:in_list([\"Acyanotci Heart Disease\"],doc.discharge_diag)",
+        "fieldname": "ahd_dis",
+        "fieldtype": "Select",
+        "options": "ASD\nVSD\nPDA\nPDA-heamodynamically significant\nCoarctation of Aorta"
+    },
+    {
+        "depends_on": "eval:in_list([\"Tachy arrythmias\",\"Brady Arrythmias\",\"Others\"],doc.discharge_diag)",
+        "fieldname": "tachy_brady_dis",
+        "fieldtype": "Text"
+    },
+    {
+        "fieldname": "section_break_9ibrx",
+        "fieldtype": "Section Break"
+    },
+    {
+        "fieldname": "inotropic_support",
+        "fieldtype": "Select",
+        "label": "Inotropic Support",
+        "options": "Yes\nNo"
+    },
+    {
+        "fieldname": "column_break_fjehq",
+        "fieldtype": "Column Break"
+    },
+    {
+        "depends_on": "eval:in_list([\"Yes\"],doc.inotropic_support)",
+        "fieldname": "dopamine",
+        "fieldtype": "Data",
+        "label": "Dopamine"
+    },
+    {
+        "depends_on": "eval:in_list([\"Yes\"],doc.inotropic_support)",
+        "fieldname": "dobutamine",
+        "fieldtype": "Data",
+        "label": "Dobutamine"
+    },
+    {
+        "depends_on": "eval:in_list([\"Yes\"],doc.inotropic_support)",
+        "fieldname": "adrenaline",
+        "fieldtype": "Data",
+        "label": "Adrenaline"
+    },
+    {
+        "depends_on": "eval:in_list([\"Yes\"],doc.inotropic_support)",
+        "fieldname": "noradrenaline",
+        "fieldtype": "Data",
+        "label": "Noradrenaline"
+    },
+    {
+        "depends_on": "eval:in_list([\"Yes\"],doc.inotropic_support)",
+        "fieldname": "hydroocortisone",
+        "fieldtype": "Data",
+        "label": "Hydroocortisone"
+    },
+    {
+        "fieldname": "section_break_olkkg",
+        "fieldtype": "Section Break"
+    },
+    {
+        "fieldname": "echo",
+        "fieldtype": "Select",
+        "label": "ECHO last 24 hours",
+        "options": "Yes\nNo"
+    },
+    {
+        "fieldname": "column_break_dwl0j",
+        "fieldtype": "Column Break"
+    },
+    {
+        "depends_on": "eval:in_list([\"Yes\"],doc.echo)",
+        "fieldname": "bedside_detailed",
+        "fieldtype": "Text",
+        "label": "Bedside Detailed"
+    },
+    {
+        "fieldname": "section_break_xbk4f",
+        "fieldtype": "Section Break"
+    },
+    {
+        "fieldname": "rpp",
+        "fieldtype": "Select",
+        "label": "Raised Pulmonary Pressures",
+        "options": "Yes\nNo"
+    },
+    {
+        "fieldname": "column_break_ztwsv",
+        "fieldtype": "Column Break"
+    },
+    {
+        "depends_on": "eval:in_list([\"Yes\"],doc.rpp)",
+        "fieldname": "pphn",
+        "fieldtype": "Data",
+        "label": "PPHN"
+    },
+    {
+        "depends_on": "eval:in_list([\"Yes\"],doc.rpp)",
+        "fieldname": "pah",
+        "fieldtype": "Data",
+        "label": "PAH"
+    },
+    {
+        "fieldname": "section_break_1nqrx",
+        "fieldtype": "Section Break"
+    },
+    {
+        "fieldname": "need_for_prostin",
+        "fieldtype": "Select",
+        "label": "Need for Prostin",
+        "options": "Yes\nNo"
+    },
+    {
+        "fieldname": "section_break_2rttz",
+        "fieldtype": "Section Break"
+    },
+    {
+        "fieldname": "hs_pda",
+        "fieldtype": "Select",
+        "label": "Hs PDA",
+        "options": "Yes\nNo"
+    },
+    {
+        "fieldname": "column_break_0zjor",
+        "fieldtype": "Column Break"
+    },
+    {
+        "depends_on": "eval:in_list([\"Yes\"],doc.hs_pda)",
+        "fieldname": "hs_type",
+        "fieldtype": "Select",
+        "label": "Type",
+        "options": "Medical\nSurgical"
+    },
+    {
+        "fieldname": "column_break_wvobx",
+        "fieldtype": "Column Break"
+    },
+    {
+        "depends_on": "eval:in_list([\"Medical\"],doc.hs_type)",
+        "fieldname": "medicine",
+        "fieldtype": "Select",
+        "options": "Paracetmol\nIbuprofin"
+    },
+    {
+        "fieldname": "column_break_vo8ni",
+        "fieldtype": "Column Break"
+    },
+    {
+        "depends_on": "eval:in_list([\"Medical\"],doc.hs_type)",
+        "fieldname": "number_of_courses",
+        "fieldtype": "Data",
+        "label": "Number of Courses"
+    },
+    {
+        "fieldname": "section_break_fhd6c",
+        "fieldtype": "Section Break"
+    },
+    {
+        "fieldname": "cardiac_surgery",
+        "fieldtype": "Select",
+        "label": "Cardiac Surgery",
+        "options": "Yes\nNo"
+    },
+    {
+        "fieldname": "column_break_oivdk",
+        "fieldtype": "Column Break"
+    },
+    {
+        "depends_on": "eval:in_list([\"Yes\"],doc.cardiac_surgery)",
+        "fieldname": "card_type",
+        "fieldtype": "Select",
+        "options": "BAS\nPDA\nSwitch\nPalliation"
+    },
+    {
+        "fieldname": "column_break_chx1l",
+        "fieldtype": "Column Break"
+    },
+    {
+        "depends_on": "eval:in_list([\"PDA\"],doc.card_type)",
+        "fieldname": "pda",
+        "fieldtype": "Select",
+        "options": "Coil\nLigation"
+    },
+    {
+        "depends_on": "eval:in_list([\"Palliation\"],doc.card_type)",
+        "fieldname": "palliation",
+        "fieldtype": "Data"
+    },
+    {
+        "fieldname": "section_break_bomgp",
+        "fieldtype": "Section Break"
+    },
+    {
+        "fieldname": "pacing",
+        "fieldtype": "Select",
+        "label": "Pacing",
+        "options": "Yes\nNo"
+    },
+    {
+        "fieldname": "column_break_r8zis",
+        "fieldtype": "Column Break"
+    },
+    {
+        "depends_on": "eval:in_list([\"Yes\"],doc.pacing)",
+        "fieldname": "if_pacing",
+        "fieldtype": "Select",
+        "options": "External\nInternal"
+    },
+    {
+        "fieldname": "section_break_z9qa6",
+        "fieldtype": "Section Break"
+    },
+    {
+        "fieldname": "arrhythmia",
+        "fieldtype": "Select",
+        "label": "Arrhythmia",
+        "options": "Yes\nNo"
+    },
+    {
+        "fieldname": "column_break_d3mnf",
+        "fieldtype": "Column Break"
+    },
+    {
+        "depends_on": "eval:in_list([\"Yes\"],doc.arrhythmia)",
+        "fieldname": "if_arr",
+        "fieldtype": "Select",
+        "options": "Tachy\nBrady"
+    },
+    {
+        "fieldname": "section_break_spa2g",
+        "fieldtype": "Section Break"
+    },
+    {
+        "fieldname": "feed_intolerence",
+        "fieldtype": "Select",
+        "label": "Feed Intolerence",
+        "options": "Yes\nNo"
+    },
+    {
+        "fieldname": "section_break_yjodg",
+        "fieldtype": "Section Break"
+    },
+    {
+        "fieldname": "cardiac_nec",
+        "fieldtype": "Select",
+        "label": "Cardiac NEC",
+        "options": "Yes\nNo"
+    },
+    {
+        "fieldname": "column_break_vefz3",
+        "fieldtype": "Column Break"
+    },
+    {
+        "depends_on": "eval:in_list([\"Yes\"],doc.cardiac_nec)",
+        "fieldname": "nec_stage",
+        "fieldtype": "Select",
+        "options": "Bells Stage I A\nBells Stage I B\nBells Stage II A\nBells Stage II B\nBells Stage III A\nBells Stage IIIB"
+    },
+    {
+        "fieldname": "section_break_njiej",
+        "fieldtype": "Section Break"
+    },
+    {
+        "fieldname": "text_for_discharge_letter",
+        "fieldtype": "Text",
+        "label": "Text for Discharge Letter"
+    }
+],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-03-06 17:28:47.045750",
+ "modified_by": "Administrator",
+ "module": "Amrita Neonet",
+ "name": "CVS",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

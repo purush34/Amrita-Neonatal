@@ -1,0 +1,180 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-03-06 17:29:05.485847",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+    "new",
+    "column_break_xr0qn",
+    "new_diagnosis_past_24_hours",
+    "grade",
+    "ihrg",
+    "hydro",
+    "seiz",
+    "other",
+    "section_break_db0ci",
+    "new_diagnosis_for_discharge",
+    "discharge",
+    "any_procedure_in_past_24_hours",
+    "hours24",
+    "procedure",
+    "imaging",
+    "mri",
+    "coolig_criteria_met",
+    "section_break_ryftw",
+    "therapeutic_cooling_past_24_hours",
+    "date_and_time_started",
+    "date_and_time_stopped",
+    "free_text_box"
+],
+"fields": [
+    {
+        "fieldname": "new",
+        "fieldtype": "Select",
+        "label": "New Diagnosis last 24 hours",
+        "options": "Yes\nNo"
+    },
+    {
+        "fieldname": "column_break_xr0qn",
+        "fieldtype": "Column Break"
+    },
+    {
+        "depends_on": "eval:in_list([\"Yes\"],doc.new)",
+        "fieldname": "new_diagnosis_past_24_hours",
+        "fieldtype": "Select",
+        "label": "New Diagnosis past 24 hours",
+        "options": "Intraventricular Haemorrhage\nPost Haemorrhagic Ventricular Dilatation\nHydrocephalous\nPeriventricular Leucomalacia\nAbsent Corpus Callosum\nPartial Agenisis of Corpus Callosum\nArnold- Chiari Malformation\nMeningocoel\nMeningomyelocoel\nHypoxic Ischaemic Encephalopathy\nSeizures\nOther"
+    },
+    {
+        "depends_on": "eval:in_list([\"Intraventricular Haemorrhage\"],doc.new_diagnosis_past_24_hours)",
+        "fieldname": "grade",
+        "fieldtype": "Select",
+        "options": "Right-Grade\nLeft-Grade"
+    },
+    {
+        "depends_on": "eval:in_list([\"Intraventricular Haemorrhage\"],doc.new_diagnosis_past_24_hours)",
+        "fieldname": "ihrg",
+        "fieldtype": "Select",
+        "options": "I\nII\nIII\nIV"
+    },
+    {
+        "depends_on": "eval:in_list([\"Hydrocephalous\"],doc.new_diagnosis_past_24_hours)",
+        "fieldname": "hydro",
+        "fieldtype": "Select",
+        "options": "Conservative management\nVentriculo-sub Galeal shunt\nVentriculo- peritoneal Shunt\nCSF Tapping"
+    },
+    {
+        "depends_on": "eval:in_list([\"Seizures\"],doc.new_diagnosis_past_24_hours)",
+        "fieldname": "seiz",
+        "fieldtype": "Small Text"
+    },
+    {
+        "depends_on": "eval:in_list([\"Other\"],doc.new_diagnosis_past_24_hours)",
+        "fieldname": "other",
+        "fieldtype": "Small Text"
+    },
+    {
+        "fieldname": "section_break_db0ci",
+        "fieldtype": "Section Break"
+    },
+    {
+        "fieldname": "new_diagnosis_for_discharge",
+        "fieldtype": "Select",
+        "label": "New Diagnosis for discharge",
+        "options": "Yes\nNo"
+    },
+    {
+        "depends_on": "eval:in_list([\"Yes\"],doc.new_diagnosis_for_discharge)",
+        "fieldname": "discharge",
+        "fieldtype": "Text Editor"
+    },
+    {
+        "fieldname": "any_procedure_in_past_24_hours",
+        "fieldtype": "Select",
+        "label": "Any Procedure in past 24 hours",
+        "options": "Yes\nNo"
+    },
+    {
+        "depends_on": "eval:in_list([\"Yes\"],doc.any_procedure_in_past_24_hours)",
+        "fieldname": "hours24",
+        "fieldtype": "Select",
+        "options": "Lumbar Puncture\nVentricular tapping\nVentriculo-Subgaleal shunt\nVentriculo-peritoneal shunt\nOther"
+    },
+    {
+        "depends_on": "eval:in_list([\"Yes\"],doc.any_procedure_in_past_24_hours)",
+        "fieldname": "procedure",
+        "fieldtype": "Text"
+    },
+    {
+        "fieldname": "imaging",
+        "fieldtype": "Select",
+        "label": "Imaging past 24 hours",
+        "options": "Yes\nNo"
+    },
+    {
+        "depends_on": "eval:in_list([\"Yes\"],doc.imaging)",
+        "fieldname": "mri",
+        "fieldtype": "Select",
+        "options": "CT\nMRI\nNeurosonogram"
+    },
+    {
+        "fieldname": "coolig_criteria_met",
+        "fieldtype": "Select",
+        "label": "Coolig Criteria Met",
+        "options": "Yes\nNo"
+    },
+    {
+        "fieldname": "section_break_ryftw",
+        "fieldtype": "Section Break"
+    },
+    {
+        "fieldname": "therapeutic_cooling_past_24_hours",
+        "fieldtype": "Select",
+        "label": "Therapeutic Cooling past 24 hours",
+        "options": "Yes\nNo"
+    },
+    {
+        "depends_on": "eval:in_list([\"Yes\"],doc.therapeutic_cooling_past_24_hours)",
+        "fieldname": "date_and_time_started",
+        "fieldtype": "Datetime",
+        "label": "Date and time started"
+    },
+    {
+        "depends_on": "eval:in_list([\"Yes\"],doc.therapeutic_cooling_past_24_hours)",
+        "fieldname": "date_and_time_stopped",
+        "fieldtype": "Datetime",
+        "label": " Date and time stopped"
+    },
+    {
+        "fieldname": "free_text_box",
+        "fieldtype": "Text"
+    }
+],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-03-06 17:29:05.485847",
+ "modified_by": "Administrator",
+ "module": "Amrita Neonet",
+ "name": "CNS",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

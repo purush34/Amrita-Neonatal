@@ -1,0 +1,168 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-03-06 17:26:51.058983",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+"field_order": [
+    "summary",
+    "currently_in_unit",
+    "baby_id",
+    "name1",
+    "date_of_admission",
+    "date_of_birth",
+    "day_of_life",
+    "gestational_age_at_birth",
+    "current_gestational_age",
+    "corrected_gestational_age",
+    "current_weight",
+    "ofc",
+    "temp",
+    "resp",
+    "age",
+    "birth_weight",
+    "date_of_discharge",
+    "final_outcome"
+],
+"fields": [
+    {
+        "fieldname": "summary",
+        "fieldtype": "Heading",
+        "label": "SUMMARY"
+    },
+    {
+        "fieldname": "currently_in_unit",
+        "fieldtype": "Select",
+        "label": "Currently in unit",
+        "options": "Yes\nNo"
+    },
+    {
+        "fieldname": "baby_id",
+        "fieldtype": "Link",
+        "label": "Baby ID",
+        "options": "Opening Page"
+    },
+    {
+        "fetch_from": "baby_id.name1",
+        "fieldname": "name1",
+        "fieldtype": "Link",
+        "label": "Name",
+        "options": "Opening Page"
+    },
+    {
+        "fieldname": "date_of_admission",
+        "fieldtype": "Link",
+        "label": "Date of Admission",
+        "options": "Opening Page"
+    },
+    {
+        "fetch_from": "baby_id.dob",
+        "fieldname": "date_of_birth",
+        "fieldtype": "Link",
+        "label": "Date of Birth",
+        "options": "Opening Page"
+    },
+    {
+        "fieldname": "day_of_life",
+        "fieldtype": "Data",
+        "label": "Day of Life",
+        "read_only": 1
+    },
+    {
+        "fetch_from": "baby_id.gestation_age_at_birth",
+        "fieldname": "gestational_age_at_birth",
+        "fieldtype": "Link",
+        "label": "Gestational age at birth",
+        "options": "Opening Page"
+    },
+    {
+        "depends_on": "eval:in_list([\"Yes\"],doc.currently_in_unit)",
+        "fieldname": "current_gestational_age",
+        "fieldtype": "Data",
+        "label": "Current Gestational age ",
+        "read_only": 1
+    },
+    {
+        "depends_on": "eval:in_list([\"No\"],doc.currently_in_unit)",
+        "fieldname": "corrected_gestational_age",
+        "fieldtype": "Data",
+        "label": "Corrected Gestational age"
+    },
+    {
+        "depends_on": "eval:in_list([\"Yes\"],doc.currently_in_unit)",
+        "fieldname": "current_weight",
+        "fieldtype": "Data",
+        "label": "Current weight"
+    },
+    {
+        "depends_on": "eval:in_list([\"Yes\"],doc.currently_in_unit)",
+        "fieldname": "ofc",
+        "fieldtype": "Data",
+        "label": "OFC"
+    },
+    {
+        "depends_on": "eval:in_list([\"Yes\"],doc.currently_in_unit)",
+        "fieldname": "temp",
+        "fieldtype": "Data",
+        "label": "Temp"
+    },
+    {
+        "depends_on": "eval:in_list([\"Yes\"],doc.currently_in_unit)",
+        "fieldname": "resp",
+        "fieldtype": "Data",
+        "label": "Resp"
+    },
+    {
+        "depends_on": "eval:in_list([\"No\"],doc.currently_in_unit)",
+        "fieldname": "age",
+        "fieldtype": "Read Only",
+        "label": "Age"
+    },
+    {
+        "depends_on": "eval:in_list([\"No\"],doc.currently_in_unit)",
+        "fetch_from": "baby_id.birth_weight",
+        "fieldname": "birth_weight",
+        "fieldtype": "Link",
+        "label": "Birth weight",
+        "options": "Opening Page"
+    },
+    {
+        "depends_on": "eval:in_list([\"No\"],doc.currently_in_unit)",
+        "fieldname": "date_of_discharge",
+        "fieldtype": "Date",
+        "label": "Date of Discharge"
+    },
+    {
+        "depends_on": "eval:in_list([\"No\"],doc.currently_in_unit)",
+        "fieldname": "final_outcome",
+        "fieldtype": "Small Text",
+        "label": "Final Outcome"
+    }
+],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-03-06 17:26:51.058983",
+ "modified_by": "Administrator",
+ "module": "Amrita Neonet",
+ "name": "Summary",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

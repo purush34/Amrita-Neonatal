@@ -1,0 +1,48 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-03-06 17:56:04.094914",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "date_inserted",
+  "done_by",
+  "nature_of_effusion"
+ ],
+ "fields": [
+  {
+   "fieldname": "date_inserted",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date Done",
+   "reqd": 1
+  },
+  {
+   "fieldname": "done_by",
+   "fieldtype": "Data",
+   "label": "Done By",
+   "reqd": 1
+  },
+  {
+   "fieldname": "nature_of_effusion",
+   "fieldtype": "Select",
+   "label": "Nature of Effusion",
+   "options": "Serous\nTPN\nBlood",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-03-06 18:03:33.206015",
+ "modified_by": "Administrator",
+ "module": "Amrita Neonet",
+ "name": "Pericardial tap_child",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
