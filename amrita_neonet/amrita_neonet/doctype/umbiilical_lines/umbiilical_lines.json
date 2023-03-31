@@ -1,14 +1,14 @@
 {
  "actions": [],
  "allow_rename": 1,
- "creation": "2023-03-06 17:33:29.122878",
+ "creation": "2023-03-16 18:37:02.694256",
  "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
   "baby_id",
-  "daily_observations"
+  "add_reports"
  ],
  "fields": [
   {
@@ -20,18 +20,18 @@
    "reqd": 1
   },
   {
-   "fieldname": "daily_observations",
+   "fieldname": "add_reports",
    "fieldtype": "Table",
-   "label": "Daily Observations",
-   "options": "Haematology_child"
+   "label": "Add Reports",
+   "options": "Umbilical lines_child"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-03-15 20:54:37.309223",
+ "modified": "2023-03-16 18:38:01.357175",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
- "name": "Haematology",
+ "name": "Umbiilical lines",
  "owner": "Administrator",
  "permissions": [
   {

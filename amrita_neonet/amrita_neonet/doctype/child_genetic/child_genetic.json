@@ -1,0 +1,114 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-03-16 14:56:10.617128",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "date",
+  "section_break_d0c76",
+  "genetics_review",
+  "section_break_f3ags",
+  "new_diagnosis",
+  "column_break_dnyqg",
+  "if_diag",
+  "section_break_zya7s",
+  "investigations",
+  "column_break_rlurh",
+  "date_done",
+  "column_break_tx2kq",
+  "options",
+  "section_break_cpvx6",
+  "discharge_summary"
+ ],
+ "fields": [
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_d0c76",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "genetics_review",
+   "fieldtype": "Select",
+   "label": "Genetics Review",
+   "options": "No\nYes"
+  },
+  {
+   "fieldname": "section_break_f3ags",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "new_diagnosis",
+   "fieldtype": "Select",
+   "label": "New Diagnosis",
+   "options": "No\nYes"
+  },
+  {
+   "fieldname": "column_break_dnyqg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.new_diagnosis)",
+   "fieldname": "if_diag",
+   "fieldtype": "Small Text"
+  },
+  {
+   "fieldname": "section_break_zya7s",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "investigations",
+   "fieldtype": "Select",
+   "label": "Investigations suggested",
+   "options": "No\nYes"
+  },
+  {
+   "fieldname": "column_break_rlurh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.investigations)",
+   "fieldname": "date_done",
+   "fieldtype": "Date",
+   "label": "Date Done"
+  },
+  {
+   "fieldname": "column_break_tx2kq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.investigations)",
+   "fieldname": "options",
+   "fieldtype": "Select",
+   "options": "Karyotype\nFISH\nMicroarray\nDNA isolation"
+  },
+  {
+   "fieldname": "section_break_cpvx6",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "discharge_summary",
+   "fieldtype": "Text",
+   "label": "Discharge Summary"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-03-16 14:56:10.617128",
+ "modified_by": "Administrator",
+ "module": "Amrita Neonet",
+ "name": "child_genetic",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

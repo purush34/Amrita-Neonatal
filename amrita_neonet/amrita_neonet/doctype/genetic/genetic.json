@@ -6,90 +6,27 @@
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
-"field_order": [
-    "genetics_review",
-    "section_break_f3ags",
-    "new_diagnosis",
-    "column_break_dnyqg",
-    "if_diag",
-    "section_break_zya7s",
-    "investigations",
-    "column_break_rlurh",
-    "date_done",
-    "column_break_tx2kq",
-    "options",
-    "section_break_cpvx6",
-    "discharge_summary"
-],
-"fields": [
-    {
-        "fieldname": "genetics_review",
-        "fieldtype": "Select",
-        "label": "Genetics Review",
-        "options": "Yes\nNo"
-    },
-    {
-        "fieldname": "section_break_f3ags",
-        "fieldtype": "Section Break"
-    },
-    {
-        "fieldname": "new_diagnosis",
-        "fieldtype": "Select",
-        "label": "New Diagnosis",
-        "options": "Yes\nNo"
-    },
-    {
-        "fieldname": "column_break_dnyqg",
-        "fieldtype": "Column Break"
-    },
-    {
-        "depends_on": "eval:in_list([\"Yes\"],doc.new_diagnosis)",
-        "fieldname": "if_diag",
-        "fieldtype": "Small Text"
-    },
-    {
-        "fieldname": "section_break_zya7s",
-        "fieldtype": "Section Break"
-    },
-    {
-        "fieldname": "investigations",
-        "fieldtype": "Select",
-        "label": "Investigations suggested",
-        "options": "Yes\nNo"
-    },
-    {
-        "fieldname": "column_break_rlurh",
-        "fieldtype": "Column Break"
-    },
-    {
-        "depends_on": "eval:in_list([\"Yes\"],doc.investigations)",
-        "fieldname": "date_done",
-        "fieldtype": "Date",
-        "label": "Date Done"
-    },
-    {
-        "fieldname": "column_break_tx2kq",
-        "fieldtype": "Column Break"
-    },
-    {
-        "depends_on": "eval:in_list([\"Yes\"],doc.investigations)",
-        "fieldname": "options",
-        "fieldtype": "Select",
-        "options": "Karyotype\nFISH\nMicroarray\nDNA isolation"
-    },
-    {
-        "fieldname": "section_break_cpvx6",
-        "fieldtype": "Section Break"
-    },
-    {
-        "fieldname": "discharge_summary",
-        "fieldtype": "Text",
-        "label": "Discharge Summary"
-    }
-],
+ "field_order": [
+  "baby_id",
+  "daily_observations"
+ ],
+ "fields": [
+  {
+   "fieldname": "baby_id",
+   "fieldtype": "Link",
+   "label": "Baby ID",
+   "options": "Opening page"
+  },
+  {
+   "fieldname": "daily_observations",
+   "fieldtype": "Table",
+   "label": "Daily Observations",
+   "options": "child_genetic"
+  }
+ ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-03-06 17:33:48.972766",
+ "modified": "2023-03-16 14:57:09.652703",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Genetic",

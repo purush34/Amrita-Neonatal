@@ -6,111 +6,27 @@
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
-"field_order": [
-    "new_diagnosis",
-    "column_break_wdays",
-    "new_diag_text",
-    "section_break_yupmq",
-    "new_diagnosis_for_discharge",
-    "column_break_bq7dv",
-    "discharge_diagnosis",
-    "section_break_66wqo",
-    "pstatus",
-    "column_break_5jsmy",
-    "procedures",
-    "column_break_ydqgx",
-    "right_eye",
-    "left_eye",
-    "section_break_exfod",
-    "text_box_for_discharge"
-],
-"fields": [
-    {
-        "fieldname": "new_diagnosis",
-        "fieldtype": "Select",
-        "label": "New diagnosis past 24 hours",
-        "options": "Yes\nNo"
-    },
-    {
-        "fieldname": "column_break_wdays",
-        "fieldtype": "Column Break"
-    },
-    {
-        "depends_on": "eval:in_list([\"Yes\"],doc.new_diagnosis)",
-        "fieldname": "new_diag_text",
-        "fieldtype": "Small Text"
-    },
-    {
-        "fieldname": "section_break_yupmq",
-        "fieldtype": "Section Break"
-    },
-    {
-        "fieldname": "new_diagnosis_for_discharge",
-        "fieldtype": "Select",
-        "label": "New diagnosis for discharge",
-        "options": "Yes\nNo"
-    },
-    {
-        "fieldname": "column_break_bq7dv",
-        "fieldtype": "Column Break"
-    },
-    {
-        "depends_on": "eval:in_list([\"Yes\"],doc.new_diagnosis_for_discharge)",
-        "fieldname": "discharge_diagnosis",
-        "fieldtype": "Small Text"
-    },
-    {
-        "fieldname": "section_break_66wqo",
-        "fieldtype": "Section Break"
-    },
-    {
-        "fieldname": "pstatus",
-        "fieldtype": "Select",
-        "label": "Any procedures past 24 hours",
-        "options": "Yes\nNo"
-    },
-    {
-        "fieldname": "column_break_5jsmy",
-        "fieldtype": "Column Break"
-    },
-    {
-        "default": "ROP screening",
-        "depends_on": "eval:in_list([\"Yes\"],doc.pstatus)",
-        "fieldname": "procedures",
-        "fieldtype": "Select",
-        "options": "Laser\nAnti-VEGF instravitral injection\nROP screening"
-    },
-    {
-        "fieldname": "column_break_ydqgx",
-        "fieldtype": "Column Break"
-    },
-    {
-        "default": "0",
-        "depends_on": "eval:in_list([\"Laser\",\"Anti-VEGF instravitral injection\"],doc.procedures)",
-        "fieldname": "right_eye",
-        "fieldtype": "Check",
-        "label": "Right Eye"
-    },
-    {
-        "default": "0",
-        "depends_on": "eval:in_list([\"Laser\",\"Anti-VEGF instravitral injection\"],doc.procedures)",
-        "fieldname": "left_eye",
-        "fieldtype": "Check",
-        "label": "Left Eye"
-    },
-    {
-        "fieldname": "section_break_exfod",
-        "fieldtype": "Section Break"
-    },
-    {
-        "fieldname": "text_box_for_discharge",
-        "fieldtype": "Text",
-        "label": "Text Box for Discharge"
-    }
-],
+ "field_order": [
+  "baby_id",
+  "daily_observations"
+ ],
+ "fields": [
+  {
+   "fieldname": "baby_id",
+   "fieldtype": "Link",
+   "label": "Baby ID",
+   "options": "Opening page"
+  },
+  {
+   "fieldname": "daily_observations",
+   "fieldtype": "Table",
+   "label": "Daily Observations",
+   "options": "opthalmology_child"
+  }
+ ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-03-06 17:32:52.258505",
+ "modified": "2023-03-16 14:52:52.805899",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Opthalmology",

@@ -1,0 +1,557 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-03-14 22:36:37.201923",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "date",
+  "section_break_d5s1m",
+  "diag_24",
+  "column_break_pats3",
+  "if_diag_24",
+  "column_break_xm7lk",
+  "blood",
+  "urine",
+  "meningitis",
+  "bacteria",
+  "other",
+  "section_break_8qyco",
+  "discharge_diag",
+  "column_break_eju1f",
+  "if_diag_dis",
+  "column_break_aujyq",
+  "blood_dis",
+  "urine_dis",
+  "meningitis_dis",
+  "bacteria_dis",
+  "other_dis",
+  "section_break_5i4jv",
+  "new_sepsis",
+  "section_break_bbgr8",
+  "signs_and_symptoms",
+  "section_break_seeic",
+  "clinical_worsening",
+  "tachycardia",
+  "bradycardias",
+  "tachypnoea",
+  "worsening_blood_gasses",
+  "apnoeas",
+  "temperature_instabilty",
+  "hypoglycaemia",
+  "hyperglycaemia",
+  "column_break_hjkmt",
+  "irritability",
+  "column_break_f54nc",
+  "not_handling_well",
+  "column_break_kbumh",
+  "change_in_infection_markers",
+  "rise_in_crp",
+  "change_in_wcc",
+  "change_in_neutrophil",
+  "thrombocytopaenia",
+  "change",
+  "section_break_as1ls",
+  "blood_culture_in_past_24_hours",
+  "last_blood_culture_report_within_past_72_hours",
+  "textboxb",
+  "section_break_oucwy",
+  "central_line_present",
+  "no_of_days_of_central_line_in_situ",
+  "section_break_pcy9v",
+  "lumbar_puncture_done_past_24_hours",
+  "puncture",
+  "cul",
+  "section_break_nhqk7",
+  "antibiotics",
+  "section_break_borur",
+  "antibiotics_used",
+  "column_break_d9vsl",
+  "type_antibiotics",
+  "column_break_8uph9",
+  "start_date",
+  "column_break_rvde9",
+  "end_date",
+  "column_break_f0ajv",
+  "days_antibiotic",
+  "section_break_fnprv",
+  "antifungals",
+  "section_break_w86dz",
+  "antifungals_used",
+  "column_break_ezjqk",
+  "start_antifungal",
+  "column_break_udyvh",
+  "end_antifungal",
+  "column_break_7o4fq",
+  "days_antifungal",
+  "section_break_podco",
+  "text_for_discharge"
+ ],
+ "fields": [
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_d5s1m",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "diag_24",
+   "fieldtype": "Select",
+   "label": "New diagnosis past 24 hours",
+   "options": "No\nYes"
+  },
+  {
+   "fieldname": "column_break_pats3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.diag_24)",
+   "fieldname": "if_diag_24",
+   "fieldtype": "Select",
+   "options": "Suspected sepsis\nCulture Postive sepsis\nCulture Negative sepsis\nVentilator associated pneumonia\nMeningitis\nCandida Sepsis\nOther"
+  },
+  {
+   "fieldname": "column_break_xm7lk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:in_list([\"Culture Postive sepsis\",\"Candida Sepsis\"],doc.if_diag_24)",
+   "fieldname": "blood",
+   "fieldtype": "Data",
+   "label": "Blood"
+  },
+  {
+   "depends_on": "eval:in_list([\"Culture Postive sepsis\",\"Candida Sepsis\"],doc.if_diag_24)",
+   "fieldname": "urine",
+   "fieldtype": "Data",
+   "label": "Urine"
+  },
+  {
+   "depends_on": "eval:in_list([\"Candida Sepsis\"],doc.if_diag_24)",
+   "fieldname": "meningitis",
+   "fieldtype": "Data",
+   "label": "Meningitis"
+  },
+  {
+   "depends_on": "eval:in_list([\"Ventilator associated pneumonia\",\"Meningitis\"],doc.if_diag_24)",
+   "fieldname": "bacteria",
+   "fieldtype": "Data",
+   "label": "Bacteria"
+  },
+  {
+   "depends_on": "eval:in_list([\"Other\"],doc.if_diag_24)",
+   "fieldname": "other",
+   "fieldtype": "Data",
+   "label": "Others"
+  },
+  {
+   "fieldname": "section_break_8qyco",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "discharge_diag",
+   "fieldtype": "Select",
+   "label": "New Diagnosis for discharge",
+   "options": "No\nYes"
+  },
+  {
+   "fieldname": "column_break_eju1f",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.discharge_diag)",
+   "fieldname": "if_diag_dis",
+   "fieldtype": "Select",
+   "options": "Suspected sepsis\nCulture Postive sepsis\nCulture Negative sepsis\nVentilator associated pneumonia\nMeningitis\nCandida Sepsis\nOther"
+  },
+  {
+   "fieldname": "column_break_aujyq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:in_list([\"Culture Postive sepsis\",\"Candida Sepsis\"],doc.if_diag_dis)",
+   "fieldname": "blood_dis",
+   "fieldtype": "Data",
+   "label": "Blood"
+  },
+  {
+   "depends_on": "eval:in_list([\"Culture Postive sepsis\",\"Candida Sepsis\"],doc.if_diag_dis)",
+   "fieldname": "urine_dis",
+   "fieldtype": "Data",
+   "label": "Urine"
+  },
+  {
+   "depends_on": "eval:in_list([\"Candida Sepsis\"],doc.if_diag_dis)",
+   "fieldname": "meningitis_dis",
+   "fieldtype": "Data",
+   "label": "Meningitis"
+  },
+  {
+   "depends_on": "eval:in_list([\"Ventilator associated pneumonia\",\"Meningitis\"],doc.if_diag_dis)",
+   "fieldname": "bacteria_dis",
+   "fieldtype": "Data",
+   "label": "Bacteria"
+  },
+  {
+   "depends_on": "eval:in_list([\"Other\"],doc.if_diag_dis)",
+   "fieldname": "other_dis",
+   "fieldtype": "Data",
+   "label": "Other"
+  },
+  {
+   "fieldname": "section_break_5i4jv",
+   "fieldtype": "Section Break"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.new_sepsis)",
+   "fieldname": "signs_and_symptoms",
+   "fieldtype": "Heading",
+   "label": "Signs and Symptoms"
+  },
+  {
+   "depends_on": "eval:in_list([\"Change in infection markers\"],doc.signs_and_symptoms)",
+   "fieldname": "change",
+   "fieldtype": "Select",
+   "options": "Rise in CRP\nChange in WCC\nChange in Neutrophil\nThrombocytopaenia"
+  },
+  {
+   "fieldname": "section_break_as1ls",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "blood_culture_in_past_24_hours",
+   "fieldtype": "Select",
+   "label": "Blood culture in past 24 hours",
+   "options": "No\nYes"
+  },
+  {
+   "fieldname": "last_blood_culture_report_within_past_72_hours",
+   "fieldtype": "Select",
+   "label": "Last Blood culture report within past 72 hours ",
+   "options": "Positive\nNegative"
+  },
+  {
+   "depends_on": "eval:in_list([\"Positive\"],doc.last_blood_culture_report_within_past_72_hours)",
+   "fieldname": "textboxb",
+   "fieldtype": "Text"
+  },
+  {
+   "fieldname": "section_break_oucwy",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "central_line_present",
+   "fieldtype": "Select",
+   "label": "Central line present",
+   "options": "No\nYes"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.central_line_present)",
+   "fieldname": "no_of_days_of_central_line_in_situ",
+   "fieldtype": "Data",
+   "label": "No of days of central line in situ"
+  },
+  {
+   "fieldname": "section_break_pcy9v",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "lumbar_puncture_done_past_24_hours",
+   "fieldtype": "Select",
+   "label": "Lumbar Puncture done past 24 hours",
+   "options": "No\nYes"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.lumbar_puncture_done_past_24_hours)",
+   "fieldname": "puncture",
+   "fieldtype": "Select",
+   "options": "WCC\nGlucose\nProtien\nCulture"
+  },
+  {
+   "depends_on": "eval:in_list([\"Culture\"],doc.puncture)",
+   "fieldname": "cul",
+   "fieldtype": "Text"
+  },
+  {
+   "fieldname": "section_break_nhqk7",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "antibiotics",
+   "fieldtype": "Select",
+   "label": "Antibiotics in past 24 hours",
+   "options": "No\nYes"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.antibiotics)",
+   "fieldname": "antibiotics_used",
+   "fieldtype": "Select",
+   "label": "Antibiotics Used",
+   "options": "Ampicillin\nAmikacin\nPipercillin-Tazobactam\nCefaperozone-Sulbactam\nCefaperazone\nCeftazidime\nCefotaxime\nCefuroxime\nMeropenam\nAzithromycin\nErythromycin\nGentamicin\nVancomycin\nLinezolid\nSulfamethoxozole+Trimethoprim\nTrimethoprim\nCefixime\nColistin\nCiprofloxacin eye drops\nMoxifloxacin eye drops\nMupirocin ointment\nOthers"
+  },
+  {
+   "fieldname": "column_break_d9vsl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.antibiotics)",
+   "fieldname": "type_antibiotics",
+   "fieldtype": "Select",
+   "options": "IV\nPO\nIntra ventricular\nIntrathecal\nTopical"
+  },
+  {
+   "fieldname": "column_break_8uph9",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.antibiotics)",
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": "Start Date"
+  },
+  {
+   "fieldname": "column_break_rvde9",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.antibiotics)",
+   "fieldname": "end_date",
+   "fieldtype": "Data",
+   "label": "End Date"
+  },
+  {
+   "fieldname": "column_break_f0ajv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.antibiotics)",
+   "fieldname": "days_antibiotic",
+   "fieldtype": "Data",
+   "label": "No.of days"
+  },
+  {
+   "fieldname": "section_break_fnprv",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "antifungals",
+   "fieldtype": "Select",
+   "label": "Antifungals in past 24 hours",
+   "options": "No\nYes"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.antifungals)",
+   "fieldname": "section_break_w86dz",
+   "fieldtype": "Section Break"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.antifungals)",
+   "fieldname": "antifungals_used",
+   "fieldtype": "Select",
+   "label": "Antifungals used",
+   "options": "Fluconazole\nVoriconazole\nAmphotericin Micafungin\nClotrimazole 1% (candid mouth paint)\nCandid cream"
+  },
+  {
+   "fieldname": "column_break_ezjqk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.antifungals)",
+   "fieldname": "start_antifungal",
+   "fieldtype": "Date",
+   "label": "Start Date"
+  },
+  {
+   "fieldname": "column_break_udyvh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.antifungals)",
+   "fieldname": "end_antifungal",
+   "fieldtype": "Date",
+   "label": "End Date"
+  },
+  {
+   "fieldname": "column_break_7o4fq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.antifungals)",
+   "fieldname": "days_antifungal",
+   "fieldtype": "Data",
+   "label": "No.of days"
+  },
+  {
+   "fieldname": "section_break_podco",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "text_for_discharge",
+   "fieldtype": "Text",
+   "label": "Text for Discharge"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.antibiotics)",
+   "fieldname": "section_break_borur",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "new_sepsis",
+   "fieldtype": "Select",
+   "label": "New episode of Sepsis suspected over past 24 hours",
+   "options": "No\nYes"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.new_sepsis)\n",
+   "fieldname": "section_break_bbgr8",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:in_list([\"Yes\"],doc.new_sepsis)",
+   "fieldname": "clinical_worsening",
+   "fieldtype": "Check",
+   "label": "Clinical worsening "
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:in_list([\"Yes\"],doc.new_sepsis)",
+   "fieldname": "irritability",
+   "fieldtype": "Check",
+   "label": "Irritability"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:in_list([\"Yes\"],doc.new_sepsis)",
+   "fieldname": "not_handling_well",
+   "fieldtype": "Check",
+   "label": "Not Handling well"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:in_list([\"Yes\"],doc.new_sepsis)",
+   "fieldname": "change_in_infection_markers",
+   "fieldtype": "Check",
+   "label": "Change in infection markers"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.clinical_worsening==1",
+   "fieldname": "tachycardia",
+   "fieldtype": "Check",
+   "label": "Tachycardia"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.clinical_worsening==1",
+   "fieldname": "bradycardias",
+   "fieldtype": "Check",
+   "label": "Bradycardias"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.clinical_worsening==1",
+   "fieldname": "tachypnoea",
+   "fieldtype": "Check",
+   "label": "Tachypnoea"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.clinical_worsening==1",
+   "fieldname": "worsening_blood_gasses",
+   "fieldtype": "Check",
+   "label": "Worsening blood gasses"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.clinical_worsening==1",
+   "fieldname": "apnoeas",
+   "fieldtype": "Check",
+   "label": "Apnoeas"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.clinical_worsening==1",
+   "fieldname": "temperature_instabilty",
+   "fieldtype": "Check",
+   "label": "Temperature instabilty"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.clinical_worsening==1",
+   "fieldname": "hypoglycaemia",
+   "fieldtype": "Check",
+   "label": "Hypoglycaemia"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.clinical_worsening==1",
+   "fieldname": "hyperglycaemia",
+   "fieldtype": "Check",
+   "label": "Hyperglycaemia"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.change_in_infection_markers==1",
+   "fieldname": "rise_in_crp",
+   "fieldtype": "Check",
+   "label": "Rise in CRP"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.change_in_infection_markers==1",
+   "fieldname": "change_in_wcc",
+   "fieldtype": "Check",
+   "label": "Change in WCC"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.change_in_infection_markers==1",
+   "fieldname": "change_in_neutrophil",
+   "fieldtype": "Check",
+   "label": "Change in Neutrophil"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.change_in_infection_markers==1",
+   "fieldname": "thrombocytopaenia",
+   "fieldtype": "Check",
+   "label": "Thrombocytopaenia"
+  },
+  {
+   "fieldname": "column_break_hjkmt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_f54nc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_kbumh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.new_sepsis)",
+   "fieldname": "section_break_seeic",
+   "fieldtype": "Section Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-03-16 19:08:29.165436",
+ "modified_by": "Administrator",
+ "module": "Amrita Neonet",
+ "name": "child_sepsis",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

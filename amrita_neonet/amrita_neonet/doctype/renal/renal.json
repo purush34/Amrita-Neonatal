@@ -6,191 +6,27 @@
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
-"field_order": [
-    "diagnosis_24",
-    "column_break_i5jb8",
-    "if_diag24",
-    "column_break_agxlf",
-    "chonal_atresia",
-    "column_break_pfjr8",
-    "text_diag24",
-    "section_break_lbix5",
-    "diagnosis_discharge",
-    "column_break_gnfez",
-    "if_diagdischarge",
-    "column_break_gozvu",
-    "chonal_atresia_dis",
-    "column_break_dgkwq",
-    "text_diagdischarge",
-    "section_break_kz2ia",
-    "procedures",
-    "column_break_grdmo",
-    "if_procedures",
-    "column_break_pbqj1",
-    "pyo_other",
-    "section_break_q2qio",
-    "uti",
-    "column_break_fk3bp",
-    "if_uti",
-    "column_break_kx3qk",
-    "uti_bacterial",
-    "uti_fungal",
-    "section_break_xfakq",
-    "discharge_text"
-],
-"fields": [
-    {
-        "fieldname": "diagnosis_24",
-        "fieldtype": "Select",
-        "label": "New diagnosis past 24 hours",
-        "options": "Yes\nNo"
-    },
-    {
-        "fieldname": "column_break_i5jb8",
-        "fieldtype": "Column Break"
-    },
-    {
-        "depends_on": "eval:in_list([\"Yes\"],doc.diagnosis_24)",
-        "fieldname": "if_diag24",
-        "fieldtype": "Select",
-        "options": "Renal Pelvic dilatation\nMulticystic Dysplastic Kidney\nFungal Ball\nPelvi-Ureter Junction obstruction\nPosterior Uretheral Valve\nAcute Kidney Injury\nAcute Renal Failure\nChronic Renal Failure\nOther"
-    },
-    {
-        "fieldname": "column_break_agxlf",
-        "fieldtype": "Column Break"
-    },
-    {
-        "depends_on": "eval:in_list([\"Renal Pelvic dilatation\",\"Multicystic Dysplastic Kidney\",\"Fungal Ball\",\"Pelvi-Ureter Junction obstruction\"],doc.if_diag24)",
-        "fieldname": "chonal_atresia",
-        "fieldtype": "Select",
-        "options": "Right\nLeft\nBilateral"
-    },
-    {
-        "fieldname": "column_break_pfjr8",
-        "fieldtype": "Column Break"
-    },
-    {
-        "depends_on": "eval:in_list([\"Yes\"],doc.diagnosis_24)",
-        "fieldname": "text_diag24",
-        "fieldtype": "Data"
-    },
-    {
-        "fieldname": "section_break_lbix5",
-        "fieldtype": "Section Break"
-    },
-    {
-        "fieldname": "diagnosis_discharge",
-        "fieldtype": "Select",
-        "label": "New Diagnosis for discharge",
-        "options": "Yes\nNo"
-    },
-    {
-        "fieldname": "column_break_gnfez",
-        "fieldtype": "Column Break"
-    },
-    {
-        "depends_on": "eval:in_list([\"Yes\"],doc.diagnosis_discharge)",
-        "fieldname": "if_diagdischarge",
-        "fieldtype": "Select",
-        "options": "Renal Pelvic dilatation\nMulticystic Dysplastic Kidney\nFungal Ball\nPelvi-Ureter Junction obstruction\nPosterior Uretheral Valve\nAcute Kidney Injury\nAcute Renal Failure\nChronic Renal Failure\nOther"
-    },
-    {
-        "fieldname": "column_break_gozvu",
-        "fieldtype": "Column Break"
-    },
-    {
-        "depends_on": "eval:in_list([\"Renal Pelvic dilatation\",\"Multicystic Dysplastic Kidney\",\"Fungal Ball\",\"Pelvi-Ureter Junction obstruction\"],doc.if_diagdischarge)",
-        "fieldname": "chonal_atresia_dis",
-        "fieldtype": "Select",
-        "options": "Right\nLeft\nBilateral"
-    },
-    {
-        "fieldname": "column_break_dgkwq",
-        "fieldtype": "Column Break"
-    },
-    {
-        "depends_on": "eval:in_list([\"Yes\"],doc.diagnosis_discharge)",
-        "fieldname": "text_diagdischarge",
-        "fieldtype": "Data"
-    },
-    {
-        "fieldname": "section_break_kz2ia",
-        "fieldtype": "Section Break"
-    },
-    {
-        "fieldname": "procedures",
-        "fieldtype": "Select",
-        "label": "New Procedure in past 24 hours",
-        "options": "Yes\nNo"
-    },
-    {
-        "fieldname": "column_break_grdmo",
-        "fieldtype": "Column Break"
-    },
-    {
-        "depends_on": "eval:in_list([\"Yes\"],doc.procedures)",
-        "fieldname": "if_procedures",
-        "fieldtype": "Select",
-        "options": "Catherisation\nPyeloplasty\nPUV Fulgaration\nOther"
-    },
-    {
-        "fieldname": "column_break_pbqj1",
-        "fieldtype": "Column Break"
-    },
-    {
-        "depends_on": "eval:in_list([\"Pyeloplasty\",\"Other\"],doc.if_procedures)",
-        "fieldname": "pyo_other",
-        "fieldtype": "Data"
-    },
-    {
-        "fieldname": "section_break_q2qio",
-        "fieldtype": "Section Break"
-    },
-    {
-        "fieldname": "uti",
-        "fieldtype": "Select",
-        "label": "UTI past 24 hours",
-        "options": "Yes\nNo"
-    },
-    {
-        "fieldname": "column_break_fk3bp",
-        "fieldtype": "Column Break"
-    },
-    {
-        "depends_on": "eval:in_list([\"Yes\"],doc.uti)",
-        "fieldname": "if_uti",
-        "fieldtype": "Select",
-        "options": "Bacterial\nFungal"
-    },
-    {
-        "fieldname": "column_break_kx3qk",
-        "fieldtype": "Column Break"
-    },
-    {
-        "depends_on": "eval:in_list([\"Bacterial\"],doc.if_uti)",
-        "fieldname": "uti_bacterial",
-        "fieldtype": "Data",
-        "label": "Bacterial"
-    },
-    {
-        "depends_on": "eval:in_list([\"Fungal\"],doc.if_uti)",
-        "fieldname": "uti_fungal",
-        "fieldtype": "Data",
-        "label": "Fungal"
-    },
-    {
-        "fieldname": "section_break_xfakq",
-        "fieldtype": "Section Break"
-    },
-    {
-        "fieldname": "discharge_text",
-        "fieldtype": "Text",
-        "label": "Text for Discharge"
-    }
-],
+ "field_order": [
+  "baby_id",
+  "daily_observations"
+ ],
+ "fields": [
+  {
+   "fieldname": "baby_id",
+   "fieldtype": "Link",
+   "label": "Baby ID",
+   "options": "Opening page"
+  },
+  {
+   "fieldname": "daily_observations",
+   "fieldtype": "Table",
+   "label": "Daily Observations",
+   "options": "Renal_child"
+  }
+ ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-03-06 17:33:39.118141",
+ "modified": "2023-03-15 21:25:38.697379",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Renal",

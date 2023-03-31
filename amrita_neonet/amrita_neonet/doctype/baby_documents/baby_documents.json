@@ -1,37 +1,39 @@
 {
  "actions": [],
  "allow_rename": 1,
- "creation": "2023-03-06 17:33:29.122878",
+ "creation": "2023-03-19 16:03:03.132557",
  "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "baby_id",
-  "daily_observations"
+  "previous_reports",
+  "consents",
+  "reports"
  ],
  "fields": [
   {
-   "fieldname": "baby_id",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Baby ID",
-   "options": "Opening page",
-   "reqd": 1
+   "fieldname": "previous_reports",
+   "fieldtype": "Heading",
+   "label": "Previous reports"
   },
   {
-   "fieldname": "daily_observations",
-   "fieldtype": "Table",
-   "label": "Daily Observations",
-   "options": "Haematology_child"
+   "fieldname": "consents",
+   "fieldtype": "Heading",
+   "label": "Consents"
+  },
+  {
+   "fieldname": "reports",
+   "fieldtype": "Heading",
+   "label": "Reports"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-03-15 20:54:37.309223",
+ "modified": "2023-03-19 16:07:28.869795",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
- "name": "Haematology",
+ "name": "Baby Documents",
  "owner": "Administrator",
  "permissions": [
   {

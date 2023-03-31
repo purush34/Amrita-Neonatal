@@ -6,173 +6,27 @@
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
-"field_order": [
-    "diag_24",
-    "column_break_pats3",
-    "if_diag_24",
-    "column_break_xm7lk",
-    "blood",
-    "urine",
-    "meningitis",
-    "bacteria",
-    "section_break_8qyco",
-    "new__episode_of_sepsis_suspected_over_past_24_hours",
-    "signs_and_symptoms",
-    "clinical",
-    "change",
-    "section_break_as1ls",
-    "blood_culture_in_past_24_hours",
-    "last_blood_culture_report_within_past_72_hours",
-    "textboxb",
-    "section_break_oucwy",
-    "central_line_present",
-    "no_of_days_of_central_line_in_situ",
-    "section_break_pcy9v",
-    "lumbar_puncture_done_past_24_hours",
-    "puncture",
-    "cul",
-    "section_break_nhqk7"
-],
-"fields": [
-    {
-        "fieldname": "diag_24",
-        "fieldtype": "Select",
-        "label": "New diagnosis past 24 hours",
-        "options": "No\nYes"
-    },
-    {
-        "fieldname": "column_break_pats3",
-        "fieldtype": "Column Break"
-    },
-    {
-        "depends_on": "eval:in_list([\"Yes\"],doc.diag_24)",
-        "fieldname": "if_diag_24",
-        "fieldtype": "Select",
-        "options": "Suspected sepsis\nCulture Postive sepsis\nCulture Negative sepsis\nVentilator associated pneumonia\nMeningitis\nCandida Sepsis\nOther"
-    },
-    {
-        "fieldname": "column_break_xm7lk",
-        "fieldtype": "Column Break"
-    },
-    {
-        "depends_on": "eval:in_list([\"Culture Positive sepsis\",\"Candida Sepsis\"],doc.if_diag_24)",
-        "fieldname": "blood",
-        "fieldtype": "Data",
-        "label": "Blood"
-    },
-    {
-        "depends_on": "eval:in_list([\"Culture Positive sepsis\",\"Candida Sepsis\"],doc.if_diag_24)",
-        "fieldname": "urine",
-        "fieldtype": "Data",
-        "label": "Urine"
-    },
-    {
-        "depends_on": "eval:in_list([\"Candida Sepsis\"],doc.if_diag_24)",
-        "fieldname": "meningitis",
-        "fieldtype": "Data",
-        "label": "Meningitis"
-    },
-    {
-        "depends_on": "eval:in_list([\"Ventilator associated pneumonia\",\"Meningitis\",\"Other\"],doc.if_diag_24)",
-        "fieldname": "bacteria",
-        "fieldtype": "Data",
-        "label": "Bacteria"
-    },
-    {
-        "fieldname": "section_break_8qyco",
-        "fieldtype": "Section Break"
-    },
-    {
-        "fieldname": "new__episode_of_sepsis_suspected_over_past_24_hours",
-        "fieldtype": "Select",
-        "label": "New  episode of Sepsis suspected over past 24 hours",
-        "options": "Yes\nNo"
-    },
-    {
-        "depends_on": "eval:in_list([\"Yes\"],doc.new__episode_of_sepsis_suspected_over_past_24_hours)",
-        "fieldname": "signs_and_symptoms",
-        "fieldtype": "Select",
-        "label": "Signs and Symptoms",
-        "options": "Clinical worsening\nIrritability\nNot Handling well\nChange in infection markers"
-    },
-    {
-        "depends_on": "eval:in_list([\"Clinical worsening\"],doc.signs_and_symptoms)",
-        "fieldname": "clinical",
-        "fieldtype": "Select",
-        "options": "Tachycardia\nBradycardias\nTachypnoea\nWorsening blood gasses\nApnoeas\nTemperature instabilty\nHypoglycaemia\nHyperglycaemia"
-    },
-    {
-        "depends_on": "eval:in_list([\"Change in infection markers\"],doc.signs_and_symptoms)",
-        "fieldname": "change",
-        "fieldtype": "Select",
-        "options": "Rise in CRP\nChange in WCC\nChange in Neutrophil\nThrombocytopaenia"
-    },
-    {
-        "fieldname": "section_break_as1ls",
-        "fieldtype": "Section Break"
-    },
-    {
-        "fieldname": "blood_culture_in_past_24_hours",
-        "fieldtype": "Select",
-        "label": "Blood culture in past 24 hours",
-        "options": "Yes\nNo"
-    },
-    {
-        "fieldname": "last_blood_culture_report_within_past_72_hours",
-        "fieldtype": "Select",
-        "label": "Last Blood culture report within past 72 hours ",
-        "options": "Positive\nNegative"
-    },
-    {
-        "depends_on": "eval:in_list([\"Positive\"],doc.last_blood_culture_report_within_past_72_hours)",
-        "fieldname": "textboxb",
-        "fieldtype": "Text"
-    },
-    {
-        "fieldname": "section_break_oucwy",
-        "fieldtype": "Section Break"
-    },
-    {
-        "fieldname": "central_line_present",
-        "fieldtype": "Select",
-        "label": "Central line present",
-        "options": "Yes\nNo"
-    },
-    {
-        "depends_on": "eval:in_list([\"Yes\"],doc.central_line_present)",
-        "fieldname": "no_of_days_of_central_line_in_situ",
-        "fieldtype": "Data",
-        "label": "No of days of central line in situ"
-    },
-    {
-        "fieldname": "section_break_pcy9v",
-        "fieldtype": "Section Break"
-    },
-    {
-        "fieldname": "lumbar_puncture_done_past_24_hours",
-        "fieldtype": "Select",
-        "label": "Lumbar Puncture done past 24 hours",
-        "options": "Yes\nNo"
-    },
-    {
-        "depends_on": "eval:in_list([\"Yes\"],doc.lumbar_puncture_done_past_24_hours)",
-        "fieldname": "puncture",
-        "fieldtype": "Select",
-        "options": "WCC\nGlucose\nProtien\nCulture"
-    },
-    {
-        "depends_on": "eval:in_list([\"Culture\"],doc.puncture)",
-        "fieldname": "cul",
-        "fieldtype": "Text"
-    },
-    {
-        "fieldname": "section_break_nhqk7",
-        "fieldtype": "Section Break"
-    }
-],
+ "field_order": [
+  "baby_id",
+  "daily_observations"
+ ],
+ "fields": [
+  {
+   "fieldname": "baby_id",
+   "fieldtype": "Link",
+   "label": "Baby ID",
+   "options": "Opening page"
+  },
+  {
+   "fieldname": "daily_observations",
+   "fieldtype": "Table",
+   "label": "Daily Observations",
+   "options": "child_sepsis"
+  }
+ ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-03-06 17:32:30.130108",
+ "modified": "2023-03-14 22:37:54.498973",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Sepsis",

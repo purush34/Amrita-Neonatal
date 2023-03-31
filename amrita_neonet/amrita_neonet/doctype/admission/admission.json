@@ -7,783 +7,783 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-    "section_break_ynnkj",
-    "name1",
-    "gestation_age_at_birth",
-    "temp",
-    "heart_rate",
-    "column_break_l6bkf",
-    "saturations",
-    "o2",
-    "bp",
-    "column_break_b7ni9",
-    "admission_weight",
-    "admission_ofc",
-    "admission_length",
-    "section_break_avxh3",
-    "reason_for_admission",
-    "blood_group_incompatabilities",
-    "sepsis",
-    "chd",
-    "hydrops",
-    "unspecified",
-    "admission_examination_section",
-    "facies",
-    "scalp",
-    "hairline",
-    "mouth",
-    "cry",
-    "column_break_05ypn",
-    "anterior_fontanelle",
-    "posterior_fontanelle",
-    "palate",
-    "abdomen",
-    "tone",
-    "column_break_vkx22",
-    "neck",
-    "chest",
-    "genitalia",
-    "spine",
-    "activity",
-    "column_break_v16kv",
-    "umbilical_cord",
-    "suck",
-    "grasp",
-    "anus",
-    "section_break_3aw4c",
-    "eyes",
-    "right_eye",
-    "left_eye",
-    "column_break_hlmlp",
-    "right_ear",
-    "left_ear",
-    "hips_column",
-    "right_hip",
-    "left_hip",
-    "moros_column",
-    "right_moro",
-    "left_moro",
-    "section_break_ahtyk",
-    "birth_trauma",
-    "birth_trauma_text",
-    "congenital_section",
-    "respiratory_section",
-    "diagnosis",
-    "vap",
-    "cdh",
-    "eventeration",
-    "toa",
-    "pneumothorax",
-    "section_break_b9eoh",
-    "intubated",
-    "column_break_k8ffg",
-    "size",
-    "fixed_at",
-    "section_break_wvc6h",
-    "support",
-    "column_break_mfumc",
-    "invasive",
-    "non_invasive",
-    "column_break_xwhjf",
-    "cva",
-    "ph_column",
-    "c_ph",
-    "v_ph",
-    "a_ph",
-    "pco2_column",
-    "c_pco2",
-    "v_pco2",
-    "a_pco2",
-    "hco3_column",
-    "c_hco3",
-    "v_hco3",
-    "a_hco3",
-    "be_column",
-    "c_be",
-    "v_be",
-    "a_be",
-    "lactate_column",
-    "c_lactate",
-    "v_lactate",
-    "a_lactate",
-    "blood_sugar_column",
-    "c_bloodsugar",
-    "v_bloodsugar",
-    "a_bloodsugar",
-    "section_break_x6ozq",
-    "respiratory_text",
-    "cardiovascular_section",
-    "diagnosis_cardio",
-    "cchd",
-    "ahd",
-    "tachy_arrythmias",
-    "brady_arrythmias",
-    "fermorals_column",
-    "right",
-    "left",
-    "section_break_a75hg",
-    "cardio_text",
-    "gastro_intestinal_section",
-    "text_gastro",
-    "cns_section",
-    "cns_text",
-    "section_break_anccs",
-    "cooling_criteria",
-    "column_break_k9jwe",
-    "cooling_start_time",
-    "cooling_stop_time",
-    "sepsis_section"
-],
-"fields": [
-    {
-        "fieldname": "section_break_ynnkj",
-        "fieldtype": "Section Break",
-        "label": "Admission details"
-    },
-    {
-        "fieldname": "name1",
-        "fieldtype": "Link",
-        "label": "Name",
-        "options": "Opening Page"
-    },
-    {
-        "fetch_from": "name1.gestation_age_at_birth",
-        "fieldname": "gestation_age_at_birth",
-        "fieldtype": "Link",
-        "label": "Gestation age at birth",
-        "options": "Opening Page"
-    },
-    {
-        "fieldname": "temp",
-        "fieldtype": "Data",
-        "label": "Temp"
-    },
-    {
-        "fieldname": "heart_rate",
-        "fieldtype": "Data",
-        "label": "Heart Rate"
-    },
-    {
-        "fieldname": "column_break_l6bkf",
-        "fieldtype": "Column Break"
-    },
-    {
-        "fieldname": "saturations",
-        "fieldtype": "Data",
-        "label": "Saturations"
-    },
-    {
-        "fieldname": "o2",
-        "fieldtype": "Data",
-        "label": "O2"
-    },
-    {
-        "fieldname": "bp",
-        "fieldtype": "Data",
-        "label": "BP"
-    },
-    {
-        "fieldname": "column_break_b7ni9",
-        "fieldtype": "Column Break"
-    },
-    {
-        "fetch_from": "name1.admission_weight",
-        "fieldname": "admission_weight",
-        "fieldtype": "Link",
-        "label": "Admission weight",
-        "options": "Opening Page"
-    },
-    {
-        "fieldname": "admission_ofc",
-        "fieldtype": "Data",
-        "label": "Admission OFC"
-    },
-    {
-        "fieldname": "admission_length",
-        "fieldtype": "Data",
-        "label": "Admission length"
-    },
-    {
-        "fieldname": "section_break_avxh3",
-        "fieldtype": "Section Break"
-    },
-    {
-        "fieldname": "reason_for_admission",
-        "fieldtype": "Select",
-        "label": "Reason for admission",
-        "options": "Pre- term\nType I Respiratory Distress Syndrome\nType II Respiratory Distress Syndrome\nIntra Uterine Growth retardation\nBlood Group Incompatabilities\nSepsis\nMeningitis\nAbsent/ Reversed End Diastolic flow/ AREDF\nInguinal Hernia\nCongenital Diaphragmatic Hernia- CDH\nTracheo-oesphageal Atresia- TEF\nPosterior Urethral Valve- PUV\nCongenital Heart Disease- CHD\nHydrops\nHypoglycaemia\nSigns of respiratory distress\nMeningomyelocoel\nAntenatally detected anomaly\nUnspecified"
-    },
-    {
-        "depends_on": "eval:in_list([\"Blood Group Incompatabilities\"],doc.reason)",
-        "fieldname": "blood_group_incompatabilities",
-        "fieldtype": "Select",
-        "label": "Blood Group Incompatabilities",
-        "options": "O-B"
-    },
-    {
-        "depends_on": "eval:in_list([\"Sepsis\"],doc.reason)",
-        "fieldname": "sepsis",
-        "fieldtype": "Select",
-        "label": "Sepsis",
-        "options": "Culture Negative\nGram Negative\nFungal"
-    },
-    {
-        "depends_on": "eval:in_list([\"Congenital Heart Disease- CHD\"],doc.reason)",
-        "fieldname": "chd",
-        "fieldtype": "Select",
-        "label": "Congenital Heart Disease CHD",
-        "options": "AVSD\nTGA\nTetrology of Fallots"
-    },
-    {
-        "depends_on": "eval:in_list([\"Hydrops\"],doc.reason)",
-        "fieldname": "hydrops",
-        "fieldtype": "Select",
-        "label": "Hydrops",
-        "options": "Immune\nNon- Immune"
-    },
-    {
-        "depends_on": "eval:in_list([\"Unspecified\"],doc.reason)",
-        "fieldname": "unspecified",
-        "fieldtype": "Data",
-        "label": "Unspecified"
-    },
-    {
-        "fieldname": "admission_examination_section",
-        "fieldtype": "Section Break",
-        "label": "Admission examination"
-    },
-    {
-        "fieldname": "facies",
-        "fieldtype": "Data",
-        "label": "Facies"
-    },
-    {
-        "fieldname": "scalp",
-        "fieldtype": "Data",
-        "label": "Scalp"
-    },
-    {
-        "fieldname": "hairline",
-        "fieldtype": "Data",
-        "label": "Hairline"
-    },
-    {
-        "fieldname": "mouth",
-        "fieldtype": "Data",
-        "label": "Mouth"
-    },
-    {
-        "fieldname": "cry",
-        "fieldtype": "Data",
-        "label": "Cry"
-    },
-    {
-        "fieldname": "column_break_05ypn",
-        "fieldtype": "Column Break"
-    },
-    {
-        "fieldname": "anterior_fontanelle",
-        "fieldtype": "Data",
-        "label": "Anterior Fontanelle"
-    },
-    {
-        "fieldname": "posterior_fontanelle",
-        "fieldtype": "Data",
-        "label": "Posterior Fontanelle"
-    },
-    {
-        "fieldname": "palate",
-        "fieldtype": "Data",
-        "label": "Palate"
-    },
-    {
-        "fieldname": "abdomen",
-        "fieldtype": "Data",
-        "label": "Abdomen"
-    },
-    {
-        "fieldname": "tone",
-        "fieldtype": "Data",
-        "label": "Tone"
-    },
-    {
-        "fieldname": "column_break_vkx22",
-        "fieldtype": "Column Break"
-    },
-    {
-        "fieldname": "neck",
-        "fieldtype": "Data",
-        "label": "Neck"
-    },
-    {
-        "fieldname": "chest",
-        "fieldtype": "Data",
-        "label": "Chest"
-    },
-    {
-        "fieldname": "genitalia",
-        "fieldtype": "Select",
-        "label": "Genitalia",
-        "options": "Male\nFemale"
-    },
-    {
-        "fieldname": "spine",
-        "fieldtype": "Data",
-        "label": "Spine"
-    },
-    {
-        "fieldname": "activity",
-        "fieldtype": "Data",
-        "label": "Activity"
-    },
-    {
-        "fieldname": "column_break_v16kv",
-        "fieldtype": "Column Break"
-    },
-    {
-        "fieldname": "umbilical_cord",
-        "fieldtype": "Data",
-        "label": "Umbilical cord"
-    },
-    {
-        "fieldname": "suck",
-        "fieldtype": "Data",
-        "label": "Suck"
-    },
-    {
-        "fieldname": "grasp",
-        "fieldtype": "Data",
-        "label": "Grasp"
-    },
-    {
-        "fieldname": "anus",
-        "fieldtype": "Data",
-        "label": "Anus"
-    },
-    {
-        "fieldname": "section_break_3aw4c",
-        "fieldtype": "Section Break"
-    },
-    {
-        "fieldname": "eyes",
-        "fieldtype": "Column Break",
-        "label": "Eyes"
-    },
-    {
-        "fieldname": "right_eye",
-        "fieldtype": "Data",
-        "label": "Right Eye"
-    },
-    {
-        "fieldname": "left_eye",
-        "fieldtype": "Data",
-        "label": "Left Eye"
-    },
-    {
-        "fieldname": "column_break_hlmlp",
-        "fieldtype": "Column Break",
-        "label": "Ears"
-    },
-    {
-        "fieldname": "right_ear",
-        "fieldtype": "Data",
-        "label": "Right Ear"
-    },
-    {
-        "fieldname": "left_ear",
-        "fieldtype": "Data",
-        "label": "Left Ear"
-    },
-    {
-        "fieldname": "hips_column",
-        "fieldtype": "Column Break",
-        "label": "Hips"
-    },
-    {
-        "fieldname": "right_hip",
-        "fieldtype": "Data",
-        "label": "Right Hip"
-    },
-    {
-        "fieldname": "left_hip",
-        "fieldtype": "Data",
-        "label": "Left Hip"
-    },
-    {
-        "fieldname": "moros_column",
-        "fieldtype": "Column Break",
-        "label": "Moro's"
-    },
-    {
-        "fieldname": "right_moro",
-        "fieldtype": "Data",
-        "label": "Right Moro"
-    },
-    {
-        "fieldname": "left_moro",
-        "fieldtype": "Data",
-        "label": "Left Moro"
-    },
-    {
-        "fieldname": "section_break_ahtyk",
-        "fieldtype": "Section Break"
-    },
-    {
-        "fieldname": "birth_trauma",
-        "fieldtype": "Select",
-        "label": "Birth Trauma",
-        "options": "Yes\nNo"
-    },
-    {
-        "fieldname": "birth_trauma_text",
-        "fieldtype": "Data",
-        "label": "Birth Trauma Text"
-    },
-    {
-        "fieldname": "congenital_section",
-        "fieldtype": "Section Break",
-        "label": "Congenital"
-    },
-    {
-        "fieldname": "respiratory_section",
-        "fieldtype": "Section Break",
-        "label": "Respiratory"
-    },
-    {
-        "fieldname": "diagnosis",
-        "fieldtype": "Select",
-        "label": "Diagnosis",
-        "options": "Type 1 RDS\nType II RDS\nARDS\nVAP\nCongenital Pneumonia\nCPAM\nCongenital Diaphragmatic Hernia\nEventeration\nPulmonary Hypoplasia\nDelayed Perinatal Transition\nTransient Tachypnoea of Newborn\nTracheo-Oesophageal Atresia\nPneumothorax\nPleural Effusion\nChylothorax"
-    },
-    {
-        "depends_on": "eval:in_list([\"VAP\"],doc.diagnosis)",
-        "fieldname": "vap",
-        "fieldtype": "Data",
-        "label": "VAP"
-    },
-    {
-        "depends_on": "eval:in_list([\"Congenital Diaphragmatic Hernia\"],doc.diagnosis)",
-        "fieldname": "cdh",
-        "fieldtype": "Select",
-        "label": "Congenital Diaphragmatic Hernia",
-        "options": "Left\nRight\nBilateral"
-    },
-    {
-        "depends_on": "eval:in_list([\"Eventeration\"],doc.diagnosis)",
-        "fieldname": "eventeration",
-        "fieldtype": "Select",
-        "label": "Eventeration",
-        "options": "Left\nRight"
-    },
-    {
-        "depends_on": "eval:in_list([\"Tracheo-Oesophageal Atresia\"],doc.diagnosis)",
-        "fieldname": "toa",
-        "fieldtype": "Select",
-        "label": "Tracheo-Oesophageal Atresia",
-        "options": "Type 1\nType 2\nType 3\nType 4"
-    },
-    {
-        "depends_on": "eval:in_list([\"Pneumothorax\"],doc.diagnosis)",
-        "fieldname": "pneumothorax",
-        "fieldtype": "Select",
-        "label": "Pneumothorax",
-        "options": "Right\nLeft"
-    },
-    {
-        "fieldname": "section_break_b9eoh",
-        "fieldtype": "Section Break"
-    },
-    {
-        "fieldname": "intubated",
-        "fieldtype": "Select",
-        "label": "Intubated",
-        "options": "Yes\nNo"
-    },
-    {
-        "depends_on": "eval:in_list([\"Yes\"],doc.intubated)",
-        "fieldname": "column_break_k8ffg",
-        "fieldtype": "Column Break"
-    },
-    {
-        "depends_on": "eval:in_list([\"Yes\"],doc.intubated)",
-        "fieldname": "size",
-        "fieldtype": "Data",
-        "label": "Size"
-    },
-    {
-        "depends_on": "eval:in_list([\"Yes\"],doc.intubated)",
-        "fieldname": "fixed_at",
-        "fieldtype": "Data",
-        "label": "Fixed at"
-    },
-    {
-        "fieldname": "section_break_wvc6h",
-        "fieldtype": "Section Break"
-    },
-    {
-        "fieldname": "support",
-        "fieldtype": "Select",
-        "label": "Support",
-        "options": "Invasive\nNon-Invasive"
-    },
-    {
-        "fieldname": "column_break_mfumc",
-        "fieldtype": "Column Break"
-    },
-    {
-        "depends_on": "eval:in_list([\"Invasive\"],doc.support)",
-        "fieldname": "invasive",
-        "fieldtype": "Select",
-        "label": "Invasive",
-        "options": "SIMV\nHFOV"
-    },
-    {
-        "depends_on": "eval:in_list([\"Non-Invasive\"],doc.support)",
-        "fieldname": "non_invasive",
-        "fieldtype": "Select",
-        "label": "Non-Invasive",
-        "options": "Nasal cannula\nHHHFNC\nCPAP"
-    },
-    {
-        "fieldname": "column_break_xwhjf",
-        "fieldtype": "Section Break",
-        "label": "Admission blood gas"
-    },
-    {
-        "fieldname": "cva",
-        "fieldtype": "HTML",
-        "options": "<h5><br><br><br>Capillary<br><br><br><br>Venous<br><br><br><br>Arterial</h5>"
-    },
-    {
-        "fieldname": "ph_column",
-        "fieldtype": "Column Break",
-        "label": "Ph"
-    },
-    {
-        "columns": 6,
-        "fieldname": "c_ph",
-        "fieldtype": "Data"
-    },
-    {
-        "fieldname": "v_ph",
-        "fieldtype": "Data"
-    },
-    {
-        "fieldname": "a_ph",
-        "fieldtype": "Data"
-    },
-    {
-        "fieldname": "pco2_column",
-        "fieldtype": "Column Break",
-        "label": "Pco2"
-    },
-    {
-        "fieldname": "c_pco2",
-        "fieldtype": "Data"
-    },
-    {
-        "fieldname": "v_pco2",
-        "fieldtype": "Data"
-    },
-    {
-        "fieldname": "a_pco2",
-        "fieldtype": "Data"
-    },
-    {
-        "fieldname": "hco3_column",
-        "fieldtype": "Column Break",
-        "label": "HCO3"
-    },
-    {
-        "fieldname": "c_hco3",
-        "fieldtype": "Data"
-    },
-    {
-        "fieldname": "v_hco3",
-        "fieldtype": "Data"
-    },
-    {
-        "fieldname": "a_hco3",
-        "fieldtype": "Data"
-    },
-    {
-        "fieldname": "be_column",
-        "fieldtype": "Column Break",
-        "label": "BE"
-    },
-    {
-        "fieldname": "c_be",
-        "fieldtype": "Data"
-    },
-    {
-        "fieldname": "v_be",
-        "fieldtype": "Data"
-    },
-    {
-        "fieldname": "a_be",
-        "fieldtype": "Data"
-    },
-    {
-        "fieldname": "lactate_column",
-        "fieldtype": "Column Break",
-        "label": "Lactate"
-    },
-    {
-        "fieldname": "c_lactate",
-        "fieldtype": "Data"
-    },
-    {
-        "fieldname": "v_lactate",
-        "fieldtype": "Data"
-    },
-    {
-        "fieldname": "a_lactate",
-        "fieldtype": "Data"
-    },
-    {
-        "fieldname": "blood_sugar_column",
-        "fieldtype": "Column Break",
-        "label": "BloodSugar"
-    },
-    {
-        "fieldname": "c_bloodsugar",
-        "fieldtype": "Data"
-    },
-    {
-        "fieldname": "v_bloodsugar",
-        "fieldtype": "Data"
-    },
-    {
-        "fieldname": "a_bloodsugar",
-        "fieldtype": "Data"
-    },
-    {
-        "fieldname": "section_break_x6ozq",
-        "fieldtype": "Section Break"
-    },
-    {
-        "fieldname": "respiratory_text",
-        "fieldtype": "Text",
-        "label": "Respiratory_Text"
-    },
-    {
-        "fieldname": "cardiovascular_section",
-        "fieldtype": "Section Break",
-        "label": "Cardiovascular "
-    },
-    {
-        "fieldname": "diagnosis_cardio",
-        "fieldtype": "Select",
-        "label": "Diagnosis",
-        "options": "Cyanotic Congenital Heart Disease\nAcyanotci Heart Disease\nHypotension\nPersistent Pulmonary Hpertension of Newborn\nHeart failure\nHypertension\nAberrant right sub-clavian artery\nVascular ring\nPremature Atrial Contraction\nPremature Ventricular Contraction\nTachy arrythmias\nBrady Arrythmias"
-    },
-    {
-        "depends_on": "eval:in_list([\"Cyanotic Congenital Heart Disease\"],doc.diagnosis_cardio)",
-        "fieldname": "cchd",
-        "fieldtype": "Select",
-        "label": "Cyanotic Congenital Heart Disease",
-        "options": "TGA\nTGA+IVS\nDORV\nTetology\nTAPVC\nPAPVC\nTruncus arteriosus\nEbstein Anomaly\nInturruption of the Aorta"
-    },
-    {
-        "depends_on": "eval:in_list([\"Acyanotci Heart Disease\"],doc.dicardio)",
-        "fieldname": "ahd",
-        "fieldtype": "Select",
-        "label": "Acyanotci Heart Disease",
-        "options": "ASD\nVSD\nPDA\nPDA-haemodynamically significant\nCoarctation of Aorta"
-    },
-    {
-        "depends_on": "eval:in_list([\"Tachy arrythmias\"],doc.diagnosis_cardio)",
-        "fieldname": "tachy_arrythmias",
-        "fieldtype": "Data",
-        "label": "Tachy arrythmias"
-    },
-    {
-        "depends_on": "eval:in_list([\"Brady Arrythmias\"],doc.diagnosis_cardio)",
-        "fieldname": "brady_arrythmias",
-        "fieldtype": "Data",
-        "label": "Brady Arrythmias"
-    },
-    {
-        "fieldname": "fermorals_column",
-        "fieldtype": "Column Break",
-        "label": "Fermorals"
-    },
-    {
-        "fieldname": "right",
-        "fieldtype": "Select",
-        "label": "Right",
-        "options": "Yes\nNo"
-    },
-    {
-        "fieldname": "left",
-        "fieldtype": "Select",
-        "label": "Left",
-        "options": "Yes\nNo"
-    },
-    {
-        "fieldname": "section_break_a75hg",
-        "fieldtype": "Section Break"
-    },
-    {
-        "fieldname": "cardio_text",
-        "fieldtype": "Text",
-        "label": "Cardio_Text"
-    },
-    {
-        "fieldname": "gastro_intestinal_section",
-        "fieldtype": "Section Break",
-        "label": "Gastro Intestinal"
-    },
-    {
-        "fieldname": "text_gastro",
-        "fieldtype": "Text",
-        "label": "Diagnosis"
-    },
-    {
-        "fieldname": "cns_section",
-        "fieldtype": "Section Break",
-        "label": "CNS"
-    },
-    {
-        "fieldname": "cns_text",
-        "fieldtype": "Text",
-        "label": "CNS_Text"
-    },
-    {
-        "fieldname": "section_break_anccs",
-        "fieldtype": "Section Break"
-    },
-    {
-        "fieldname": "cooling_criteria",
-        "fieldtype": "Select",
-        "label": "Cooling criteria",
-        "options": "Yes\nNo"
-    },
-    {
-        "fieldname": "column_break_k9jwe",
-        "fieldtype": "Column Break"
-    },
-    {
-        "depends_on": "eval:in_list([\"Yes\"],doc.cooling_criteria)",
-        "fieldname": "cooling_start_time",
-        "fieldtype": "Datetime",
-        "label": "Cooling Start time"
-    },
-    {
-        "depends_on": "eval:in_list([\"Yes\"],doc.cooling_criteria)",
-        "fieldname": "cooling_stop_time",
-        "fieldtype": "Datetime",
-        "label": "Cooling stop time"
-    },
-    {
-        "fieldname": "sepsis_section",
-        "fieldtype": "Section Break",
-        "label": "Sepsis"
-    }
-],
+  "section_break_ynnkj",
+  "name1",
+  "gestation_age_at_birth",
+  "temp",
+  "heart_rate",
+  "column_break_l6bkf",
+  "saturations",
+  "o2",
+  "bp",
+  "column_break_b7ni9",
+  "admission_weight",
+  "admission_ofc",
+  "admission_length",
+  "section_break_avxh3",
+  "reason_for_admission",
+  "blood_group_incompatabilities",
+  "sepsis",
+  "chd",
+  "hydrops",
+  "unspecified",
+  "admission_examination_section",
+  "facies",
+  "scalp",
+  "hairline",
+  "mouth",
+  "cry",
+  "column_break_05ypn",
+  "anterior_fontanelle",
+  "posterior_fontanelle",
+  "palate",
+  "abdomen",
+  "tone",
+  "column_break_vkx22",
+  "neck",
+  "chest",
+  "genitalia",
+  "spine",
+  "activity",
+  "column_break_v16kv",
+  "umbilical_cord",
+  "suck",
+  "grasp",
+  "anus",
+  "section_break_3aw4c",
+  "eyes",
+  "right_eye",
+  "left_eye",
+  "column_break_hlmlp",
+  "right_ear",
+  "left_ear",
+  "hips_column",
+  "right_hip",
+  "left_hip",
+  "moros_column",
+  "right_moro",
+  "left_moro",
+  "section_break_ahtyk",
+  "birth_trauma",
+  "birth_trauma_text",
+  "congenital_section",
+  "respiratory_section",
+  "diagnosis",
+  "vap",
+  "cdh",
+  "eventeration",
+  "toa",
+  "pneumothorax",
+  "section_break_b9eoh",
+  "intubated",
+  "column_break_k8ffg",
+  "size",
+  "fixed_at",
+  "section_break_wvc6h",
+  "support",
+  "column_break_mfumc",
+  "invasive",
+  "non_invasive",
+  "column_break_xwhjf",
+  "cva",
+  "ph_column",
+  "c_ph",
+  "v_ph",
+  "a_ph",
+  "pco2_column",
+  "c_pco2",
+  "v_pco2",
+  "a_pco2",
+  "hco3_column",
+  "c_hco3",
+  "v_hco3",
+  "a_hco3",
+  "be_column",
+  "c_be",
+  "v_be",
+  "a_be",
+  "lactate_column",
+  "c_lactate",
+  "v_lactate",
+  "a_lactate",
+  "blood_sugar_column",
+  "c_bloodsugar",
+  "v_bloodsugar",
+  "a_bloodsugar",
+  "section_break_x6ozq",
+  "respiratory_text",
+  "cardiovascular_section",
+  "diagnosis_cardio",
+  "cchd",
+  "ahd",
+  "tachy_arrythmias",
+  "brady_arrythmias",
+  "fermorals_column",
+  "right",
+  "left",
+  "section_break_a75hg",
+  "cardio_text",
+  "gastro_intestinal_section",
+  "text_gastro",
+  "cns_section",
+  "cns_text",
+  "section_break_anccs",
+  "cooling_criteria",
+  "column_break_k9jwe",
+  "cooling_start_time",
+  "cooling_stop_time",
+  "sepsis_section"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_ynnkj",
+   "fieldtype": "Section Break",
+   "label": "Admission details"
+  },
+  {
+   "fieldname": "name1",
+   "fieldtype": "Link",
+   "label": "Name",
+   "options": "Opening page"
+  },
+  {
+   "fetch_from": "name1.gestation_age_at_birth",
+   "fieldname": "gestation_age_at_birth",
+   "fieldtype": "Link",
+   "label": "Gestation age at birth",
+   "options": "Opening page"
+  },
+  {
+   "fieldname": "temp",
+   "fieldtype": "Data",
+   "label": "Temp"
+  },
+  {
+   "fieldname": "heart_rate",
+   "fieldtype": "Data",
+   "label": "Heart Rate"
+  },
+  {
+   "fieldname": "column_break_l6bkf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "saturations",
+   "fieldtype": "Data",
+   "label": "Saturations"
+  },
+  {
+   "fieldname": "o2",
+   "fieldtype": "Data",
+   "label": "O2"
+  },
+  {
+   "fieldname": "bp",
+   "fieldtype": "Data",
+   "label": "BP"
+  },
+  {
+   "fieldname": "column_break_b7ni9",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "name1.admission_weight",
+   "fieldname": "admission_weight",
+   "fieldtype": "Link",
+   "label": "Admission weight",
+   "options": "Opening page"
+  },
+  {
+   "fieldname": "admission_ofc",
+   "fieldtype": "Data",
+   "label": "Admission OFC"
+  },
+  {
+   "fieldname": "admission_length",
+   "fieldtype": "Data",
+   "label": "Admission length"
+  },
+  {
+   "fieldname": "section_break_avxh3",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "reason_for_admission",
+   "fieldtype": "Select",
+   "label": "Reason for admission",
+   "options": "Pre- term\nType I Respiratory Distress Syndrome\nType II Respiratory Distress Syndrome\nIntra Uterine Growth retardation\nBlood Group Incompatabilities\nSepsis\nMeningitis\nAbsent/ Reversed End Diastolic flow/ AREDF\nInguinal Hernia\nCongenital Diaphragmatic Hernia- CDH\nTracheo-oesphageal Atresia- TEF\nPosterior Urethral Valve- PUV\nCongenital Heart Disease- CHD\nHydrops\nHypoglycaemia\nSigns of respiratory distress\nMeningomyelocoel\nAntenatally detected anomaly\nUnspecified"
+  },
+  {
+   "depends_on": "eval:in_list([\"Blood Group Incompatabilities\"],doc.reason)",
+   "fieldname": "blood_group_incompatabilities",
+   "fieldtype": "Select",
+   "label": "Blood Group Incompatabilities",
+   "options": "O-B"
+  },
+  {
+   "depends_on": "eval:in_list([\"Sepsis\"],doc.reason)",
+   "fieldname": "sepsis",
+   "fieldtype": "Select",
+   "label": "Sepsis",
+   "options": "Culture Negative\nGram Negative\nFungal"
+  },
+  {
+   "depends_on": "eval:in_list([\"Congenital Heart Disease- CHD\"],doc.reason)",
+   "fieldname": "chd",
+   "fieldtype": "Select",
+   "label": "Congenital Heart Disease CHD",
+   "options": "AVSD\nTGA\nTetrology of Fallots"
+  },
+  {
+   "depends_on": "eval:in_list([\"Hydrops\"],doc.reason)",
+   "fieldname": "hydrops",
+   "fieldtype": "Select",
+   "label": "Hydrops",
+   "options": "Immune\nNon- Immune"
+  },
+  {
+   "depends_on": "eval:in_list([\"Unspecified\"],doc.reason)",
+   "fieldname": "unspecified",
+   "fieldtype": "Data",
+   "label": "Unspecified"
+  },
+  {
+   "fieldname": "admission_examination_section",
+   "fieldtype": "Section Break",
+   "label": "Admission examination"
+  },
+  {
+   "fieldname": "facies",
+   "fieldtype": "Data",
+   "label": "Facies"
+  },
+  {
+   "fieldname": "scalp",
+   "fieldtype": "Data",
+   "label": "Scalp"
+  },
+  {
+   "fieldname": "hairline",
+   "fieldtype": "Data",
+   "label": "Hairline"
+  },
+  {
+   "fieldname": "mouth",
+   "fieldtype": "Data",
+   "label": "Mouth"
+  },
+  {
+   "fieldname": "cry",
+   "fieldtype": "Data",
+   "label": "Cry"
+  },
+  {
+   "fieldname": "column_break_05ypn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "anterior_fontanelle",
+   "fieldtype": "Data",
+   "label": "Anterior Fontanelle"
+  },
+  {
+   "fieldname": "posterior_fontanelle",
+   "fieldtype": "Data",
+   "label": "Posterior Fontanelle"
+  },
+  {
+   "fieldname": "palate",
+   "fieldtype": "Data",
+   "label": "Palate"
+  },
+  {
+   "fieldname": "abdomen",
+   "fieldtype": "Data",
+   "label": "Abdomen"
+  },
+  {
+   "fieldname": "tone",
+   "fieldtype": "Data",
+   "label": "Tone"
+  },
+  {
+   "fieldname": "column_break_vkx22",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "neck",
+   "fieldtype": "Data",
+   "label": "Neck"
+  },
+  {
+   "fieldname": "chest",
+   "fieldtype": "Data",
+   "label": "Chest"
+  },
+  {
+   "fieldname": "genitalia",
+   "fieldtype": "Select",
+   "label": "Genitalia",
+   "options": "Male\nFemale\nIndeterminate"
+  },
+  {
+   "fieldname": "spine",
+   "fieldtype": "Data",
+   "label": "Spine"
+  },
+  {
+   "fieldname": "activity",
+   "fieldtype": "Data",
+   "label": "Activity"
+  },
+  {
+   "fieldname": "column_break_v16kv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "umbilical_cord",
+   "fieldtype": "Data",
+   "label": "Umbilical cord"
+  },
+  {
+   "fieldname": "suck",
+   "fieldtype": "Data",
+   "label": "Suck"
+  },
+  {
+   "fieldname": "grasp",
+   "fieldtype": "Data",
+   "label": "Grasp"
+  },
+  {
+   "fieldname": "anus",
+   "fieldtype": "Data",
+   "label": "Anus"
+  },
+  {
+   "fieldname": "section_break_3aw4c",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "eyes",
+   "fieldtype": "Column Break",
+   "label": "Eyes"
+  },
+  {
+   "fieldname": "right_eye",
+   "fieldtype": "Data",
+   "label": "Right Eye"
+  },
+  {
+   "fieldname": "left_eye",
+   "fieldtype": "Data",
+   "label": "Left Eye"
+  },
+  {
+   "fieldname": "column_break_hlmlp",
+   "fieldtype": "Column Break",
+   "label": "Ears"
+  },
+  {
+   "fieldname": "right_ear",
+   "fieldtype": "Data",
+   "label": "Right Ear"
+  },
+  {
+   "fieldname": "left_ear",
+   "fieldtype": "Data",
+   "label": "Left Ear"
+  },
+  {
+   "fieldname": "hips_column",
+   "fieldtype": "Column Break",
+   "label": "Hips"
+  },
+  {
+   "fieldname": "right_hip",
+   "fieldtype": "Data",
+   "label": "Right Hip"
+  },
+  {
+   "fieldname": "left_hip",
+   "fieldtype": "Data",
+   "label": "Left Hip"
+  },
+  {
+   "fieldname": "moros_column",
+   "fieldtype": "Column Break",
+   "label": "Moro's"
+  },
+  {
+   "fieldname": "right_moro",
+   "fieldtype": "Data",
+   "label": "Right Moro"
+  },
+  {
+   "fieldname": "left_moro",
+   "fieldtype": "Data",
+   "label": "Left Moro"
+  },
+  {
+   "fieldname": "section_break_ahtyk",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "birth_trauma",
+   "fieldtype": "Select",
+   "label": "Birth Trauma",
+   "options": "Yes\nNo"
+  },
+  {
+   "fieldname": "birth_trauma_text",
+   "fieldtype": "Data",
+   "label": "Birth Trauma Text"
+  },
+  {
+   "fieldname": "congenital_section",
+   "fieldtype": "Section Break",
+   "label": "Congenital"
+  },
+  {
+   "fieldname": "respiratory_section",
+   "fieldtype": "Section Break",
+   "label": "Respiratory"
+  },
+  {
+   "fieldname": "diagnosis",
+   "fieldtype": "Select",
+   "label": "Diagnosis",
+   "options": "Type 1 RDS\nType II RDS\nARDS\nVAP\nCongenital Pneumonia\nCPAM\nCongenital Diaphragmatic Hernia\nEventeration\nPulmonary Hypoplasia\nDelayed Perinatal Transition\nTransient Tachypnoea of Newborn\nTracheo-Oesophageal Atresia\nPneumothorax\nPleural Effusion\nChylothorax"
+  },
+  {
+   "depends_on": "eval:in_list([\"VAP\"],doc.diagnosis)",
+   "fieldname": "vap",
+   "fieldtype": "Data",
+   "label": "VAP"
+  },
+  {
+   "depends_on": "eval:in_list([\"Congenital Diaphragmatic Hernia\"],doc.diagnosis)",
+   "fieldname": "cdh",
+   "fieldtype": "Select",
+   "label": "Congenital Diaphragmatic Hernia",
+   "options": "Left\nRight\nBilateral"
+  },
+  {
+   "depends_on": "eval:in_list([\"Eventeration\"],doc.diagnosis)",
+   "fieldname": "eventeration",
+   "fieldtype": "Select",
+   "label": "Eventeration",
+   "options": "Left\nRight"
+  },
+  {
+   "depends_on": "eval:in_list([\"Tracheo-Oesophageal Atresia\"],doc.diagnosis)",
+   "fieldname": "toa",
+   "fieldtype": "Select",
+   "label": "Tracheo-Oesophageal Atresia",
+   "options": "Type 1\nType 2\nType 3\nType 4"
+  },
+  {
+   "depends_on": "eval:in_list([\"Pneumothorax\"],doc.diagnosis)",
+   "fieldname": "pneumothorax",
+   "fieldtype": "Select",
+   "label": "Pneumothorax",
+   "options": "Right\nLeft"
+  },
+  {
+   "fieldname": "section_break_b9eoh",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "intubated",
+   "fieldtype": "Select",
+   "label": "Intubated",
+   "options": "Yes\nNo"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.intubated)",
+   "fieldname": "column_break_k8ffg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.intubated)",
+   "fieldname": "size",
+   "fieldtype": "Data",
+   "label": "Size"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.intubated)",
+   "fieldname": "fixed_at",
+   "fieldtype": "Data",
+   "label": "Fixed at"
+  },
+  {
+   "fieldname": "section_break_wvc6h",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "support",
+   "fieldtype": "Select",
+   "label": "Support",
+   "options": "Invasive\nNon-Invasive"
+  },
+  {
+   "fieldname": "column_break_mfumc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:in_list([\"Invasive\"],doc.support)",
+   "fieldname": "invasive",
+   "fieldtype": "Select",
+   "label": "Invasive",
+   "options": "SIMV\nHFOV"
+  },
+  {
+   "depends_on": "eval:in_list([\"Non-Invasive\"],doc.support)",
+   "fieldname": "non_invasive",
+   "fieldtype": "Select",
+   "label": "Non-Invasive",
+   "options": "Nasal cannula\nHHHFNC\nCPAP"
+  },
+  {
+   "fieldname": "column_break_xwhjf",
+   "fieldtype": "Section Break",
+   "label": "Admission blood gas"
+  },
+  {
+   "fieldname": "cva",
+   "fieldtype": "HTML",
+   "options": "<h5><br><br><br>Capillary<br><br><br><br>Venous<br><br><br><br>Arterial</h5>"
+  },
+  {
+   "fieldname": "ph_column",
+   "fieldtype": "Column Break",
+   "label": "Ph"
+  },
+  {
+   "columns": 6,
+   "fieldname": "c_ph",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "v_ph",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "a_ph",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "pco2_column",
+   "fieldtype": "Column Break",
+   "label": "Pco2"
+  },
+  {
+   "fieldname": "c_pco2",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "v_pco2",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "a_pco2",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "hco3_column",
+   "fieldtype": "Column Break",
+   "label": "HCO3"
+  },
+  {
+   "fieldname": "c_hco3",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "v_hco3",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "a_hco3",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "be_column",
+   "fieldtype": "Column Break",
+   "label": "BE"
+  },
+  {
+   "fieldname": "c_be",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "v_be",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "a_be",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "lactate_column",
+   "fieldtype": "Column Break",
+   "label": "Lactate"
+  },
+  {
+   "fieldname": "c_lactate",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "v_lactate",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "a_lactate",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "blood_sugar_column",
+   "fieldtype": "Column Break",
+   "label": "BloodSugar"
+  },
+  {
+   "fieldname": "c_bloodsugar",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "v_bloodsugar",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "a_bloodsugar",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "section_break_x6ozq",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "respiratory_text",
+   "fieldtype": "Text",
+   "label": "Respiratory_Text"
+  },
+  {
+   "fieldname": "cardiovascular_section",
+   "fieldtype": "Section Break",
+   "label": "Cardiovascular "
+  },
+  {
+   "fieldname": "diagnosis_cardio",
+   "fieldtype": "Select",
+   "label": "Diagnosis",
+   "options": "Cyanotic Congenital Heart Disease\nAcyanotci Heart Disease\nHypotension\nPersistent Pulmonary Hpertension of Newborn\nHeart failure\nHypertension\nAberrant right sub-clavian artery\nVascular ring\nPremature Atrial Contraction\nPremature Ventricular Contraction\nTachy arrythmias\nBrady Arrythmias"
+  },
+  {
+   "depends_on": "eval:in_list([\"Cyanotic Congenital Heart Disease\"],doc.diagnosis_cardio)",
+   "fieldname": "cchd",
+   "fieldtype": "Select",
+   "label": "Cyanotic Congenital Heart Disease",
+   "options": "TGA\nTGA+IVS\nDORV\nTetology\nTAPVC\nPAPVC\nTruncus arteriosus\nEbstein Anomaly\nInturruption of the Aorta"
+  },
+  {
+   "depends_on": "eval:in_list([\"Acyanotci Heart Disease\"],doc.dicardio)",
+   "fieldname": "ahd",
+   "fieldtype": "Select",
+   "label": "Acyanotci Heart Disease",
+   "options": "ASD\nVSD\nPDA\nPDA-haemodynamically significant\nCoarctation of Aorta"
+  },
+  {
+   "depends_on": "eval:in_list([\"Tachy arrythmias\"],doc.diagnosis_cardio)",
+   "fieldname": "tachy_arrythmias",
+   "fieldtype": "Data",
+   "label": "Tachy arrythmias"
+  },
+  {
+   "depends_on": "eval:in_list([\"Brady Arrythmias\"],doc.diagnosis_cardio)",
+   "fieldname": "brady_arrythmias",
+   "fieldtype": "Data",
+   "label": "Brady Arrythmias"
+  },
+  {
+   "fieldname": "fermorals_column",
+   "fieldtype": "Column Break",
+   "label": "Fermorals"
+  },
+  {
+   "fieldname": "right",
+   "fieldtype": "Select",
+   "label": "Right",
+   "options": "Yes\nNo"
+  },
+  {
+   "fieldname": "left",
+   "fieldtype": "Select",
+   "label": "Left",
+   "options": "Yes\nNo"
+  },
+  {
+   "fieldname": "section_break_a75hg",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "cardio_text",
+   "fieldtype": "Text",
+   "label": "Cardio_Text"
+  },
+  {
+   "fieldname": "gastro_intestinal_section",
+   "fieldtype": "Section Break",
+   "label": "Gastro Intestinal"
+  },
+  {
+   "fieldname": "text_gastro",
+   "fieldtype": "Text",
+   "label": "Diagnosis"
+  },
+  {
+   "fieldname": "cns_section",
+   "fieldtype": "Section Break",
+   "label": "CNS"
+  },
+  {
+   "fieldname": "cns_text",
+   "fieldtype": "Text",
+   "label": "CNS_Text"
+  },
+  {
+   "fieldname": "section_break_anccs",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "cooling_criteria",
+   "fieldtype": "Select",
+   "label": "Cooling criteria",
+   "options": "Yes\nNo"
+  },
+  {
+   "fieldname": "column_break_k9jwe",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.cooling_criteria)",
+   "fieldname": "cooling_start_time",
+   "fieldtype": "Datetime",
+   "label": "Cooling Start time"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.cooling_criteria)",
+   "fieldname": "cooling_stop_time",
+   "fieldtype": "Datetime",
+   "label": "Cooling stop time"
+  },
+  {
+   "fieldname": "sepsis_section",
+   "fieldtype": "Section Break",
+   "label": "Sepsis"
+  }
+ ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-03-06 17:28:00.860757",
+ "modified": "2023-03-31 16:20:02.752347",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Admission",

@@ -1,0 +1,317 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-03-15 15:21:30.281095",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "date",
+  "baby_blood_group",
+  "dct",
+  "ict",
+  "section_break_liopk",
+  "diag_24",
+  "column_break_ty7nl",
+  "if_diag_24",
+  "thrombocytopaenia",
+  "coagulopathy",
+  "factor_deficiency",
+  "haemolytic",
+  "section_break_dtbfq",
+  "diag_discharge",
+  "column_break_bt6ur",
+  "if_diag_discharge",
+  "thrombocytopaenia_dis",
+  "coagulopathy_dis",
+  "factor_deficiency_dis",
+  "haemolytic_dis",
+  "section_break_xjahg",
+  "transfusion",
+  "column_break_fkpdq",
+  "if_transfusion",
+  "others",
+  "section_break_ohdk8",
+  "prbc",
+  "hb",
+  "hct",
+  "prbc_no",
+  "section_break_zfq6d",
+  "platelets",
+  "if_platelets",
+  "platelets_no",
+  "section_break_87i3c",
+  "ffp",
+  "if_ffp_units",
+  "pt",
+  "inr",
+  "section_break_rmfcz",
+  "cryoprecipitate",
+  "fibrinogen",
+  "ivig",
+  "ivig_dose",
+  "section_break_fajya",
+  "text_for_discharge"
+ ],
+ "fields": [
+  {
+   "fieldname": "baby_blood_group",
+   "fieldtype": "Data",
+   "label": "Baby's Blood group"
+  },
+  {
+   "fieldname": "dct",
+   "fieldtype": "Data",
+   "label": "DCT"
+  },
+  {
+   "fieldname": "ict",
+   "fieldtype": "Data",
+   "label": "ICT"
+  },
+  {
+   "fieldname": "section_break_liopk",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "diag_24",
+   "fieldtype": "Select",
+   "label": "New diagnosis past 24 hours",
+   "options": "No\nYes"
+  },
+  {
+   "fieldname": "column_break_ty7nl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.diag_24)",
+   "fieldname": "if_diag_24",
+   "fieldtype": "Select",
+   "options": "Anemia of prematurity\nThrombocytopaenia\nCoagulopathy\nPost Surgical Anemia\nHeriditary Spherocytosis\nHaemolytic"
+  },
+  {
+   "depends_on": "eval:in_list([\"Thrombocytopaenia\"],doc.if_diag_24)",
+   "fieldname": "thrombocytopaenia",
+   "fieldtype": "Select",
+   "options": "Sepsis\nAutoimmune\nAlloimmune"
+  },
+  {
+   "depends_on": "eval:in_list([\"Coagulopathy\"],doc.if_diag_24)",
+   "fieldname": "coagulopathy",
+   "fieldtype": "Select",
+   "options": "Asymptomatic\nSepsis\nFactor deficiency"
+  },
+  {
+   "depends_on": "eval:in_list([\"Factor deficiency\"],doc.coagulopathy)",
+   "fieldname": "factor_deficiency",
+   "fieldtype": "Data"
+  },
+  {
+   "depends_on": "eval:in_list([\"Haemolytic\"],doc.if_diag_24)",
+   "fieldname": "haemolytic",
+   "fieldtype": "Select",
+   "options": "Rh incompatability\nO-A/O-B\nHAemoglobinopathies"
+  },
+  {
+   "fieldname": "section_break_dtbfq",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "diag_discharge",
+   "fieldtype": "Select",
+   "label": "New Diagnosis for discharge",
+   "options": "No\nYes"
+  },
+  {
+   "fieldname": "column_break_bt6ur",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.diag_discharge)",
+   "fieldname": "if_diag_discharge",
+   "fieldtype": "Select",
+   "options": "Anemia of prematurity\nThrombocytopaenia\nCoagulopathy\nPost Surgical Anemia\nHeriditary Spherocytosis\nHaemolytic"
+  },
+  {
+   "depends_on": "eval:in_list([\"Thrombocytopaenia\"],doc.if_diag_discharge)",
+   "fieldname": "thrombocytopaenia_dis",
+   "fieldtype": "Select",
+   "options": "Sepsis\nAutoimmune\nAlloimmune"
+  },
+  {
+   "depends_on": "eval:in_list([\"Coagulopathy\"],doc.if_diag_discharge)",
+   "fieldname": "coagulopathy_dis",
+   "fieldtype": "Select",
+   "options": "Asymptomatic\nSepsis\nFactor deficiency"
+  },
+  {
+   "depends_on": "eval:in_list([\"Factor deficiency\"],doc.coagulopathy_dis)",
+   "fieldname": "factor_deficiency_dis",
+   "fieldtype": "Data"
+  },
+  {
+   "depends_on": "eval:in_list([\"Haemolytic\"],doc.if_diag_discharge)",
+   "fieldname": "haemolytic_dis",
+   "fieldtype": "Select",
+   "options": "Rh incompatability\nO-A/O-B\nHAemoglobinopathies"
+  },
+  {
+   "fieldname": "section_break_xjahg",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "transfusion",
+   "fieldtype": "Select",
+   "label": "Exchange Transfusion past 24 hours",
+   "options": "No\nYes"
+  },
+  {
+   "fieldname": "column_break_fkpdq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.transfusion)",
+   "fieldname": "if_transfusion",
+   "fieldtype": "Select",
+   "options": "Haemolytic anemia\nOther Causes"
+  },
+  {
+   "depends_on": "eval:in_list([\"Other Causes\"],doc.if_transfusion)",
+   "fieldname": "others",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "section_break_ohdk8",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "prbc",
+   "fieldtype": "Select",
+   "label": "PRBC past 24 hours",
+   "options": "No\nYes"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.prbc)",
+   "fieldname": "hb",
+   "fieldtype": "Data",
+   "label": "HB"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.prbc)",
+   "fieldname": "hct",
+   "fieldtype": "Data",
+   "label": "HCT"
+  },
+  {
+   "depends_on": "eval:in_list([\"No\"],doc.prbc)",
+   "fieldname": "prbc_no",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "section_break_zfq6d",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "platelets",
+   "fieldtype": "Select",
+   "label": "Platelets past 24 hours",
+   "options": "No\nYes"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.platelets)",
+   "fieldname": "if_platelets",
+   "fieldtype": "Data",
+   "label": "No.of Units"
+  },
+  {
+   "depends_on": "eval:in_list([\"No\"],doc.platelets)",
+   "fieldname": "platelets_no",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "section_break_87i3c",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "ffp",
+   "fieldtype": "Select",
+   "label": "FFP past 24 hours",
+   "options": "No\nYes"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.ffp)",
+   "fieldname": "if_ffp_units",
+   "fieldtype": "Data",
+   "label": "No.of units"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.ffp)",
+   "fieldname": "pt",
+   "fieldtype": "Data",
+   "label": "PT"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.ffp)",
+   "fieldname": "inr",
+   "fieldtype": "Data",
+   "label": "INR"
+  },
+  {
+   "fieldname": "section_break_rmfcz",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "cryoprecipitate",
+   "fieldtype": "Select",
+   "label": "Cryoprecipitate past 24 hours",
+   "options": "No\nYes"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.cryoprecipitate)",
+   "fieldname": "fibrinogen",
+   "fieldtype": "Data",
+   "label": "Fibrinogen"
+  },
+  {
+   "fieldname": "ivig",
+   "fieldtype": "Select",
+   "label": "IVIG past 24 hours",
+   "options": "No\nYes"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.ivig)",
+   "fieldname": "ivig_dose",
+   "fieldtype": "Data",
+   "label": "Dose"
+  },
+  {
+   "fieldname": "section_break_fajya",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "text_for_discharge",
+   "fieldtype": "Text",
+   "label": "Text for Discharge"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-03-16 17:41:58.460793",
+ "modified_by": "Administrator",
+ "module": "Amrita Neonet",
+ "name": "Haematology_child",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

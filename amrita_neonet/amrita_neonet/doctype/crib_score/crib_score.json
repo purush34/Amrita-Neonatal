@@ -1,0 +1,138 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-03-16 16:53:22.430337",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "gestation",
+  "birthweight",
+  "gender",
+  "points",
+  "section_break_uzcnn",
+  "temperature",
+  "column_break_ejtgs",
+  "temp_points",
+  "section_break_sakik",
+  "base_excess",
+  "column_break_bgiqc",
+  "base_points",
+  "section_break_tzmnr",
+  "predicted_death_rate",
+  "total_crib_ii_score",
+  "info"
+ ],
+ "fields": [
+  {
+   "fieldname": "gestation",
+   "fieldtype": "Int",
+   "label": "Gestation (weeks)"
+  },
+  {
+   "fieldname": "birthweight",
+   "fieldtype": "Float",
+   "label": "Birthweight (g)"
+  },
+  {
+   "fieldname": "gender",
+   "fieldtype": "Select",
+   "label": "Gender",
+   "options": "Male\nFemale"
+  },
+  {
+   "fieldname": "points",
+   "fieldtype": "Data",
+   "is_virtual": 1,
+   "label": "Points"
+  },
+  {
+   "fieldname": "section_break_uzcnn",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "temperature",
+   "fieldtype": "Select",
+   "label": "Temperature at admission (c)",
+   "options": "<= 29.6\n29.7 to 31.2\n31.3 to 32.8\n32.9 to 34.4\n34.5 to 36\n36.1 to 37.5\n37.6 to 39.1\n39.2 to 40.7\n>=40.8"
+  },
+  {
+   "fieldname": "column_break_ejtgs",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "temp_points",
+   "fieldtype": "Data",
+   "is_virtual": 1,
+   "label": "Temp Points"
+  },
+  {
+   "fieldname": "section_break_sakik",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "base_excess",
+   "fieldtype": "Select",
+   "label": "Base excess (mmol/L)",
+   "options": "< -26\n-26 to -23\n-22 to -18\n-17 to -13\n-12 to -8\n-7 to -3\n-2 to 2\n>= 3"
+  },
+  {
+   "fieldname": "column_break_bgiqc",
+   "fieldtype": "Column Break",
+   "read_only": 1
+  },
+  {
+   "fieldname": "base_points",
+   "fieldtype": "Data",
+   "is_virtual": 1,
+   "label": "Base Points"
+  },
+  {
+   "fieldname": "section_break_tzmnr",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "predicted_death_rate",
+   "fieldtype": "Data",
+   "is_virtual": 1,
+   "label": "Predicted Death Rate"
+  },
+  {
+   "fieldname": "total_crib_ii_score",
+   "fieldtype": "Data",
+   "is_virtual": 1,
+   "label": "Total CRIB II score"
+  },
+  {
+   "fieldname": "info",
+   "fieldtype": "HTML",
+   "label": "Info",
+   "options": "<p class=\"alert alert-warning\">Logit = -6.476 + 0.45 * CRIB II <br> Predicted death rate = e^Logit/ (1+e^Logit) <br> Total CRIB II score = Sum (points)<br>The range of possible CRIB II score is 0 to 27</p>"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-03-16 18:26:10.289071",
+ "modified_by": "Administrator",
+ "module": "Amrita Neonet",
+ "name": "CRIB score",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

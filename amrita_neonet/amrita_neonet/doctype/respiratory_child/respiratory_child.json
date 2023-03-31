@@ -7,6 +7,7 @@
  "engine": "InnoDB",
  "field_order": [
   "date",
+  "section_break_trvur",
   "new_diag_24",
   "column_break_4ux1b",
   "diag_24",
@@ -57,15 +58,13 @@
   "column_break_9w0zh",
   "started",
   "stopped",
-  "section_break_rpwbp",
-  "column_break_e5gv5",
-  "sildenafil",
-  "column_break_btm1e",
-  "sil_dose",
-  "column_break_hzhpq",
-  "section_break_4bc8y",
+  "section_break_qpxuo",
   "bosentan_po",
   "milrinone",
+  "sildenafil",
+  "sil_dose",
+  "column_break_btm1e",
+  "section_break_pocyh",
   "sedation_in_past_24_hours",
   "column_break_o3qsp",
   "if_sedation",
@@ -333,7 +332,7 @@
    "fieldtype": "Column Break"
   },
   {
-   "depends_on": "eval:in_list([\"Nitric use in past 24 hours\"],doc.pul_vas)",
+   "depends_on": "eval:doc.pulmonary_vasodilators == \"Yes\" && doc.pul_vas == \"Nitric use in past 24 hours\"",
    "fieldname": "con_stop",
    "fieldtype": "Select",
    "options": "Continuing\nStopped"
@@ -344,33 +343,26 @@
    "fieldtype": "Column Break"
   },
   {
-   "depends_on": "eval:in_list([\"Nitric use in past 24 hours\"],doc.pul_vas)",
+   "depends_on": "eval:doc.pulmonary_vasodilators == \"Yes\" && doc.pul_vas == \"Nitric use in past 24 hours\"",
    "fieldname": "started",
    "fieldtype": "Date",
    "label": "Started on"
   },
   {
-   "depends_on": "eval:in_list([\"Stopped\"],doc.con_stop)",
+   "depends_on": "eval:doc.pulmonary_vasodilators == \"Yes\" && doc.pul_vas == \"Nitric use in past 24 hours\" && doc.con_stop==\"Stopped\"",
    "fieldname": "stopped",
    "fieldtype": "Date",
    "label": "Stopped on"
   },
   {
-   "fieldname": "section_break_rpwbp",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "column_break_e5gv5",
-   "fieldtype": "Column Break"
-  },
-  {
-   "depends_on": "eval:in_list([\"Sildenafil\"],doc.pul_vas)",
+   "depends_on": "eval:doc.pulmonary_vasodilators == \"Yes\" && doc.pul_vas == \"Sildenafil\"",
    "fieldname": "sildenafil",
    "fieldtype": "Select",
    "label": "Sildenafil",
    "options": "IV\nPO"
   },
   {
+   "depends_on": "eval:doc.pulmonary_vasodilators == \"Yes\" && doc.pul_vas == \"Sildenafil\"",
    "fieldname": "column_break_btm1e",
    "fieldtype": "Column Break"
   },
@@ -379,14 +371,6 @@
    "fieldname": "sil_dose",
    "fieldtype": "Data",
    "label": "Dose"
-  },
-  {
-   "fieldname": "column_break_hzhpq",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "section_break_4bc8y",
-   "fieldtype": "Section Break"
   },
   {
    "depends_on": "eval:in_list([\"Bosentan\"],doc.pul_vas)",
@@ -490,6 +474,7 @@
    "fieldtype": "Column Break"
   },
   {
+   "depends_on": "eval:in_list([\"Yes\"],doc.non_invasive)",
    "fieldname": "ni_dose",
    "fieldtype": "Data"
   },
@@ -529,12 +514,25 @@
    "in_list_view": 1,
    "label": "Date",
    "reqd": 1
+  },
+  {
+   "fieldname": "section_break_trvur",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_pocyh",
+   "fieldtype": "Section Break"
+  },
+  {
+   "depends_on": "eval:in_list([\"Sildenafil\",\"Bosentan\",\"Milrinone\"],doc.pul_vas)",
+   "fieldname": "section_break_qpxuo",
+   "fieldtype": "Section Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-03-07 21:02:40.709282",
+ "modified": "2023-03-16 18:07:44.067692",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Respiratory_child",

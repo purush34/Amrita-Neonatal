@@ -1,0 +1,299 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-03-14 21:12:57.384829",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "date",
+  "section_break_frjcb",
+  "new",
+  "column_break_xr0qn",
+  "new_diagnosis_past_24_hours",
+  "column_break_hxj52",
+  "grade",
+  "ihrg",
+  "hydro",
+  "grade_hie",
+  "history_of",
+  "therapeutic_cooling",
+  "seiz",
+  "other",
+  "section_break_db0ci",
+  "new_diagnosis_for_discharge",
+  "column_break_onuqw",
+  "diag_discharge",
+  "grade_dis",
+  "ihd",
+  "hydro_dis",
+  "column_break_8uo3r",
+  "grade_hie_dis",
+  "history_dis",
+  "cooling_dis",
+  "seiz_dis",
+  "other_dis",
+  "discharge",
+  "section_break_z4edi",
+  "any_procedure_in_past_24_hours",
+  "hours24",
+  "other_procedures",
+  "procedure_date",
+  "section_break_sesg3",
+  "imaging",
+  "mri",
+  "cooling_criteria_met",
+  "section_break_ryftw",
+  "therapeutic_cooling_past_24_hours",
+  "date_and_time_started",
+  "date_and_time_stopped",
+  "free_text_box"
+ ],
+ "fields": [
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_frjcb",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "new",
+   "fieldtype": "Select",
+   "label": "New Diagnosis last 24 hours",
+   "options": "No\nYes"
+  },
+  {
+   "fieldname": "column_break_xr0qn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.new)",
+   "fieldname": "new_diagnosis_past_24_hours",
+   "fieldtype": "Select",
+   "label": "New Diagnosis past 24 hours",
+   "options": "Intraventricular Haemorrhage\nPost Haemorrhagic Ventricular Dilatation\nHydrocephalous\nPeriventricular Leucomalacia\nAbsent Corpus Callosum\nPartial Agenisis of Corpus Callosum\nArnold- Chiari Malformation\nMeningocoel\nMeningomyelocoel\nHypoxic Ischaemic Encephalopathy\nSeizures\nOther"
+  },
+  {
+   "depends_on": "eval:doc.new_diagnosis_past_24_hours == \"Intraventricular Haemorrhage\" && doc.new == \"Yes\"",
+   "fieldname": "grade",
+   "fieldtype": "Select",
+   "options": "Right-Grade\nLeft-Grade"
+  },
+  {
+   "depends_on": "eval:doc.new_diagnosis_past_24_hours == \"Intraventricular Haemorrhage\" && doc.new == \"Yes\"",
+   "fieldname": "ihrg",
+   "fieldtype": "Select",
+   "options": "I\nII\nIII\nIV"
+  },
+  {
+   "depends_on": "eval:doc.new_diagnosis_past_24_hours == \"Hydrocephalous\" && doc.new == \"Yes\"",
+   "fieldname": "hydro",
+   "fieldtype": "Select",
+   "options": "Conservative management\nVentriculo-sub Galeal shunt\nVentriculo- peritoneal Shunt\nCSF Tapping"
+  },
+  {
+   "fieldname": "column_break_hxj52",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.new_diagnosis_past_24_hours == \"Hypoxic Ischaemic Encephalopathy\" && doc.new == \"Yes\"",
+   "fieldname": "grade_hie",
+   "fieldtype": "Select",
+   "label": "Grade",
+   "options": "1\n2\n3"
+  },
+  {
+   "depends_on": "eval:doc.new_diagnosis_past_24_hours == \"Hypoxic Ischaemic Encephalopathy\" && doc.new == \"Yes\"",
+   "fieldname": "history_of",
+   "fieldtype": "Small Text",
+   "label": "History of"
+  },
+  {
+   "depends_on": "eval:doc.new_diagnosis_past_24_hours == \"Hypoxic Ischaemic Encephalopathy\" && doc.new == \"Yes\"",
+   "fieldname": "therapeutic_cooling",
+   "fieldtype": "Small Text",
+   "label": "Therapeutic Cooling"
+  },
+  {
+   "depends_on": "eval:in_list([\"Seizures\"],doc.new_diagnosis_past_24_hours)",
+   "fieldname": "seiz",
+   "fieldtype": "Small Text"
+  },
+  {
+   "depends_on": "eval:in_list([\"Other\"],doc.new_diagnosis_past_24_hours)",
+   "fieldname": "other",
+   "fieldtype": "Small Text"
+  },
+  {
+   "fieldname": "section_break_db0ci",
+   "fieldtype": "Section Break"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.new_diagnosis_for_discharge)",
+   "fieldname": "diag_discharge",
+   "fieldtype": "Select",
+   "label": "New Diagnosis for discharge",
+   "options": "Intraventricular Haemorrhage\nPost Haemorrhagic Ventricular Dilatation\nHydrocephalous\nPeriventricular Leucomalacia\nAbsent Corpus Callosum\nPartial Agenisis of Corpus Callosum\nArnold- Chiari Malformation\nMeningocoel\nMeningomyelocoel\nHypoxic Ischaemic Encephalopathy\nSeizures\nOther"
+  },
+  {
+   "depends_on": "eval:doc.diag_discharge == \"Intraventricular Haemorrhage\" && doc.new_diagnosis_for_discharge == \"Yes\"",
+   "fieldname": "grade_dis",
+   "fieldtype": "Select",
+   "options": "Right-Grade\nLeft-Grade"
+  },
+  {
+   "depends_on": "eval:doc.diag_discharge == \"Intraventricular Haemorrhage\" && doc.new_diagnosis_for_discharge == \"Yes\"",
+   "fieldname": "ihd",
+   "fieldtype": "Select",
+   "options": "I\nII\nIII\nIV"
+  },
+  {
+   "depends_on": "eval:doc.diag_discharge == \"Hydrocephalous\" && doc.new_diagnosis_for_discharge == \"Yes\"",
+   "fieldname": "hydro_dis",
+   "fieldtype": "Select",
+   "options": "Conservative management\nVentriculo-sub Galeal shunt\nVentriculo- peritoneal Shunt\nCSF Tapping"
+  },
+  {
+   "fieldname": "column_break_8uo3r",
+   "fieldtype": "Section Break"
+  },
+  {
+   "depends_on": "eval:doc.diag_discharge == \"Hypoxic Ischaemic Encephalopathy\" && doc.new == \"Yes\"",
+   "fieldname": "grade_hie_dis",
+   "fieldtype": "Select",
+   "label": "Grade",
+   "options": "1\n2\n3"
+  },
+  {
+   "depends_on": "eval:doc.diag_discharge == \"Hypoxic Ischaemic Encephalopathy\" && doc.new == \"Yes\"",
+   "fieldname": "history_dis",
+   "fieldtype": "Small Text",
+   "label": "History of"
+  },
+  {
+   "depends_on": "eval:doc.diag_discharge == \"Hypoxic Ischaemic Encephalopathy\" && doc.new == \"Yes\"",
+   "fieldname": "cooling_dis",
+   "fieldtype": "Small Text",
+   "label": "Therapeutic Cooling"
+  },
+  {
+   "depends_on": "eval:in_list([\"Seizures\"],doc.diag_discharge)",
+   "fieldname": "seiz_dis",
+   "fieldtype": "Small Text"
+  },
+  {
+   "depends_on": "eval:in_list([\"Other\"],doc.diag_discharge)",
+   "fieldname": "other_dis",
+   "fieldtype": "Small Text"
+  },
+  {
+   "fieldname": "section_break_z4edi",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "new_diagnosis_for_discharge",
+   "fieldtype": "Select",
+   "label": "New Diagnosis for discharge",
+   "options": "No\nYes"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.new_diagnosis_for_discharge)",
+   "fieldname": "discharge",
+   "fieldtype": "Small Text"
+  },
+  {
+   "fieldname": "any_procedure_in_past_24_hours",
+   "fieldtype": "Select",
+   "label": "Any Procedure in past 24 hours",
+   "options": "No\nYes"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.any_procedure_in_past_24_hours)",
+   "fieldname": "hours24",
+   "fieldtype": "Select",
+   "options": "Lumbar Puncture\nVentricular tapping\nVentriculo-Subgaleal shunt\nVentriculo-peritoneal shunt\nOther"
+  },
+  {
+   "fieldname": "imaging",
+   "fieldtype": "Select",
+   "label": "Imaging past 24 hours",
+   "options": "No\nYes"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.imaging)",
+   "fieldname": "mri",
+   "fieldtype": "Select",
+   "options": "CT\nMRI\nNeurosonogram"
+  },
+  {
+   "fieldname": "cooling_criteria_met",
+   "fieldtype": "Select",
+   "label": "Cooling Criteria Met",
+   "options": "No\nYes"
+  },
+  {
+   "fieldname": "section_break_ryftw",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "therapeutic_cooling_past_24_hours",
+   "fieldtype": "Select",
+   "label": "Therapeutic Cooling past 24 hours",
+   "options": "No\nYes"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.therapeutic_cooling_past_24_hours)",
+   "fieldname": "date_and_time_started",
+   "fieldtype": "Datetime",
+   "label": "Date and time started"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.therapeutic_cooling_past_24_hours)",
+   "fieldname": "date_and_time_stopped",
+   "fieldtype": "Datetime",
+   "label": " Date and time stopped"
+  },
+  {
+   "fieldname": "free_text_box",
+   "fieldtype": "Text",
+   "label": "Text for Discharge"
+  },
+  {
+   "fieldname": "column_break_onuqw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.any_procedure_in_past_24_hours)",
+   "fieldname": "procedure_date",
+   "fieldtype": "Date",
+   "label": "Date done"
+  },
+  {
+   "depends_on": "eval:in_list([\"Other\"],doc.hours24)",
+   "fieldname": "other_procedures",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "section_break_sesg3",
+   "fieldtype": "Section Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-03-14 21:29:22.807391",
+ "modified_by": "Administrator",
+ "module": "Amrita Neonet",
+ "name": "child_cns",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -6,212 +6,225 @@
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
-"field_order": [
-    "new_admission",
-    "section_break_gvax8",
-    "baby_id",
-    "name1",
-    "dob",
-    "tob",
-    "gestation_age_at_birth",
-    "section_break_xu1nm",
-    "singleton_or_multiple",
-    "column_break_t8gfc",
-    "twins",
-    "triplets",
-    "section_break_gbv20",
-    "hospital",
-    "column_break_xphk0",
-    "hospital_name",
-    "referring_doctor",
-    "column_break_ije30",
-    "city",
-    "contact",
-    "section_break_5pkbg",
-    "admission_to",
-    "date_of_admission",
-    "time_of_admission",
-    "day_of_life",
-    "gestational_age_at_admission",
-    "birth_weight",
-    "admission_weight",
-    "admission_under",
-    "gender"
-],
-"fields": [
-    {
-        "fieldname": "new_admission",
-        "fieldtype": "Heading",
-        "label": "NEW ADMISSION"
-    },
-    {
-        "fieldname": "section_break_gvax8",
-        "fieldtype": "Section Break"
-    },
-    {
-        "fieldname": "baby_id",
-        "fieldtype": "Data",
-        "in_list_view": 1,
-        "label": "Baby ID",
-        "reqd": 1,
-        "unique": 1
-    },
-    {
-        "fieldname": "name1",
-        "fieldtype": "Data",
-        "in_list_view": 1,
-        "label": "Name",
-        "reqd": 1,
-        "unique": 1
-    },
-    {
-        "fieldname": "dob",
-        "fieldtype": "Date",
-        "label": "Date of birth"
-    },
-    {
-        "fieldname": "tob",
-        "fieldtype": "Time",
-        "label": "Time of birth"
-    },
-    {
-        "fieldname": "gestation_age_at_birth",
-        "fieldtype": "Data",
-        "label": "Gestation age at birth"
-    },
-    {
-        "fieldname": "section_break_xu1nm",
-        "fieldtype": "Section Break"
-    },
-    {
-        "fieldname": "singleton_or_multiple",
-        "fieldtype": "Select",
-        "in_list_view": 1,
-        "label": "Singleton or Multiple",
-        "options": "Singleton\nTwins\nTriplets",
-        "reqd": 1
-    },
-    {
-        "depends_on": "singleton_or_multiple",
-        "fieldname": "column_break_t8gfc",
-        "fieldtype": "Column Break"
-    },
-    {
-        "depends_on": "eval:in_list([\"Twins\"],doc.singleton_or_multiple)",
-        "fieldname": "twins",
-        "fieldtype": "Select",
-        "label": "Twins",
-        "options": "MCMA\nMCDA\nDCDA"
-    },
-    {
-        "depends_on": "eval:in_list([\"Triplets\"],doc.singleton_or_multiple)",
-        "fieldname": "triplets",
-        "fieldtype": "Select",
-        "label": "Triplets",
-        "options": "TCTA\nDCDA & Singleton"
-    },
-    {
-        "fieldname": "section_break_gbv20",
-        "fieldtype": "Section Break"
-    },
-    {
-        "fieldname": "hospital",
-        "fieldtype": "Select",
-        "in_list_view": 1,
-        "label": "Hospital",
-        "options": "Inborn\nOutborn",
-        "reqd": 1
-    },
-    {
-        "depends_on": "eval:in_list([\"Outborn\"],doc.hospital)",
-        "fieldname": "column_break_xphk0",
-        "fieldtype": "Column Break"
-    },
-    {
-        "depends_on": "eval:in_list([\"Outborn\"],doc.hospital)",
-        "fieldname": "hospital_name",
-        "fieldtype": "Data",
-        "label": "Hospital Name"
-    },
-    {
-        "depends_on": "eval:in_list([\"Outborn\"],doc.hospital)",
-        "fieldname": "referring_doctor",
-        "fieldtype": "Data",
-        "label": "Referring Doctor"
-    },
-    {
-        "depends_on": "eval:in_list([\"Outborn\"],doc.hospital)",
-        "fieldname": "column_break_ije30",
-        "fieldtype": "Column Break"
-    },
-    {
-        "depends_on": "eval:in_list([\"Outborn\"],doc.hospital)",
-        "fieldname": "city",
-        "fieldtype": "Data",
-        "label": "City"
-    },
-    {
-        "depends_on": "eval:in_list([\"Outborn\"],doc.hospital)",
-        "fieldname": "contact",
-        "fieldtype": "Phone",
-        "label": "Contact"
-    },
-    {
-        "fieldname": "section_break_5pkbg",
-        "fieldtype": "Section Break"
-    },
-    {
-        "fieldname": "admission_to",
-        "fieldtype": "Select",
-        "label": "Admission to",
-        "options": "NICU\nStep Down\nWard"
-    },
-    {
-        "fieldname": "date_of_admission",
-        "fieldtype": "Date",
-        "label": "Date of Admission"
-    },
-    {
-        "fieldname": "time_of_admission",
-        "fieldtype": "Time",
-        "label": "Time of admission"
-    },
-    {
-        "fieldname": "day_of_life",
-        "fieldtype": "Int",
-        "label": "Day of life"
-    },
-    {
-        "fieldname": "gestational_age_at_admission",
-        "fieldtype": "Data",
-        "label": "Gestational Age at admission"
-    },
-    {
-        "fieldname": "birth_weight",
-        "fieldtype": "Float",
-        "label": "Birth weight in grams"
-    },
-    {
-        "fieldname": "admission_weight",
-        "fieldtype": "Float",
-        "label": "Admission weight in grams"
-    },
-    {
-        "fieldname": "admission_under",
-        "fieldtype": "Select",
-        "label": "Admission under",
-        "options": "Neonatology\nPaediatric Surgery\nNeurology\nNeurosurgery\nOphthalmology\nCardiology"
-    },
-    {
-        "fieldname": "gender",
-        "fieldtype": "Select",
-        "label": "Gender",
-        "options": "Male\nFemale\nIndeterminate"
-    }
-],
+ "field_order": [
+  "new_admission",
+  "section_break_gvax8",
+  "baby_id",
+  "name1",
+  "dob",
+  "tob",
+  "pgestation_age_at_birthp",
+  "gobd",
+  "wfbw",
+  "section_break_xu1nm",
+  "singleton_or_multiple",
+  "column_break_t8gfc",
+  "twins",
+  "triplets",
+  "section_break_gbv20",
+  "hospital",
+  "column_break_xphk0",
+  "hospital_name",
+  "referring_doctor",
+  "column_break_ije30",
+  "city",
+  "contact",
+  "section_break_5pkbg",
+  "admission_to",
+  "date_of_admission",
+  "time_of_admission",
+  "day_of_life",
+  "gestational_age_at_admission",
+  "birth_weight",
+  "admission_weight",
+  "admission_under",
+  "gender"
+ ],
+ "fields": [
+  {
+   "fieldname": "new_admission",
+   "fieldtype": "Heading",
+   "label": "NEW ADMISSION"
+  },
+  {
+   "fieldname": "section_break_gvax8",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "baby_id",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Baby ID",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "name1",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "dob",
+   "fieldtype": "Date",
+   "label": "Date of birth"
+  },
+  {
+   "fieldname": "tob",
+   "fieldtype": "Time",
+   "label": "Time of birth"
+  },
+  {
+   "fieldname": "section_break_xu1nm",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "singleton_or_multiple",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Singleton or Multiple",
+   "options": "Singleton\nTwins\nTriplets",
+   "reqd": 1
+  },
+  {
+   "depends_on": "singleton_or_multiple",
+   "fieldname": "column_break_t8gfc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:in_list([\"Twins\"],doc.singleton_or_multiple)",
+   "fieldname": "twins",
+   "fieldtype": "Select",
+   "label": "Twins",
+   "options": "MCMA\nMCDA\nDCDA"
+  },
+  {
+   "depends_on": "eval:in_list([\"Triplets\"],doc.singleton_or_multiple)",
+   "fieldname": "triplets",
+   "fieldtype": "Select",
+   "label": "Triplets",
+   "options": "TCTA\nDCDA & Singleton"
+  },
+  {
+   "fieldname": "section_break_gbv20",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "hospital",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Hospital",
+   "options": "Inborn\nOutborn",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:in_list([\"Outborn\"],doc.hospital)",
+   "fieldname": "column_break_xphk0",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:in_list([\"Outborn\"],doc.hospital)",
+   "fieldname": "hospital_name",
+   "fieldtype": "Data",
+   "label": "Hospital Name"
+  },
+  {
+   "depends_on": "eval:in_list([\"Outborn\"],doc.hospital)",
+   "fieldname": "referring_doctor",
+   "fieldtype": "Data",
+   "label": "Referring Doctor"
+  },
+  {
+   "depends_on": "eval:in_list([\"Outborn\"],doc.hospital)",
+   "fieldname": "column_break_ije30",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:in_list([\"Outborn\"],doc.hospital)",
+   "fieldname": "city",
+   "fieldtype": "Data",
+   "label": "City"
+  },
+  {
+   "depends_on": "eval:in_list([\"Outborn\"],doc.hospital)",
+   "fieldname": "contact",
+   "fieldtype": "Phone",
+   "label": "Contact"
+  },
+  {
+   "fieldname": "section_break_5pkbg",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "admission_to",
+   "fieldtype": "Select",
+   "label": "Admission to",
+   "options": "NICU\nStep Down\nWard"
+  },
+  {
+   "fieldname": "date_of_admission",
+   "fieldtype": "Date",
+   "label": "Date of Admission"
+  },
+  {
+   "fieldname": "time_of_admission",
+   "fieldtype": "Time",
+   "label": "Time of admission"
+  },
+  {
+   "fieldname": "day_of_life",
+   "fieldtype": "Int",
+   "label": "Day of life"
+  },
+  {
+   "fieldname": "gestational_age_at_admission",
+   "fieldtype": "Data",
+   "label": "Gestational Age at admission"
+  },
+  {
+   "fieldname": "birth_weight",
+   "fieldtype": "Float",
+   "label": "Birth weight in grams"
+  },
+  {
+   "fieldname": "admission_weight",
+   "fieldtype": "Float",
+   "label": "Admission weight in grams"
+  },
+  {
+   "fieldname": "admission_under",
+   "fieldtype": "Select",
+   "label": "Admission under",
+   "options": "Neonatology\nPaediatric Surgery\nNeurology\nNeurosurgery\nOphthalmology\nCardiology"
+  },
+  {
+   "fieldname": "gender",
+   "fieldtype": "Select",
+   "label": "Gender",
+   "options": "Male\nFemale\nIndeterminate"
+  },
+  {
+   "fieldname": "pgestation_age_at_birthp",
+   "fieldtype": "HTML",
+   "label": "<p>Gestation age at birth</p>",
+   "options": "<p>Gestation age at birth</p>"
+  },
+  {
+   "fieldname": "gobd",
+   "fieldtype": "Data",
+   "label": "Gestation age at birth days"
+  },
+  {
+   "fieldname": "wfbw",
+   "fieldtype": "Data",
+   "label": "Gestation age at birth weeks"
+  }
+ ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-02-24 20:12:26.131666",
+ "modified": "2023-03-31 15:15:15.233275",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Opening page",
