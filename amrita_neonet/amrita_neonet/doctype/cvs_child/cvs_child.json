@@ -25,12 +25,22 @@
   "tachy_brady_dis",
   "section_break_9ibrx",
   "inotropic_support",
+  "if_any_other",
   "column_break_fjehq",
   "dopamine",
+  "dopamine_dose",
+  "column_break_iktbz",
   "dobutamine",
+  "dose2",
+  "column_break_oo0qz",
   "adrenaline",
+  "dose3",
+  "column_break_ggxbb",
   "noradrenaline",
+  "dose4",
+  "column_break_lhdr9",
   "hydroocortisone",
+  "dose5",
   "section_break_olkkg",
   "echo",
   "column_break_dwl0j",
@@ -38,10 +48,10 @@
   "section_break_xbk4f",
   "rpp",
   "column_break_ztwsv",
-  "pphn",
-  "pah",
+  "pphn_pah",
   "section_break_1nqrx",
   "need_for_prostin",
+  "dose",
   "section_break_2rttz",
   "hs_pda",
   "column_break_0zjor",
@@ -65,6 +75,7 @@
   "arrhythmia",
   "column_break_d3mnf",
   "if_arr",
+  "t_b",
   "section_break_spa2g",
   "feed_intolerence",
   "section_break_yjodg",
@@ -172,37 +183,43 @@
    "options": "No\nYes"
   },
   {
+   "depends_on": "eval:in_list([\"Yes\"],doc.inotropic_support)",
    "fieldname": "column_break_fjehq",
-   "fieldtype": "Column Break"
+   "fieldtype": "Section Break"
   },
   {
+   "default": "0",
    "depends_on": "eval:in_list([\"Yes\"],doc.inotropic_support)",
    "fieldname": "dopamine",
-   "fieldtype": "Data",
+   "fieldtype": "Check",
    "label": "Dopamine"
   },
   {
+   "default": "0",
    "depends_on": "eval:in_list([\"Yes\"],doc.inotropic_support)",
    "fieldname": "dobutamine",
-   "fieldtype": "Data",
+   "fieldtype": "Check",
    "label": "Dobutamine"
   },
   {
+   "default": "0",
    "depends_on": "eval:in_list([\"Yes\"],doc.inotropic_support)",
    "fieldname": "adrenaline",
-   "fieldtype": "Data",
+   "fieldtype": "Check",
    "label": "Adrenaline"
   },
   {
+   "default": "0",
    "depends_on": "eval:in_list([\"Yes\"],doc.inotropic_support)",
    "fieldname": "noradrenaline",
-   "fieldtype": "Data",
+   "fieldtype": "Check",
    "label": "Noradrenaline"
   },
   {
+   "default": "0",
    "depends_on": "eval:in_list([\"Yes\"],doc.inotropic_support)",
    "fieldname": "hydroocortisone",
-   "fieldtype": "Data",
+   "fieldtype": "Check",
    "label": "Hydroocortisone"
   },
   {
@@ -238,18 +255,6 @@
   {
    "fieldname": "column_break_ztwsv",
    "fieldtype": "Column Break"
-  },
-  {
-   "depends_on": "eval:in_list([\"Yes\"],doc.rpp)",
-   "fieldname": "pphn",
-   "fieldtype": "Data",
-   "label": "PPHN"
-  },
-  {
-   "depends_on": "eval:in_list([\"Yes\"],doc.rpp)",
-   "fieldname": "pah",
-   "fieldtype": "Data",
-   "label": "PAH"
   },
   {
    "fieldname": "section_break_1nqrx",
@@ -419,12 +424,76 @@
   {
    "fieldname": "section_break_vlr6q",
    "fieldtype": "Section Break"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.inotropic_support)",
+   "fieldname": "if_any_other",
+   "fieldtype": "Data",
+   "label": "If any other"
+  },
+  {
+   "depends_on": "eval:doc.dopamine==1",
+   "fieldname": "dopamine_dose",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "column_break_iktbz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.dobutamine==1",
+   "fieldname": "dose2",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "column_break_oo0qz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.Arenaline==1",
+   "fieldname": "dose3",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "column_break_ggxbb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.Noradrenaline==1",
+   "fieldname": "dose4",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "column_break_lhdr9",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.Hydroocortisone==1",
+   "fieldname": "dose5",
+   "fieldtype": "Data"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.rpp)",
+   "fieldname": "pphn_pah",
+   "fieldtype": "Select",
+   "options": "PPHN\nPAH"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.need_for_prostin)",
+   "fieldname": "dose",
+   "fieldtype": "Data",
+   "label": "Dose"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.arrhythmia)",
+   "fieldname": "t_b",
+   "fieldtype": "Data"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-03-08 11:37:24.809196",
+ "modified": "2023-03-31 19:11:22.033955",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "CVS_child",

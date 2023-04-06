@@ -8,7 +8,65 @@
  "engine": "InnoDB",
  "field_order": [
   "baby_navigation",
-  "mid"
+  "baby_id",
+  "section_break_puihb",
+  "repiratory_page",
+  "opening_form",
+  "admission",
+  "maternal",
+  "navigator",
+  "discharge",
+  "discharge_examination",
+  "discharge_checklist",
+  "death_summary",
+  "column_break_vxatl",
+  "daily_summery",
+  "respiratory",
+  "cvs",
+  "gi",
+  "cns",
+  "endocrine_and_metabollic",
+  "sepsis",
+  "opthalmology",
+  "ent_and_swallow",
+  "haematology",
+  "renal",
+  "genetic",
+  "crib_ii_score",
+  "snappe_ii",
+  "section_break_gmvir",
+  "investigations",
+  "nurosonogram",
+  "ct",
+  "mri",
+  "electroencephalography",
+  "uss_kub_abdomen",
+  "blood_culture",
+  "urineperitonealpleural_fluid",
+  "echocardiography",
+  "lumbar_puncture",
+  "neogen",
+  "genetic_investigation",
+  "pcr",
+  "swabs",
+  "respiratory_secretions",
+  "retinopathy_of_prematurity",
+  "column_break_sry3q",
+  "important_procedures",
+  "umbilical_lines",
+  "picc_lines",
+  "subclavian_femoral_line",
+  "peripheral_arterial_line",
+  "pericardial_tab",
+  "pleural_tab",
+  "peritoneal_tab",
+  "chest_drain",
+  "peritoneal_drain",
+  "surgical_operative_note",
+  "catheterisation",
+  "intubation",
+  "ng_tube_insertion",
+  "naso_pharyngeal_tube"
  ],
  "fields": [
   {
@@ -17,15 +75,302 @@
    "label": "Baby Navigation"
   },
   {
-   "fieldname": "mid",
+   "fieldname": "repiratory_page",
+   "fieldtype": "Heading",
+   "label": "Joining"
+  },
+  {
+   "fieldname": "opening_form",
    "fieldtype": "Button",
-   "label": "Enter Baby MID"
+   "label": "Opening Form"
+  },
+  {
+   "fieldname": "admission",
+   "fieldtype": "Button",
+   "label": "Admission"
+  },
+  {
+   "fieldname": "maternal",
+   "fieldtype": "Button",
+   "label": "Maternal"
+  },
+  {
+   "fieldname": "navigator",
+   "fieldtype": "Button",
+   "label": "Navigator"
+  },
+  {
+   "fieldname": "daily_summery",
+   "fieldtype": "Heading",
+   "label": "Daily Summery"
+  },
+  {
+   "fieldname": "respiratory",
+   "fieldtype": "Button",
+   "label": "Respiratory"
+  },
+  {
+   "fieldname": "cvs",
+   "fieldtype": "Button",
+   "label": "CVS"
+  },
+  {
+   "fieldname": "gi",
+   "fieldtype": "Button",
+   "label": "GI"
+  },
+  {
+   "fieldname": "cns",
+   "fieldtype": "Button",
+   "label": "CNS"
+  },
+  {
+   "fieldname": "endocrine_and_metabollic",
+   "fieldtype": "Button",
+   "label": "Endocrine and Metabollic"
+  },
+  {
+   "fieldname": "sepsis",
+   "fieldtype": "Button",
+   "label": "Sepsis"
+  },
+  {
+   "fieldname": "opthalmology",
+   "fieldtype": "Button",
+   "label": "Opthalmology"
+  },
+  {
+   "fieldname": "ent_and_swallow",
+   "fieldtype": "Button",
+   "label": "ENT and swallow"
+  },
+  {
+   "fieldname": "haematology",
+   "fieldtype": "Button",
+   "label": "Haematology"
+  },
+  {
+   "fieldname": "renal",
+   "fieldtype": "Button",
+   "label": "Renal"
+  },
+  {
+   "fieldname": "genetic",
+   "fieldtype": "Button",
+   "label": "Genetic"
+  },
+  {
+   "fieldname": "crib_ii_score",
+   "fieldtype": "Button",
+   "label": "CRIB II Score"
+  },
+  {
+   "fieldname": "snappe_ii",
+   "fieldtype": "Button",
+   "label": "Snappe II"
+  },
+  {
+   "fieldname": "column_break_vxatl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_puihb",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_gmvir",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "investigations",
+   "fieldtype": "Heading",
+   "label": "Investigations"
+  },
+  {
+   "fieldname": "nurosonogram",
+   "fieldtype": "Button",
+   "label": "Nurosonogram"
+  },
+  {
+   "fieldname": "ct",
+   "fieldtype": "Button",
+   "label": "CT"
+  },
+  {
+   "fieldname": "mri",
+   "fieldtype": "Button",
+   "label": "MRI"
+  },
+  {
+   "fieldname": "electroencephalography",
+   "fieldtype": "Button",
+   "label": "Electroencephalography"
+  },
+  {
+   "fieldname": "uss_kub_abdomen",
+   "fieldtype": "Button",
+   "label": "USS KUB/ Abdomen"
+  },
+  {
+   "fieldname": "blood_culture",
+   "fieldtype": "Button",
+   "label": "Blood culture"
+  },
+  {
+   "fieldname": "urineperitonealpleural_fluid",
+   "fieldtype": "Button",
+   "label": "Urine/Peritoneal/Pleural fluid"
+  },
+  {
+   "fieldname": "echocardiography",
+   "fieldtype": "Button",
+   "label": "Echocardiography"
+  },
+  {
+   "fieldname": "lumbar_puncture",
+   "fieldtype": "Button",
+   "label": "Lumbar puncture"
+  },
+  {
+   "fieldname": "neogen",
+   "fieldtype": "Button",
+   "label": "Neogen"
+  },
+  {
+   "fieldname": "genetic_investigation",
+   "fieldtype": "Button",
+   "label": "Genetic "
+  },
+  {
+   "fieldname": "pcr",
+   "fieldtype": "Button",
+   "label": "PCR"
+  },
+  {
+   "fieldname": "column_break_sry3q",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "important_procedures",
+   "fieldtype": "Heading",
+   "label": "Important procedures"
+  },
+  {
+   "fieldname": "umbilical_lines",
+   "fieldtype": "Button",
+   "label": "Umbilical lines"
+  },
+  {
+   "fieldname": "picc_lines",
+   "fieldtype": "Button",
+   "label": "PICC lines"
+  },
+  {
+   "fieldname": "subclavian_femoral_line",
+   "fieldtype": "Button",
+   "label": "Subclavian/ femoral line"
+  },
+  {
+   "fieldname": "peripheral_arterial_line",
+   "fieldtype": "Button",
+   "label": "Peripheral Arterial line"
+  },
+  {
+   "fieldname": "pericardial_tab",
+   "fieldtype": "Button",
+   "label": "Pericardial tab"
+  },
+  {
+   "fieldname": "pleural_tab",
+   "fieldtype": "Button",
+   "label": "Pleural tab"
+  },
+  {
+   "fieldname": "peritoneal_tab",
+   "fieldtype": "Button",
+   "label": "Peritoneal tab"
+  },
+  {
+   "fieldname": "chest_drain",
+   "fieldtype": "Button",
+   "label": "Chest drain"
+  },
+  {
+   "fieldname": "peritoneal_drain",
+   "fieldtype": "Button",
+   "label": "Peritoneal drain"
+  },
+  {
+   "fieldname": "surgical_operative_note",
+   "fieldtype": "Button",
+   "label": "Surgical Operative Note"
+  },
+  {
+   "fieldname": "catheterisation",
+   "fieldtype": "Button",
+   "label": "Catheterisation"
+  },
+  {
+   "fieldname": "intubation",
+   "fieldtype": "Button",
+   "label": "Intubation"
+  },
+  {
+   "fieldname": "ng_tube_insertion",
+   "fieldtype": "Button",
+   "label": "NG tube insertion"
+  },
+  {
+   "fieldname": "naso_pharyngeal_tube",
+   "fieldtype": "Button",
+   "label": "Naso-pharyngeal tube"
+  },
+  {
+   "fieldname": "discharge",
+   "fieldtype": "Heading",
+   "label": "Discharge"
+  },
+  {
+   "fieldname": "discharge_examination",
+   "fieldtype": "Button",
+   "label": "Discharge examination"
+  },
+  {
+   "fieldname": "discharge_checklist",
+   "fieldtype": "Button",
+   "label": "Discharge checklist"
+  },
+  {
+   "fieldname": "death_summary",
+   "fieldtype": "Button",
+   "label": "Death summary"
+  },
+  {
+   "fieldname": "swabs",
+   "fieldtype": "Button",
+   "label": "Swabs"
+  },
+  {
+   "fieldname": "respiratory_secretions",
+   "fieldtype": "Button",
+   "label": "Respiratory secretions"
+  },
+  {
+   "fieldname": "retinopathy_of_prematurity",
+   "fieldtype": "Button",
+   "label": "Retinopathy of Prematurity"
+  },
+  {
+   "fieldname": "baby_id",
+   "fieldtype": "Link",
+   "label": "Enter Baby MID",
+   "options": "Opening page"
   }
  ],
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2023-03-31 16:01:13.173407",
+ "modified": "2023-04-05 07:57:11.349717",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Neonet_Navigator",

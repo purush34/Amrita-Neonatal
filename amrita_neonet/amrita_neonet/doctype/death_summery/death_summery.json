@@ -6,288 +6,300 @@
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
-"field_order": [
-    "date_and_time_of_birth",
-    "column_break_kyvu8",
-    "date_and_time_of_death",
-    "section_break_c0wsc",
-    "gestational_age_at_admission",
-    "column_break_frmhy",
-    "gestational_age_at_death",
-    "column_break_k0blo",
-    "length_of_hospital_stay",
-    "section_break_6cixk",
-    "admission_weight",
-    "column_break_333im",
-    "admission_length",
-    "column_break_gqtt6",
-    "admission_height",
-    "section_break_v3s4k",
-    "discharge_weight",
-    "column_break_xjqma",
-    "discharge_length",
-    "column_break_r2ttv",
-    "discharge_ofc",
-    "section_break_w8ec2",
-    "diagnosis",
-    "cause_of_death",
-    "antenatal_history_labour_and_delivery",
-    "investigations_done_during_stay",
-    "summary_of_stay",
-    "respiratory",
-    "course_during_stay",
-    "cvs",
-    "gi",
-    "cns",
-    "endocrine",
-    "sepsis",
-    "antibiotics_used",
-    "antifnglas_used",
-    "ophthalmology",
-    "ent_and_swallow",
-    "haematology",
-    "renal",
-    "genetic",
-    "any_genetic_samples_sent",
-    "samples_stored",
-    "date",
-    "any_special_investigation_results_awaited",
-    "date_expected",
-    "investigation"
-],
-"fields": [
-    {
-        "fieldname": "date_and_time_of_birth",
-        "fieldtype": "Datetime",
-        "label": "Date and Time of Birth"
-    },
-    {
-        "fieldname": "column_break_kyvu8",
-        "fieldtype": "Column Break"
-    },
-    {
-        "fieldname": "date_and_time_of_death",
-        "fieldtype": "Datetime",
-        "label": "Date and Time of Death"
-    },
-    {
-        "fieldname": "section_break_c0wsc",
-        "fieldtype": "Section Break"
-    },
-    {
-        "fieldname": "gestational_age_at_admission",
-        "fieldtype": "Data",
-        "label": "Gestational Age at admission"
-    },
-    {
-        "fieldname": "column_break_frmhy",
-        "fieldtype": "Column Break"
-    },
-    {
-        "fieldname": "gestational_age_at_death",
-        "fieldtype": "Data",
-        "label": "Gestational age at Death"
-    },
-    {
-        "fieldname": "column_break_k0blo",
-        "fieldtype": "Column Break"
-    },
-    {
-        "fieldname": "length_of_hospital_stay",
-        "fieldtype": "Data",
-        "label": "Length of Hospital Stay"
-    },
-    {
-        "fieldname": "section_break_6cixk",
-        "fieldtype": "Section Break"
-    },
-    {
-        "fieldname": "admission_weight",
-        "fieldtype": "Text",
-        "label": "Admission Weight"
-    },
-    {
-        "fieldname": "column_break_333im",
-        "fieldtype": "Column Break"
-    },
-    {
-        "fieldname": "admission_length",
-        "fieldtype": "Text",
-        "label": "Admission Length"
-    },
-    {
-        "fieldname": "column_break_gqtt6",
-        "fieldtype": "Column Break"
-    },
-    {
-        "fieldname": "admission_height",
-        "fieldtype": "Text",
-        "label": "Admission Height"
-    },
-    {
-        "fieldname": "section_break_v3s4k",
-        "fieldtype": "Section Break"
-    },
-    {
-        "fieldname": "discharge_weight",
-        "fieldtype": "Text",
-        "label": "Discharge weight"
-    },
-    {
-        "fieldname": "column_break_xjqma",
-        "fieldtype": "Column Break"
-    },
-    {
-        "fieldname": "discharge_length",
-        "fieldtype": "Text",
-        "label": "Discharge Length"
-    },
-    {
-        "fieldname": "column_break_r2ttv",
-        "fieldtype": "Column Break"
-    },
-    {
-        "fieldname": "discharge_ofc",
-        "fieldtype": "Text",
-        "label": "Discharge OFC"
-    },
-    {
-        "fieldname": "section_break_w8ec2",
-        "fieldtype": "Section Break"
-    },
-    {
-        "fieldname": "diagnosis",
-        "fieldtype": "Heading",
-        "label": "Diagnosis "
-    },
-    {
-        "fieldname": "cause_of_death",
-        "fieldtype": "Text",
-        "label": "Cause of Death"
-    },
-    {
-        "fieldname": "antenatal_history_labour_and_delivery",
-        "fieldtype": "Heading",
-        "label": "Antenatal History, labour and delivery"
-    },
-    {
-        "fieldname": "investigations_done_during_stay",
-        "fieldtype": "Heading",
-        "label": "Investigations done during stay"
-    },
-    {
-        "fieldname": "summary_of_stay",
-        "fieldtype": "Heading",
-        "label": "Summary of Stay"
-    },
-    {
-        "fieldname": "respiratory",
-        "fieldtype": "Heading",
-        "label": "Respiratory"
-    },
-    {
-        "fieldname": "course_during_stay",
-        "fieldtype": "Data",
-        "label": "Course during stay"
-    },
-    {
-        "fieldname": "cvs",
-        "fieldtype": "Heading",
-        "label": "CVS"
-    },
-    {
-        "fieldname": "gi",
-        "fieldtype": "Heading",
-        "label": "GI"
-    },
-    {
-        "fieldname": "cns",
-        "fieldtype": "Heading",
-        "label": "CNS"
-    },
-    {
-        "fieldname": "endocrine",
-        "fieldtype": "Heading",
-        "label": "Endocrine"
-    },
-    {
-        "fieldname": "sepsis",
-        "fieldtype": "Heading",
-        "label": "Sepsis"
-    },
-    {
-        "fieldname": "antibiotics_used",
-        "fieldtype": "Data",
-        "label": "Antibiotics Used"
-    },
-    {
-        "fieldname": "antifnglas_used",
-        "fieldtype": "Data",
-        "label": "Antifnglas used"
-    },
-    {
-        "fieldname": "ophthalmology",
-        "fieldtype": "Heading",
-        "label": "Ophthalmology"
-    },
-    {
-        "fieldname": "ent_and_swallow",
-        "fieldtype": "Heading",
-        "label": "ENT and Swallow"
-    },
-    {
-        "fieldname": "haematology",
-        "fieldtype": "Heading",
-        "label": "Haematology"
-    },
-    {
-        "fieldname": "renal",
-        "fieldtype": "Heading",
-        "label": "Renal"
-    },
-    {
-        "fieldname": "genetic",
-        "fieldtype": "Heading",
-        "label": "Genetic"
-    },
-    {
-        "fieldname": "any_genetic_samples_sent",
-        "fieldtype": "Select",
-        "label": "Any Genetic samples sent",
-        "options": "Yes\nNo"
-    },
-    {
-        "depends_on": "eval:in_list([\"Yes\"],doc.any_genetic_samples_sent)",
-        "fieldname": "samples_stored",
-        "fieldtype": "Select",
-        "label": "Samples Stored",
-        "options": "Yes\nNo"
-    },
-    {
-        "fieldname": "date",
-        "fieldtype": "Date",
-        "label": "Date "
-    },
-    {
-        "fieldname": "any_special_investigation_results_awaited",
-        "fieldtype": "Select",
-        "label": "Any special investigation results Awaited",
-        "options": "Yes\nNo"
-    },
-    {
-        "fieldname": "date_expected",
-        "fieldtype": "Date",
-        "label": "Date Expected"
-    },
-    {
-        "depends_on": "eval:in_list([\"Yes\"],doc.any_special_investigation_results_awaited)",
-        "fieldname": "investigation",
-        "fieldtype": "Text"
-    }
-],
+ "field_order": [
+  "baby_id",
+  "mother_name",
+  "date_and_time_of_birth",
+  "column_break_kyvu8",
+  "date_and_time_of_death",
+  "section_break_c0wsc",
+  "gestational_age_at_admission",
+  "column_break_frmhy",
+  "gestational_age_at_death",
+  "column_break_k0blo",
+  "length_of_hospital_stay",
+  "section_break_6cixk",
+  "admission_weight",
+  "column_break_333im",
+  "admission_length",
+  "column_break_gqtt6",
+  "admission_height",
+  "section_break_v3s4k",
+  "discharge_weight",
+  "column_break_xjqma",
+  "discharge_length",
+  "column_break_r2ttv",
+  "discharge_ofc",
+  "section_break_w8ec2",
+  "diagnosis",
+  "cause_of_death",
+  "antenatal_history_labour_and_delivery",
+  "investigations_done_during_stay",
+  "summary_of_stay",
+  "respiratory",
+  "course_during_stay",
+  "cvs",
+  "gi",
+  "cns",
+  "endocrine",
+  "sepsis",
+  "antibiotics_used",
+  "antifnglas_used",
+  "ophthalmology",
+  "ent_and_swallow",
+  "haematology",
+  "renal",
+  "genetic",
+  "any_genetic_samples_sent",
+  "samples_stored",
+  "date",
+  "any_special_investigation_results_awaited",
+  "date_expected",
+  "investigation"
+ ],
+ "fields": [
+  {
+   "fieldname": "date_and_time_of_birth",
+   "fieldtype": "Datetime",
+   "label": "Date and Time of Birth"
+  },
+  {
+   "fieldname": "column_break_kyvu8",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "date_and_time_of_death",
+   "fieldtype": "Datetime",
+   "label": "Date and Time of Death"
+  },
+  {
+   "fieldname": "section_break_c0wsc",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "gestational_age_at_admission",
+   "fieldtype": "Data",
+   "label": "Gestational Age at admission"
+  },
+  {
+   "fieldname": "column_break_frmhy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "gestational_age_at_death",
+   "fieldtype": "Data",
+   "label": "Gestational age at Death"
+  },
+  {
+   "fieldname": "column_break_k0blo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "length_of_hospital_stay",
+   "fieldtype": "Data",
+   "label": "Length of Hospital Stay"
+  },
+  {
+   "fieldname": "section_break_6cixk",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "admission_weight",
+   "fieldtype": "Text",
+   "label": "Admission Weight"
+  },
+  {
+   "fieldname": "column_break_333im",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "admission_length",
+   "fieldtype": "Text",
+   "label": "Admission Length"
+  },
+  {
+   "fieldname": "column_break_gqtt6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "admission_height",
+   "fieldtype": "Text",
+   "label": "Admission Height"
+  },
+  {
+   "fieldname": "section_break_v3s4k",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "discharge_weight",
+   "fieldtype": "Text",
+   "label": "Discharge weight"
+  },
+  {
+   "fieldname": "column_break_xjqma",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "discharge_length",
+   "fieldtype": "Text",
+   "label": "Discharge Length"
+  },
+  {
+   "fieldname": "column_break_r2ttv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "discharge_ofc",
+   "fieldtype": "Text",
+   "label": "Discharge OFC"
+  },
+  {
+   "fieldname": "section_break_w8ec2",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "diagnosis",
+   "fieldtype": "Heading",
+   "label": "Diagnosis "
+  },
+  {
+   "fieldname": "cause_of_death",
+   "fieldtype": "Text",
+   "label": "Cause of Death"
+  },
+  {
+   "fieldname": "antenatal_history_labour_and_delivery",
+   "fieldtype": "Heading",
+   "label": "Antenatal History, labour and delivery"
+  },
+  {
+   "fieldname": "investigations_done_during_stay",
+   "fieldtype": "Heading",
+   "label": "Investigations done during stay"
+  },
+  {
+   "fieldname": "summary_of_stay",
+   "fieldtype": "Heading",
+   "label": "Summary of Stay"
+  },
+  {
+   "fieldname": "respiratory",
+   "fieldtype": "Heading",
+   "label": "Respiratory"
+  },
+  {
+   "fieldname": "course_during_stay",
+   "fieldtype": "Data",
+   "label": "Course during stay"
+  },
+  {
+   "fieldname": "cvs",
+   "fieldtype": "Heading",
+   "label": "CVS"
+  },
+  {
+   "fieldname": "gi",
+   "fieldtype": "Heading",
+   "label": "GI"
+  },
+  {
+   "fieldname": "cns",
+   "fieldtype": "Heading",
+   "label": "CNS"
+  },
+  {
+   "fieldname": "endocrine",
+   "fieldtype": "Heading",
+   "label": "Endocrine"
+  },
+  {
+   "fieldname": "sepsis",
+   "fieldtype": "Heading",
+   "label": "Sepsis"
+  },
+  {
+   "fieldname": "antibiotics_used",
+   "fieldtype": "Data",
+   "label": "Antibiotics Used"
+  },
+  {
+   "fieldname": "antifnglas_used",
+   "fieldtype": "Data",
+   "label": "Antifnglas used"
+  },
+  {
+   "fieldname": "ophthalmology",
+   "fieldtype": "Heading",
+   "label": "Ophthalmology"
+  },
+  {
+   "fieldname": "ent_and_swallow",
+   "fieldtype": "Heading",
+   "label": "ENT and Swallow"
+  },
+  {
+   "fieldname": "haematology",
+   "fieldtype": "Heading",
+   "label": "Haematology"
+  },
+  {
+   "fieldname": "renal",
+   "fieldtype": "Heading",
+   "label": "Renal"
+  },
+  {
+   "fieldname": "genetic",
+   "fieldtype": "Heading",
+   "label": "Genetic"
+  },
+  {
+   "fieldname": "any_genetic_samples_sent",
+   "fieldtype": "Select",
+   "label": "Any Genetic samples sent",
+   "options": "Yes\nNo"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.any_genetic_samples_sent)",
+   "fieldname": "samples_stored",
+   "fieldtype": "Select",
+   "label": "Samples Stored",
+   "options": "Yes\nNo"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date "
+  },
+  {
+   "fieldname": "any_special_investigation_results_awaited",
+   "fieldtype": "Select",
+   "label": "Any special investigation results Awaited",
+   "options": "Yes\nNo"
+  },
+  {
+   "fieldname": "date_expected",
+   "fieldtype": "Date",
+   "label": "Date Expected"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.any_special_investigation_results_awaited)",
+   "fieldname": "investigation",
+   "fieldtype": "Text"
+  },
+  {
+   "fieldname": "baby_id",
+   "fieldtype": "Data",
+   "label": "Baby ID"
+  },
+  {
+   "fieldname": "mother_name",
+   "fieldtype": "Data",
+   "label": "Mother Name"
+  }
+ ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-03-06 17:35:58.745995",
+ "modified": "2023-04-04 17:55:33.533798",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Death summery",

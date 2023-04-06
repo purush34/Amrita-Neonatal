@@ -35,6 +35,7 @@
   "uti_bacterial",
   "uti_fungal",
   "section_break_xfakq",
+  "peritoneal_dialysis_in_past_24_hours",
   "discharge_text"
  ],
  "fields": [
@@ -190,12 +191,18 @@
    "depends_on": "eval:doc.diagnosis_24==\"Yes\" && (doc.if_diag24 == \"Renal Pelvic dilatation\" || doc.if_diag24==\"Multicystic Dysplastic Kidney\" || doc.if_diag24==\"Fungal Ball\" || doc.if_diag24==\"Pelvi-Ureter Junction obstruction\")",
    "fieldname": "column_break_8eq9b",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "peritoneal_dialysis_in_past_24_hours",
+   "fieldtype": "Select",
+   "label": "Peritoneal Dialysis in past 24 hours",
+   "options": "Yes\nNo"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-03-16 16:08:18.365148",
+ "modified": "2023-04-02 02:34:36.906327",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Renal_child",

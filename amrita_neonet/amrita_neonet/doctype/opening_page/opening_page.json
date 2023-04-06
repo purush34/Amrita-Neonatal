@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:{baby_id} {mother_name}",
  "creation": "2023-02-24 20:06:49.336248",
  "default_view": "List",
  "doctype": "DocType",
@@ -10,15 +11,17 @@
   "new_admission",
   "section_break_gvax8",
   "baby_id",
-  "name1",
+  "mother_name",
   "dob",
   "tob",
   "pgestation_age_at_birthp",
-  "gobd",
-  "wfbw",
+  "gab_v",
+  "section_break_pztdn",
+  "gab_w",
+  "column_break_byhiu",
+  "gab_d",
   "section_break_xu1nm",
   "singleton_or_multiple",
-  "column_break_t8gfc",
   "twins",
   "triplets",
   "section_break_gbv20",
@@ -26,15 +29,15 @@
   "column_break_xphk0",
   "hospital_name",
   "referring_doctor",
-  "column_break_ije30",
   "city",
+  "column_break_ije30",
   "contact",
   "section_break_5pkbg",
   "admission_to",
-  "date_of_admission",
+  "doa",
   "time_of_admission",
   "day_of_life",
-  "gestational_age_at_admission",
+  "gaa_v",
   "birth_weight",
   "admission_weight",
   "admission_under",
@@ -59,14 +62,6 @@
    "unique": 1
   },
   {
-   "fieldname": "name1",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Name",
-   "reqd": 1,
-   "unique": 1
-  },
-  {
    "fieldname": "dob",
    "fieldtype": "Date",
    "label": "Date of birth"
@@ -87,11 +82,6 @@
    "label": "Singleton or Multiple",
    "options": "Singleton\nTwins\nTriplets",
    "reqd": 1
-  },
-  {
-   "depends_on": "singleton_or_multiple",
-   "fieldname": "column_break_t8gfc",
-   "fieldtype": "Column Break"
   },
   {
    "depends_on": "eval:in_list([\"Twins\"],doc.singleton_or_multiple)",
@@ -164,11 +154,6 @@
    "options": "NICU\nStep Down\nWard"
   },
   {
-   "fieldname": "date_of_admission",
-   "fieldtype": "Date",
-   "label": "Date of Admission"
-  },
-  {
    "fieldname": "time_of_admission",
    "fieldtype": "Time",
    "label": "Time of admission"
@@ -177,11 +162,6 @@
    "fieldname": "day_of_life",
    "fieldtype": "Int",
    "label": "Day of life"
-  },
-  {
-   "fieldname": "gestational_age_at_admission",
-   "fieldtype": "Data",
-   "label": "Gestational Age at admission"
   },
   {
    "fieldname": "birth_weight",
@@ -212,22 +192,57 @@
    "options": "<p>Gestation age at birth</p>"
   },
   {
-   "fieldname": "gobd",
+   "fieldname": "mother_name",
    "fieldtype": "Data",
-   "label": "Gestation age at birth days"
+   "label": "Mother name"
   },
   {
-   "fieldname": "wfbw",
+   "fieldname": "section_break_pztdn",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_byhiu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "gab_w",
+   "fieldtype": "Int",
+   "label": "weeks"
+  },
+  {
+   "fieldname": "gab_d",
+   "fieldtype": "Select",
+   "label": "days",
+   "options": "0\n1\n2\n3\n4\n5\n6"
+  },
+  {
+   "default": "0 Weeks 0 Days",
+   "fieldname": "gab_v",
    "fieldtype": "Data",
-   "label": "Gestation age at birth weeks"
+   "is_virtual": 1,
+   "label": "Gestation Age At Birth (Auto)"
+  },
+  {
+   "fieldname": "gaa_v",
+   "fieldtype": "Data",
+   "is_virtual": 1,
+   "label": "Gestational Age at admission"
+  },
+  {
+   "fieldname": "doa",
+   "fieldtype": "Date",
+   "label": "Date of Admission"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-03-31 15:15:15.233275",
+ "modified": "2023-04-05 17:26:13.786779",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Opening page",
+ "name_case": "Title Case",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

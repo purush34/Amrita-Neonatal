@@ -1,0 +1,151 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-04-02 02:47:15.019273",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "baby_id",
+  "name1",
+  "consultants_agreed_section",
+  "jayasree",
+  "if_jayasree",
+  "column_break_rvlud",
+  "perraju",
+  "if_perraju",
+  "column_break_rr47s",
+  "ashwin",
+  "if_ashwin",
+  "column_break_gltap",
+  "lakshmi",
+  "if_lakshmi",
+  "column_break_gkbfb",
+  "smrithi",
+  "if_smrithi",
+  "section_break_pvism"
+ ],
+ "fields": [
+  {
+   "fieldname": "baby_id",
+   "fieldtype": "Link",
+   "label": "Baby ID",
+   "options": "Opening page"
+  },
+  {
+   "fieldname": "name1",
+   "fieldtype": "Data",
+   "label": "Name"
+  },
+  {
+   "fieldname": "consultants_agreed_section",
+   "fieldtype": "Section Break",
+   "label": "Consultants Agreed"
+  },
+  {
+   "default": "0",
+   "fieldname": "jayasree",
+   "fieldtype": "Check",
+   "label": "Dr. Jayasree"
+  },
+  {
+   "depends_on": "eval:doc.jayasree==1",
+   "fieldname": "if_jayasree",
+   "fieldtype": "Select",
+   "options": "Yes\nNo\nNot Discussed"
+  },
+  {
+   "fieldname": "column_break_rvlud",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "perraju",
+   "fieldtype": "Check",
+   "label": "Dr. Perraju"
+  },
+  {
+   "depends_on": "eval:doc.perraju==1",
+   "fieldname": "if_perraju",
+   "fieldtype": "Select",
+   "options": "Yes\nNo\nNot Discussed"
+  },
+  {
+   "fieldname": "column_break_rr47s",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "ashwin",
+   "fieldtype": "Check",
+   "label": "Dr. Ashwin"
+  },
+  {
+   "depends_on": "eval:doc.ashwin==1",
+   "fieldname": "if_ashwin",
+   "fieldtype": "Select",
+   "options": "Yes\nNo\nNot Discussed"
+  },
+  {
+   "fieldname": "column_break_gltap",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "lakshmi",
+   "fieldtype": "Check",
+   "label": "Dr. Lakshmi"
+  },
+  {
+   "depends_on": "eval:doc.lakshmi==1",
+   "fieldname": "if_lakshmi",
+   "fieldtype": "Select",
+   "options": "Yes\nNo\nNot Discussed"
+  },
+  {
+   "fieldname": "column_break_gkbfb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "smrithi",
+   "fieldtype": "Check",
+   "label": "Dr. Smrithi"
+  },
+  {
+   "depends_on": "eval:doc.smrithi==1",
+   "fieldname": "if_smrithi",
+   "fieldtype": "Select",
+   "options": "Yes\nNo\nNot Discussed"
+  },
+  {
+   "fieldname": "section_break_pvism",
+   "fieldtype": "Section Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-04-02 02:47:15.019273",
+ "modified_by": "Administrator",
+ "module": "Amrita Neonet",
+ "name": "Cooling Criteria",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

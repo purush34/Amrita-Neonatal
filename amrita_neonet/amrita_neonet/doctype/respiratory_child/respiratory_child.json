@@ -27,13 +27,19 @@
   "diag_dis_text",
   "section_break_hlrrj",
   "o2_24",
+  "oxidation_calculation",
+  "o2c_m",
+  "o2c_o2",
+  "o2c_pa",
   "column_break_rwv1j",
   "highest_o2",
   "section_break_t7cl8",
   "intubation",
   "column_break_1m4ud",
-  "size_fixed_at",
+  "size",
+  "fixed_at",
   "reason",
+  "if_other",
   "section_break_ksecw",
   "surfactant",
   "column_break_nm3wx",
@@ -43,8 +49,12 @@
   "section_break_jaxgg",
   "ventilated",
   "column_break_rzzse",
-  "simv",
-  "hfov",
+  "simv_hfov",
+  "maximum_oxygenation_index_of_the_day_section",
+  "mapcm_h2o",
+  "o2_",
+  "pao2_mmh",
+  "oxygenation_index",
   "section_break_15cyk",
   "maximum_map_past_24_hours",
   "section_break_parfm",
@@ -52,17 +62,20 @@
   "section_break_lowqe",
   "pulmonary_vasodilators",
   "column_break_egfev",
-  "pul_vas",
-  "column_break_hnhvl",
+  "nitric_use_in_past_24_hours",
   "con_stop",
-  "column_break_9w0zh",
+  "column_break_hnhvl",
   "started",
   "stopped",
-  "section_break_qpxuo",
+  "sildenafil",
+  "sildenafil_ivpo",
+  "sil_dose",
+  "bosentan",
   "bosentan_po",
   "milrinone",
-  "sildenafil",
-  "sil_dose",
+  "milrinone_iv",
+  "column_break_9w0zh",
+  "section_break_qpxuo",
   "column_break_btm1e",
   "section_break_pocyh",
   "sedation_in_past_24_hours",
@@ -81,9 +94,14 @@
   "section_break_ozstk",
   "non_invasive",
   "column_break_sjdrz",
-  "if_non_invasive",
-  "column_break_sm4rd",
-  "ni_dose",
+  "nasal_cannula",
+  "nasal_cannula_dose",
+  "hhhfnc",
+  "hhhfnc_dose",
+  "bcpap",
+  "bcpap_dose",
+  "vent_cpap",
+  "vent_cpap_dose",
   "section_break_keu8c",
   "bpd_criteria",
   "column_break_lylsh",
@@ -203,6 +221,7 @@
    "label": "Highest O2 needed in past 24 hours "
   },
   {
+   "depends_on": "eval:in_list([\"Yes\"],doc.o2_24)",
    "fieldname": "section_break_t7cl8",
    "fieldtype": "Section Break"
   },
@@ -217,16 +236,10 @@
    "fieldtype": "Column Break"
   },
   {
-   "depends_on": "eval:in_list([\"Yes\"],doc.intubation)",
-   "fieldname": "size_fixed_at",
-   "fieldtype": "Data",
-   "label": "Size Fixed at"
-  },
-  {
    "fieldname": "reason",
    "fieldtype": "Select",
    "label": "Reason",
-   "options": "At birth\nAccidental extubation\nTube blocked\nRespiratory distress\nRespiratory failure\nFailure of extubation (<48 hours of extubation)\nProcedure"
+   "options": "At birth\nAccidental extubation\nTube blocked\nRespiratory distress\nRespiratory failure\nFailure of extubation (<48 hours of extubation)\nProcedure\nOther"
   },
   {
    "fieldname": "section_break_ksecw",
@@ -276,18 +289,6 @@
    "fieldtype": "Column Break"
   },
   {
-   "depends_on": "eval:in_list([\"Yes\"],doc.ventilated)",
-   "fieldname": "simv",
-   "fieldtype": "Data",
-   "label": "SIMV"
-  },
-  {
-   "depends_on": "eval:in_list([\"Yes\"],doc.ventilated)",
-   "fieldname": "hfov",
-   "fieldtype": "Data",
-   "label": "HFOV"
-  },
-  {
    "fieldname": "section_break_15cyk",
    "fieldtype": "Section Break"
   },
@@ -321,18 +322,12 @@
    "fieldtype": "Column Break"
   },
   {
-   "depends_on": "eval:in_list([\"Yes\"],doc.pulmonary_vasodilators)",
-   "fieldname": "pul_vas",
-   "fieldtype": "Select",
-   "options": "Nitric use in past 24 hours\nSildenafil\nBosentan\nMilrinone"
-  },
-  {
    "depends_on": "eval:in_list([\"Nitric use in past 24 hours\"],doc.pul_vas)",
    "fieldname": "column_break_hnhvl",
    "fieldtype": "Column Break"
   },
   {
-   "depends_on": "eval:doc.pulmonary_vasodilators == \"Yes\" && doc.pul_vas == \"Nitric use in past 24 hours\"",
+   "depends_on": "eval:doc.nitric_use_in_past_24_hours==1",
    "fieldname": "con_stop",
    "fieldtype": "Select",
    "options": "Continuing\nStopped"
@@ -343,23 +338,23 @@
    "fieldtype": "Column Break"
   },
   {
-   "depends_on": "eval:doc.pulmonary_vasodilators == \"Yes\" && doc.pul_vas == \"Nitric use in past 24 hours\"",
+   "depends_on": "eval:doc.nitric_use_in_past_24_hours==1",
    "fieldname": "started",
    "fieldtype": "Date",
    "label": "Started on"
   },
   {
-   "depends_on": "eval:doc.pulmonary_vasodilators == \"Yes\" && doc.pul_vas == \"Nitric use in past 24 hours\" && doc.con_stop==\"Stopped\"",
+   "depends_on": "eval:doc.nitric_use_in_past_24_hours==1 && doc.con_stop==\"Stopped\"",
    "fieldname": "stopped",
    "fieldtype": "Date",
    "label": "Stopped on"
   },
   {
-   "depends_on": "eval:doc.pulmonary_vasodilators == \"Yes\" && doc.pul_vas == \"Sildenafil\"",
+   "default": "0",
+   "depends_on": "eval:in_list([\"Yes\"],doc.pulmonary_vasodilators)",
    "fieldname": "sildenafil",
-   "fieldtype": "Select",
-   "label": "Sildenafil",
-   "options": "IV\nPO"
+   "fieldtype": "Check",
+   "label": "Sildenafil"
   },
   {
    "depends_on": "eval:doc.pulmonary_vasodilators == \"Yes\" && doc.pul_vas == \"Sildenafil\"",
@@ -379,9 +374,10 @@
    "label": "PO"
   },
   {
-   "depends_on": "eval:in_list([\"Milrinone\"],doc.pul_vas)",
+   "default": "0",
    "fieldname": "milrinone",
-   "fieldtype": "Data"
+   "fieldtype": "Check",
+   "label": "Milrinone"
   },
   {
    "fieldname": "sedation_in_past_24_hours",
@@ -464,21 +460,6 @@
    "fieldtype": "Column Break"
   },
   {
-   "depends_on": "eval:in_list([\"Yes\"],doc.non_invasive)",
-   "fieldname": "if_non_invasive",
-   "fieldtype": "Select",
-   "options": "Nasal cannula\nHHHFNC\nBCPAP\nVent CPAP"
-  },
-  {
-   "fieldname": "column_break_sm4rd",
-   "fieldtype": "Column Break"
-  },
-  {
-   "depends_on": "eval:in_list([\"Yes\"],doc.non_invasive)",
-   "fieldname": "ni_dose",
-   "fieldtype": "Data"
-  },
-  {
    "fieldname": "section_break_keu8c",
    "fieldtype": "Section Break"
   },
@@ -527,12 +508,163 @@
    "depends_on": "eval:in_list([\"Sildenafil\",\"Bosentan\",\"Milrinone\"],doc.pul_vas)",
    "fieldname": "section_break_qpxuo",
    "fieldtype": "Section Break"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.intubation)",
+   "fieldname": "size",
+   "fieldtype": "Data",
+   "label": "Size "
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.intubation)",
+   "fieldname": "fixed_at",
+   "fieldtype": "Data",
+   "label": "Fixed At"
+  },
+  {
+   "depends_on": "eval:in_list([\"Other\"],doc.reason)",
+   "fieldname": "if_other",
+   "fieldtype": "Data"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.ventilated)",
+   "fieldname": "simv_hfov",
+   "fieldtype": "Select",
+   "label": "SIMV/HFOV",
+   "options": "SIMV\nHFOV"
+  },
+  {
+   "fieldname": "maximum_oxygenation_index_of_the_day_section",
+   "fieldtype": "Section Break",
+   "label": "Maximum Oxygenation Index of the day"
+  },
+  {
+   "fieldname": "mapcm_h2o",
+   "fieldtype": "Float",
+   "label": "MAP(cm H2O)"
+  },
+  {
+   "fieldname": "o2_",
+   "fieldtype": "Float",
+   "label": "O2 (%)"
+  },
+  {
+   "fieldname": "pao2_mmh",
+   "fieldtype": "Float",
+   "label": "PaO2 mmH"
+  },
+  {
+   "fieldname": "oxygenation_index",
+   "fieldtype": "Float",
+   "is_virtual": 1,
+   "label": "Oxygenation Index"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:in_list([\"Yes\"],doc.non_invasive)",
+   "fieldname": "nasal_cannula",
+   "fieldtype": "Check",
+   "label": "Nasal Cannula"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:in_list([\"Yes\"],doc.non_invasive)",
+   "fieldname": "hhhfnc",
+   "fieldtype": "Check",
+   "label": "HHHFNC"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:in_list([\"Yes\"],doc.non_invasive)",
+   "fieldname": "bcpap",
+   "fieldtype": "Check",
+   "label": "BCPAP"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:in_list([\"Yes\"],doc.non_invasive)",
+   "fieldname": "vent_cpap",
+   "fieldtype": "Check",
+   "label": "Vent CPAP"
+  },
+  {
+   "depends_on": "eval:doc.nasal_cannula==1",
+   "fieldname": "nasal_cannula_dose",
+   "fieldtype": "Data"
+  },
+  {
+   "depends_on": "eval:doc.hhhfnc==1",
+   "fieldname": "hhhfnc_dose",
+   "fieldtype": "Data"
+  },
+  {
+   "depends_on": "eval:doc.bcpap==1",
+   "fieldname": "bcpap_dose",
+   "fieldtype": "Data"
+  },
+  {
+   "depends_on": "eval:doc.vent_cpap==1",
+   "fieldname": "vent_cpap_dose",
+   "fieldtype": "Data"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:in_list([\"Yes\"],doc.pulmonary_vasodilators)",
+   "fieldname": "nitric_use_in_past_24_hours",
+   "fieldtype": "Check",
+   "label": "Nitric use in past 24 hours "
+  },
+  {
+   "depends_on": "eval:doc.pulmonary_vasodilators == \"Yes\" && doc.pul_vas == \"Sildenafil\"",
+   "fieldname": "sildenafil_ivpo",
+   "fieldtype": "Select",
+   "options": "IV\nPO"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:in_list([\"Yes\"],doc.pulmonary_vasodilators)",
+   "fieldname": "bosentan",
+   "fieldtype": "Check",
+   "label": "Bosentan"
+  },
+  {
+   "depends_on": "eval:in_list([\"Milrinone\"],doc.pul_vas)",
+   "fieldname": "milrinone_iv",
+   "fieldtype": "Data",
+   "label": "IV"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.o2_24)",
+   "fieldname": "oxidation_calculation",
+   "fieldtype": "Heading",
+   "label": "Oxidation calculation"
+  },
+  {
+   "default": "0.0",
+   "depends_on": "eval:in_list([\"Yes\"],doc.o2_24)",
+   "fieldname": "o2c_m",
+   "fieldtype": "Data",
+   "label": "MAP (cm H20)"
+  },
+  {
+   "default": "0.0",
+   "depends_on": "eval:in_list([\"Yes\"],doc.o2_24)",
+   "fieldname": "o2c_o2",
+   "fieldtype": "Data",
+   "label": "O2 (%)"
+  },
+  {
+   "default": "1.0",
+   "depends_on": "eval:in_list([\"Yes\"],doc.o2_24)",
+   "fieldname": "o2c_pa",
+   "fieldtype": "Data",
+   "label": "PaO2 mmHg"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-03-16 18:07:44.067692",
+ "modified": "2023-04-06 09:48:30.516933",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Respiratory_child",

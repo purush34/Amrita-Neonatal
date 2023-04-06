@@ -1,0 +1,49 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-04-04 09:48:19.157683",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "mid",
+  "mo"
+ ],
+ "fields": [
+  {
+   "fieldname": "mid",
+   "fieldtype": "Data",
+   "label": "Baby Id"
+  },
+  {
+   "fieldname": "mo",
+   "fieldtype": "Data",
+   "label": "Baby of"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-04-04 09:48:19.157683",
+ "modified_by": "Administrator",
+ "module": "Amrita Neonet",
+ "name": "page3",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

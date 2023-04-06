@@ -7,6 +7,8 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+  "baby_id",
+  "mother_name",
   "gestation",
   "birthweight",
   "gender",
@@ -109,11 +111,21 @@
    "fieldtype": "HTML",
    "label": "Info",
    "options": "<p class=\"alert alert-warning\">Logit = -6.476 + 0.45 * CRIB II <br> Predicted death rate = e^Logit/ (1+e^Logit) <br> Total CRIB II score = Sum (points)<br>The range of possible CRIB II score is 0 to 27</p>"
+  },
+  {
+   "fieldname": "baby_id",
+   "fieldtype": "Data",
+   "label": "Baby ID"
+  },
+  {
+   "fieldname": "mother_name",
+   "fieldtype": "Data",
+   "label": "Mother Name"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-03-16 18:26:10.289071",
+ "modified": "2023-04-04 17:53:34.202893",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "CRIB score",

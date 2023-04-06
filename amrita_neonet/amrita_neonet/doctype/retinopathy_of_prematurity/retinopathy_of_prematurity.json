@@ -8,27 +8,31 @@
  "engine": "InnoDB",
  "field_order": [
   "baby_id",
+  "mother_name",
   "add_reports"
  ],
  "fields": [
   {
    "fieldname": "baby_id",
-   "fieldtype": "Link",
+   "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Baby ID",
-   "options": "Opening page",
-   "reqd": 1
+   "label": "Baby ID"
   },
   {
    "fieldname": "add_reports",
    "fieldtype": "Table",
    "label": "Add Reports",
    "options": "Retinopathy of Prematurity_child"
+  },
+  {
+   "fieldname": "mother_name",
+   "fieldtype": "Data",
+   "label": "Mother Name"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-03-06 18:03:51.752825",
+ "modified": "2023-04-04 18:04:54.652999",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Retinopathy of Prematurity",

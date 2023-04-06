@@ -8,25 +8,30 @@
  "engine": "InnoDB",
  "field_order": [
   "baby_id",
+  "mother_name",
   "daily_observations"
  ],
  "fields": [
   {
    "fieldname": "baby_id",
-   "fieldtype": "Link",
-   "label": "Baby ID",
-   "options": "Opening page"
+   "fieldtype": "Data",
+   "label": "Baby ID"
   },
   {
    "fieldname": "daily_observations",
    "fieldtype": "Table",
    "label": "Daily Observations",
    "options": "opthalmology_child"
+  },
+  {
+   "fieldname": "mother_name",
+   "fieldtype": "Data",
+   "label": "Mother Name"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-03-16 14:52:52.805899",
+ "modified": "2023-04-04 17:49:09.213264",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Opthalmology",

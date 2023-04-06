@@ -41,6 +41,8 @@
   "temperature_instabilty",
   "hypoglycaemia",
   "hyperglycaemia",
+  "others",
+  "other_text",
   "column_break_hjkmt",
   "irritability",
   "column_break_f54nc",
@@ -61,7 +63,14 @@
   "no_of_days_of_central_line_in_situ",
   "section_break_pcy9v",
   "lumbar_puncture_done_past_24_hours",
-  "puncture",
+  "section_break_ixy5g",
+  "wcc",
+  "column_break_rgufy",
+  "glucose",
+  "column_break_mlyvx",
+  "protein",
+  "column_break_qixvp",
+  "culture_bacteria",
   "cul",
   "section_break_nhqk7",
   "antibiotics",
@@ -72,6 +81,8 @@
   "column_break_8uph9",
   "start_date",
   "column_break_rvde9",
+  "status_biotics",
+  "column_break_g1ogk",
   "end_date",
   "column_break_f0ajv",
   "days_antibiotic",
@@ -80,8 +91,12 @@
   "section_break_w86dz",
   "antifungals_used",
   "column_break_ezjqk",
+  "type_antifungals",
+  "column_break_i7h9h",
   "start_antifungal",
   "column_break_udyvh",
+  "status_fungals",
+  "column_break_dlsjt",
   "end_antifungal",
   "column_break_7o4fq",
   "days_antifungal",
@@ -239,7 +254,7 @@
   {
    "depends_on": "eval:in_list([\"Positive\"],doc.last_blood_culture_report_within_past_72_hours)",
    "fieldname": "textboxb",
-   "fieldtype": "Text"
+   "fieldtype": "Small Text"
   },
   {
    "fieldname": "section_break_oucwy",
@@ -268,15 +283,9 @@
    "options": "No\nYes"
   },
   {
-   "depends_on": "eval:in_list([\"Yes\"],doc.lumbar_puncture_done_past_24_hours)",
-   "fieldname": "puncture",
-   "fieldtype": "Select",
-   "options": "WCC\nGlucose\nProtien\nCulture"
-  },
-  {
-   "depends_on": "eval:in_list([\"Culture\"],doc.puncture)",
+   "depends_on": "eval:doc.culture_bacteria==1",
    "fieldname": "cul",
-   "fieldtype": "Text"
+   "fieldtype": "Data"
   },
   {
    "fieldname": "section_break_nhqk7",
@@ -287,13 +296,6 @@
    "fieldtype": "Select",
    "label": "Antibiotics in past 24 hours",
    "options": "No\nYes"
-  },
-  {
-   "depends_on": "eval:in_list([\"Yes\"],doc.antibiotics)",
-   "fieldname": "antibiotics_used",
-   "fieldtype": "Select",
-   "label": "Antibiotics Used",
-   "options": "Ampicillin\nAmikacin\nPipercillin-Tazobactam\nCefaperozone-Sulbactam\nCefaperazone\nCeftazidime\nCefotaxime\nCefuroxime\nMeropenam\nAzithromycin\nErythromycin\nGentamicin\nVancomycin\nLinezolid\nSulfamethoxozole+Trimethoprim\nTrimethoprim\nCefixime\nColistin\nCiprofloxacin eye drops\nMoxifloxacin eye drops\nMupirocin ointment\nOthers"
   },
   {
    "fieldname": "column_break_d9vsl",
@@ -320,7 +322,7 @@
    "fieldtype": "Column Break"
   },
   {
-   "depends_on": "eval:in_list([\"Yes\"],doc.antibiotics)",
+   "depends_on": "eval:in_list([\"Stopped\"],doc.status_biotics)",
    "fieldname": "end_date",
    "fieldtype": "Data",
    "label": "End Date"
@@ -330,7 +332,7 @@
    "fieldtype": "Column Break"
   },
   {
-   "depends_on": "eval:in_list([\"Yes\"],doc.antibiotics)",
+   "depends_on": "eval:in_list([\"Stopped\"],doc.status_biotics)",
    "fieldname": "days_antibiotic",
    "fieldtype": "Data",
    "label": "No.of days"
@@ -372,7 +374,7 @@
    "fieldtype": "Column Break"
   },
   {
-   "depends_on": "eval:in_list([\"Yes\"],doc.antifungals)",
+   "depends_on": "eval:in_list([\"Stopped\"],doc.status_fungals)",
    "fieldname": "end_antifungal",
    "fieldtype": "Date",
    "label": "End Date"
@@ -382,7 +384,7 @@
    "fieldtype": "Column Break"
   },
   {
-   "depends_on": "eval:in_list([\"Yes\"],doc.antifungals)",
+   "depends_on": "eval:in_list([\"Stopped\"],doc.status_fungals)",
    "fieldname": "days_antifungal",
    "fieldtype": "Data",
    "label": "No.of days"
@@ -540,12 +542,100 @@
    "depends_on": "eval:in_list([\"Yes\"],doc.new_sepsis)",
    "fieldname": "section_break_seeic",
    "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.clinical_worsening==1",
+   "fieldname": "others",
+   "fieldtype": "Check",
+   "label": "Others"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.lumbar_puncture_done_past_24_hours)",
+   "fieldname": "section_break_ixy5g",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "wcc",
+   "fieldtype": "Check",
+   "label": "WCC"
+  },
+  {
+   "fieldname": "column_break_rgufy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "glucose",
+   "fieldtype": "Check",
+   "label": "Glucose"
+  },
+  {
+   "fieldname": "column_break_mlyvx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "protein",
+   "fieldtype": "Check",
+   "label": "Protein"
+  },
+  {
+   "fieldname": "column_break_qixvp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "culture_bacteria",
+   "fieldtype": "Check",
+   "label": "Culture"
+  },
+  {
+   "fieldname": "antibiotics_used",
+   "fieldtype": "Select",
+   "label": "Antibiotics used",
+   "options": "Ampicillin\nAmikacin\nPipercillin-Tazobactam\nCefaperozone-Sulbactam\nCefaperazone\nCeftazidime\nCefotaxime\nCefuroxime\nMeropenam\nAzithromycin\nErythromycin\nGentamicin\nVancomycin\nLinezolid\nSulfamethoxozole+Trimethoprim\nTrimethoprim\nCefixime\nColistin\nCiprofloxacin eye drops\nMoxifloxacin eye drops\nMupirocin ointment\nOthers"
+  },
+  {
+   "depends_on": "eval:doc.others==1",
+   "fieldname": "other_text",
+   "fieldtype": "Data",
+   "label": "Others"
+  },
+  {
+   "fieldname": "status_biotics",
+   "fieldtype": "Select",
+   "options": "Continuing\nStopped"
+  },
+  {
+   "fieldname": "column_break_g1ogk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "status_fungals",
+   "fieldtype": "Select",
+   "options": "Continuing\nStopped"
+  },
+  {
+   "fieldname": "column_break_dlsjt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.antifungals)",
+   "fieldname": "type_antifungals",
+   "fieldtype": "Select",
+   "options": "IV\nPO\nIntra ventricular\nIntrathecal\nTopical"
+  },
+  {
+   "fieldname": "column_break_i7h9h",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-03-16 19:08:29.165436",
+ "modified": "2023-04-02 02:32:14.158158",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "child_sepsis",

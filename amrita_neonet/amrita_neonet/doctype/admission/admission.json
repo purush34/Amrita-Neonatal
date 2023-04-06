@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:{baby_id} {mother_name}",
  "creation": "2023-03-06 17:28:00.860757",
  "default_view": "List",
  "doctype": "DocType",
@@ -8,7 +9,8 @@
  "engine": "InnoDB",
  "field_order": [
   "section_break_ynnkj",
-  "name1",
+  "baby_id",
+  "mother_name",
   "gestation_age_at_birth",
   "temp",
   "heart_rate",
@@ -20,13 +22,29 @@
   "admission_weight",
   "admission_ofc",
   "admission_length",
+  "transillum",
+  "if_transillum",
   "section_break_avxh3",
-  "reason_for_admission",
+  "reason_1",
   "blood_group_incompatabilities",
-  "sepsis",
-  "chd",
-  "hydrops",
-  "unspecified",
+  "sepsis_1",
+  "chd_1",
+  "hydrops_1",
+  "unspecified_1",
+  "section_break_wrv6d",
+  "reason_2",
+  "blood_group_incompatabilities_2",
+  "sepsis_2",
+  "chd_2",
+  "hydrops_2",
+  "unspecified_2",
+  "section_break_pbzop",
+  "reason_3",
+  "blood_group_incompatabilities_3",
+  "sepsis_3",
+  "chd_3",
+  "hydrops_3",
+  "unspecified_3",
   "admission_examination_section",
   "facies",
   "scalp",
@@ -66,7 +84,7 @@
   "section_break_ahtyk",
   "birth_trauma",
   "birth_trauma_text",
-  "congenital_section",
+  "congenital_anamoly",
   "respiratory_section",
   "diagnosis",
   "vap",
@@ -74,6 +92,7 @@
   "eventeration",
   "toa",
   "pneumothorax",
+  "pleural_effusion",
   "section_break_b9eoh",
   "intubated",
   "column_break_k8ffg",
@@ -88,28 +107,16 @@
   "cva",
   "ph_column",
   "c_ph",
-  "v_ph",
-  "a_ph",
   "pco2_column",
   "c_pco2",
-  "v_pco2",
-  "a_pco2",
   "hco3_column",
   "c_hco3",
-  "v_hco3",
-  "a_hco3",
   "be_column",
   "c_be",
-  "v_be",
-  "a_be",
   "lactate_column",
   "c_lactate",
-  "v_lactate",
-  "a_lactate",
   "blood_sugar_column",
   "c_bloodsugar",
-  "v_bloodsugar",
-  "a_bloodsugar",
   "section_break_x6ozq",
   "respiratory_text",
   "cardiovascular_section",
@@ -131,8 +138,7 @@
   "cooling_criteria",
   "column_break_k9jwe",
   "cooling_start_time",
-  "cooling_stop_time",
-  "sepsis_section"
+  "cooling_stop_time"
  ],
  "fields": [
   {
@@ -141,17 +147,10 @@
    "label": "Admission details"
   },
   {
-   "fieldname": "name1",
-   "fieldtype": "Link",
-   "label": "Name",
-   "options": "Opening page"
-  },
-  {
    "fetch_from": "name1.gestation_age_at_birth",
    "fieldname": "gestation_age_at_birth",
-   "fieldtype": "Link",
-   "label": "Gestation age at birth",
-   "options": "Opening page"
+   "fieldtype": "Data",
+   "label": "Gestation age at birth"
   },
   {
    "fieldname": "temp",
@@ -189,9 +188,8 @@
   {
    "fetch_from": "name1.admission_weight",
    "fieldname": "admission_weight",
-   "fieldtype": "Link",
-   "label": "Admission weight",
-   "options": "Opening page"
+   "fieldtype": "Data",
+   "label": "Admission weight"
   },
   {
    "fieldname": "admission_ofc",
@@ -208,44 +206,11 @@
    "fieldtype": "Section Break"
   },
   {
-   "fieldname": "reason_for_admission",
-   "fieldtype": "Select",
-   "label": "Reason for admission",
-   "options": "Pre- term\nType I Respiratory Distress Syndrome\nType II Respiratory Distress Syndrome\nIntra Uterine Growth retardation\nBlood Group Incompatabilities\nSepsis\nMeningitis\nAbsent/ Reversed End Diastolic flow/ AREDF\nInguinal Hernia\nCongenital Diaphragmatic Hernia- CDH\nTracheo-oesphageal Atresia- TEF\nPosterior Urethral Valve- PUV\nCongenital Heart Disease- CHD\nHydrops\nHypoglycaemia\nSigns of respiratory distress\nMeningomyelocoel\nAntenatally detected anomaly\nUnspecified"
-  },
-  {
-   "depends_on": "eval:in_list([\"Blood Group Incompatabilities\"],doc.reason)",
+   "depends_on": "eval:in_list([\"Blood Group Incompatabilities\"],doc.reason_1)",
    "fieldname": "blood_group_incompatabilities",
    "fieldtype": "Select",
    "label": "Blood Group Incompatabilities",
-   "options": "O-B"
-  },
-  {
-   "depends_on": "eval:in_list([\"Sepsis\"],doc.reason)",
-   "fieldname": "sepsis",
-   "fieldtype": "Select",
-   "label": "Sepsis",
-   "options": "Culture Negative\nGram Negative\nFungal"
-  },
-  {
-   "depends_on": "eval:in_list([\"Congenital Heart Disease- CHD\"],doc.reason)",
-   "fieldname": "chd",
-   "fieldtype": "Select",
-   "label": "Congenital Heart Disease CHD",
-   "options": "AVSD\nTGA\nTetrology of Fallots"
-  },
-  {
-   "depends_on": "eval:in_list([\"Hydrops\"],doc.reason)",
-   "fieldname": "hydrops",
-   "fieldtype": "Select",
-   "label": "Hydrops",
-   "options": "Immune\nNon- Immune"
-  },
-  {
-   "depends_on": "eval:in_list([\"Unspecified\"],doc.reason)",
-   "fieldname": "unspecified",
-   "fieldtype": "Data",
-   "label": "Unspecified"
+   "options": "Rh\nO-A\nO-B"
   },
   {
    "fieldname": "admission_examination_section",
@@ -432,17 +397,13 @@
    "fieldname": "birth_trauma",
    "fieldtype": "Select",
    "label": "Birth Trauma",
-   "options": "Yes\nNo"
+   "options": "No\nYes"
   },
   {
+   "depends_on": "eval:in_list([\"Yes\"],doc.birth_trauma)",
    "fieldname": "birth_trauma_text",
    "fieldtype": "Data",
    "label": "Birth Trauma Text"
-  },
-  {
-   "fieldname": "congenital_section",
-   "fieldtype": "Section Break",
-   "label": "Congenital"
   },
   {
    "fieldname": "respiratory_section",
@@ -497,7 +458,7 @@
    "fieldname": "intubated",
    "fieldtype": "Select",
    "label": "Intubated",
-   "options": "Yes\nNo"
+   "options": "No\nYes"
   },
   {
    "depends_on": "eval:in_list([\"Yes\"],doc.intubated)",
@@ -551,8 +512,9 @@
   },
   {
    "fieldname": "cva",
-   "fieldtype": "HTML",
-   "options": "<h5><br><br><br>Capillary<br><br><br><br>Venous<br><br><br><br>Arterial</h5>"
+   "fieldtype": "Select",
+   "label": "Select",
+   "options": "Capillary\nVenous\nArterial"
   },
   {
    "fieldname": "ph_column",
@@ -565,28 +527,12 @@
    "fieldtype": "Data"
   },
   {
-   "fieldname": "v_ph",
-   "fieldtype": "Data"
-  },
-  {
-   "fieldname": "a_ph",
-   "fieldtype": "Data"
-  },
-  {
    "fieldname": "pco2_column",
    "fieldtype": "Column Break",
    "label": "Pco2"
   },
   {
    "fieldname": "c_pco2",
-   "fieldtype": "Data"
-  },
-  {
-   "fieldname": "v_pco2",
-   "fieldtype": "Data"
-  },
-  {
-   "fieldname": "a_pco2",
    "fieldtype": "Data"
   },
   {
@@ -599,28 +545,12 @@
    "fieldtype": "Data"
   },
   {
-   "fieldname": "v_hco3",
-   "fieldtype": "Data"
-  },
-  {
-   "fieldname": "a_hco3",
-   "fieldtype": "Data"
-  },
-  {
    "fieldname": "be_column",
    "fieldtype": "Column Break",
    "label": "BE"
   },
   {
    "fieldname": "c_be",
-   "fieldtype": "Data"
-  },
-  {
-   "fieldname": "v_be",
-   "fieldtype": "Data"
-  },
-  {
-   "fieldname": "a_be",
    "fieldtype": "Data"
   },
   {
@@ -633,28 +563,12 @@
    "fieldtype": "Data"
   },
   {
-   "fieldname": "v_lactate",
-   "fieldtype": "Data"
-  },
-  {
-   "fieldname": "a_lactate",
-   "fieldtype": "Data"
-  },
-  {
    "fieldname": "blood_sugar_column",
    "fieldtype": "Column Break",
    "label": "BloodSugar"
   },
   {
    "fieldname": "c_bloodsugar",
-   "fieldtype": "Data"
-  },
-  {
-   "fieldname": "v_bloodsugar",
-   "fieldtype": "Data"
-  },
-  {
-   "fieldname": "a_bloodsugar",
    "fieldtype": "Data"
   },
   {
@@ -727,7 +641,7 @@
   {
    "fieldname": "cardio_text",
    "fieldtype": "Text",
-   "label": "Cardio_Text"
+   "label": "Cardio"
   },
   {
    "fieldname": "gastro_intestinal_section",
@@ -747,7 +661,7 @@
   {
    "fieldname": "cns_text",
    "fieldtype": "Text",
-   "label": "CNS_Text"
+   "label": "CNS"
   },
   {
    "fieldname": "section_break_anccs",
@@ -776,17 +690,173 @@
    "label": "Cooling stop time"
   },
   {
-   "fieldname": "sepsis_section",
-   "fieldtype": "Section Break",
-   "label": "Sepsis"
+   "fieldname": "transillum",
+   "fieldtype": "Select",
+   "label": "Transillum",
+   "options": "Yes\nNo"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.transillum)",
+   "fieldname": "if_transillum",
+   "fieldtype": "Select",
+   "options": "Pos\nNeg"
+  },
+  {
+   "fieldname": "congenital_anamoly",
+   "fieldtype": "Select",
+   "label": "Congenital anomaly",
+   "options": "Yes\nNo"
+  },
+  {
+   "depends_on": "eval:in_list([\"Pleural Effusion\"],doc.diagnosis)",
+   "fieldname": "pleural_effusion",
+   "fieldtype": "Select",
+   "label": "Pleural Effusion",
+   "options": "Right\nLeft"
+  },
+  {
+   "fetch_from": "name1.mid",
+   "fieldname": "baby_id",
+   "fieldtype": "Data",
+   "label": "Baby ID"
+  },
+  {
+   "fieldname": "reason_1",
+   "fieldtype": "Select",
+   "label": "Reason for admission",
+   "options": "Pre- term\nType I Respiratory Distress Syndrome\nType II Respiratory Distress Syndrome\nIntra Uterine Growth retardation\nBlood Group Incompatabilities\nSepsis\nMeningitis\nAbsent/ Reversed End Diastolic flow/ AREDF\nInguinal Hernia\nCongenital Diaphragmatic Hernia- CDH\nTracheo-oesphageal Atresia- TEF\nPosterior Urethral Valve- PUV\nCongenital Heart Disease- CHD\nHydrops\nHypoglycaemia\nSigns of respiratory distress\nMeningomyelocoel\nAntenatally detected anomaly\nUnspecified"
+  },
+  {
+   "depends_on": "eval:in_list([\"Sepsis\"],doc.reason_1)",
+   "fieldname": "sepsis_1",
+   "fieldtype": "Select",
+   "label": "Sepsis",
+   "options": "Culture Negative\nGram Negative\nFungal\nSuspected Sepsis"
+  },
+  {
+   "depends_on": "eval:in_list([\"Congenital Heart Disease- CHD\"],doc.reason_1)",
+   "fieldname": "chd_1",
+   "fieldtype": "Select",
+   "label": "Congenital Heart Disease CHD",
+   "options": "ASD\nVSD\nAVSD\nTGA\nTetrology of Fallots\nDORV"
+  },
+  {
+   "depends_on": "eval:in_list([\"Hydrops\"],doc.reason_1)",
+   "fieldname": "hydrops_1",
+   "fieldtype": "Select",
+   "label": "Hydrops",
+   "options": "Immune\nNon- Immune"
+  },
+  {
+   "depends_on": "eval:in_list([\"Unspecified\"],doc.reason_1)",
+   "fieldname": "unspecified_1",
+   "fieldtype": "Data",
+   "label": "Unspecified"
+  },
+  {
+   "depends_on": "eval:doc.reason_1 != \"Unspecified\"",
+   "fieldname": "section_break_wrv6d",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "reason_2",
+   "fieldtype": "Select",
+   "label": "Reason - 2",
+   "options": "Pre- term\nType I Respiratory Distress Syndrome\nType II Respiratory Distress Syndrome\nIntra Uterine Growth retardation\nBlood Group Incompatabilities\nSepsis\nMeningitis\nAbsent/ Reversed End Diastolic flow/ AREDF\nInguinal Hernia\nCongenital Diaphragmatic Hernia- CDH\nTracheo-oesphageal Atresia- TEF\nPosterior Urethral Valve- PUV\nCongenital Heart Disease- CHD\nHydrops\nHypoglycaemia\nSigns of respiratory distress\nMeningomyelocoel\nAntenatally detected anomaly\nUnspecified"
+  },
+  {
+   "depends_on": "eval:in_list([\"Blood Group Incompatabilities\"],doc.reason_2)",
+   "fieldname": "blood_group_incompatabilities_2",
+   "fieldtype": "Select",
+   "label": "Blood Group Incompatabilities",
+   "options": "Rh\nO-A\nO-B"
+  },
+  {
+   "depends_on": "eval:in_list([\"Sepsis\"],doc.reason_2)",
+   "fieldname": "sepsis_2",
+   "fieldtype": "Select",
+   "label": "Sepsis",
+   "options": "Culture Negative\nGram Negative\nFungal\nSuspected Sepsis"
+  },
+  {
+   "depends_on": "eval:in_list([\"Congenital Heart Disease- CHD\"],doc.reason_2)",
+   "fieldname": "chd_2",
+   "fieldtype": "Select",
+   "label": "Congenital Heart Disease CHD",
+   "options": "ASD\nVSD\nAVSD\nTGA\nTetrology of Fallots\nDORV"
+  },
+  {
+   "depends_on": "eval:in_list([\"Hydrops\"],doc.reason_2)",
+   "fieldname": "hydrops_2",
+   "fieldtype": "Select",
+   "label": "Hydrops",
+   "options": "Immune\nNon- Immune"
+  },
+  {
+   "depends_on": "eval:in_list([\"Unspecified\"],doc.reason_2)",
+   "fieldname": "unspecified_2",
+   "fieldtype": "Data",
+   "label": "Unspecified"
+  },
+  {
+   "fieldname": "section_break_pbzop",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:(doc.reason_2!=\"Unspecified\")",
+   "fieldname": "reason_3",
+   "fieldtype": "Select",
+   "label": "Reason - 3",
+   "options": "Pre- term\nType I Respiratory Distress Syndrome\nType II Respiratory Distress Syndrome\nIntra Uterine Growth retardation\nBlood Group Incompatabilities\nSepsis\nMeningitis\nAbsent/ Reversed End Diastolic flow/ AREDF\nInguinal Hernia\nCongenital Diaphragmatic Hernia- CDH\nTracheo-oesphageal Atresia- TEF\nPosterior Urethral Valve- PUV\nCongenital Heart Disease- CHD\nHydrops\nHypoglycaemia\nSigns of respiratory distress\nMeningomyelocoel\nAntenatally detected anomaly\nUnspecified"
+  },
+  {
+   "depends_on": "eval:in_list([\"Blood Group Incompatabilities\"],doc.reason_3)",
+   "fieldname": "blood_group_incompatabilities_3",
+   "fieldtype": "Select",
+   "label": "Blood Group Incompatabilities",
+   "options": "Rh\nO-A\nO-B"
+  },
+  {
+   "depends_on": "eval:in_list([\"Sepsis\"],doc.reason_3)",
+   "fieldname": "sepsis_3",
+   "fieldtype": "Select",
+   "label": "Sepsis",
+   "options": "Culture Negative\nGram Negative\nFungal\nSuspected Sepsis"
+  },
+  {
+   "depends_on": "eval:in_list([\"Congenital Heart Disease- CHD\"],doc.reason_3)",
+   "fieldname": "chd_3",
+   "fieldtype": "Select",
+   "label": "Congenital Heart Disease CHD",
+   "options": "ASD\nVSD\nAVSD\nTGA\nTetrology of Fallots\nDORV"
+  },
+  {
+   "depends_on": "eval:in_list([\"Hydrops\"],doc.reason_3)",
+   "fieldname": "hydrops_3",
+   "fieldtype": "Select",
+   "label": "Hydrops",
+   "options": "Immune\nNon- Immune"
+  },
+  {
+   "depends_on": "eval:in_list([\"Unspecified\"],doc.reason_3)",
+   "fieldname": "unspecified_3",
+   "fieldtype": "Data",
+   "label": "Unspecified"
+  },
+  {
+   "fieldname": "mother_name",
+   "fieldtype": "Data",
+   "label": "Mother Name"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-03-31 16:20:02.752347",
+ "modified": "2023-04-04 18:07:30.321745",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Admission",
+ "name_case": "Title Case",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

@@ -95,6 +95,9 @@
   "metabolic",
   "seizures",
   "undiagnosed",
+  "section_break_jiuvc",
+  "antenantal_follow_up",
+  "1st_visit_to_aims",
   "current_pregnancy_section",
   "conception",
   "column_break_jcnjk",
@@ -138,6 +141,7 @@
   "gs_ga",
   "gs_doplers",
   "gs_findings",
+  "efw_growth",
   "additional_scans",
   "number_of_additional_scans",
   "section_break_osldw",
@@ -145,6 +149,7 @@
   "ad_gestational",
   "ad_dopplers",
   "ad_findings",
+  "ewf_additional",
   "edd_column",
   "by_scan",
   "by_dates",
@@ -176,7 +181,7 @@
   "steroids",
   "column_break_0ofys",
   "steroids_no",
-  "betamethasone_column",
+  "if_steriods",
   "first_dose",
   "first_date",
   "column_break_knyhe",
@@ -1177,8 +1182,9 @@
   {
    "depends_on": "eval:in_list([\"IVF/IUI\"],doc.conception)",
    "fieldname": "donors",
-   "fieldtype": "Data",
-   "label": "Donors"
+   "fieldtype": "Select",
+   "label": "Donors",
+   "options": "Eggs\nSperms\nBoth"
   },
   {
    "fieldname": "section_break_iy0qu",
@@ -1274,12 +1280,6 @@
    "fieldname": "date_and_time",
    "fieldtype": "Datetime",
    "label": "Date and Time"
-  },
-  {
-   "depends_on": "eval:in_list([\"Yes\"],doc.steroids)",
-   "fieldname": "betamethasone_column",
-   "fieldtype": "HTML",
-   "options": "<h6>Betamethasone</h6>"
   },
   {
    "default": "0",
@@ -1392,11 +1392,42 @@
   {
    "fieldname": "column_break_knyhe",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_jiuvc",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "antenantal_follow_up",
+   "fieldtype": "Select",
+   "label": "Antenantal Follow Up",
+   "options": "At AIMS\nLocally"
+  },
+  {
+   "fieldname": "1st_visit_to_aims",
+   "fieldtype": "Data",
+   "label": "1st Visit to AIMS"
+  },
+  {
+   "fieldname": "efw_growth",
+   "fieldtype": "Data",
+   "label": "EFW (in grams)"
+  },
+  {
+   "fieldname": "ewf_additional",
+   "fieldtype": "Data",
+   "label": "EFW (in grams)"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.steroids)",
+   "fieldname": "if_steriods",
+   "fieldtype": "Select",
+   "options": "Betamethasone\nDexamethasone"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-03-18 00:17:31.108225",
+ "modified": "2023-03-31 18:45:40.687275",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Maternal And Antenatal Details",

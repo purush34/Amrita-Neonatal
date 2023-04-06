@@ -8,27 +8,31 @@
  "engine": "InnoDB",
  "field_order": [
   "baby_id",
+  "mother_name",
   "daily_observations"
  ],
  "fields": [
   {
    "fieldname": "baby_id",
-   "fieldtype": "Link",
+   "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Baby ID",
-   "options": "Opening page",
-   "reqd": 1
+   "label": "Baby ID"
   },
   {
    "fieldname": "daily_observations",
    "fieldtype": "Table",
    "label": "Daily Observations",
    "options": "ent_child"
+  },
+  {
+   "fieldname": "mother_name",
+   "fieldtype": "Data",
+   "label": "Mother Name"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-03-16 16:15:07.982982",
+ "modified": "2023-04-04 17:49:35.224318",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "ENT and Swallow",

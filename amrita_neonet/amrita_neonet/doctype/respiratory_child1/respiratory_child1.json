@@ -1,0 +1,664 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-03-31 19:11:11.715580",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "date",
+  "section_break_trvur",
+  "new_diag_24",
+  "column_break_4ux1b",
+  "diag_24",
+  "column_break_qj3sh",
+  "cdh_24",
+  "evnt_pnemo_pe_chylo_24",
+  "toa_24",
+  "diag_24_text",
+  "section_break_4zckn",
+  "new_diag_dis",
+  "column_break_xhtpk",
+  "diag_dis",
+  "column_break_eglxp",
+  "cdh_dis",
+  "evnt_pnemo_pe_chylo_dis",
+  "toa_dis",
+  "diag_dis_text",
+  "section_break_hlrrj",
+  "o2_24",
+  "column_break_rwv1j",
+  "highest_o2",
+  "section_break_t7cl8",
+  "intubation",
+  "column_break_1m4ud",
+  "size",
+  "fixed_at",
+  "reason",
+  "if_other",
+  "section_break_ksecw",
+  "surfactant",
+  "column_break_nm3wx",
+  "number_of_doses",
+  "dose",
+  "product",
+  "section_break_jaxgg",
+  "ventilated",
+  "column_break_rzzse",
+  "simv_hfov",
+  "maximum_oxygenation_index_of_the_day_section",
+  "mapcm_h2o",
+  "o2_",
+  "pao2_mmh",
+  "oxygenation_index",
+  "section_break_15cyk",
+  "maximum_map_past_24_hours",
+  "section_break_parfm",
+  "pphn_pah",
+  "section_break_lowqe",
+  "pulmonary_vasodilators",
+  "column_break_egfev",
+  "nitric_use_in_past_24_hours",
+  "nitric_dose",
+  "con_stop",
+  "started",
+  "stopped",
+  "duration",
+  "column_break_hnhvl",
+  "sildenafil",
+  "sildenafil_ivpo",
+  "sil_dose",
+  "column_break_fhsxi",
+  "bosentan",
+  "bosentan_po",
+  "column_break_fh6dy",
+  "milrinone",
+  "milrinone_iv",
+  "section_break_pocyh",
+  "sedation_in_past_24_hours",
+  "column_break_o3qsp",
+  "if_sedation",
+  "column_break_gxzon",
+  "other",
+  "column_break_bewyj",
+  "sad_dose",
+  "section_break_avlpa",
+  "muscle_relaxation_in_past_24_hours",
+  "column_break_akjqj",
+  "if_muscle_relax",
+  "column_break_lnlbo",
+  "dos_mus",
+  "section_break_ozstk",
+  "non_invasive",
+  "column_break_sjdrz",
+  "nasal_cannula",
+  "nasal_cannula_dose",
+  "hhhfnc",
+  "hhhfnc_dose",
+  "bcpap",
+  "bcpap_dose",
+  "vent_cpap",
+  "vent_cpap_dose",
+  "section_break_keu8c",
+  "bpd_criteria",
+  "column_break_lylsh",
+  "o2_req",
+  "section_break_lts7n",
+  "free_text_box_for_discharge_letter"
+ ],
+ "fields": [
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_trvur",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "new_diag_24",
+   "fieldtype": "Select",
+   "label": "New Diagnosis in last 24 hours ",
+   "options": "No\nYes"
+  },
+  {
+   "fieldname": "column_break_4ux1b",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.new_diag_24)",
+   "fieldname": "diag_24",
+   "fieldtype": "Select",
+   "options": "Type 1 RDS\nType II RDS\nARDS\nVAP\nCongenital Pneumonia\nCPAM\nCongenital Diaphragmatic Hernia\nEventeration\nPulmonary Hypoplasia\nDelayed Perinatal Transition\nTransient Tachypnoea of Newborn\nTracheo-Oesophageal Atresia\nPneumothorax\nPleural Effusion\nChylothorax\nSequestration\nOther"
+  },
+  {
+   "fieldname": "column_break_qj3sh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:in_list([\"Congenital Diaphragmatic Hernia\"],doc.diag_24)",
+   "fieldname": "cdh_24",
+   "fieldtype": "Select",
+   "options": "Left\nRight\nBilateral"
+  },
+  {
+   "depends_on": "eval:in_list([\"Eventeration\",\"Pneumothorax\",\"Pleural Effusion\",\"Chylothorax\"],doc.diag_24)",
+   "fieldname": "evnt_pnemo_pe_chylo_24",
+   "fieldtype": "Select",
+   "options": "Left\nRight"
+  },
+  {
+   "depends_on": "eval:in_list([\"Tracheo-Oesophageal Atresia\"],doc.diag_24)",
+   "fieldname": "toa_24",
+   "fieldtype": "Select",
+   "options": "Type 1\nType 2\nType 3\nType 4"
+  },
+  {
+   "depends_on": "eval:in_list([\"VAP\",\"CPAM\",\"Other\"],doc.diag_24)",
+   "fieldname": "diag_24_text",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "section_break_4zckn",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "new_diag_dis",
+   "fieldtype": "Select",
+   "label": "New Diagnosis for discharge",
+   "options": "No\nYes"
+  },
+  {
+   "fieldname": "column_break_xhtpk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.new_diag_dis)",
+   "fieldname": "diag_dis",
+   "fieldtype": "Select",
+   "options": "Type 1 RDS\nType II RDS\nARDS\nVAP\nCongenital Pneumonia\nCPAM\nCongenital Diaphragmatic Hernia\nEventeration\nPulmonary Hypoplasia\nDelayed Perinatal Transition\nTransient Tachypnoea of Newborn\nTracheo-Oesophageal Atresia\nPneumothorax\nPleural Effusion\nChylothorax\nSequestration\nOther"
+  },
+  {
+   "fieldname": "column_break_eglxp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:in_list([\"Congenital Diaphragmatic Hernia\"],doc.diag_dis)",
+   "fieldname": "cdh_dis",
+   "fieldtype": "Select",
+   "options": "Left\nRight\nBilateral"
+  },
+  {
+   "depends_on": "eval:in_list([\"Eventeration\",\"Pneumothorax\",\"Pleural Effusion\",\"Chylothorax\"],doc.diag_dis)",
+   "fieldname": "evnt_pnemo_pe_chylo_dis",
+   "fieldtype": "Select",
+   "options": "Left\nRight"
+  },
+  {
+   "depends_on": "eval:in_list([\"Tracheo-Oesophageal Atresia\"],doc.diag_dis)",
+   "fieldname": "toa_dis",
+   "fieldtype": "Select",
+   "options": "Type 1\nType 2\nType 3\nType 4"
+  },
+  {
+   "depends_on": "eval:in_list([\"VAP\",\"CPAM\",\"Other\"],doc.diag_dis)",
+   "fieldname": "diag_dis_text",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "section_break_hlrrj",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "o2_24",
+   "fieldtype": "Select",
+   "label": "Oxygen needed in past 24 hours",
+   "options": "No\nYes"
+  },
+  {
+   "fieldname": "column_break_rwv1j",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.o2_24)",
+   "fieldname": "highest_o2",
+   "fieldtype": "Data",
+   "label": "Highest O2 needed in past 24 hours "
+  },
+  {
+   "fieldname": "section_break_t7cl8",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "intubation",
+   "fieldtype": "Select",
+   "label": "Intubation in past 24 hours ",
+   "options": "No\nYes"
+  },
+  {
+   "fieldname": "column_break_1m4ud",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.intubation)",
+   "fieldname": "size",
+   "fieldtype": "Data",
+   "label": "Size "
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.intubation)",
+   "fieldname": "fixed_at",
+   "fieldtype": "Data",
+   "label": "Fixed At"
+  },
+  {
+   "fieldname": "reason",
+   "fieldtype": "Select",
+   "label": "Reason",
+   "options": "At birth\nAccidental extubation\nTube blocked\nRespiratory distress\nRespiratory failure\nFailure of extubation (<48 hours of extubation)\nProcedure\nOther"
+  },
+  {
+   "depends_on": "eval:in_list([\"Other\"],doc.reason)",
+   "fieldname": "if_other",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "section_break_ksecw",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "surfactant",
+   "fieldtype": "Select",
+   "label": "Surfactant in past 24 hours",
+   "options": "No\nYes"
+  },
+  {
+   "fieldname": "column_break_nm3wx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.surfactant)",
+   "fieldname": "number_of_doses",
+   "fieldtype": "Data",
+   "label": "Number of doses"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.surfactant)",
+   "fieldname": "dose",
+   "fieldtype": "Select",
+   "label": "Dose",
+   "options": "100 mg/kg\n200 mg/kg"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.surfactant)",
+   "fieldname": "product",
+   "fieldtype": "Data",
+   "label": "Product"
+  },
+  {
+   "fieldname": "section_break_jaxgg",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "ventilated",
+   "fieldtype": "Select",
+   "label": "Ventilated",
+   "options": "No\nYes"
+  },
+  {
+   "fieldname": "column_break_rzzse",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.ventilated)",
+   "fieldname": "simv_hfov",
+   "fieldtype": "Select",
+   "label": "SIMV/HFOV",
+   "options": "SIMV\nHFOV"
+  },
+  {
+   "fieldname": "maximum_oxygenation_index_of_the_day_section",
+   "fieldtype": "Section Break",
+   "label": "Maximum Oxygenation Index of the day"
+  },
+  {
+   "fieldname": "mapcm_h2o",
+   "fieldtype": "Float",
+   "label": "MAP(cm H2O)"
+  },
+  {
+   "fieldname": "o2_",
+   "fieldtype": "Float",
+   "label": "O2 (%)"
+  },
+  {
+   "fieldname": "pao2_mmh",
+   "fieldtype": "Float",
+   "label": "PaO2 mmH"
+  },
+  {
+   "fieldname": "oxygenation_index",
+   "fieldtype": "Float",
+   "is_virtual": 1,
+   "label": "Oxygenation Index"
+  },
+  {
+   "fieldname": "section_break_15cyk",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "maximum_map_past_24_hours",
+   "fieldtype": "Data",
+   "label": "Maximum MAP past 24 hours"
+  },
+  {
+   "fieldname": "section_break_parfm",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "pphn_pah",
+   "fieldtype": "Select",
+   "label": "PPHN/PAH",
+   "options": "No\nYes"
+  },
+  {
+   "fieldname": "section_break_lowqe",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "pulmonary_vasodilators",
+   "fieldtype": "Select",
+   "label": "Pulmonary Vasodilators ",
+   "options": "No\nYes"
+  },
+  {
+   "fieldname": "column_break_egfev",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:in_list([\"Yes\"],doc.pulmonary_vasodilators)",
+   "fieldname": "nitric_use_in_past_24_hours",
+   "fieldtype": "Check",
+   "label": "Nitric use in past 24 hours"
+  },
+  {
+   "depends_on": "eval:doc.nitric_use_in_past_24_hours==1",
+   "fieldname": "con_stop",
+   "fieldtype": "Select",
+   "options": "Continuing\nStopped"
+  },
+  {
+   "depends_on": "eval:doc.nitric_use_in_past_24_hours==1",
+   "fieldname": "column_break_hnhvl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.nitric_use_in_past_24_hours==1",
+   "fieldname": "started",
+   "fieldtype": "Date",
+   "label": "Started on"
+  },
+  {
+   "depends_on": "eval:doc.con_stop==\"Stopped\" && doc.nitric_use_in_past_24_hours==1",
+   "fieldname": "stopped",
+   "fieldtype": "Date",
+   "label": "Stopped on"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:in_list([\"Yes\"],doc.pulmonary_vasodilators)",
+   "fieldname": "sildenafil",
+   "fieldtype": "Check",
+   "label": "Sildenafil"
+  },
+  {
+   "depends_on": "eval:doc.sildenafil==1",
+   "fieldname": "sildenafil_ivpo",
+   "fieldtype": "Select",
+   "options": "IV\nPO"
+  },
+  {
+   "depends_on": "eval:doc.sildenafil==1",
+   "fieldname": "sil_dose",
+   "fieldtype": "Data",
+   "label": "Dose"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:in_list([\"Yes\"],doc.pulmonary_vasodilators)",
+   "fieldname": "bosentan",
+   "fieldtype": "Check",
+   "label": "Bosentan"
+  },
+  {
+   "depends_on": "eval:doc.bosentan==1",
+   "fieldname": "bosentan_po",
+   "fieldtype": "Data",
+   "label": "PO"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:in_list([\"Yes\"],doc.pulmonary_vasodilators)",
+   "fieldname": "milrinone",
+   "fieldtype": "Check",
+   "label": "Milrinone"
+  },
+  {
+   "depends_on": "eval:doc.milrinone==1",
+   "fieldname": "milrinone_iv",
+   "fieldtype": "Data",
+   "label": "IV"
+  },
+  {
+   "fieldname": "section_break_pocyh",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "sedation_in_past_24_hours",
+   "fieldtype": "Select",
+   "label": "Sedation in past 24 hours ",
+   "options": "No\nYes"
+  },
+  {
+   "fieldname": "column_break_o3qsp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.sedation_in_past_24_hours)",
+   "fieldname": "if_sedation",
+   "fieldtype": "Select",
+   "options": "Morphine\nFentanyl\nOther"
+  },
+  {
+   "depends_on": "eval:in_list([\"Other\"],doc.if_sedation)",
+   "fieldname": "column_break_gxzon",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:in_list([\"Other\"],doc.if_sedation)",
+   "fieldname": "other",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "column_break_bewyj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.sedation_in_past_24_hours)",
+   "fieldname": "sad_dose",
+   "fieldtype": "Data",
+   "label": "Dose"
+  },
+  {
+   "fieldname": "section_break_avlpa",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "muscle_relaxation_in_past_24_hours",
+   "fieldtype": "Select",
+   "label": "Muscle relaxation in past 24 hours",
+   "options": "No\nYes"
+  },
+  {
+   "fieldname": "column_break_akjqj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.muscle_relaxation_in_past_24_hours)",
+   "fieldname": "if_muscle_relax",
+   "fieldtype": "Select",
+   "options": "Atracurium\nVecuronium\nPancuronium"
+  },
+  {
+   "fieldname": "column_break_lnlbo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.muscle_relaxation_in_past_24_hours)",
+   "fieldname": "dos_mus",
+   "fieldtype": "Data",
+   "label": "Dose"
+  },
+  {
+   "fieldname": "section_break_ozstk",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "non_invasive",
+   "fieldtype": "Select",
+   "label": "Non-Invasive",
+   "options": "No\nYes"
+  },
+  {
+   "fieldname": "column_break_sjdrz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:in_list([\"Yes\"],doc.non_invasive)",
+   "fieldname": "nasal_cannula",
+   "fieldtype": "Check",
+   "label": "Nasal Cannula"
+  },
+  {
+   "depends_on": "eval:doc.nasal_cannula==1",
+   "fieldname": "nasal_cannula_dose",
+   "fieldtype": "Data"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:in_list([\"Yes\"],doc.non_invasive)",
+   "fieldname": "hhhfnc",
+   "fieldtype": "Check",
+   "label": "HHHFNC"
+  },
+  {
+   "depends_on": "eval:doc.hhhfnc==1",
+   "fieldname": "hhhfnc_dose",
+   "fieldtype": "Data"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:in_list([\"Yes\"],doc.non_invasive)",
+   "fieldname": "bcpap",
+   "fieldtype": "Check",
+   "label": "BCPAP"
+  },
+  {
+   "depends_on": "eval:doc.bcpap==1",
+   "fieldname": "bcpap_dose",
+   "fieldtype": "Data"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:in_list([\"Yes\"],doc.non_invasive)",
+   "fieldname": "vent_cpap",
+   "fieldtype": "Check",
+   "label": "Vent CPAP"
+  },
+  {
+   "depends_on": "eval:doc.vent_cpap==1",
+   "fieldname": "vent_cpap_dose",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "section_break_keu8c",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "bpd_criteria",
+   "fieldtype": "Select",
+   "label": "Meets criteria for BPD",
+   "options": "No\nYes"
+  },
+  {
+   "fieldname": "column_break_lylsh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.bpd_criteria)",
+   "fieldname": "o2_req",
+   "fieldtype": "Select",
+   "options": "O2 requirement for a total of 28 days or more\nO2 requirement at 36 weeks corrected gestational age"
+  },
+  {
+   "fieldname": "section_break_lts7n",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "free_text_box_for_discharge_letter",
+   "fieldtype": "Text",
+   "label": "Free Text Box for Discharge Letter",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_fhsxi",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_fh6dy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.nitric_use_in_past_24_hours==1",
+   "fieldname": "nitric_dose",
+   "fieldtype": "Data",
+   "label": "Dose"
+  },
+  {
+   "depends_on": "eval:doc.nitric_use_in_past_24_hours==1",
+   "fieldname": "duration",
+   "fieldtype": "Data",
+   "label": "Duration"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-03-31 19:33:13.192544",
+ "modified_by": "Administrator",
+ "module": "Amrita Neonet",
+ "name": "Respiratory_child1",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

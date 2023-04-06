@@ -1,0 +1,61 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-04-03 09:31:57.417503",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "mid",
+  "page1",
+  "page2",
+  "page3"
+ ],
+ "fields": [
+  {
+   "fieldname": "page1",
+   "fieldtype": "Button",
+   "label": "page1"
+  },
+  {
+   "fieldname": "page2",
+   "fieldtype": "Button",
+   "label": "page2"
+  },
+  {
+   "fieldname": "page3",
+   "fieldtype": "Button",
+   "label": "page3"
+  },
+  {
+   "fieldname": "mid",
+   "fieldtype": "Link",
+   "label": "Baby ID",
+   "options": "testBabies"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2023-04-04 10:48:05.663213",
+ "modified_by": "Administrator",
+ "module": "Amrita Neonet",
+ "name": "Test-1",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

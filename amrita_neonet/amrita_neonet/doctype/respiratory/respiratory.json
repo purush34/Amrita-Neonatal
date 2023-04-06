@@ -1,37 +1,50 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:{baby_id} {mother_name}",
  "creation": "2023-03-06 17:28:35.546606",
  "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+  "respiratory",
   "baby_id",
+  "mother_name",
   "daily_observations"
  ],
  "fields": [
   {
    "fieldname": "baby_id",
-   "fieldtype": "Link",
+   "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Baby ID",
-   "options": "Opening page",
-   "reqd": 1
+   "label": "Baby ID"
   },
   {
    "fieldname": "daily_observations",
    "fieldtype": "Table",
    "label": "Daily Observations",
    "options": "Respiratory_child"
+  },
+  {
+   "fieldname": "mother_name",
+   "fieldtype": "Data",
+   "label": "Mother Name"
+  },
+  {
+   "fieldname": "respiratory",
+   "fieldtype": "Heading",
+   "label": "RESPIRATORY"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-03-07 20:44:10.567667",
+ "modified": "2023-04-05 14:13:40.153722",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Respiratory",
+ "name_case": "Title Case",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
