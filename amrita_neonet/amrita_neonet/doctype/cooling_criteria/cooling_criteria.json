@@ -29,7 +29,7 @@
  "fields": [
   {
    "fieldname": "baby_id",
-   "fieldtype": "Link",
+   "fieldtype": "Data",
    "label": "Baby ID",
    "options": "Opening page"
   },
@@ -126,7 +126,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-04-02 02:47:15.019273",
+ "modified": "2023-04-07 18:26:38.257476",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Cooling Criteria",

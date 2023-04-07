@@ -63,10 +63,10 @@
   "pulmonary_vasodilators",
   "column_break_egfev",
   "nitric_use_in_past_24_hours",
-  "con_stop",
-  "column_break_hnhvl",
   "started",
   "stopped",
+  "duration",
+  "column_break_hnhvl",
   "sildenafil",
   "sildenafil_ivpo",
   "sil_dose",
@@ -217,8 +217,8 @@
   {
    "depends_on": "eval:in_list([\"Yes\"],doc.o2_24)",
    "fieldname": "highest_o2",
-   "fieldtype": "Data",
-   "label": "Highest O2 needed in past 24 hours "
+   "fieldtype": "Float",
+   "label": "Maximum Oxygenation Index of the day"
   },
   {
    "depends_on": "eval:in_list([\"Yes\"],doc.o2_24)",
@@ -327,12 +327,6 @@
    "fieldtype": "Column Break"
   },
   {
-   "depends_on": "eval:doc.nitric_use_in_past_24_hours==1",
-   "fieldname": "con_stop",
-   "fieldtype": "Select",
-   "options": "Continuing\nStopped"
-  },
-  {
    "depends_on": "eval:in_list([\"Nitric use in past 24 hours\"],doc.pul_vas)",
    "fieldname": "column_break_9w0zh",
    "fieldtype": "Column Break"
@@ -340,13 +334,13 @@
   {
    "depends_on": "eval:doc.nitric_use_in_past_24_hours==1",
    "fieldname": "started",
-   "fieldtype": "Date",
+   "fieldtype": "Datetime",
    "label": "Started on"
   },
   {
-   "depends_on": "eval:doc.nitric_use_in_past_24_hours==1 && doc.con_stop==\"Stopped\"",
+   "depends_on": "eval:doc.nitric_use_in_past_24_hours==1",
    "fieldname": "stopped",
-   "fieldtype": "Date",
+   "fieldtype": "Datetime",
    "label": "Stopped on"
   },
   {
@@ -512,8 +506,9 @@
   {
    "depends_on": "eval:in_list([\"Yes\"],doc.intubation)",
    "fieldname": "size",
-   "fieldtype": "Data",
-   "label": "Size "
+   "fieldtype": "Float",
+   "label": "Size ",
+   "precision": "1"
   },
   {
    "depends_on": "eval:in_list([\"Yes\"],doc.intubation)",
@@ -637,7 +632,7 @@
    "depends_on": "eval:in_list([\"Yes\"],doc.o2_24)",
    "fieldname": "oxidation_calculation",
    "fieldtype": "Heading",
-   "label": "Oxidation calculation"
+   "label": "OI Calculation"
   },
   {
    "default": "0.0",
@@ -659,12 +654,18 @@
    "fieldname": "o2c_pa",
    "fieldtype": "Data",
    "label": "PaO2 mmHg"
+  },
+  {
+   "depends_on": "eval:doc.nitric_use_in_past_24_hours==1",
+   "fieldname": "duration",
+   "fieldtype": "Data",
+   "label": "Duration (in minutes)"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-04-06 09:48:30.516933",
+ "modified": "2023-04-07 10:48:38.558097",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Respiratory_child",

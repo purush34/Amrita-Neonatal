@@ -1,12 +1,14 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:{baby_id} {mother_name}",
  "creation": "2023-03-06 17:21:11.895685",
  "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+  "echocardiography",
   "baby_id",
   "mother_name",
   "add_reports"
@@ -28,14 +30,21 @@
    "fieldname": "mother_name",
    "fieldtype": "Data",
    "label": "Mother Name"
+  },
+  {
+   "fieldname": "echocardiography",
+   "fieldtype": "Heading",
+   "label": "ECHOCARDIOGRAPHY"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-04-04 18:01:37.853196",
+ "modified": "2023-04-06 17:53:16.054681",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Echocardiography",
+ "name_case": "Title Case",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

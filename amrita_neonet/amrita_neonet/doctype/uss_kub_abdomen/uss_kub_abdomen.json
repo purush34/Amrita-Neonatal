@@ -1,12 +1,14 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:{baby_id} {mother_name}",
  "creation": "2023-03-06 17:19:04.395840",
  "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+  "uss_kubabdomen",
   "baby_id",
   "mother_name",
   "add_reports"
@@ -28,14 +30,21 @@
    "fieldname": "mother_name",
    "fieldtype": "Data",
    "label": "Mother Name"
+  },
+  {
+   "fieldname": "uss_kubabdomen",
+   "fieldtype": "Heading",
+   "label": "USS KUB/ABDOMEN "
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-04-04 17:58:45.881424",
+ "modified": "2023-04-06 17:51:11.965140",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "USS KUB_Abdomen",
+ "name_case": "Title Case",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

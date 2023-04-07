@@ -1,17 +1,21 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:{baby_id} {mother_name}",
  "creation": "2023-03-16 16:53:22.430337",
  "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+  "crib_score",
   "baby_id",
   "mother_name",
+  "gender",
+  "section_break_y7ixn",
   "gestation",
   "birthweight",
-  "gender",
+  "column_break_1yboc",
   "points",
   "section_break_uzcnn",
   "temperature",
@@ -24,18 +28,22 @@
   "section_break_tzmnr",
   "predicted_death_rate",
   "total_crib_ii_score",
+  "calc",
   "info"
  ],
  "fields": [
   {
    "fieldname": "gestation",
-   "fieldtype": "Int",
-   "label": "Gestation (weeks)"
+   "fieldtype": "Select",
+   "label": "Gestation (weeks)",
+   "options": "22\n23\n24\n25\n26\n27\n28\n29\n30\n31\n32"
   },
   {
+   "default": "1500",
    "fieldname": "birthweight",
    "fieldtype": "Float",
-   "label": "Birthweight (g)"
+   "label": "Birthweight (in grams)",
+   "non_negative": 1
   },
   {
    "fieldname": "gender",
@@ -46,8 +54,8 @@
   {
    "fieldname": "points",
    "fieldtype": "Data",
-   "is_virtual": 1,
-   "label": "Points"
+   "label": "Points",
+   "read_only": 1
   },
   {
    "fieldname": "section_break_uzcnn",
@@ -64,10 +72,11 @@
    "fieldtype": "Column Break"
   },
   {
+   "default": "5",
    "fieldname": "temp_points",
    "fieldtype": "Data",
-   "is_virtual": 1,
-   "label": "Temp Points"
+   "label": "Temp Points",
+   "read_only": 1
   },
   {
    "fieldname": "section_break_sakik",
@@ -85,10 +94,11 @@
    "read_only": 1
   },
   {
+   "default": "7",
    "fieldname": "base_points",
    "fieldtype": "Data",
-   "is_virtual": 1,
-   "label": "Base Points"
+   "label": "Base Points",
+   "read_only": 1
   },
   {
    "fieldname": "section_break_tzmnr",
@@ -97,14 +107,14 @@
   {
    "fieldname": "predicted_death_rate",
    "fieldtype": "Data",
-   "is_virtual": 1,
-   "label": "Predicted Death Rate"
+   "label": "Predicted Death Rate",
+   "read_only": 1
   },
   {
    "fieldname": "total_crib_ii_score",
    "fieldtype": "Data",
-   "is_virtual": 1,
-   "label": "Total CRIB II score"
+   "label": "Total CRIB II score",
+   "read_only": 1
   },
   {
    "fieldname": "info",
@@ -121,14 +131,34 @@
    "fieldname": "mother_name",
    "fieldtype": "Data",
    "label": "Mother Name"
+  },
+  {
+   "fieldname": "column_break_1yboc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_y7ixn",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "calc",
+   "fieldtype": "Button",
+   "label": "Calculate"
+  },
+  {
+   "fieldname": "crib_score",
+   "fieldtype": "Heading",
+   "label": "CRIB II SCORE"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-04-04 17:53:34.202893",
+ "modified": "2023-04-06 17:42:09.317175",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "CRIB score",
+ "name_case": "Title Case",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

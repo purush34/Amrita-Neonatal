@@ -1,12 +1,14 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:{baby_id} {mother_name}",
  "creation": "2023-03-06 17:32:15.302940",
  "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+  "endocrine_and_metabolic",
   "baby_id",
   "mother_name",
   "daily_observations"
@@ -28,14 +30,21 @@
    "fieldname": "mother_name",
    "fieldtype": "Data",
    "label": "Mother Name"
+  },
+  {
+   "fieldname": "endocrine_and_metabolic",
+   "fieldtype": "Heading",
+   "label": "ENDOCRINE AND METABOLIC"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-04-04 17:48:14.903580",
+ "modified": "2023-04-06 17:26:16.536276",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Endocrine and metabolic",
+ "name_case": "Title Case",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

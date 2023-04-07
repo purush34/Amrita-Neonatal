@@ -1,37 +1,51 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:{baby_id} {mother_name}",
  "creation": "2023-03-06 18:45:05.475587",
  "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+  "subclavian_femoral_line",
   "baby_id",
+  "mother_name",
   "add_reports"
  ],
  "fields": [
   {
    "fieldname": "baby_id",
-   "fieldtype": "Link",
+   "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Baby ID",
-   "options": "Opening page",
-   "reqd": 1
+   "options": "Opening page"
   },
   {
    "fieldname": "add_reports",
    "fieldtype": "Table",
    "label": "Add Reports",
    "options": "Subclavian femoral line_child"
+  },
+  {
+   "fieldname": "subclavian_femoral_line",
+   "fieldtype": "Heading",
+   "label": "SUBCLAVIAN FEMORAL LINE"
+  },
+  {
+   "fieldname": "mother_name",
+   "fieldtype": "Data",
+   "label": "Mother Name"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-03-06 18:45:05.475587",
+ "modified": "2023-04-06 23:44:27.616938",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Subclavian_femoral line",
+ "name_case": "Title Case",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

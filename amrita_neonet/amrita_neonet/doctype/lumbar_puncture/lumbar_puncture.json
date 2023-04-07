@@ -1,12 +1,14 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:{baby_id} {mother_name}",
  "creation": "2023-03-06 17:22:36.193370",
  "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+  "lumbar_puncture",
   "baby_id",
   "mother_name",
   "add_reports"
@@ -28,14 +30,21 @@
    "fieldname": "mother_name",
    "fieldtype": "Data",
    "label": "Mother Name"
+  },
+  {
+   "fieldname": "lumbar_puncture",
+   "fieldtype": "Heading",
+   "label": "LUMBAR PUNCTURE"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-04-04 18:02:01.517855",
+ "modified": "2023-04-06 17:54:02.301250",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Lumbar puncture",
+ "name_case": "Title Case",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

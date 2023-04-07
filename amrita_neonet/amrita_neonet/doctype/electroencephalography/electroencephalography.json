@@ -1,12 +1,14 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:{baby_id} {mother_name}",
  "creation": "2023-03-06 17:18:29.545336",
  "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+  "electroencenphalography",
   "baby_id",
   "mother_name",
   "add_reports"
@@ -28,14 +30,21 @@
    "fieldname": "mother_name",
    "fieldtype": "Data",
    "label": "Mother Name"
+  },
+  {
+   "fieldname": "electroencenphalography",
+   "fieldtype": "Heading",
+   "label": "ELECTROENCENPHALOGRAPHY"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-04-04 17:58:20.200582",
+ "modified": "2023-04-06 17:49:09.373151",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Electroencephalography",
+ "name_case": "Title Case",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

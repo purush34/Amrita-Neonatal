@@ -13,7 +13,7 @@
  "fields": [
   {
    "fieldname": "baby_id",
-   "fieldtype": "Link",
+   "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Baby ID",
    "options": "Opening page",
@@ -28,7 +28,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-03-06 17:25:41.168620",
+ "modified": "2023-04-07 18:30:54.835581",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Genetic Tests",

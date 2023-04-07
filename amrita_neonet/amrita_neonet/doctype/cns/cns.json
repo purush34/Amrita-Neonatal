@@ -3,12 +3,14 @@
  "_liked_by": "[]",
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:{baby_id} {mother_name}",
  "creation": "2023-03-06 17:29:05.485847",
  "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+  "cns",
   "baby_id",
   "mother_name",
   "daily_observations"
@@ -30,14 +32,21 @@
    "fieldname": "mother_name",
    "fieldtype": "Data",
    "label": "Mother Name"
+  },
+  {
+   "fieldname": "cns",
+   "fieldtype": "Heading",
+   "label": "CNS"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-04-04 17:47:36.624917",
+ "modified": "2023-04-06 17:25:39.540351",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "CNS",
+ "name_case": "Title Case",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

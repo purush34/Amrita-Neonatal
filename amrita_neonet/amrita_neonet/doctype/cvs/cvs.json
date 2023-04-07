@@ -1,12 +1,14 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:{baby_id} {mother_name}",
  "creation": "2023-03-06 17:28:47.045750",
  "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+  "cvs",
   "baby_id",
   "mother_name",
   "daily_observations"
@@ -27,14 +29,21 @@
    "fieldtype": "Table",
    "label": "Daily Observations",
    "options": "CVS_child"
+  },
+  {
+   "fieldname": "cvs",
+   "fieldtype": "Heading",
+   "label": "CVS"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-04-04 17:46:33.878945",
+ "modified": "2023-04-06 17:20:50.330857",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "CVS",
+ "name_case": "Title Case",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

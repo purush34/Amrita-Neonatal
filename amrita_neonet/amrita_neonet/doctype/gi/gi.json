@@ -1,489 +1,510 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:{baby_id} {mother_name}",
  "creation": "2023-03-06 17:28:55.601975",
  "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
-"field_order": [
-    "anthropometry_today",
-    "section_break_jhiej",
-    "weight",
-    "ofc",
-    "length",
-    "column_break_kh0yp",
-    "working_weight",
-    "new",
-    "column_break_tiwbh",
-    "last24",
-    "nec_bells_staging",
-    "atresia",
-    "text",
-    "inguinalhernia_hydrocoel",
-    "column_break_ilbib",
-    "text24hours",
-    "section_break_vbgrg",
-    "new1",
-    "column_break_zimsd",
-    "discharge",
-    "nec_bells_staging1",
-    "atresia1",
-    "text1",
-    "inguinalhernia_hydrocoel1",
-    "column_break_yfd4c",
-    "textdischarge",
-    "section_break_uwe6w",
-    "any_surgery_in_past_24_hours",
-    "column_break_aqxhq",
-    "stime",
-    "column_break_imobx",
-    "stext",
-    "section_break_5iwxg",
-    "central_line",
-    "column_break_0m9s4",
-    "coptions",
-    "column_break_oa5mz",
-    "no_of_days",
-    "section_break_fiyme",
-    "total_fluid_volume_in_mlkg",
-    "aspirates",
-    "column_break_khevj",
-    "aoptions",
-    "column_break_fntdk",
-    "atext",
-    "section_break_dpoy7",
-    "stoma",
-    "column_break_ruyah",
-    "soptions",
-    "column_break_gvcwn",
-    "foptions",
-    "sttext",
-    "section_break_9gs91",
-    "replacement_fluid",
-    "column_break_ecmbr",
-    "mlday",
-    "column_break_opv5k",
-    "mlkgday",
-    "section_break_5ky2c",
-    "tpn",
-    "enteral_feeds_in_last_24_hours",
-    "column_break_1sp8v",
-    "mlkge",
-    "section_break_eaezt",
-    "route_of_feeds",
-    "total_volume_of_feeds_over_past_24_hours",
-    "feeds_skipped_in_past_24hours",
-    "column_break_uxuff",
-    "number",
-    "reason",
-    "section_break_9vq9w",
-    "full_enteral_feeds",
-    "column_break_6rgfi",
-    "day_of_life",
-    "section_break_whwof",
-    "full_oral_feeds",
-    "column_break_ryeii",
-    "day1",
-    "section_break_et0pk"
-],
-"fields": [
-    {
-        "fieldname": "anthropometry_today",
-        "fieldtype": "Heading",
-        "label": "Anthropometry today"
-    },
-    {
-        "fieldname": "section_break_jhiej",
-        "fieldtype": "Section Break"
-    },
-    {
-        "fieldname": "weight",
-        "fieldtype": "Data",
-        "label": "Weight"
-    },
-    {
-        "fieldname": "ofc",
-        "fieldtype": "Data",
-        "label": "OFC"
-    },
-    {
-        "fieldname": "length",
-        "fieldtype": "Data",
-        "label": "Length"
-    },
-    {
-        "fieldname": "column_break_kh0yp",
-        "fieldtype": "Column Break"
-    },
-    {
-        "fieldname": "working_weight",
-        "fieldtype": "Data",
-        "label": "Working Weight"
-    },
-    {
-        "fieldname": "new",
-        "fieldtype": "Select",
-        "label": "New Diagnosis last 24 hours",
-        "options": "Yes\nNo"
-    },
-    {
-        "fieldname": "column_break_tiwbh",
-        "fieldtype": "Column Break"
-    },
-    {
-        "depends_on": "eval:in_list([\"Yes\"],doc.new)",
-        "fieldname": "last24",
-        "fieldtype": "Select",
-        "options": "Feed Intolerance\nNEC- BELLS Staging\nAtresia\nDuplication cyst\nPerforation\nBiliary Atresia\nMeconium Ileus\nMalrotation\nVolvulus\nAnorectal malformation\nDisorders of sex Development\nInguinal Hernia\nHydrocoel\nCholedocal cyst\nOther"
-    },
-    {
-        "depends_on": "eval:in_list([\"NEC- BELLS Staging\"],doc.last24)",
-        "fieldname": "nec_bells_staging",
-        "fieldtype": "Select",
-        "options": "IA\nIB\nIIA\nIIB\nIIIA\nIIIB"
-    },
-    {
-        "depends_on": "eval:in_list([\"Atresia\"],doc.last24)",
-        "fieldname": "atresia",
-        "fieldtype": "Select",
-        "options": "Pyloric\nDuodenal\nIleal\ncolonic"
-    },
-    {
-        "depends_on": "eval:in_list([\"Other\",\"Duplication cyst\",\"Perforation\"],doc.last24)",
-        "fieldname": "text",
-        "fieldtype": "Text"
-    },
-    {
-        "depends_on": "eval:in_list([\"Inguinal Hernia\",\"Hydrocoel\"],doc.last24)",
-        "fieldname": "inguinalhernia_hydrocoel",
-        "fieldtype": "Select",
-        "options": "Right\nLeft\nBilateral"
-    },
-    {
-        "fieldname": "column_break_ilbib",
-        "fieldtype": "Column Break"
-    },
-    {
-        "fieldname": "text24hours",
-        "fieldtype": "Text"
-    },
-    {
-        "fieldname": "section_break_vbgrg",
-        "fieldtype": "Section Break"
-    },
-    {
-        "fieldname": "new1",
-        "fieldtype": "Select",
-        "label": "New Diagnosis for discharge",
-        "options": "Yes\nNo"
-    },
-    {
-        "fieldname": "column_break_zimsd",
-        "fieldtype": "Column Break"
-    },
-    {
-        "depends_on": "eval:in_list([\"Yes\"],doc.new1)",
-        "fieldname": "discharge",
-        "fieldtype": "Select",
-        "options": "Feed Intolerance\nNEC- BELLS Staging\nAtresia\nDuplication cyst\nPerforation\nBiliary Atresia\nMeconium Ileus\nMalrotation\nVolvulus\nAnorectal malformation\nDisorders of sex Development\nInguinal Hernia\nHydrocoel\nCholedocal cyst\nOther"
-    },
-    {
-        "depends_on": "eval:in_list([\"NEC- BELLS Staging\"],doc.discharge)",
-        "fieldname": "nec_bells_staging1",
-        "fieldtype": "Select",
-        "options": "IA\nIB\nIIA\nIIB\nIIIA\nIIIB"
-    },
-    {
-        "depends_on": "eval:in_list([\"Atresia\"],doc.discharge)",
-        "fieldname": "atresia1",
-        "fieldtype": "Select",
-        "options": "Pyloric\nDuodenal\nIleal\ncolonic"
-    },
-    {
-        "depends_on": "eval:in_list([\"Other\",\"Duplication cyst\",\"Perforation\"],doc.discharge)",
-        "fieldname": "text1",
-        "fieldtype": "Text"
-    },
-    {
-        "depends_on": "eval:in_list([\"Inguinal Hernia\",\"Hydrocoel\"],doc.discharge)",
-        "fieldname": "inguinalhernia_hydrocoel1",
-        "fieldtype": "Select",
-        "options": "Right\nLeft\nBilateral"
-    },
-    {
-        "fieldname": "column_break_yfd4c",
-        "fieldtype": "Column Break"
-    },
-    {
-        "fieldname": "textdischarge",
-        "fieldtype": "Text"
-    },
-    {
-        "fieldname": "section_break_uwe6w",
-        "fieldtype": "Section Break"
-    },
-    {
-        "fieldname": "any_surgery_in_past_24_hours",
-        "fieldtype": "Select",
-        "label": "Any Surgery in past 24 hours",
-        "options": "Yes\nNo"
-    },
-    {
-        "fieldname": "column_break_aqxhq",
-        "fieldtype": "Column Break"
-    },
-    {
-        "fieldname": "stime",
-        "fieldtype": "Datetime"
-    },
-    {
-        "fieldname": "column_break_imobx",
-        "fieldtype": "Column Break"
-    },
-    {
-        "fieldname": "stext",
-        "fieldtype": "Text"
-    },
-    {
-        "fieldname": "section_break_5iwxg",
-        "fieldtype": "Section Break"
-    },
-    {
-        "fieldname": "central_line",
-        "fieldtype": "Select",
-        "label": "Central line",
-        "options": "Yes\nNo"
-    },
-    {
-        "fieldname": "column_break_0m9s4",
-        "fieldtype": "Column Break"
-    },
-    {
-        "depends_on": "eval:in_list([\"Yes\"],doc.central_line)",
-        "fieldname": "coptions",
-        "fieldtype": "Select",
-        "options": "Premi cath\nUVC\nFemoral\nSubclavian\nIJV"
-    },
-    {
-        "fieldname": "column_break_oa5mz",
-        "fieldtype": "Column Break"
-    },
-    {
-        "depends_on": "eval:in_list([\"Premi cath\"],doc.coptions)",
-        "fieldname": "no_of_days",
-        "fieldtype": "Data",
-        "label": "No of days"
-    },
-    {
-        "fieldname": "section_break_fiyme",
-        "fieldtype": "Section Break"
-    },
-    {
-        "fieldname": "total_fluid_volume_in_mlkg",
-        "fieldtype": "Text",
-        "label": "Total Fluid Volume in Ml/kg"
-    },
-    {
-        "fieldname": "aspirates",
-        "fieldtype": "Select",
-        "label": "Aspirates",
-        "options": "Yes\nNo"
-    },
-    {
-        "fieldname": "column_break_khevj",
-        "fieldtype": "Column Break"
-    },
-    {
-        "depends_on": "eval:in_list([\"Yes\"],doc.aspirates)",
-        "fieldname": "aoptions",
-        "fieldtype": "Select",
-        "options": "Clear\nBilious"
-    },
-    {
-        "fieldname": "column_break_fntdk",
-        "fieldtype": "Column Break"
-    },
-    {
-        "fieldname": "atext",
-        "fieldtype": "Text"
-    },
-    {
-        "fieldname": "section_break_dpoy7",
-        "fieldtype": "Section Break"
-    },
-    {
-        "fieldname": "stoma",
-        "fieldtype": "Select",
-        "label": "Stoma",
-        "options": "Yes\nNo"
-    },
-    {
-        "fieldname": "column_break_ruyah",
-        "fieldtype": "Column Break"
-    },
-    {
-        "depends_on": "eval:in_list([\"Yes\"],doc.stoma)",
-        "fieldname": "soptions",
-        "fieldtype": "Select",
-        "options": "Functioning\nStoma Loss"
-    },
-    {
-        "fieldname": "column_break_gvcwn",
-        "fieldtype": "Column Break"
-    },
-    {
-        "depends_on": "eval:in_list([\"Functioning\"],doc.soptions)",
-        "fieldname": "foptions",
-        "fieldtype": "Select",
-        "options": "Yes\nNo"
-    },
-    {
-        "depends_on": "eval:in_list([\"Stoma Loss\"],doc.soptions)",
-        "fieldname": "sttext",
-        "fieldtype": "Text"
-    },
-    {
-        "fieldname": "section_break_9gs91",
-        "fieldtype": "Section Break"
-    },
-    {
-        "fieldname": "replacement_fluid",
-        "fieldtype": "Select",
-        "label": "Replacement Fluid",
-        "options": "Yes\nNo"
-    },
-    {
-        "fieldname": "column_break_ecmbr",
-        "fieldtype": "Column Break"
-    },
-    {
-        "depends_on": "eval:in_list([\"Yes\"],doc.replacement_fluid)",
-        "fieldname": "mlday",
-        "fieldtype": "Data",
-        "label": "ml/day"
-    },
-    {
-        "fieldname": "column_break_opv5k",
-        "fieldtype": "Column Break"
-    },
-    {
-        "depends_on": "eval:in_list([\"Yes\"],doc.replacement_fluid)",
-        "fieldname": "mlkgday",
-        "fieldtype": "Data",
-        "label": "ml/kg/day"
-    },
-    {
-        "fieldname": "section_break_5ky2c",
-        "fieldtype": "Section Break"
-    },
-    {
-        "fieldname": "tpn",
-        "fieldtype": "Select",
-        "label": "TPN",
-        "options": "Yes\nNo"
-    },
-    {
-        "fieldname": "enteral_feeds_in_last_24_hours",
-        "fieldtype": "Select",
-        "label": "Enteral feeds in last 24 hours",
-        "options": "Yes\nNo"
-    },
-    {
-        "fieldname": "column_break_1sp8v",
-        "fieldtype": "Column Break"
-    },
-    {
-        "fieldname": "mlkge",
-        "fieldtype": "Data",
-        "label": "ml/kg"
-    },
-    {
-        "fieldname": "section_break_eaezt",
-        "fieldtype": "Section Break"
-    },
-    {
-        "fieldname": "route_of_feeds",
-        "fieldtype": "Select",
-        "label": "Route of feeds",
-        "options": "Tube\nOral\nBoth"
-    },
-    {
-        "fieldname": "total_volume_of_feeds_over_past_24_hours",
-        "fieldtype": "Data",
-        "label": "Total volume of feeds over past 24 hours"
-    },
-    {
-        "fieldname": "feeds_skipped_in_past_24hours",
-        "fieldtype": "Select",
-        "label": "Feeds skipped in past 24hours",
-        "options": "Yes\nNo"
-    },
-    {
-        "fieldname": "column_break_uxuff",
-        "fieldtype": "Column Break"
-    },
-    {
-        "depends_on": "eval:in_list([\"Yes\"],doc.feeds_skipped_in_past_24hours)",
-        "fieldname": "number",
-        "fieldtype": "Text",
-        "label": "Number"
-    },
-    {
-        "depends_on": "eval:in_list([\"Yes\"],doc.feeds_skipped_in_past_24hours)",
-        "fieldname": "reason",
-        "fieldtype": "Text",
-        "label": "Reason"
-    },
-    {
-        "fieldname": "section_break_9vq9w",
-        "fieldtype": "Section Break"
-    },
-    {
-        "fieldname": "full_enteral_feeds",
-        "fieldtype": "Select",
-        "label": "Full enteral feeds",
-        "options": "Yes\nNo"
-    },
-    {
-        "fieldname": "column_break_6rgfi",
-        "fieldtype": "Column Break"
-    },
-    {
-        "fieldname": "day_of_life",
-        "fieldtype": "Text",
-        "label": "DAY OF LIFE"
-    },
-    {
-        "fieldname": "section_break_whwof",
-        "fieldtype": "Section Break"
-    },
-    {
-        "fieldname": "full_oral_feeds",
-        "fieldtype": "Select",
-        "label": "Full oral feeds",
-        "options": "Yes\nNo"
-    },
-    {
-        "fieldname": "column_break_ryeii",
-        "fieldtype": "Column Break"
-    },
-    {
-        "fieldname": "day1",
-        "fieldtype": "Text",
-        "label": "DAY OF LIFE"
-    },
-    {
-        "fieldname": "section_break_et0pk",
-        "fieldtype": "Section Break"
-    }
-],
+ "field_order": [
+  "gi",
+  "baby_id",
+  "mother_name",
+  "anthropometry_today",
+  "section_break_jhiej",
+  "weight",
+  "ofc",
+  "length",
+  "column_break_kh0yp",
+  "working_weight",
+  "new",
+  "column_break_tiwbh",
+  "last24",
+  "nec_bells_staging",
+  "atresia",
+  "text",
+  "inguinalhernia_hydrocoel",
+  "column_break_ilbib",
+  "text24hours",
+  "section_break_vbgrg",
+  "new1",
+  "column_break_zimsd",
+  "discharge",
+  "nec_bells_staging1",
+  "atresia1",
+  "text1",
+  "inguinalhernia_hydrocoel1",
+  "column_break_yfd4c",
+  "textdischarge",
+  "section_break_uwe6w",
+  "any_surgery_in_past_24_hours",
+  "column_break_aqxhq",
+  "stime",
+  "column_break_imobx",
+  "stext",
+  "section_break_5iwxg",
+  "central_line",
+  "column_break_0m9s4",
+  "coptions",
+  "column_break_oa5mz",
+  "no_of_days",
+  "section_break_fiyme",
+  "total_fluid_volume_in_mlkg",
+  "aspirates",
+  "column_break_khevj",
+  "aoptions",
+  "column_break_fntdk",
+  "atext",
+  "section_break_dpoy7",
+  "stoma",
+  "column_break_ruyah",
+  "soptions",
+  "column_break_gvcwn",
+  "foptions",
+  "sttext",
+  "section_break_9gs91",
+  "replacement_fluid",
+  "column_break_ecmbr",
+  "mlday",
+  "column_break_opv5k",
+  "mlkgday",
+  "section_break_5ky2c",
+  "tpn",
+  "enteral_feeds_in_last_24_hours",
+  "column_break_1sp8v",
+  "mlkge",
+  "section_break_eaezt",
+  "route_of_feeds",
+  "total_volume_of_feeds_over_past_24_hours",
+  "feeds_skipped_in_past_24hours",
+  "column_break_uxuff",
+  "number",
+  "reason",
+  "section_break_9vq9w",
+  "full_enteral_feeds",
+  "column_break_6rgfi",
+  "day_of_life",
+  "section_break_whwof",
+  "full_oral_feeds",
+  "column_break_ryeii",
+  "day1",
+  "section_break_et0pk"
+ ],
+ "fields": [
+  {
+   "fieldname": "anthropometry_today",
+   "fieldtype": "Heading",
+   "label": "Anthropometry today"
+  },
+  {
+   "fieldname": "section_break_jhiej",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "weight",
+   "fieldtype": "Data",
+   "label": "Weight"
+  },
+  {
+   "fieldname": "ofc",
+   "fieldtype": "Data",
+   "label": "OFC"
+  },
+  {
+   "fieldname": "length",
+   "fieldtype": "Data",
+   "label": "Length"
+  },
+  {
+   "fieldname": "column_break_kh0yp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "working_weight",
+   "fieldtype": "Data",
+   "label": "Working Weight"
+  },
+  {
+   "fieldname": "new",
+   "fieldtype": "Select",
+   "label": "New Diagnosis last 24 hours",
+   "options": "Yes\nNo"
+  },
+  {
+   "fieldname": "column_break_tiwbh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.new)",
+   "fieldname": "last24",
+   "fieldtype": "Select",
+   "options": "Feed Intolerance\nNEC- BELLS Staging\nAtresia\nDuplication cyst\nPerforation\nBiliary Atresia\nMeconium Ileus\nMalrotation\nVolvulus\nAnorectal malformation\nDisorders of sex Development\nInguinal Hernia\nHydrocoel\nCholedocal cyst\nOther"
+  },
+  {
+   "depends_on": "eval:in_list([\"NEC- BELLS Staging\"],doc.last24)",
+   "fieldname": "nec_bells_staging",
+   "fieldtype": "Select",
+   "options": "IA\nIB\nIIA\nIIB\nIIIA\nIIIB"
+  },
+  {
+   "depends_on": "eval:in_list([\"Atresia\"],doc.last24)",
+   "fieldname": "atresia",
+   "fieldtype": "Select",
+   "options": "Pyloric\nDuodenal\nIleal\ncolonic"
+  },
+  {
+   "depends_on": "eval:in_list([\"Other\",\"Duplication cyst\",\"Perforation\"],doc.last24)",
+   "fieldname": "text",
+   "fieldtype": "Text"
+  },
+  {
+   "depends_on": "eval:in_list([\"Inguinal Hernia\",\"Hydrocoel\"],doc.last24)",
+   "fieldname": "inguinalhernia_hydrocoel",
+   "fieldtype": "Select",
+   "options": "Right\nLeft\nBilateral"
+  },
+  {
+   "fieldname": "column_break_ilbib",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "text24hours",
+   "fieldtype": "Text"
+  },
+  {
+   "fieldname": "section_break_vbgrg",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "new1",
+   "fieldtype": "Select",
+   "label": "New Diagnosis for discharge",
+   "options": "Yes\nNo"
+  },
+  {
+   "fieldname": "column_break_zimsd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.new1)",
+   "fieldname": "discharge",
+   "fieldtype": "Select",
+   "options": "Feed Intolerance\nNEC- BELLS Staging\nAtresia\nDuplication cyst\nPerforation\nBiliary Atresia\nMeconium Ileus\nMalrotation\nVolvulus\nAnorectal malformation\nDisorders of sex Development\nInguinal Hernia\nHydrocoel\nCholedocal cyst\nOther"
+  },
+  {
+   "depends_on": "eval:in_list([\"NEC- BELLS Staging\"],doc.discharge)",
+   "fieldname": "nec_bells_staging1",
+   "fieldtype": "Select",
+   "options": "IA\nIB\nIIA\nIIB\nIIIA\nIIIB"
+  },
+  {
+   "depends_on": "eval:in_list([\"Atresia\"],doc.discharge)",
+   "fieldname": "atresia1",
+   "fieldtype": "Select",
+   "options": "Pyloric\nDuodenal\nIleal\ncolonic"
+  },
+  {
+   "depends_on": "eval:in_list([\"Other\",\"Duplication cyst\",\"Perforation\"],doc.discharge)",
+   "fieldname": "text1",
+   "fieldtype": "Text"
+  },
+  {
+   "depends_on": "eval:in_list([\"Inguinal Hernia\",\"Hydrocoel\"],doc.discharge)",
+   "fieldname": "inguinalhernia_hydrocoel1",
+   "fieldtype": "Select",
+   "options": "Right\nLeft\nBilateral"
+  },
+  {
+   "fieldname": "column_break_yfd4c",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "textdischarge",
+   "fieldtype": "Text"
+  },
+  {
+   "fieldname": "section_break_uwe6w",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "any_surgery_in_past_24_hours",
+   "fieldtype": "Select",
+   "label": "Any Surgery in past 24 hours",
+   "options": "Yes\nNo"
+  },
+  {
+   "fieldname": "column_break_aqxhq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "stime",
+   "fieldtype": "Datetime"
+  },
+  {
+   "fieldname": "column_break_imobx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "stext",
+   "fieldtype": "Text"
+  },
+  {
+   "fieldname": "section_break_5iwxg",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "central_line",
+   "fieldtype": "Select",
+   "label": "Central line",
+   "options": "Yes\nNo"
+  },
+  {
+   "fieldname": "column_break_0m9s4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.central_line)",
+   "fieldname": "coptions",
+   "fieldtype": "Select",
+   "options": "Premi cath\nUVC\nFemoral\nSubclavian\nIJV"
+  },
+  {
+   "fieldname": "column_break_oa5mz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:in_list([\"Premi cath\"],doc.coptions)",
+   "fieldname": "no_of_days",
+   "fieldtype": "Data",
+   "label": "No of days"
+  },
+  {
+   "fieldname": "section_break_fiyme",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "total_fluid_volume_in_mlkg",
+   "fieldtype": "Text",
+   "label": "Total Fluid Volume in Ml/kg"
+  },
+  {
+   "fieldname": "aspirates",
+   "fieldtype": "Select",
+   "label": "Aspirates",
+   "options": "Yes\nNo"
+  },
+  {
+   "fieldname": "column_break_khevj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.aspirates)",
+   "fieldname": "aoptions",
+   "fieldtype": "Select",
+   "options": "Clear\nBilious"
+  },
+  {
+   "fieldname": "column_break_fntdk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "atext",
+   "fieldtype": "Text"
+  },
+  {
+   "fieldname": "section_break_dpoy7",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "stoma",
+   "fieldtype": "Select",
+   "label": "Stoma",
+   "options": "Yes\nNo"
+  },
+  {
+   "fieldname": "column_break_ruyah",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.stoma)",
+   "fieldname": "soptions",
+   "fieldtype": "Select",
+   "options": "Functioning\nStoma Loss"
+  },
+  {
+   "fieldname": "column_break_gvcwn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:in_list([\"Functioning\"],doc.soptions)",
+   "fieldname": "foptions",
+   "fieldtype": "Select",
+   "options": "Yes\nNo"
+  },
+  {
+   "depends_on": "eval:in_list([\"Stoma Loss\"],doc.soptions)",
+   "fieldname": "sttext",
+   "fieldtype": "Text"
+  },
+  {
+   "fieldname": "section_break_9gs91",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "replacement_fluid",
+   "fieldtype": "Select",
+   "label": "Replacement Fluid",
+   "options": "Yes\nNo"
+  },
+  {
+   "fieldname": "column_break_ecmbr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.replacement_fluid)",
+   "fieldname": "mlday",
+   "fieldtype": "Data",
+   "label": "ml/day"
+  },
+  {
+   "fieldname": "column_break_opv5k",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.replacement_fluid)",
+   "fieldname": "mlkgday",
+   "fieldtype": "Data",
+   "label": "ml/kg/day"
+  },
+  {
+   "fieldname": "section_break_5ky2c",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "tpn",
+   "fieldtype": "Select",
+   "label": "TPN",
+   "options": "Yes\nNo"
+  },
+  {
+   "fieldname": "enteral_feeds_in_last_24_hours",
+   "fieldtype": "Select",
+   "label": "Enteral feeds in last 24 hours",
+   "options": "Yes\nNo"
+  },
+  {
+   "fieldname": "column_break_1sp8v",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "mlkge",
+   "fieldtype": "Data",
+   "label": "ml/kg"
+  },
+  {
+   "fieldname": "section_break_eaezt",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "route_of_feeds",
+   "fieldtype": "Select",
+   "label": "Route of feeds",
+   "options": "Tube\nOral\nBoth"
+  },
+  {
+   "fieldname": "total_volume_of_feeds_over_past_24_hours",
+   "fieldtype": "Data",
+   "label": "Total volume of feeds over past 24 hours"
+  },
+  {
+   "fieldname": "feeds_skipped_in_past_24hours",
+   "fieldtype": "Select",
+   "label": "Feeds skipped in past 24hours",
+   "options": "Yes\nNo"
+  },
+  {
+   "fieldname": "column_break_uxuff",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.feeds_skipped_in_past_24hours)",
+   "fieldname": "number",
+   "fieldtype": "Text",
+   "label": "Number"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.feeds_skipped_in_past_24hours)",
+   "fieldname": "reason",
+   "fieldtype": "Text",
+   "label": "Reason"
+  },
+  {
+   "fieldname": "section_break_9vq9w",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "full_enteral_feeds",
+   "fieldtype": "Select",
+   "label": "Full enteral feeds",
+   "options": "Yes\nNo"
+  },
+  {
+   "fieldname": "column_break_6rgfi",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "day_of_life",
+   "fieldtype": "Text",
+   "label": "DAY OF LIFE"
+  },
+  {
+   "fieldname": "section_break_whwof",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "full_oral_feeds",
+   "fieldtype": "Select",
+   "label": "Full oral feeds",
+   "options": "Yes\nNo"
+  },
+  {
+   "fieldname": "column_break_ryeii",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "day1",
+   "fieldtype": "Text",
+   "label": "DAY OF LIFE"
+  },
+  {
+   "fieldname": "section_break_et0pk",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "gi",
+   "fieldtype": "Heading",
+   "label": "GI"
+  },
+  {
+   "fieldname": "baby_id",
+   "fieldtype": "Data",
+   "label": "Baby ID"
+  },
+  {
+   "fieldname": "mother_name",
+   "fieldtype": "Data",
+   "label": "Mother Name"
+  }
+ ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-03-06 17:28:55.601975",
+ "modified": "2023-04-07 19:27:13.569424",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "GI",
+ "name_case": "Title Case",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

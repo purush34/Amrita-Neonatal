@@ -1,12 +1,14 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:{baby_id} {mother_name}",
  "creation": "2023-03-06 17:26:42.074411",
  "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+  "respiratory_secretions",
   "baby_id",
   "mother_name",
   "add_reports"
@@ -28,14 +30,21 @@
    "fieldname": "mother_name",
    "fieldtype": "Data",
    "label": "Mother Name"
+  },
+  {
+   "fieldname": "respiratory_secretions",
+   "fieldtype": "Heading",
+   "label": "RESPIRATORY SECRETIONS"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-04-04 18:04:29.539675",
+ "modified": "2023-04-06 17:56:09.203124",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Respiratory secreations",
+ "name_case": "Title Case",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

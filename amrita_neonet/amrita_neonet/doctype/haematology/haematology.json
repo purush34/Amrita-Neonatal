@@ -1,12 +1,14 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:{baby_id} {mother_name}",
  "creation": "2023-03-06 17:33:29.122878",
  "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+  "haematology",
   "baby_id",
   "mother_name",
   "daily_observations"
@@ -28,14 +30,21 @@
    "fieldname": "mother_name",
    "fieldtype": "Data",
    "label": "Mother Name"
+  },
+  {
+   "fieldname": "haematology",
+   "fieldtype": "Heading",
+   "label": "HAEMATOLOGY"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-04-04 17:50:02.464885",
+ "modified": "2023-04-06 17:38:06.902379",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Haematology",
+ "name_case": "Title Case",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

@@ -11,14 +11,27 @@
   "respiratory",
   "baby_id",
   "mother_name",
-  "daily_observations"
+  "section_break_nr6iq",
+  "simv_days",
+  "hfov_days",
+  "nasal_days",
+  "hhhfnc_days",
+  "column_break_h5e9s",
+  "bcpap_days",
+  "vent_days",
+  "o2_days",
+  "n_hour",
+  "section_break_d3s4x",
+  "daily_observations",
+  "goto"
  ],
  "fields": [
   {
    "fieldname": "baby_id",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Baby ID"
+   "label": "Baby ID",
+   "unique": 1
   },
   {
    "fieldname": "daily_observations",
@@ -35,11 +48,68 @@
    "fieldname": "respiratory",
    "fieldtype": "Heading",
    "label": "RESPIRATORY"
+  },
+  {
+   "fieldname": "simv_days",
+   "fieldtype": "Int",
+   "label": "No of days SIMV "
+  },
+  {
+   "fieldname": "hfov_days",
+   "fieldtype": "Int",
+   "label": "No of days HFOV"
+  },
+  {
+   "fieldname": "nasal_days",
+   "fieldtype": "Int",
+   "label": "No of days Nasal cannula"
+  },
+  {
+   "fieldname": "hhhfnc_days",
+   "fieldtype": "Int",
+   "label": "No of days HHHFNC"
+  },
+  {
+   "fieldname": "bcpap_days",
+   "fieldtype": "Int",
+   "label": "No of days BCPAP"
+  },
+  {
+   "fieldname": "vent_days",
+   "fieldtype": "Int",
+   "label": "No of days Vent CPAP"
+  },
+  {
+   "fieldname": "o2_days",
+   "fieldtype": "Int",
+   "label": "No of days Oxygen required"
+  },
+  {
+   "fieldname": "n_hour",
+   "fieldtype": "Float",
+   "label": "Duration of Nitric"
+  },
+  {
+   "fieldname": "section_break_nr6iq",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_h5e9s",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_d3s4x",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "goto",
+   "fieldtype": "Button",
+   "label": "Go to CVS"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-04-05 14:13:40.153722",
+ "modified": "2023-04-07 17:35:07.837017",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Respiratory",

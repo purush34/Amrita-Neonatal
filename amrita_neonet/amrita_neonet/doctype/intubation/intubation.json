@@ -1,37 +1,49 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:{baby_id} {mother_name}",
  "creation": "2023-03-06 18:50:08.843509",
  "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+  "intubation",
   "baby_id",
+  "mother_name",
   "add_reports"
  ],
  "fields": [
   {
    "fieldname": "baby_id",
-   "fieldtype": "Link",
+   "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Baby ID",
-   "options": "Opening page",
-   "reqd": 1
+   "label": "Baby ID"
   },
   {
    "fieldname": "add_reports",
    "fieldtype": "Table",
    "label": "Add Reports",
    "options": "Intubation_child"
+  },
+  {
+   "fieldname": "intubation",
+   "fieldtype": "Heading",
+   "label": "INTUBATION"
+  },
+  {
+   "fieldname": "mother_name",
+   "fieldtype": "Data",
+   "label": "Mother Name"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-03-06 18:50:08.843509",
+ "modified": "2023-04-07 19:23:40.335992",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Intubation",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

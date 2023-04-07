@@ -1,14 +1,17 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:{baby_id} {mother_name}",
  "creation": "2023-03-16 18:22:12.916025",
  "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+  "snappe_head",
   "baby_id",
   "mother_name",
+  "section_break_jwdth",
   "variables",
   "mean_blood_pressure",
   "lowest_temperature",
@@ -31,7 +34,10 @@
   "urine",
   "apgar",
   "birthweight",
-  "small_ges_age"
+  "small_ges_age",
+  "section_break_fpnhb",
+  "gaw",
+  "gaw_s"
  ],
  "fields": [
   {
@@ -43,25 +49,25 @@
    "fieldname": "mean_blood_pressure",
    "fieldtype": "Select",
    "label": "Mean Blood Pressure",
-   "options": ">= 30 mmHg\n20-29 mmHg\n< 20 mmHg"
+   "options": ">= 30 mmHg\n20 - 29 mmHg\n< 20 mmHg"
   },
   {
    "fieldname": "lowest_temperature",
    "fieldtype": "Select",
    "label": "Lowest Temperature",
-   "options": "> 96 \u00b0F\n95-96 \u00b0F\n< 95\u00b0F\n> 35.6 \u00b0C\n35-35.6 \u00b0C\n< 35 \u00b0C"
+   "options": "> 96 \u00b0F\n95 - 96 \u00b0F\n<  95 \u00b0F\n> 35.6  \u00b0C\n35 - 35.6  \u00b0C\n<  35 \u00b0C"
   },
   {
    "fieldname": "p02_mmhg___fio2_",
    "fieldtype": "Select",
    "label": "P02 (mmHg ) / FIO2 (%)",
-   "options": "> 2.49\n1.0-2.49\n0.3-0.99\n<0.3"
+   "options": "> 2.49\n1.0 - 2.49\n0.3 - 0.99\n< 0.3"
   },
   {
    "fieldname": "lowest_serum_ph",
    "fieldtype": "Select",
    "label": "Lowest serum pH",
-   "options": ">=7.20\n7.10-7.19\n< 7.10"
+   "options": ">= 7.20\n7.10 - 7.19\n< 7.10"
   },
   {
    "fieldname": "multiple_seizures",
@@ -73,19 +79,19 @@
    "fieldname": "urine_output_mlkgh",
    "fieldtype": "Select",
    "label": "Urine output (mL/kg.h)",
-   "options": ">= 1\n0.1-0.9\n<0.1"
+   "options": ">= 1\n0.1 - 0.9\n< 0.1"
   },
   {
    "fieldname": "apgar_score",
    "fieldtype": "Select",
    "label": "Apgar Score",
-   "options": ">=7\n<7"
+   "options": ">= 7\n< 7"
   },
   {
    "fieldname": "birth_weight",
    "fieldtype": "Select",
    "label": "Birth Weight",
-   "options": ">= 1000 g\n750-999 g\n<750 g"
+   "options": ">= 1000 g\n750 - 999 g\n< 750 g"
   },
   {
    "fieldname": "small_for_gestational_age",
@@ -96,14 +102,14 @@
   {
    "fieldname": "snap_ii",
    "fieldtype": "Data",
-   "is_virtual": 1,
-   "label": "SNAP II"
+   "label": "SNAP II",
+   "read_only": 1
   },
   {
    "fieldname": "snappe_ii",
    "fieldtype": "Data",
-   "is_virtual": 1,
-   "label": "SNAPPE II"
+   "label": "SNAPPE II",
+   "read_only": 1
   },
   {
    "fieldname": "column_break_wtus6",
@@ -117,47 +123,60 @@
   {
    "fieldname": "mean_bp",
    "fieldtype": "Data",
-   "is_virtual": 1
+   "label": "Score",
+   "read_only": 1
   },
   {
    "fieldname": "low_temp",
    "fieldtype": "Data",
-   "is_virtual": 1
+   "label": "Score",
+   "read_only": 1
   },
   {
    "fieldname": "po2",
    "fieldtype": "Data",
-   "is_virtual": 1
+   "label": "Score",
+   "read_only": 1
   },
   {
    "fieldname": "low_serum",
    "fieldtype": "Data",
-   "is_virtual": 1
+   "label": "Score",
+   "read_only": 1
   },
   {
    "fieldname": "seizures",
    "fieldtype": "Data",
-   "is_virtual": 1
+   "label": "Score",
+   "read_only": 1
   },
   {
+   "default": "0",
    "fieldname": "urine",
    "fieldtype": "Data",
-   "is_virtual": 1
+   "label": "Score",
+   "read_only": 1
   },
   {
+   "default": "0",
    "fieldname": "apgar",
    "fieldtype": "Data",
-   "is_virtual": 1
+   "label": "Score",
+   "read_only": 1
   },
   {
+   "default": "0",
    "fieldname": "birthweight",
    "fieldtype": "Data",
-   "is_virtual": 1
+   "label": "Score",
+   "read_only": 1
   },
   {
+   "default": "0",
    "fieldname": "small_ges_age",
    "fieldtype": "Data",
-   "is_virtual": 1
+   "label": "Score",
+   "read_only": 1
   },
   {
    "fieldname": "baby_id",
@@ -168,14 +187,41 @@
    "fieldname": "mother_name",
    "fieldtype": "Data",
    "label": "Mother Name"
+  },
+  {
+   "fieldname": "section_break_jwdth",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_fpnhb",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "gaw",
+   "fieldtype": "Select",
+   "label": "Gestation Age (in weeks)",
+   "options": "0\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\n32\n33\n34\n35\n36\n37\n38\n39\n40\n41\n>41"
+  },
+  {
+   "fieldname": "gaw_s",
+   "fieldtype": "Data",
+   "label": "3rd percentile birth weight (g)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "snappe_head",
+   "fieldtype": "Heading",
+   "label": "SNAPPE II"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-04-04 17:54:05.852230",
+ "modified": "2023-04-06 23:49:31.030568",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Snappe II",
+ "name_case": "Title Case",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

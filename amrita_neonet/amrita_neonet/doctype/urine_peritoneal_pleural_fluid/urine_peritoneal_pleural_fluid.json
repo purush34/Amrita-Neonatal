@@ -1,12 +1,14 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:{baby_id} {mother_name}",
  "creation": "2023-03-06 17:20:55.448196",
  "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+  "urineperitoneal_pleural_fluid",
   "baby_id",
   "mother_name",
   "add_reports"
@@ -28,14 +30,21 @@
    "fieldname": "mother_name",
    "fieldtype": "Data",
    "label": "Mother Name"
+  },
+  {
+   "fieldname": "urineperitoneal_pleural_fluid",
+   "fieldtype": "Heading",
+   "label": "Urine/Peritoneal/ Pleural fluid"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-04-04 18:01:09.801158",
+ "modified": "2023-04-06 17:52:43.123224",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Urine_Peritoneal_Pleural fluid",
+ "name_case": "Title Case",
+ "naming_rule": "Expression (old style)",
  "owner": "Administrator",
  "permissions": [
   {

@@ -1,37 +1,51 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:{baby_id} {mother_name}",
  "creation": "2023-03-06 18:46:18.718551",
  "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+  "pleural_tap",
   "baby_id",
-  "add_reports"
+  "add_reports",
+  "mother_name"
  ],
  "fields": [
   {
    "fieldname": "baby_id",
-   "fieldtype": "Link",
+   "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Baby ID",
-   "options": "Opening page",
-   "reqd": 1
+   "options": "Opening page"
   },
   {
    "fieldname": "add_reports",
    "fieldtype": "Table",
    "label": "Add Reports",
    "options": "Pleural tap_child"
+  },
+  {
+   "fieldname": "pleural_tap",
+   "fieldtype": "Heading",
+   "label": "PLEURAL TAP"
+  },
+  {
+   "fieldname": "mother_name",
+   "fieldtype": "Data",
+   "label": "Mother Name"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-03-06 18:46:18.718551",
+ "modified": "2023-04-06 23:31:44.164015",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Pleural tap",
+ "name_case": "Title Case",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
