@@ -14,6 +14,8 @@
   "opening_form",
   "admission",
   "maternal",
+  "cooling_criteria",
+  "cooling_documentation",
   "crib_ii_score",
   "snappe_ii",
   "navigator",
@@ -365,12 +367,22 @@
    "fieldtype": "Link",
    "label": "Enter Baby MID",
    "options": "Opening page"
+  },
+  {
+   "fieldname": "cooling_criteria",
+   "fieldtype": "Button",
+   "label": "Cooling Criteria"
+  },
+  {
+   "fieldname": "cooling_documentation",
+   "fieldtype": "Button",
+   "label": "Cooling Documentation"
   }
  ],
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2023-04-07 18:46:28.620728",
+ "modified": "2023-04-10 14:05:34.852356",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Neonet_Navigator",

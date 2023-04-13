@@ -11,13 +11,28 @@
   "genetic",
   "baby_id",
   "mother_name",
-  "daily_observations"
+  "section_break_7zljj",
+  "new_diagnosis",
+  "investigations",
+  "karyotype",
+  "fish",
+  "microarray",
+  "dna_isolation",
+  "section_break_jbfvu",
+  "daily_observations",
+  "text_box_for_discharge",
+  "section_break_ub1xn",
+  "go_back_to_renal",
+  "column_break_imjiy",
+  "column_break_px83x",
+  "save_and_goto_navigator"
  ],
  "fields": [
   {
    "fieldname": "baby_id",
    "fieldtype": "Data",
-   "label": "Baby ID"
+   "label": "Baby ID",
+   "read_only": 1
   },
   {
    "fieldname": "daily_observations",
@@ -28,17 +43,94 @@
   {
    "fieldname": "mother_name",
    "fieldtype": "Data",
-   "label": "Mother Name"
+   "label": "Mother Name",
+   "read_only": 1
   },
   {
    "fieldname": "genetic",
    "fieldtype": "Heading",
    "label": "GENETIC "
+  },
+  {
+   "fieldname": "new_diagnosis",
+   "fieldtype": "Data",
+   "label": "Diagnosis ",
+   "read_only": 1
+  },
+  {
+   "fieldname": "investigations",
+   "fieldtype": "Section Break",
+   "label": "Investigations ",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_jbfvu",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "text_box_for_discharge",
+   "fieldtype": "Text",
+   "label": "Text Box for Discharge",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_7zljj",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_ub1xn",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "go_back_to_renal",
+   "fieldtype": "Button",
+   "label": "Go Back to Renal"
+  },
+  {
+   "fieldname": "column_break_imjiy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_px83x",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "save_and_goto_navigator",
+   "fieldtype": "Button",
+   "label": "Save and goto Navigator"
+  },
+  {
+   "default": "0",
+   "fieldname": "karyotype",
+   "fieldtype": "Check",
+   "label": "Karyotype",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "fish",
+   "fieldtype": "Check",
+   "label": "FISH",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "microarray",
+   "fieldtype": "Check",
+   "label": "Microarray",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "dna_isolation",
+   "fieldtype": "Check",
+   "label": "DNA Isolation",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-04-06 17:40:12.220164",
+ "modified": "2023-04-11 00:56:27.689967",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Genetic",

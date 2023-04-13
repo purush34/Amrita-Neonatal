@@ -11,14 +11,30 @@
   "haematology",
   "baby_id",
   "mother_name",
-  "daily_observations"
+  "section_break_0igr1",
+  "no_of_days_exchange_transfusion_past_24_hours",
+  "no_of_days_prbc_past_24_hours",
+  "no_of_days_platelets_past_24_hours",
+  "no_of_days_ffp_past_24_hours",
+  "column_break_bgeeo",
+  "no_of_days_cryoprecipitate_past_24_hours",
+  "no_of_days_ivig_past_24_hours",
+  "section_break_6czsb",
+  "daily_observations",
+  "text_box_for_discharge",
+  "_section",
+  "go_back_to_ent_swallow",
+  "column_break_b9csb",
+  "column_break_qs3kg",
+  "save_and_goto_renal"
  ],
  "fields": [
   {
    "fieldname": "baby_id",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Baby ID"
+   "label": "Baby ID",
+   "read_only": 1
   },
   {
    "fieldname": "daily_observations",
@@ -29,17 +45,89 @@
   {
    "fieldname": "mother_name",
    "fieldtype": "Data",
-   "label": "Mother Name"
+   "label": "Mother Name",
+   "read_only": 1
   },
   {
    "fieldname": "haematology",
    "fieldtype": "Heading",
    "label": "HAEMATOLOGY"
+  },
+  {
+   "fieldname": "section_break_0igr1",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_6czsb",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "text_box_for_discharge",
+   "fieldtype": "Text",
+   "label": "Text Box for Discharge",
+   "read_only": 1
+  },
+  {
+   "fieldname": "_section",
+   "fieldtype": "Section Break",
+   "label": " "
+  },
+  {
+   "fieldname": "go_back_to_ent_swallow",
+   "fieldtype": "Button",
+   "label": "Go Back to ENT Swallow"
+  },
+  {
+   "fieldname": "column_break_b9csb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_qs3kg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "save_and_goto_renal",
+   "fieldtype": "Button",
+   "label": "Save and goto Renal"
+  },
+  {
+   "fieldname": "no_of_days_exchange_transfusion_past_24_hours",
+   "fieldtype": "Int",
+   "label": "No of days Exchange Transfusion past 24 hours"
+  },
+  {
+   "fieldname": "no_of_days_prbc_past_24_hours",
+   "fieldtype": "Int",
+   "label": "No of days PRBC past 24 hours"
+  },
+  {
+   "fieldname": "no_of_days_platelets_past_24_hours",
+   "fieldtype": "Int",
+   "label": "No of days Platelets past 24 hours"
+  },
+  {
+   "fieldname": "no_of_days_ffp_past_24_hours",
+   "fieldtype": "Int",
+   "label": "No of days FFP past 24 hours"
+  },
+  {
+   "fieldname": "column_break_bgeeo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "no_of_days_cryoprecipitate_past_24_hours",
+   "fieldtype": "Int",
+   "label": "No of days Cryoprecipitate past 24 hours"
+  },
+  {
+   "fieldname": "no_of_days_ivig_past_24_hours",
+   "fieldtype": "Int",
+   "label": "No of days IVIG past 24 hours"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-04-06 17:38:06.902379",
+ "modified": "2023-04-11 19:00:03.141801",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Haematology",

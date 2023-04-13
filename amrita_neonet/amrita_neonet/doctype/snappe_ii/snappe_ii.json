@@ -181,12 +181,14 @@
   {
    "fieldname": "baby_id",
    "fieldtype": "Data",
-   "label": "Baby ID"
+   "label": "Baby ID",
+   "read_only": 1
   },
   {
    "fieldname": "mother_name",
    "fieldtype": "Data",
-   "label": "Mother Name"
+   "label": "Mother Name",
+   "read_only": 1
   },
   {
    "fieldname": "section_break_jwdth",
@@ -216,7 +218,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-04-06 23:49:31.030568",
+ "modified": "2023-04-10 17:36:49.105594",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Snappe II",

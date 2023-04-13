@@ -9,8 +9,6 @@
  "engine": "InnoDB",
  "field_order": [
   "gi",
-  "baby_id",
-  "mother_name",
   "anthropometry_today",
   "section_break_jhiej",
   "weight",
@@ -18,6 +16,7 @@
   "length",
   "column_break_kh0yp",
   "working_weight",
+  "section_break_gjo8k",
   "new",
   "column_break_tiwbh",
   "last24",
@@ -51,6 +50,7 @@
   "no_of_days",
   "section_break_fiyme",
   "total_fluid_volume_in_mlkg",
+  "section_break_5jekd",
   "aspirates",
   "column_break_khevj",
   "aoptions",
@@ -71,12 +71,14 @@
   "mlkgday",
   "section_break_5ky2c",
   "tpn",
+  "section_break_f7ejf",
   "enteral_feeds_in_last_24_hours",
   "column_break_1sp8v",
   "mlkge",
   "section_break_eaezt",
   "route_of_feeds",
   "total_volume_of_feeds_over_past_24_hours",
+  "section_break_itm6a",
   "feeds_skipped_in_past_24hours",
   "column_break_uxuff",
   "number",
@@ -89,7 +91,94 @@
   "full_oral_feeds",
   "column_break_ryeii",
   "day1",
-  "section_break_et0pk"
+  "section_break_et0pk",
+  "dextrose",
+  "dextrose_text",
+  "column_break_it9os",
+  "isop_check",
+  "isop",
+  "column_break_pzmaf",
+  "tpn_check",
+  "tpn_ml",
+  "column_break_xnxp5",
+  "feeds_check",
+  "feeds",
+  "section_break_eacgp",
+  "type_of_feed",
+  "ebm_pre_term_ml",
+  "ebm_term_mlday",
+  "no_of_fortifier_sachets_mlday",
+  "pre_term_formula_ml",
+  "term_formula_mlday",
+  "neocate_mlday",
+  "sagar_mlday",
+  "mct_oil_dropsday",
+  "beneprotien_gmkgday",
+  "column_break_k9clm",
+  "ebm_pre_term_calories",
+  "ebm_term_calories",
+  "no_of_fortifier_sachets_calories",
+  "pre_term_formula_calories",
+  "term_formula_calories",
+  "neocate_calories",
+  "sagar_calories",
+  "mct_oil_calories",
+  "beneprotien_calories",
+  "total_calories",
+  "column_break_ayqn8",
+  "ebm_pre_term_per_kilo",
+  "ebm_term_per_kilo",
+  "no_of_fortifier_sachets_per_kilo",
+  "pre_term_formula_per_kilo",
+  "term_formula_per_kilo",
+  "neocate_per_kilo",
+  "sagar_per_kilo",
+  "mct_oil_per_kilo",
+  "beneprotien_per_kilo",
+  "total_per_kilo",
+  "column_break_e3521",
+  "ebm_pre_term_protein",
+  "ebm_term_protein_content",
+  "no_of_fortifier_sachets_protein_content",
+  "pre_term_formula_protein",
+  "term_formula_protein_content",
+  "neocate_protein_content",
+  "sagar_protein_content",
+  "mct_oil_protein_content",
+  "beneprotien_protein_content",
+  "total_protein_content",
+  "section_break_lzng5",
+  "tpn_head",
+  "section_break_jksgj",
+  "gir_mg",
+  "protein_grams",
+  "lipid_grams",
+  "column_break_m7tbj",
+  "gir_kcal",
+  "protein_kcal",
+  "lipid_kcal",
+  "feeds_and_supplement_kcals",
+  "total_kcal",
+  "section_break_cye4p",
+  "jaundice",
+  "unconjugated_section",
+  "un_text",
+  "haemolytic",
+  "unh_options",
+  "column_break_cqkpa",
+  "non_haemolytic",
+  "un_non",
+  "conjugated_section",
+  "c_text",
+  "c_options",
+  "section_break_lexsz",
+  "phototherapy",
+  "if_photo",
+  "section_break_fz8dh",
+  "bowel",
+  "color",
+  "no_of_times",
+  "text_for_discharge"
  ],
  "fields": [
   {
@@ -129,7 +218,7 @@
    "fieldname": "new",
    "fieldtype": "Select",
    "label": "New Diagnosis last 24 hours",
-   "options": "Yes\nNo"
+   "options": "No\nYes"
   },
   {
    "fieldname": "column_break_tiwbh",
@@ -154,9 +243,9 @@
    "options": "Pyloric\nDuodenal\nIleal\ncolonic"
   },
   {
-   "depends_on": "eval:in_list([\"Other\",\"Duplication cyst\",\"Perforation\"],doc.last24)",
+   "depends_on": "eval:doc.last24==[\"Other\",\"Duplication cyst\",\"Perforation\"] && doc.new==\"Yes\"",
    "fieldname": "text",
-   "fieldtype": "Text"
+   "fieldtype": "Data"
   },
   {
    "depends_on": "eval:in_list([\"Inguinal Hernia\",\"Hydrocoel\"],doc.last24)",
@@ -169,8 +258,9 @@
    "fieldtype": "Column Break"
   },
   {
+   "depends_on": "eval:doc.new==\"Yes\"",
    "fieldname": "text24hours",
-   "fieldtype": "Text"
+   "fieldtype": "Data"
   },
   {
    "fieldname": "section_break_vbgrg",
@@ -180,7 +270,7 @@
    "fieldname": "new1",
    "fieldtype": "Select",
    "label": "New Diagnosis for discharge",
-   "options": "Yes\nNo"
+   "options": "No\nYes"
   },
   {
    "fieldname": "column_break_zimsd",
@@ -207,7 +297,7 @@
   {
    "depends_on": "eval:in_list([\"Other\",\"Duplication cyst\",\"Perforation\"],doc.discharge)",
    "fieldname": "text1",
-   "fieldtype": "Text"
+   "fieldtype": "Data"
   },
   {
    "depends_on": "eval:in_list([\"Inguinal Hernia\",\"Hydrocoel\"],doc.discharge)",
@@ -220,8 +310,9 @@
    "fieldtype": "Column Break"
   },
   {
+   "depends_on": "eval:doc.new1==\"Yes\"",
    "fieldname": "textdischarge",
-   "fieldtype": "Text"
+   "fieldtype": "Data"
   },
   {
    "fieldname": "section_break_uwe6w",
@@ -231,13 +322,14 @@
    "fieldname": "any_surgery_in_past_24_hours",
    "fieldtype": "Select",
    "label": "Any Surgery in past 24 hours",
-   "options": "Yes\nNo"
+   "options": "No\nYes"
   },
   {
    "fieldname": "column_break_aqxhq",
    "fieldtype": "Column Break"
   },
   {
+   "depends_on": "eval:doc.any_surgery_in_past_24_hours==\"Yes\"",
    "fieldname": "stime",
    "fieldtype": "Datetime"
   },
@@ -246,8 +338,9 @@
    "fieldtype": "Column Break"
   },
   {
+   "depends_on": "eval:doc.any_surgery_in_past_24_hours==\"Yes\"",
    "fieldname": "stext",
-   "fieldtype": "Text"
+   "fieldtype": "Data"
   },
   {
    "fieldname": "section_break_5iwxg",
@@ -257,7 +350,7 @@
    "fieldname": "central_line",
    "fieldtype": "Select",
    "label": "Central line",
-   "options": "Yes\nNo"
+   "options": "No\nYes"
   },
   {
    "fieldname": "column_break_0m9s4",
@@ -274,9 +367,9 @@
    "fieldtype": "Column Break"
   },
   {
-   "depends_on": "eval:in_list([\"Premi cath\"],doc.coptions)",
+   "depends_on": "eval:in_list([\"Yes\"],doc.central_line)",
    "fieldname": "no_of_days",
-   "fieldtype": "Data",
+   "fieldtype": "Int",
    "label": "No of days"
   },
   {
@@ -285,14 +378,14 @@
   },
   {
    "fieldname": "total_fluid_volume_in_mlkg",
-   "fieldtype": "Text",
+   "fieldtype": "Data",
    "label": "Total Fluid Volume in Ml/kg"
   },
   {
    "fieldname": "aspirates",
    "fieldtype": "Select",
    "label": "Aspirates",
-   "options": "Yes\nNo"
+   "options": "No\nYes"
   },
   {
    "fieldname": "column_break_khevj",
@@ -309,8 +402,9 @@
    "fieldtype": "Column Break"
   },
   {
+   "depends_on": "eval:doc.aspirates==\"Yes\"",
    "fieldname": "atext",
-   "fieldtype": "Text"
+   "fieldtype": "Data"
   },
   {
    "fieldname": "section_break_dpoy7",
@@ -320,7 +414,7 @@
    "fieldname": "stoma",
    "fieldtype": "Select",
    "label": "Stoma",
-   "options": "Yes\nNo"
+   "options": "No\nYes"
   },
   {
    "fieldname": "column_break_ruyah",
@@ -337,15 +431,15 @@
    "fieldtype": "Column Break"
   },
   {
-   "depends_on": "eval:in_list([\"Functioning\"],doc.soptions)",
+   "depends_on": "eval:doc.soptions==[\"Functioning\"] && doc.stoma==\"Yes\"",
    "fieldname": "foptions",
    "fieldtype": "Select",
-   "options": "Yes\nNo"
+   "options": "No\nYes"
   },
   {
    "depends_on": "eval:in_list([\"Stoma Loss\"],doc.soptions)",
    "fieldname": "sttext",
-   "fieldtype": "Text"
+   "fieldtype": "Data"
   },
   {
    "fieldname": "section_break_9gs91",
@@ -355,7 +449,7 @@
    "fieldname": "replacement_fluid",
    "fieldtype": "Select",
    "label": "Replacement Fluid",
-   "options": "Yes\nNo"
+   "options": "No\nYes"
   },
   {
    "fieldname": "column_break_ecmbr",
@@ -391,13 +485,14 @@
    "fieldname": "enteral_feeds_in_last_24_hours",
    "fieldtype": "Select",
    "label": "Enteral feeds in last 24 hours",
-   "options": "Yes\nNo"
+   "options": "No\nYes"
   },
   {
    "fieldname": "column_break_1sp8v",
    "fieldtype": "Column Break"
   },
   {
+   "depends_on": "eval:doc.enteral_feeds_in_last_24_hours==\"Yes\"",
    "fieldname": "mlkge",
    "fieldtype": "Data",
    "label": "ml/kg"
@@ -421,7 +516,7 @@
    "fieldname": "feeds_skipped_in_past_24hours",
    "fieldtype": "Select",
    "label": "Feeds skipped in past 24hours",
-   "options": "Yes\nNo"
+   "options": "No\nYes"
   },
   {
    "fieldname": "column_break_uxuff",
@@ -430,13 +525,13 @@
   {
    "depends_on": "eval:in_list([\"Yes\"],doc.feeds_skipped_in_past_24hours)",
    "fieldname": "number",
-   "fieldtype": "Text",
+   "fieldtype": "Int",
    "label": "Number"
   },
   {
    "depends_on": "eval:in_list([\"Yes\"],doc.feeds_skipped_in_past_24hours)",
    "fieldname": "reason",
-   "fieldtype": "Text",
+   "fieldtype": "Small Text",
    "label": "Reason"
   },
   {
@@ -447,15 +542,16 @@
    "fieldname": "full_enteral_feeds",
    "fieldtype": "Select",
    "label": "Full enteral feeds",
-   "options": "Yes\nNo"
+   "options": "No\nYes"
   },
   {
    "fieldname": "column_break_6rgfi",
    "fieldtype": "Column Break"
   },
   {
+   "depends_on": "eval:doc.full_enteral_feeds==\"Yes\"",
    "fieldname": "day_of_life",
-   "fieldtype": "Text",
+   "fieldtype": "Int",
    "label": "DAY OF LIFE"
   },
   {
@@ -466,20 +562,22 @@
    "fieldname": "full_oral_feeds",
    "fieldtype": "Select",
    "label": "Full oral feeds",
-   "options": "Yes\nNo"
+   "options": "No\nYes"
   },
   {
    "fieldname": "column_break_ryeii",
    "fieldtype": "Column Break"
   },
   {
+   "depends_on": "eval:doc.full_oral_feeds==\"Yes\"",
    "fieldname": "day1",
-   "fieldtype": "Text",
+   "fieldtype": "Int",
    "label": "DAY OF LIFE"
   },
   {
    "fieldname": "section_break_et0pk",
-   "fieldtype": "Section Break"
+   "fieldtype": "Section Break",
+   "label": "Type of fluids"
   },
   {
    "fieldname": "gi",
@@ -487,39 +585,605 @@
    "label": "GI"
   },
   {
-   "fieldname": "baby_id",
-   "fieldtype": "Data",
-   "label": "Baby ID"
+   "default": "0",
+   "fieldname": "dextrose",
+   "fieldtype": "Check",
+   "label": "10% Dextrose"
   },
   {
-   "fieldname": "mother_name",
+   "depends_on": "eval:doc.isop_check==1",
+   "fieldname": "isop",
    "fieldtype": "Data",
-   "label": "Mother Name"
+   "label": "(ml/kg/day)"
+  },
+  {
+   "depends_on": "eval:doc.tpn_check==1",
+   "fieldname": "tpn_ml",
+   "fieldtype": "Data",
+   "label": "(ml/Kg/Day)"
+  },
+  {
+   "depends_on": "eval:doc.feeds_check==1",
+   "fieldname": "feeds",
+   "fieldtype": "Data",
+   "label": "(ml/kg/day)"
+  },
+  {
+   "depends_on": "eval:doc.feeds_check==1",
+   "fieldname": "section_break_eacgp",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "ebm_pre_term_ml",
+   "fieldtype": "Float",
+   "label": "EBM Pre-Term",
+   "max_height": "40px"
+  },
+  {
+   "default": "0",
+   "fieldname": "ebm_term_mlday",
+   "fieldtype": "Float",
+   "label": "EBM Term",
+   "max_height": "40px"
+  },
+  {
+   "default": "0",
+   "fieldname": "no_of_fortifier_sachets_mlday",
+   "fieldtype": "Float",
+   "label": "No of Fortifier",
+   "max_height": "40px"
+  },
+  {
+   "default": "0",
+   "fieldname": "pre_term_formula_ml",
+   "fieldtype": "Float",
+   "label": "Pre-Term Formula (ml/day)",
+   "max_height": "40px"
+  },
+  {
+   "default": "0",
+   "fieldname": "term_formula_mlday",
+   "fieldtype": "Float",
+   "label": "Term Formula (ml/day)",
+   "max_height": "40px"
+  },
+  {
+   "default": "0",
+   "fieldname": "neocate_mlday",
+   "fieldtype": "Float",
+   "label": "Neocate (ml/day)",
+   "max_height": "40px"
+  },
+  {
+   "default": "0",
+   "fieldname": "sagar_mlday",
+   "fieldtype": "Float",
+   "label": "Sagar (ml/day)",
+   "max_height": "40px"
+  },
+  {
+   "default": "0",
+   "fieldname": "mct_oil_dropsday",
+   "fieldtype": "Float",
+   "label": "MCT oil (drops/day)",
+   "max_height": "40px"
+  },
+  {
+   "default": "0",
+   "fieldname": "beneprotien_gmkgday",
+   "fieldtype": "Float",
+   "label": "Beneprotien (GM/Kg/Day)",
+   "max_height": "40px"
+  },
+  {
+   "fieldname": "column_break_k9clm",
+   "fieldtype": "Column Break",
+   "label": "CALORIES"
+  },
+  {
+   "default": "0",
+   "fieldname": "ebm_pre_term_calories",
+   "fieldtype": "Float",
+   "label": "EBM Pre-Term calories",
+   "max_height": "40px",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "ebm_term_calories",
+   "fieldtype": "Float",
+   "label": "EBM Term calories",
+   "max_height": "40px",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "no_of_fortifier_sachets_calories",
+   "fieldtype": "Float",
+   "label": "No of Fortifier Sachets calories",
+   "max_height": "40px",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "pre_term_formula_calories",
+   "fieldtype": "Float",
+   "label": "Pre-Term Formula calories",
+   "max_height": "40px",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "term_formula_calories",
+   "fieldtype": "Float",
+   "label": "Term Formula calories",
+   "max_height": "40px",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "neocate_calories",
+   "fieldtype": "Float",
+   "label": "Neocate calories",
+   "max_height": "40px",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "sagar_calories",
+   "fieldtype": "Float",
+   "label": "Sagar calories",
+   "max_height": "40px",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "mct_oil_calories",
+   "fieldtype": "Float",
+   "label": "MCT oil calories",
+   "max_height": "40px",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "beneprotien_calories",
+   "fieldtype": "Float",
+   "label": "Beneprotien calories",
+   "max_height": "40px",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "total_calories",
+   "fieldtype": "Float",
+   "label": "Total calories",
+   "max_height": "40px",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_ayqn8",
+   "fieldtype": "Column Break",
+   "label": "Kcal/kg/day"
+  },
+  {
+   "default": "0",
+   "fieldname": "ebm_pre_term_per_kilo",
+   "fieldtype": "Float",
+   "label": "EBM Pre-Term per kilo cal",
+   "max_height": "40px",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "ebm_term_per_kilo",
+   "fieldtype": "Float",
+   "label": "EBM Term per kilo",
+   "max_height": "40px",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "no_of_fortifier_sachets_per_kilo",
+   "fieldtype": "Float",
+   "label": "No of Fortifier Sachets per kilo",
+   "max_height": "40px",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "pre_term_formula_per_kilo",
+   "fieldtype": "Float",
+   "label": "Pre-Term Formula per kilo",
+   "max_height": "40px",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "term_formula_per_kilo",
+   "fieldtype": "Float",
+   "label": "Term Formula per kilo",
+   "max_height": "40px",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "neocate_per_kilo",
+   "fieldtype": "Float",
+   "label": "Neocate per kilo",
+   "max_height": "40px",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "sagar_per_kilo",
+   "fieldtype": "Float",
+   "label": "Sagar per kilo",
+   "max_height": "40px",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "mct_oil_per_kilo",
+   "fieldtype": "Float",
+   "label": "MCT oil per kilo",
+   "max_height": "40px",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "beneprotien_per_kilo",
+   "fieldtype": "Float",
+   "label": "Beneprotien per kilo",
+   "max_height": "40px",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "total_per_kilo",
+   "fieldtype": "Float",
+   "label": "Total per kilo",
+   "max_height": "40px",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_e3521",
+   "fieldtype": "Column Break",
+   "label": "PROTEIN CONTENT"
+  },
+  {
+   "default": "0",
+   "fieldname": "ebm_pre_term_protein",
+   "fieldtype": "Float",
+   "label": "EBM Pre-Term Protein content",
+   "max_height": "40px",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "ebm_term_protein_content",
+   "fieldtype": "Float",
+   "label": "EBM Term Protein content",
+   "max_height": "40px",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "no_of_fortifier_sachets_protein_content",
+   "fieldtype": "Float",
+   "label": "No of Fortifier Sachets Protein content",
+   "max_height": "40px",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "pre_term_formula_protein",
+   "fieldtype": "Float",
+   "label": "Pre-Term Formula Protein content",
+   "max_height": "40px",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "term_formula_protein_content",
+   "fieldtype": "Float",
+   "label": "Term Formula Protein content",
+   "max_height": "40px",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "neocate_protein_content",
+   "fieldtype": "Float",
+   "label": "Neocate Protein content",
+   "max_height": "40px",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "sagar_protein_content",
+   "fieldtype": "Float",
+   "label": "Sagar Protein content",
+   "max_height": "40px",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "mct_oil_protein_content",
+   "fieldtype": "Float",
+   "label": "MCT oil Protein content",
+   "max_height": "40px",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "beneprotien_protein_content",
+   "fieldtype": "Float",
+   "label": "Beneprotien Protein content",
+   "max_height": "40px",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "total_protein_content",
+   "fieldtype": "Float",
+   "label": "Total Protein content",
+   "max_height": "40px",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_lzng5",
+   "fieldtype": "Section Break",
+   "label": "Total Calories Kcal/kg/day"
+  },
+  {
+   "fieldname": "tpn_head",
+   "fieldtype": "Heading",
+   "label": "TPN"
+  },
+  {
+   "fieldname": "section_break_jksgj",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "gir_mg",
+   "fieldtype": "Float",
+   "label": "GIR (mg)",
+   "max_height": "40px"
+  },
+  {
+   "fieldname": "protein_grams",
+   "fieldtype": "Float",
+   "label": "Protein (grams)",
+   "max_height": "40px"
+  },
+  {
+   "fieldname": "lipid_grams",
+   "fieldtype": "Float",
+   "label": "Lipid (grams)",
+   "max_height": "40px"
+  },
+  {
+   "fieldname": "column_break_m7tbj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "gir_kcal",
+   "fieldtype": "Float",
+   "label": "GIR Kcal",
+   "max_height": "40px",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "protein_kcal",
+   "fieldtype": "Float",
+   "label": "Protein Kcal",
+   "max_height": "40px",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "lipid_kcal",
+   "fieldtype": "Float",
+   "label": "Lipid Kcal",
+   "max_height": "40px",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "feeds_and_supplement_kcals",
+   "fieldtype": "Float",
+   "label": "Feeds and Supplement Kcals",
+   "max_height": "40px",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_kcal",
+   "fieldtype": "Float",
+   "label": "Total Kcal",
+   "max_height": "40px"
+  },
+  {
+   "fieldname": "section_break_gjo8k",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_5jekd",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_f7ejf",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_itm6a",
+   "fieldtype": "Section Break"
+  },
+  {
+   "depends_on": "eval:doc.dextrose==1",
+   "fieldname": "dextrose_text",
+   "fieldtype": "Data",
+   "label": "(ml/kg/day)"
+  },
+  {
+   "fieldname": "column_break_it9os",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "isop_check",
+   "fieldtype": "Check",
+   "label": "10% ISOP"
+  },
+  {
+   "fieldname": "column_break_pzmaf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "tpn_check",
+   "fieldtype": "Check",
+   "label": "TPN"
+  },
+  {
+   "fieldname": "column_break_xnxp5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "feeds_check",
+   "fieldtype": "Check",
+   "label": "Feeds"
+  },
+  {
+   "fieldname": "type_of_feed",
+   "fieldtype": "Heading",
+   "label": "Type of Feed"
+  },
+  {
+   "fieldname": "section_break_cye4p",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "jaundice",
+   "fieldtype": "Select",
+   "label": "Jaundice",
+   "options": "No\nYes"
+  },
+  {
+   "fieldname": "unconjugated_section",
+   "fieldtype": "Section Break",
+   "label": "Unconjugated"
+  },
+  {
+   "depends_on": "eval:doc.jaundice==\"unconjugated\"",
+   "fieldname": "un_text",
+   "fieldtype": "Data",
+   "label": "Highest value last 24 hours"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.jaundice==\"unconjugated\"",
+   "fieldname": "haemolytic",
+   "fieldtype": "Check",
+   "label": "Haemolytic"
+  },
+  {
+   "depends_on": "eval:doc.haemolytic==1",
+   "fieldname": "unh_options",
+   "fieldtype": "Select",
+   "options": "O-A\nO-B\nRh\nMinor antibodies\nSepsis"
+  },
+  {
+   "fieldname": "column_break_cqkpa",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.jaundice==\"unconjugated\"",
+   "fieldname": "non_haemolytic",
+   "fieldtype": "Check",
+   "label": "Non-Haemolytic"
+  },
+  {
+   "depends_on": "eval:doc.non_haemolytic==1",
+   "fieldname": "un_non",
+   "fieldtype": "Select",
+   "options": "Physiological.\nDehydration\nLactational Failure"
+  },
+  {
+   "fieldname": "conjugated_section",
+   "fieldtype": "Section Break",
+   "label": "Conjugated"
+  },
+  {
+   "fieldname": "c_text",
+   "fieldtype": "Data",
+   "label": "Highest value last 24 hours"
+  },
+  {
+   "depends_on": "eval:doc.jaundice==\"Yes\"",
+   "fieldname": "c_options",
+   "fieldtype": "Select",
+   "options": "TPN cholestasis\nSepsis\nBiliary Atresia\nCholedochal cyst\nUTI\nHypo/Hyper Thyroidism"
+  },
+  {
+   "fieldname": "section_break_lexsz",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "phototherapy",
+   "fieldtype": "Select",
+   "label": "Phototherapy",
+   "options": "No\nYes"
+  },
+  {
+   "depends_on": "eval:doc.phototherapy==\"Yes\"",
+   "fieldname": "if_photo",
+   "fieldtype": "Select",
+   "options": "Single\nDouble\nTriple\nQuadruple"
+  },
+  {
+   "fieldname": "section_break_fz8dh",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "bowel",
+   "fieldtype": "Select",
+   "label": "Bowel",
+   "options": "No\nYes"
+  },
+  {
+   "depends_on": "eval:doc.bowel==\"Yes\"",
+   "fieldname": "color",
+   "fieldtype": "Data",
+   "label": "Color"
+  },
+  {
+   "depends_on": "eval:doc.bowel==\"Yes\"",
+   "fieldname": "no_of_times",
+   "fieldtype": "Data",
+   "label": "No of times"
+  },
+  {
+   "fieldname": "text_for_discharge",
+   "fieldtype": "Text",
+   "label": "Text for Discharge"
   }
  ],
  "index_web_pages_for_search": 1,
+ "istable": 1,
  "links": [],
- "modified": "2023-04-07 19:27:13.569424",
+ "modified": "2023-04-13 14:35:29.106998",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "GI",
  "name_case": "Title Case",
  "naming_rule": "Expression",
  "owner": "Administrator",
- "permissions": [
-  {
-   "create": 1,
-   "delete": 1,
-   "email": 1,
-   "export": 1,
-   "print": 1,
-   "read": 1,
-   "report": 1,
-   "role": "System Manager",
-   "share": 1,
-   "write": 1
-  }
- ],
+ "permissions": [],
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": []

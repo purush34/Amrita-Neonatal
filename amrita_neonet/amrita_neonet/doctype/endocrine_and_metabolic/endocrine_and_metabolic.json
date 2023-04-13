@@ -11,14 +11,46 @@
   "endocrine_and_metabolic",
   "baby_id",
   "mother_name",
-  "daily_observations"
+  "diagnosis_for_discharge",
+  "transient_hypothyroidism",
+  "congenital_hypothyroidism",
+  "congenital_hyperthyroidism",
+  "disorders_of_protein_metabolism",
+  "disorders_of_protein_metabolism_text",
+  "disorders_of_fat_metabolism",
+  "disorders_of_fat_metabolism_text",
+  "disorders_of_carbohydrate_metabolism",
+  "disorders_of_carbohydrate_metabolism_text",
+  "congenital_adrenal_hyperplasia",
+  "growth_harmone_deficiency",
+  "transient_hyperinsulism",
+  "column_break_ergsu",
+  "disorders_of_sexual_differentiation",
+  "hypoparathyroidism",
+  "hyperparathyroidism",
+  "adrenal_insufficiency",
+  "neonatal_diabetes_mellitus",
+  "diabetes_insipidus",
+  "cerebral_salt_wasting_syndrome",
+  "other",
+  "other_text",
+  "section_break_mcky2",
+  "daily_observations",
+  "section_break_gv1xr",
+  "text_box_for_dicharge",
+  "section_break_xpp1t",
+  "go_back_to_cns",
+  "column_break_pyfzr",
+  "column_break_zibov",
+  "save_and_goto_sepsis"
  ],
  "fields": [
   {
    "fieldname": "baby_id",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Baby ID"
+   "label": "Baby ID",
+   "read_only": 1
   },
   {
    "fieldname": "daily_observations",
@@ -29,17 +61,206 @@
   {
    "fieldname": "mother_name",
    "fieldtype": "Data",
-   "label": "Mother Name"
+   "label": "Mother Name",
+   "read_only": 1
   },
   {
    "fieldname": "endocrine_and_metabolic",
    "fieldtype": "Heading",
    "label": "ENDOCRINE AND METABOLIC"
+  },
+  {
+   "fieldname": "diagnosis_for_discharge",
+   "fieldtype": "Section Break",
+   "label": "Diagnosis "
+  },
+  {
+   "fieldname": "text_box_for_dicharge",
+   "fieldtype": "Text",
+   "label": "Text Box for dicharge"
+  },
+  {
+   "fieldname": "section_break_gv1xr",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "transient_hypothyroidism",
+   "fieldtype": "Check",
+   "label": "Transient hypothyroidism",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "congenital_hypothyroidism",
+   "fieldtype": "Check",
+   "label": "Congenital hypothyroidism",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "congenital_hyperthyroidism",
+   "fieldtype": "Check",
+   "label": "Congenital Hyperthyroidism",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "disorders_of_protein_metabolism",
+   "fieldtype": "Check",
+   "label": "Disorders of Protein metabolism",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "disorders_of_fat_metabolism",
+   "fieldtype": "Check",
+   "label": "Disorders of Fat metabolism",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "disorders_of_carbohydrate_metabolism",
+   "fieldtype": "Check",
+   "label": "Disorders of Carbohydrate metabolism",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "congenital_adrenal_hyperplasia",
+   "fieldtype": "Check",
+   "label": "Congenital Adrenal Hyperplasia",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "growth_harmone_deficiency",
+   "fieldtype": "Check",
+   "label": "Growth Harmone deficiency",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "transient_hyperinsulism",
+   "fieldtype": "Check",
+   "label": "Transient Hyperinsulism",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "disorders_of_sexual_differentiation",
+   "fieldtype": "Check",
+   "label": "Disorders of Sexual differentiation",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "hypoparathyroidism",
+   "fieldtype": "Check",
+   "label": "Hypoparathyroidism",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "hyperparathyroidism",
+   "fieldtype": "Check",
+   "label": "Hyperparathyroidism",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "adrenal_insufficiency",
+   "fieldtype": "Check",
+   "label": "Adrenal Insufficiency",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "neonatal_diabetes_mellitus",
+   "fieldtype": "Check",
+   "label": "Neonatal Diabetes Mellitus",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "diabetes_insipidus",
+   "fieldtype": "Check",
+   "label": "Diabetes Insipidus",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "cerebral_salt_wasting_syndrome",
+   "fieldtype": "Check",
+   "label": "Cerebral Salt Wasting Syndrome",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "other",
+   "fieldtype": "Check",
+   "label": "Other",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.other==1",
+   "fieldname": "other_text",
+   "fieldtype": "Data",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_mcky2",
+   "fieldtype": "Section Break"
+  },
+  {
+   "depends_on": "eval:doc.disorders_of_protein_metabolism==1",
+   "fieldname": "disorders_of_protein_metabolism_text",
+   "fieldtype": "Data",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.disorders_of_fat_metabolism==1",
+   "fieldname": "disorders_of_fat_metabolism_text",
+   "fieldtype": "Data",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.disorders_of_carbohydrate_metabolism==1",
+   "fieldname": "disorders_of_carbohydrate_metabolism_text",
+   "fieldtype": "Data",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_ergsu",
+   "fieldtype": "Column Break",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_xpp1t",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "go_back_to_cns",
+   "fieldtype": "Button",
+   "label": "Go Back to CNS"
+  },
+  {
+   "fieldname": "column_break_pyfzr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_zibov",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "save_and_goto_sepsis",
+   "fieldtype": "Button",
+   "label": "Save and goto Sepsis"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-04-06 17:26:16.536276",
+ "modified": "2023-04-10 17:21:40.978730",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Endocrine and metabolic",

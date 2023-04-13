@@ -93,6 +93,7 @@
   "toa",
   "pneumothorax",
   "pleural_effusion",
+  "other",
   "section_break_b9eoh",
   "intubated",
   "column_break_k8ffg",
@@ -125,6 +126,7 @@
   "ahd",
   "tachy_arrythmias",
   "brady_arrythmias",
+  "other_cardio",
   "fermorals_column",
   "right",
   "left",
@@ -189,17 +191,17 @@
    "fetch_from": "name1.admission_weight",
    "fieldname": "admission_weight",
    "fieldtype": "Data",
-   "label": "Admission weight"
+   "label": "Admission weight (in grams)"
   },
   {
    "fieldname": "admission_ofc",
    "fieldtype": "Data",
-   "label": "Admission OFC"
+   "label": "Admission OFC (cm)"
   },
   {
    "fieldname": "admission_length",
    "fieldtype": "Data",
-   "label": "Admission length"
+   "label": "Admission length (cm)"
   },
   {
    "fieldname": "section_break_avxh3",
@@ -414,7 +416,7 @@
    "fieldname": "diagnosis",
    "fieldtype": "Select",
    "label": "Diagnosis",
-   "options": "Type 1 RDS\nType II RDS\nARDS\nVAP\nCongenital Pneumonia\nCPAM\nCongenital Diaphragmatic Hernia\nEventeration\nPulmonary Hypoplasia\nDelayed Perinatal Transition\nTransient Tachypnoea of Newborn\nTracheo-Oesophageal Atresia\nPneumothorax\nPleural Effusion\nChylothorax"
+   "options": "Type 1 RDS\nType II RDS\nARDS\nVAP\nCongenital Pneumonia\nCPAM\nCongenital Diaphragmatic Hernia\nEventeration\nPulmonary Hypoplasia\nDelayed Perinatal Transition\nTransient Tachypnoea of Newborn\nTracheo-Oesophageal Atresia\nPneumothorax\nPleural Effusion\nChylothorax\nOthers"
   },
   {
    "depends_on": "eval:in_list([\"VAP\"],doc.diagnosis)",
@@ -578,7 +580,7 @@
   {
    "fieldname": "respiratory_text",
    "fieldtype": "Text",
-   "label": "Respiratory_Text"
+   "label": "Text for Respiratory"
   },
   {
    "fieldname": "cardiovascular_section",
@@ -589,7 +591,7 @@
    "fieldname": "diagnosis_cardio",
    "fieldtype": "Select",
    "label": "Diagnosis",
-   "options": "Cyanotic Congenital Heart Disease\nAcyanotci Heart Disease\nHypotension\nPersistent Pulmonary Hpertension of Newborn\nHeart failure\nHypertension\nAberrant right sub-clavian artery\nVascular ring\nPremature Atrial Contraction\nPremature Ventricular Contraction\nTachy arrythmias\nBrady Arrythmias"
+   "options": "Cyanotic Congenital Heart Disease\nAcyanotci Heart Disease\nHypotension\nPersistent Pulmonary Hpertension of Newborn\nHeart failure\nHypertension\nAberrant right sub-clavian artery\nVascular ring\nPremature Atrial Contraction\nPremature Ventricular Contraction\nTachy arrythmias\nBrady Arrythmias\nOthers"
   },
   {
    "depends_on": "eval:in_list([\"Cyanotic Congenital Heart Disease\"],doc.diagnosis_cardio)",
@@ -641,7 +643,7 @@
   {
    "fieldname": "cardio_text",
    "fieldtype": "Text",
-   "label": "Cardio"
+   "label": "Text for Cardio"
   },
   {
    "fieldname": "gastro_intestinal_section",
@@ -692,7 +694,7 @@
   {
    "fieldname": "transillum",
    "fieldtype": "Select",
-   "label": "Transillum",
+   "label": "Transillumination",
    "options": "Yes\nNo"
   },
   {
@@ -847,11 +849,23 @@
    "fieldname": "mother_name",
    "fieldtype": "Data",
    "label": "Mother Name"
+  },
+  {
+   "depends_on": "eval:doc.diagnosis==\"Others\"",
+   "fieldname": "other",
+   "fieldtype": "Data",
+   "label": "Other"
+  },
+  {
+   "depends_on": "eval:doc.diagnosis_cardio==\"Others\"",
+   "fieldname": "other_cardio",
+   "fieldtype": "Data",
+   "label": "Other"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-04-04 18:07:30.321745",
+ "modified": "2023-04-11 00:39:12.370655",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Admission",

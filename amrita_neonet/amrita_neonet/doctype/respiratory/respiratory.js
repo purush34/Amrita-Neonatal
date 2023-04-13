@@ -1,11 +1,15 @@
 // Copyright (c) 2023, ICTS and contributors
 // For license information, please see license.txt
 
-// frappe.ui.form.on('Respiratory', {
-// 	// refresh: function(frm) {
+frappe.ui.form.on('Respiratory', {
+	// refresh: function(frm) {
 
-// 	// }
-// });
+	// }
+	save_and_goto_cvs(frm){
+		frm.save();
+		frappe.set_route("Form", "CVS", frm.doc.name);
+	}
+});
 // console.log("Hello");
 // frappe.ui.form.on('Respiratory', {
 // 	// cdt is Child DocType name i.e Quotation Item
@@ -27,24 +31,6 @@
 frappe.ui.form.on('Respiratory_child', {
 	// cdt is Child DocType name i.e Quotation Item
 	// cdn is the row name for e.g bbfcb8da6a
-	date(frm, cdt, cdn) {
-		// let row = frappe.get_doc(cdt, cdn);
-		console.log(frm);
-		console.log("Hello I am in the child");
-		console.log(cdt,cdn);
-		var child_table = frm.fields_dict.daily_observations.grid.grid_rows;
-		// In for loop find the row index of the current row in doc.name
-		var ind = -1;
-		for (let index = 0; index < child_table.length; index++) {
-			if (child_table[index].doc.name == cdn) {
-				ind = index;
-				break;
-			}			
-		}
-		console.log(ind);
-
-		
-	},
 	o2c_m(frm, cdt, cdn) {
 		calc_maximum_oxidatio(frm, cdt, cdn);
 	},
@@ -76,18 +62,9 @@ frappe.ui.form.on('Respiratory_child', {
 
 function calc_maximum_oxidatio(frm, cdt, cdn) {
 	let row = frappe.get_doc(cdt, cdn);
-	var child_table = frm.fields_dict.daily_observations.grid.grid_rows;
-	var ind = -1;
-	for (let index = 0; index < child_table.length; index++) {
-		if (child_table[index].doc.name == cdn) {
-			ind = index;
-			break;
-		}
-	}
-	// console.log(ind);
-	var map = parseFloat(frm.doc.daily_observations[ind].o2c_m);
-	var o2 = parseFloat(frm.doc.daily_observations[ind].o2c_o2);
-	var pao = parseFloat(frm.doc.daily_observations[ind].o2c_pa);
+	var map = parseFloat(row.o2c_m);
+	var o2 = parseFloat(row.o2c_o2);
+	var pao = parseFloat(row.o2c_pa);
 	// OI= % O2 * MeanAirwayPressure (cm of H20/ PaO2 (mmHG)
 	// 1kPA= 7.5mmHg
 	console.log(map);
@@ -95,31 +72,22 @@ function calc_maximum_oxidatio(frm, cdt, cdn) {
 	console.log(pao);
 	var result = (o2 * map) / pao;
 	// console.log(result);
-	frm.doc.daily_observations[ind].highest_o2 = result;
+	row.highest_o2 = result;
 	frm.refresh_fields();
 }
 
 function calc_duration(frm,cdt,cdn){
 	let row = frappe.get_doc(cdt, cdn);
-	var child_table = frm.fields_dict.daily_observations.grid.grid_rows;
-	var ind = -1;
-	for (let index = 0; index < child_table.length; index++) {
-		if (child_table[index].doc.name == cdn) {
-			ind = index;
-			break;
-		}
-	}
-	// console.log(ind);
-	var start = frm.doc.daily_observations[ind].started;
-	var end = frm.doc.daily_observations[ind].stopped;
+	var start = row.started;
+	var end = row.stopped;
 	// '2023-04-14 11:43:46'
 	// caliculate the difference between the two times and return the difference in minutes even id days are different
 	var start_date = new Date(start);
 	var end_date = new Date(end);
-	var duration = (end_date - start_date) / 1000 / 60;
+	var duration = (end_date - start_date) / 1000 / 60 / 60;
 	// console.log(duration);
 	// round the duration to 2 decimal places
 	duration = Math.round(duration * 100) / 100;
-	frm.doc.daily_observations[ind].duration = duration;
+	row.duration = duration;
 	frm.refresh_fields();
 }

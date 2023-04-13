@@ -1015,18 +1015,23 @@
   },
   {
    "fieldname": "cried_soon_after_birth",
-   "fieldtype": "Data",
-   "label": "Cried soon after birth"
+   "fieldtype": "Select",
+   "label": "Cried soon after birth",
+   "options": "Yes\nNo"
   },
   {
+   "depends_on": "eval:in_list([\"Yes\"],doc.cried_soon_after_birth)",
    "fieldname": "need_for_resuscitation",
-   "fieldtype": "Data",
-   "label": "Need for resuscitation"
+   "fieldtype": "Select",
+   "label": "Need for resuscitation",
+   "options": "Yes\nNo"
   },
   {
+   "depends_on": "eval:doc.cried_soon_after_birth==\"Yes\" && doc.need_for_resuscitation==\"Yes\"",
    "fieldname": "stimulation",
-   "fieldtype": "Data",
-   "label": "Stimulation"
+   "fieldtype": "Select",
+   "label": "Stimulation",
+   "options": "Yes\nNo"
   },
   {
    "fieldname": "bag_and_mask",
@@ -1615,7 +1620,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-04-07 18:31:33.938546",
+ "modified": "2023-04-08 10:33:57.761742",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Maternal And Antenatal Details",

@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:{baby_id} {mother_name}",
  "creation": "2023-03-06 17:35:58.745995",
  "default_view": "List",
  "doctype": "DocType",
@@ -25,12 +26,6 @@
   "column_break_gqtt6",
   "admission_height",
   "section_break_v3s4k",
-  "discharge_weight",
-  "column_break_xjqma",
-  "discharge_length",
-  "column_break_r2ttv",
-  "discharge_ofc",
-  "section_break_w8ec2",
   "diagnosis",
   "cause_of_death",
   "antenatal_history_labour_and_delivery",
@@ -128,33 +123,6 @@
   },
   {
    "fieldname": "section_break_v3s4k",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "discharge_weight",
-   "fieldtype": "Text",
-   "label": "Discharge weight"
-  },
-  {
-   "fieldname": "column_break_xjqma",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "discharge_length",
-   "fieldtype": "Text",
-   "label": "Discharge Length"
-  },
-  {
-   "fieldname": "column_break_r2ttv",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "discharge_ofc",
-   "fieldtype": "Text",
-   "label": "Discharge OFC"
-  },
-  {
-   "fieldname": "section_break_w8ec2",
    "fieldtype": "Section Break"
   },
   {
@@ -299,10 +267,11 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-04-04 17:55:33.533798",
+ "modified": "2023-04-10 12:19:07.664431",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Death summery",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

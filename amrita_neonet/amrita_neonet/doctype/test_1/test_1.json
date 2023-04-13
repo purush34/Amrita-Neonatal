@@ -10,7 +10,8 @@
   "mid",
   "page1",
   "page2",
-  "page3"
+  "page3",
+  "sample"
  ],
  "fields": [
   {
@@ -33,12 +34,21 @@
    "fieldtype": "Link",
    "label": "Baby ID",
    "options": "testBabies"
+  },
+  {
+   "columns": 10,
+   "fieldname": "sample",
+   "fieldtype": "Small Text",
+   "label": "sample",
+   "max_height": "40px",
+   "print_width": "100px",
+   "width": "100px"
   }
  ],
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2023-04-04 10:48:05.663213",
+ "modified": "2023-04-09 21:30:02.029972",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Test-1",

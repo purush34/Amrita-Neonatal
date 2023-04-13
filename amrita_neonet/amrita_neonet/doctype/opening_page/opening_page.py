@@ -14,6 +14,7 @@ class Openingpage(Document):
         'Chest drain': 'chest_drain',
         'CNS': 'cns',
         'Cooling Criteria': 'cooling_criteria',
+        'Cooling Documentation': 'cooling_documentation',
         'CRIB score': 'crib_score',
         'CT': 'ct',
         'CVS': 'cvs',
@@ -22,16 +23,17 @@ class Openingpage(Document):
         'Discharge examination': 'discharge_examination',
         'Discharge letter': 'discharge_letter',
         'Echocardiography': 'echocardiography',
+        'Endocrine and metabolic': 'endocrine_and_metabolic',
         'Electroencephalography': 'electroencephalography',
         # 'Enselfrine And Metabolic': 'enselfrine_and_metabolic',
         'ENT and Swallow': 'ent_and_swallow',
         'Genetic': 'genetic',
         'Genetic Tests': 'genetic_tests',
-        'GI': 'gi',
+        'Gastrointestinal': 'gastrointestinal',
         'Haematology': 'haematology',
         'Intubation': 'intubation',
         'Lumbar puncture': 'lumbar_puncture',
-        'Maternal And Antenatal Details': 'maternal_and_antenatal_details',
+        # 'Maternal And Antenatal Details': 'maternal_and_antenatal_details',  # come back
         'MRI': 'mri',
         'Naso- Pharyngeal tube': 'naso__pharyngeal_tube',
         'Neogen': 'neogen',
@@ -68,13 +70,26 @@ class Openingpage(Document):
             temp.mother_name = self.mother_name
             temp.save()
 
+        # ad = frappe.new_doc('Admission')
+        # ad.baby_id = self.baby_id
+        # ad.mother_name = self.mother_name
+        # ad.save()
+
     def on_trash(self):
         """Called when doc is trashed."""
         for i in self.all_dict_doctypes.keys():
-            temp = frappe.get_doc(i, {'baby_id': self.baby_id})
-            temp.delete()
+            try :
+                temp = frappe.get_doc(i, {'baby_id': self.baby_id})
+                frappe.delete_doc(i, temp.name)
+            except:
+                pass
         # neogen = frappe.get_doc('Neogen', {'baby_id': self.baby_id})
         # neogen.delete()
+        # open = frappe.get_doc('Opening Page', {'baby_id': self.baby_id})
+        # open.delete()
+
+        # admi = frappe.get_doc('Admission', {'baby_id': self.baby_id})
+        # frappe.delete_doc('Admission', admi.name)
 
         
 

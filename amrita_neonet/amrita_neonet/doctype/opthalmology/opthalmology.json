@@ -11,13 +11,26 @@
   "opthalmology",
   "baby_id",
   "mother_name",
-  "daily_observations"
+  "section_break_1edtl",
+  "diagnosis",
+  "procedures_section",
+  "laser",
+  "anti_vgef_intravitral_injection",
+  "rop_screening",
+  "daily_observations",
+  "text_box_for_discharge",
+  "section_break_d8avw",
+  "go_back_to_sepsis",
+  "column_break_9ig02",
+  "column_break_ii2r3",
+  "save_and_goto_ent_swallow"
  ],
  "fields": [
   {
    "fieldname": "baby_id",
    "fieldtype": "Data",
-   "label": "Baby ID"
+   "label": "Baby ID",
+   "read_only": 1
   },
   {
    "fieldname": "daily_observations",
@@ -28,17 +41,83 @@
   {
    "fieldname": "mother_name",
    "fieldtype": "Data",
-   "label": "Mother Name"
+   "label": "Mother Name",
+   "read_only": 1
   },
   {
    "fieldname": "opthalmology",
    "fieldtype": "Heading",
    "label": "OPTHALMOLOGY"
+  },
+  {
+   "fieldname": "text_box_for_discharge",
+   "fieldtype": "Data",
+   "label": "Text Box for Discharge",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_1edtl",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_d8avw",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "go_back_to_sepsis",
+   "fieldtype": "Button",
+   "label": "Go Back to Sepsis"
+  },
+  {
+   "fieldname": "column_break_9ig02",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_ii2r3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "save_and_goto_ent_swallow",
+   "fieldtype": "Button",
+   "label": "Save and goto ENT Swallow"
+  },
+  {
+   "fieldname": "diagnosis",
+   "fieldtype": "Data",
+   "label": "Diagnosis ",
+   "read_only": 1
+  },
+  {
+   "fieldname": "procedures_section",
+   "fieldtype": "Section Break",
+   "label": "Procedures ",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "laser",
+   "fieldtype": "Check",
+   "label": "Laser",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "anti_vgef_intravitral_injection",
+   "fieldtype": "Check",
+   "label": "Anti VGEF intravitral injection",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "rop_screening",
+   "fieldtype": "Check",
+   "label": "ROP screening",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-04-06 17:36:54.081044",
+ "modified": "2023-04-11 01:11:29.613772",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Opthalmology",

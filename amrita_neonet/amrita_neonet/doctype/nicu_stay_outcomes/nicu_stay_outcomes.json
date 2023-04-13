@@ -1,0 +1,383 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{baby_id} {mother_name}",
+ "creation": "2023-04-11 14:43:19.166063",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "outcome",
+  "refresh_data",
+  "discharge_letter",
+  "death_summary",
+  "section_break_kzfwt",
+  "baby_id",
+  "mother_id",
+  "column_break_hpttl",
+  "date_and_time_of_birth",
+  "mother_name",
+  "section_break_yjhp2",
+  "gestational_age_at_admission",
+  "date_of_admission",
+  "admission_weight",
+  "admission_length",
+  "admission_ofc",
+  "column_break_keffn",
+  "gestational_age_at_discharge",
+  "time_and_date_of_discharge",
+  "time_and_date_of_death",
+  "discharge_weight",
+  "discharge_length",
+  "discharge_ofc",
+  "section_break_atcrl",
+  "length_of_hospital_stay",
+  "column_break_qnuwk",
+  "discharge",
+  "name_of_the_hospital",
+  "consultant_name",
+  "handover_given_to",
+  "ward_name",
+  "section_break_qkbe4",
+  "diagnosis_throughout_the_stay",
+  "antenatal_history_labour_and_delivery",
+  "antenatal",
+  "investigations_done_during_stay",
+  "list_of_investigations",
+  "summary_of_stay",
+  "respiratory_summery",
+  "cvs_summery",
+  "gastroinstestine_summery",
+  "cns_summery",
+  "endocrine_and_metabolic_summery",
+  "sepsis_summery",
+  "ophthalmology_summery",
+  "ent_and_swallow_summery",
+  "haematology_summery",
+  "renal_summery",
+  "genetic_summery",
+  "any_genetic_samples_sent",
+  "samples_stored",
+  "date_of_discard",
+  "medications_at_discharge",
+  "advise_at_discharge",
+  "follow_up"
+ ],
+ "fields": [
+  {
+   "fieldname": "outcome",
+   "fieldtype": "Select",
+   "label": "Outcome",
+   "options": "Discharge Letter\nDeath Summary"
+  },
+  {
+   "depends_on": "eval:in_list([\"Discharge Letter\"],doc.outcome)",
+   "fieldname": "discharge_letter",
+   "fieldtype": "Heading",
+   "label": "Discharge Letter"
+  },
+  {
+   "depends_on": "eval:in_list([\"Death Summary\"],doc.outcome)",
+   "fieldname": "death_summary",
+   "fieldtype": "Heading",
+   "label": "Death Summary"
+  },
+  {
+   "fieldname": "baby_id",
+   "fieldtype": "Data",
+   "label": "Baby Id"
+  },
+  {
+   "fieldname": "mother_name",
+   "fieldtype": "Data",
+   "label": "Mother name"
+  },
+  {
+   "fieldname": "section_break_yjhp2",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "date_and_time_of_birth",
+   "fieldtype": "Data",
+   "label": "Date and Time of Birth"
+  },
+  {
+   "depends_on": "eval:in_list([\"Discharge Letter\"],doc.outcome)",
+   "fieldname": "discharge",
+   "fieldtype": "Select",
+   "label": "Discharge to",
+   "options": "Home\nOther Hospital\nWard"
+  },
+  {
+   "depends_on": "eval:in_list([\"Other Hospital\"],doc.discharge) && in_list([\"Discharge Letter\"],doc.outcome)",
+   "fieldname": "name_of_the_hospital",
+   "fieldtype": "Data",
+   "label": "Name of the Hospital"
+  },
+  {
+   "depends_on": "eval:in_list([\"Other Hospital\"],doc.discharge) && in_list([\"Discharge Letter\"],doc.outcome)",
+   "fieldname": "consultant_name",
+   "fieldtype": "Data",
+   "label": "Consultant name"
+  },
+  {
+   "depends_on": "eval:in_list([\"Other Hospital\"],doc.discharge) && in_list([\"Discharge Letter\"],doc.outcome)",
+   "fieldname": "handover_given_to",
+   "fieldtype": "Data",
+   "label": "Handover given to"
+  },
+  {
+   "depends_on": "eval:in_list([\"Discharge Letter\"],doc.outcome)",
+   "fieldname": "gestational_age_at_admission",
+   "fieldtype": "Data",
+   "label": "Gestational Age at admission"
+  },
+  {
+   "depends_on": "eval:in_list([\"Discharge Letter\"],doc.outcome)",
+   "fieldname": "gestational_age_at_discharge",
+   "fieldtype": "Data",
+   "label": "Gestational age at Discharge"
+  },
+  {
+   "fieldname": "length_of_hospital_stay",
+   "fieldtype": "Data",
+   "label": "Length of Hospital Stay"
+  },
+  {
+   "depends_on": "eval:in_list([\"Discharge Letter\"],doc.outcome)",
+   "fieldname": "discharge_weight",
+   "fieldtype": "Data",
+   "label": "Discharge weight (in kg)"
+  },
+  {
+   "depends_on": "eval:in_list([\"Discharge Letter\"],doc.outcome)",
+   "fieldname": "discharge_length",
+   "fieldtype": "Data",
+   "label": "Discharge Length (in cm)"
+  },
+  {
+   "depends_on": "eval:in_list([\"Discharge Letter\"],doc.outcome)",
+   "fieldname": "discharge_ofc",
+   "fieldtype": "Data",
+   "label": "Discharge OFC (in cm)"
+  },
+  {
+   "fieldname": "antenatal_history_labour_and_delivery",
+   "fieldtype": "Heading",
+   "label": "Antenatal History, labour and delivery"
+  },
+  {
+   "fieldname": "antenatal",
+   "fieldtype": "Text Editor",
+   "label": "Antenatal "
+  },
+  {
+   "fieldname": "investigations_done_during_stay",
+   "fieldtype": "Heading",
+   "label": "Investigations done during stay"
+  },
+  {
+   "fieldname": "list_of_investigations",
+   "fieldtype": "Text Editor",
+   "label": "List of Investigations "
+  },
+  {
+   "fieldname": "summary_of_stay",
+   "fieldtype": "Heading",
+   "label": "Summary of Stay"
+  },
+  {
+   "fieldname": "section_break_qkbe4",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "any_genetic_samples_sent",
+   "fieldtype": "Select",
+   "label": "Any genetic samples sent",
+   "options": "No\nYes"
+  },
+  {
+   "fieldname": "samples_stored",
+   "fieldtype": "Select",
+   "label": "Samples Stored",
+   "options": "No\nYes"
+  },
+  {
+   "fieldname": "date_of_discard",
+   "fieldtype": "Date",
+   "label": "Date to be discarded if no consent given"
+  },
+  {
+   "fieldname": "medications_at_discharge",
+   "fieldtype": "Text Editor",
+   "label": "Medications at discharge"
+  },
+  {
+   "fieldname": "advise_at_discharge",
+   "fieldtype": "Text Editor",
+   "label": "Advise at discharge"
+  },
+  {
+   "fieldname": "follow_up",
+   "fieldtype": "Text Editor",
+   "label": "Follow Up"
+  },
+  {
+   "fieldname": "column_break_keffn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:in_list([\"Ward\"],doc.discharge) && in_list([\"Discharge Letter\"],doc.outcome)",
+   "fieldname": "ward_name",
+   "fieldtype": "Data",
+   "label": "Ward Name"
+  },
+  {
+   "fieldname": "mother_id",
+   "fieldtype": "Data",
+   "label": "Mother Id"
+  },
+  {
+   "fieldname": "column_break_hpttl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_kzfwt",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "date_of_admission",
+   "fieldtype": "Datetime",
+   "label": "Date and time of admission"
+  },
+  {
+   "depends_on": "eval:in_list([\"Discharge Letter\"],doc.outcome)",
+   "fieldname": "admission_weight",
+   "fieldtype": "Float",
+   "label": "Admission weight (in kg)"
+  },
+  {
+   "depends_on": "eval:in_list([\"Discharge Letter\"],doc.outcome)",
+   "fieldname": "admission_length",
+   "fieldtype": "Int",
+   "label": "Admission length (in cm)"
+  },
+  {
+   "depends_on": "eval:in_list([\"Discharge Letter\"],doc.outcome)",
+   "fieldname": "admission_ofc",
+   "fieldtype": "Data",
+   "label": "Admission OFC (in cm)"
+  },
+  {
+   "fieldname": "section_break_atcrl",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_qnuwk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:in_list([\"Death Summary\"],doc.outcome)",
+   "fieldname": "time_and_date_of_death",
+   "fieldtype": "Datetime",
+   "label": "Date and time of death"
+  },
+  {
+   "depends_on": "eval:in_list([\"Discharge Letter\"],doc.outcome)",
+   "fieldname": "time_and_date_of_discharge",
+   "fieldtype": "Datetime",
+   "label": "Date and time of discharge"
+  },
+  {
+   "fieldname": "diagnosis_throughout_the_stay",
+   "fieldtype": "Text Editor",
+   "label": "Diagnosis throughout the stay"
+  },
+  {
+   "fieldname": "respiratory_summery",
+   "fieldtype": "Text Editor",
+   "label": "Respiratory summery "
+  },
+  {
+   "fieldname": "cvs_summery",
+   "fieldtype": "Text Editor",
+   "label": "CVS summery"
+  },
+  {
+   "fieldname": "cns_summery",
+   "fieldtype": "Text Editor",
+   "label": "CNS summery"
+  },
+  {
+   "fieldname": "sepsis_summery",
+   "fieldtype": "Text Editor",
+   "label": "Sepsis summery"
+  },
+  {
+   "fieldname": "ophthalmology_summery",
+   "fieldtype": "Text Editor",
+   "label": "Ophthalmology summery"
+  },
+  {
+   "fieldname": "haematology_summery",
+   "fieldtype": "Text Editor",
+   "label": "Haematology summery"
+  },
+  {
+   "fieldname": "refresh_data",
+   "fieldtype": "Button",
+   "label": "Refresh data"
+  },
+  {
+   "fieldname": "ent_and_swallow_summery",
+   "fieldtype": "Text Editor",
+   "label": "ENT and swallow summery"
+  },
+  {
+   "fieldname": "renal_summery",
+   "fieldtype": "Text Editor",
+   "label": "Renal summery"
+  },
+  {
+   "fieldname": "gastroinstestine_summery",
+   "fieldtype": "Text Editor",
+   "label": "GI summery"
+  },
+  {
+   "fieldname": "genetic_summery",
+   "fieldtype": "Text Editor",
+   "label": "Genetics summery"
+  },
+  {
+   "fieldname": "endocrine_and_metabolic_summery",
+   "fieldtype": "Text Editor",
+   "label": "Endocrine and metabolic summery"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-04-13 00:13:02.836918",
+ "modified_by": "Administrator",
+ "module": "Amrita Neonet",
+ "name": "NICU Stay Outcomes",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -11,7 +11,59 @@
   "cvs",
   "baby_id",
   "mother_name",
-  "daily_observations"
+  "section_break_p0bbc",
+  "inotropic_support_dopamime_days",
+  "inotropic_support_dobutamine_days",
+  "inotropic_support_adrenaline_days",
+  "inotropic_support_noradrenaline_days",
+  "inotropic_support_hydroocortisone_days",
+  "column_break_vpzck",
+  "no_of_days_need_for_prostin",
+  "no_of_hs_pda_medical_courses_paracetmol",
+  "no_of_hs_pda_medical_courses_ibuprofin",
+  "no_hs_pda_surgical",
+  "section_break_6uhe0",
+  "cyanotic_congenital_heart_disease",
+  "tga",
+  "tgaivs",
+  "dorv",
+  "tetology",
+  "tapvc",
+  "papvc",
+  "truncus_arteriosus",
+  "ebstein_anomaly",
+  "interruption_of_the_aorta",
+  "acyanotci_heart_disease",
+  "asd",
+  "vsd",
+  "pda",
+  "pda_heamodynamically_significant",
+  "coarctation_of_aorta",
+  "hypotension",
+  "persistent_pulmonary_hpertension_of_newborn",
+  "heart_failure",
+  "hypertension",
+  "aberrant_right_sub_clavian_artery",
+  "column_break_wvfk2",
+  "vascular_ring",
+  "premature_atrial_contraction",
+  "premature_ventricular_contraction",
+  "tachy_arrythmias",
+  "tachy_text",
+  "brady_arrythmias",
+  "brady_text",
+  "other",
+  "other_text",
+  "section_break_m72wd",
+  "echo",
+  "section_break_qbfql",
+  "daily_observations",
+  "text_box_for_discharge_letter",
+  "section_break_dii9y",
+  "go_back_to_respiratory",
+  "column_break_qjq3h",
+  "column_break_vz6z9",
+  "save_and_goto_gi"
  ],
  "fields": [
   {
@@ -34,11 +86,335 @@
    "fieldname": "cvs",
    "fieldtype": "Heading",
    "label": "CVS"
+  },
+  {
+   "fieldname": "section_break_p0bbc",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_qbfql",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "text_box_for_discharge_letter",
+   "fieldtype": "Text",
+   "label": "Text Box for Discharge Letter"
+  },
+  {
+   "fieldname": "section_break_6uhe0",
+   "fieldtype": "Section Break",
+   "label": "Diagnosis"
+  },
+  {
+   "fieldname": "echo",
+   "fieldtype": "Data",
+   "label": "ECHO "
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.cyanotic_congenital_heart_disease==1",
+   "fieldname": "tga",
+   "fieldtype": "Check",
+   "label": "TGA",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.cyanotic_congenital_heart_disease==1",
+   "fieldname": "tgaivs",
+   "fieldtype": "Check",
+   "label": "TGA+IVS",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.cyanotic_congenital_heart_disease==1",
+   "fieldname": "dorv",
+   "fieldtype": "Check",
+   "label": "DORV",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.cyanotic_congenital_heart_disease==1",
+   "fieldname": "tetology",
+   "fieldtype": "Check",
+   "label": "Tetology",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.cyanotic_congenital_heart_disease==1",
+   "fieldname": "tapvc",
+   "fieldtype": "Check",
+   "label": "TAPVC",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.cyanotic_congenital_heart_disease==1",
+   "fieldname": "papvc",
+   "fieldtype": "Check",
+   "label": "PAPVC",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.cyanotic_congenital_heart_disease==1",
+   "fieldname": "truncus_arteriosus",
+   "fieldtype": "Check",
+   "label": "Truncus Arteriosus",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.cyanotic_congenital_heart_disease==1",
+   "fieldname": "ebstein_anomaly",
+   "fieldtype": "Check",
+   "label": "Ebstein Anomaly",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.cyanotic_congenital_heart_disease==1",
+   "fieldname": "interruption_of_the_aorta",
+   "fieldtype": "Check",
+   "label": "Interruption of the Aorta",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "acyanotci_heart_disease",
+   "fieldtype": "Check",
+   "label": "Acyanotci Heart Disease",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "hypotension",
+   "fieldtype": "Check",
+   "label": "Hypotension",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "persistent_pulmonary_hpertension_of_newborn",
+   "fieldtype": "Check",
+   "label": "Persistent Pulmonary Hpertension of Newborn",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "heart_failure",
+   "fieldtype": "Check",
+   "label": "Heart failure",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "hypertension",
+   "fieldtype": "Check",
+   "label": "Hypertension",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "aberrant_right_sub_clavian_artery",
+   "fieldtype": "Check",
+   "label": "Aberrant right sub-clavian artery",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "vascular_ring",
+   "fieldtype": "Check",
+   "label": "Vascular ring",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "premature_atrial_contraction",
+   "fieldtype": "Check",
+   "label": "Premature Atrial Contraction",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "premature_ventricular_contraction",
+   "fieldtype": "Check",
+   "label": "Premature Ventricular Contraction",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "tachy_arrythmias",
+   "fieldtype": "Check",
+   "label": "Tachy arrythmias",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "brady_arrythmias",
+   "fieldtype": "Check",
+   "label": "Brady Arrythmias",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "other",
+   "fieldtype": "Check",
+   "label": "Other",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "cyanotic_congenital_heart_disease",
+   "fieldtype": "Check",
+   "label": "Cyanotic Congenital Heart Disease",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.acyanotci_heart_disease==1",
+   "fieldname": "vsd",
+   "fieldtype": "Check",
+   "label": "VSD",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.acyanotci_heart_disease==1",
+   "fieldname": "pda",
+   "fieldtype": "Check",
+   "label": "PDA",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.acyanotci_heart_disease==1",
+   "fieldname": "pda_heamodynamically_significant",
+   "fieldtype": "Check",
+   "label": "PDA-heamodynamically significant",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.acyanotci_heart_disease==1",
+   "fieldname": "coarctation_of_aorta",
+   "fieldtype": "Check",
+   "label": "Coarctation of Aorta",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_wvfk2",
+   "fieldtype": "Column Break",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.tachy_arrythmias==1",
+   "fieldname": "tachy_text",
+   "fieldtype": "Data",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.brady_arrythmias==1",
+   "fieldname": "brady_text",
+   "fieldtype": "Data",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.other==1",
+   "fieldname": "other_text",
+   "fieldtype": "Data",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_m72wd",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.acyanotci_heart_disease==1",
+   "fieldname": "asd",
+   "fieldtype": "Check",
+   "label": "ASD",
+   "read_only": 1
+  },
+  {
+   "fieldname": "go_back_to_respiratory",
+   "fieldtype": "Button",
+   "label": "Go Back to Respiratory"
+  },
+  {
+   "fieldname": "column_break_qjq3h",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_vz6z9",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "save_and_goto_gi",
+   "fieldtype": "Button",
+   "label": "Save and goto GI"
+  },
+  {
+   "fieldname": "section_break_dii9y",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "inotropic_support_dopamime_days",
+   "fieldtype": "Int",
+   "label": "Inotropic support Dopamime days"
+  },
+  {
+   "fieldname": "inotropic_support_dobutamine_days",
+   "fieldtype": "Int",
+   "label": "Inotropic support Dobutamine days"
+  },
+  {
+   "fieldname": "inotropic_support_adrenaline_days",
+   "fieldtype": "Int",
+   "label": "Inotropic support Adrenaline days"
+  },
+  {
+   "fieldname": "inotropic_support_noradrenaline_days",
+   "fieldtype": "Int",
+   "label": "Inotropic support Noradrenaline days"
+  },
+  {
+   "fieldname": "inotropic_support_hydroocortisone_days",
+   "fieldtype": "Int",
+   "label": "Inotropic support Hydroocortisone days"
+  },
+  {
+   "fieldname": "no_of_days_need_for_prostin",
+   "fieldtype": "Icon",
+   "label": "No of days need for prostin"
+  },
+  {
+   "fieldname": "column_break_vpzck",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "no_of_hs_pda_medical_courses_paracetmol",
+   "fieldtype": "Int",
+   "label": "No of Hs PDA Medical courses (Paracetmol)"
+  },
+  {
+   "fieldname": "no_of_hs_pda_medical_courses_ibuprofin",
+   "fieldtype": "Int",
+   "label": "No of Hs PDA Medical courses (Ibuprofin)"
+  },
+  {
+   "fieldname": "no_hs_pda_surgical",
+   "fieldtype": "Int",
+   "label": "No Hs PDA Surgical"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-04-06 17:20:50.330857",
+ "modified": "2023-04-11 17:36:04.371049",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "CVS",

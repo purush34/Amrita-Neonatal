@@ -1,6 +1,6 @@
 {
  "actions": [],
- "allow_rename": 1,
+ "autoname": "format:{baby_id} {mother_name}",
  "creation": "2023-04-02 02:47:15.019273",
  "default_view": "List",
  "doctype": "DocType",
@@ -8,7 +8,7 @@
  "engine": "InnoDB",
  "field_order": [
   "baby_id",
-  "name1",
+  "mother_name",
   "consultants_agreed_section",
   "jayasree",
   "if_jayasree",
@@ -30,13 +30,7 @@
   {
    "fieldname": "baby_id",
    "fieldtype": "Data",
-   "label": "Baby ID",
-   "options": "Opening page"
-  },
-  {
-   "fieldname": "name1",
-   "fieldtype": "Data",
-   "label": "Name"
+   "label": "Baby ID"
   },
   {
    "fieldname": "consultants_agreed_section",
@@ -122,14 +116,21 @@
   {
    "fieldname": "section_break_pvism",
    "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "mother_name",
+   "fieldtype": "Data",
+   "label": "Mother name"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-04-07 18:26:38.257476",
+ "modified": "2023-04-10 13:55:20.765337",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Cooling Criteria",
+ "name_case": "Title Case",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

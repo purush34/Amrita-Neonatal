@@ -24,13 +24,14 @@
   "singleton_or_multiple",
   "twins",
   "triplets",
+  "others",
   "section_break_gbv20",
   "hospital",
   "column_break_xphk0",
   "hospital_name",
   "referring_doctor",
   "city",
-  "column_break_ije30",
+  "column_break_ije3",
   "contact",
   "section_break_5pkbg",
   "admission_to",
@@ -80,7 +81,7 @@
    "fieldtype": "Select",
    "in_list_view": 1,
    "label": "Singleton or Multiple",
-   "options": "Singleton\nTwins\nTriplets",
+   "options": "Singleton\nTwins\nTriplets\nQuadruplets\nOther",
    "reqd": 1
   },
   {
@@ -128,11 +129,6 @@
   },
   {
    "depends_on": "eval:in_list([\"Outborn\"],doc.hospital)",
-   "fieldname": "column_break_ije30",
-   "fieldtype": "Column Break"
-  },
-  {
-   "depends_on": "eval:in_list([\"Outborn\"],doc.hospital)",
    "fieldname": "city",
    "fieldtype": "Data",
    "label": "City"
@@ -165,12 +161,12 @@
   },
   {
    "fieldname": "birth_weight",
-   "fieldtype": "Float",
+   "fieldtype": "Int",
    "label": "Birth weight in grams"
   },
   {
    "fieldname": "admission_weight",
-   "fieldtype": "Float",
+   "fieldtype": "Int",
    "label": "Admission weight in grams"
   },
   {
@@ -233,11 +229,22 @@
    "fieldname": "doa",
    "fieldtype": "Date",
    "label": "Date of Admission"
+  },
+  {
+   "depends_on": "eval:doc.singleton_or_multiple==\"Other\"",
+   "fieldname": "others",
+   "fieldtype": "Data",
+   "label": "Others"
+  },
+  {
+   "depends_on": "eval:in_list([\"Outborn\"],doc.hospital)",
+   "fieldname": "column_break_ije3",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-04-05 17:26:13.786779",
+ "modified": "2023-04-12 16:11:01.280216",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Opening page",

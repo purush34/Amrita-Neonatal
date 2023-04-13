@@ -4,9 +4,9 @@
 function setGAA(frm,doa,dob) {
 	var gad = frappe.datetime.get_day_diff(doa,dob);
 	frm.set_value("day_of_life", gad);
-	console.log(doa + " Hello");
+	// console.log(doa + " Hello");
 	var g_days = parseInt(frm.doc.gab_w) * 7 + parseInt(frm.doc.gab_d);
-	console.log(g_days + " Hello");
+	// console.log(g_days + " Hello");
 	gad = gad + g_days
 	frm.set_value("gaa_v", Math.floor(gad / 7) + " Weeks " + (gad % 7) + " Days");
 }

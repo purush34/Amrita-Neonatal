@@ -125,12 +125,14 @@
   {
    "fieldname": "baby_id",
    "fieldtype": "Data",
-   "label": "Baby ID"
+   "label": "Baby ID",
+   "read_only": 1
   },
   {
    "fieldname": "mother_name",
    "fieldtype": "Data",
-   "label": "Mother Name"
+   "label": "Mother Name",
+   "read_only": 1
   },
   {
    "fieldname": "column_break_1yboc",
@@ -153,7 +155,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-04-06 17:42:09.317175",
+ "modified": "2023-04-10 17:36:30.158930",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "CRIB score",

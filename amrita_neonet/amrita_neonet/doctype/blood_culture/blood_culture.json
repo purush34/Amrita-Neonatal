@@ -18,7 +18,8 @@
    "fieldname": "baby_id",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Baby ID"
+   "label": "Baby ID",
+   "read_only": 1
   },
   {
    "fieldname": "add_reports",
@@ -29,7 +30,8 @@
   {
    "fieldname": "mother_name",
    "fieldtype": "Data",
-   "label": "Mother Name"
+   "label": "Mother Name",
+   "read_only": 1
   },
   {
    "fieldname": "blood_culture",
@@ -39,7 +41,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-04-06 17:52:01.501217",
+ "modified": "2023-04-10 17:39:10.556547",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Blood culture",

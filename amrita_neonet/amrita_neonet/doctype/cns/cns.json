@@ -13,7 +13,12 @@
   "cns",
   "baby_id",
   "mother_name",
-  "daily_observations"
+  "section_break_gtmhp",
+  "new_diagnosis_for_discharge",
+  "any_procedure_in_past_24_hours",
+  "section_break_2ib2x",
+  "daily_observations",
+  "text_box_for_discharge"
  ],
  "fields": [
   {
@@ -37,11 +42,34 @@
    "fieldname": "cns",
    "fieldtype": "Heading",
    "label": "CNS"
+  },
+  {
+   "fieldname": "new_diagnosis_for_discharge",
+   "fieldtype": "Data",
+   "label": "New Diagnosis for discharge"
+  },
+  {
+   "fieldname": "any_procedure_in_past_24_hours",
+   "fieldtype": "Data",
+   "label": "Any procedure in past 24 hours "
+  },
+  {
+   "fieldname": "text_box_for_discharge",
+   "fieldtype": "Text",
+   "label": "Text Box for Discharge"
+  },
+  {
+   "fieldname": "section_break_gtmhp",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_2ib2x",
+   "fieldtype": "Section Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-04-06 17:25:39.540351",
+ "modified": "2023-04-10 01:13:24.271991",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "CNS",

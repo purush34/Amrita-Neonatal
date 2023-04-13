@@ -22,7 +22,10 @@
   "o2_days",
   "n_hour",
   "section_break_d3s4x",
+  "new_diagnosis_for_discharge",
+  "section_break_lfltv",
   "daily_observations",
+  "text_box_for_discharge_letter",
   "goto"
  ],
  "fields": [
@@ -105,11 +108,25 @@
    "fieldname": "goto",
    "fieldtype": "Button",
    "label": "Go to CVS"
+  },
+  {
+   "fieldname": "new_diagnosis_for_discharge",
+   "fieldtype": "Data",
+   "label": "New Diagnosis for discharge"
+  },
+  {
+   "fieldname": "text_box_for_discharge_letter",
+   "fieldtype": "Text",
+   "label": "Text Box for Discharge Letter "
+  },
+  {
+   "fieldname": "section_break_lfltv",
+   "fieldtype": "Section Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-04-07 17:35:07.837017",
+ "modified": "2023-04-10 01:12:12.925049",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Respiratory",

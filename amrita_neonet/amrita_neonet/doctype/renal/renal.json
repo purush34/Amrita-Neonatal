@@ -11,13 +11,40 @@
   "renal",
   "baby_id",
   "mother_name",
-  "daily_observations"
+  "new_diagnosis_for_discharge",
+  "renal_pelvic_dilatation",
+  "multicystic_dysplastic_kidney",
+  "fungal_ball",
+  "pelvi_ureter_junction_obstruction",
+  "posterior_uretheral_valve",
+  "acute_kidney_injury",
+  "acute_renal_failure",
+  "chronic_renal_failure",
+  "other",
+  "new_procedure_past_24_hours",
+  "catherisation",
+  "pyeloplasty",
+  "puv_fulgaration",
+  "other_procedures",
+  "uti_past_24_hours",
+  "bacterial",
+  "fungal",
+  "peritoneal_dialysis_in_past_24_hours",
+  "section_break_g0ypr",
+  "daily_observations",
+  "text_box_for_discharge",
+  "_section",
+  "go_back_to_haematology",
+  "column_break_bddbv",
+  "column_break_jqkod",
+  "save_and_goto_genetic"
  ],
  "fields": [
   {
    "fieldname": "baby_id",
    "fieldtype": "Data",
-   "label": "Baby ID"
+   "label": "Baby ID",
+   "read_only": 1
   },
   {
    "fieldname": "daily_observations",
@@ -28,17 +55,180 @@
   {
    "fieldname": "mother_name",
    "fieldtype": "Data",
-   "label": "Mother Name"
+   "label": "Mother Name",
+   "read_only": 1
   },
   {
    "fieldname": "renal",
    "fieldtype": "Heading",
    "label": "RENAL"
+  },
+  {
+   "fieldname": "new_procedure_past_24_hours",
+   "fieldtype": "Section Break",
+   "label": "Procedures",
+   "read_only": 1
+  },
+  {
+   "fieldname": "new_diagnosis_for_discharge",
+   "fieldtype": "Section Break",
+   "label": "Diagnosis ",
+   "read_only": 1
+  },
+  {
+   "fieldname": "uti_past_24_hours",
+   "fieldtype": "Section Break",
+   "label": "UTI ",
+   "read_only": 1
+  },
+  {
+   "fieldname": "peritoneal_dialysis_in_past_24_hours",
+   "fieldtype": "Data",
+   "label": "Peritoneal Dialysis in past 24 hours ",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_g0ypr",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "text_box_for_discharge",
+   "fieldtype": "Text",
+   "label": "Text Box for Discharge",
+   "read_only": 1
+  },
+  {
+   "fieldname": "_section",
+   "fieldtype": "Section Break",
+   "label": " "
+  },
+  {
+   "fieldname": "go_back_to_haematology",
+   "fieldtype": "Button",
+   "label": "Go Back to Haematology"
+  },
+  {
+   "fieldname": "column_break_bddbv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_jqkod",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "save_and_goto_genetic",
+   "fieldtype": "Button",
+   "label": "Save and goto Genetic"
+  },
+  {
+   "default": "0",
+   "fieldname": "renal_pelvic_dilatation",
+   "fieldtype": "Check",
+   "label": "Renal Pelvic dilatation",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "multicystic_dysplastic_kidney",
+   "fieldtype": "Check",
+   "label": "Multicystic Dysplastic Kidney",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "fungal_ball",
+   "fieldtype": "Check",
+   "label": "Fungal Ball",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "pelvi_ureter_junction_obstruction",
+   "fieldtype": "Check",
+   "label": "Pelvi Ureter Junction obstruction",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "posterior_uretheral_valve",
+   "fieldtype": "Check",
+   "label": "Posterior Uretheral Valve",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "acute_kidney_injury",
+   "fieldtype": "Check",
+   "label": "Acute Kidney Injury",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "acute_renal_failure",
+   "fieldtype": "Check",
+   "label": "Acute Renal Failure",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "chronic_renal_failure",
+   "fieldtype": "Check",
+   "label": "Chronic Renal Failure",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "other",
+   "fieldtype": "Check",
+   "label": "Other",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "catherisation",
+   "fieldtype": "Check",
+   "label": "Catherisation",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "pyeloplasty",
+   "fieldtype": "Check",
+   "label": "Pyeloplasty",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "puv_fulgaration",
+   "fieldtype": "Check",
+   "label": "PUV Fulgaration",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "bacterial",
+   "fieldtype": "Check",
+   "label": "Bacterial",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "fungal",
+   "fieldtype": "Check",
+   "label": "Fungal",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "other_procedures",
+   "fieldtype": "Check",
+   "label": "Other",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-04-06 17:39:05.162587",
+ "modified": "2023-04-11 01:03:01.037891",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Renal",

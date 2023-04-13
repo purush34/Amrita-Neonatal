@@ -1,0 +1,73 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-04-10 14:00:12.007512",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "baby_id",
+  "mother_name",
+  "day_1_cooling_documentation",
+  "day_2_cooling_documentation",
+  "day_3_cooling_documentation",
+  "day_4_cooling_documentation"
+ ],
+ "fields": [
+  {
+   "fieldname": "baby_id",
+   "fieldtype": "Data",
+   "label": "Baby Id"
+  },
+  {
+   "fieldname": "mother_name",
+   "fieldtype": "Data",
+   "label": "Mother name"
+  },
+  {
+   "fieldname": "day_1_cooling_documentation",
+   "fieldtype": "Attach",
+   "label": "Day 1 Cooling Documentation"
+  },
+  {
+   "fieldname": "day_2_cooling_documentation",
+   "fieldtype": "Attach",
+   "label": "Day 2 Cooling Documentation"
+  },
+  {
+   "fieldname": "day_3_cooling_documentation",
+   "fieldtype": "Attach",
+   "label": "Day 3 cooling Documentation"
+  },
+  {
+   "fieldname": "day_4_cooling_documentation",
+   "fieldtype": "Attach",
+   "label": "Day 4 Cooling Documentation"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-04-10 14:00:12.007512",
+ "modified_by": "Administrator",
+ "module": "Amrita Neonet",
+ "name": "Cooling Documentation",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

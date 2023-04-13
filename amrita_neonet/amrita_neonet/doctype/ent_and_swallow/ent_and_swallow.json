@@ -11,14 +11,24 @@
   "ent_and_swallow",
   "baby_id",
   "mother_name",
-  "daily_observations"
+  "section_break_26xfl",
+  "new_diagnosis_for_discharge",
+  "section_break_sg62f",
+  "daily_observations",
+  "text_box_for_discharge",
+  "section_break_jgnf5",
+  "go_back_to_opthalmology",
+  "column_break_4vjgv",
+  "column_break_ucayk",
+  "save_and_goto_haematology"
  ],
  "fields": [
   {
    "fieldname": "baby_id",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Baby ID"
+   "label": "Baby ID",
+   "read_only": 1
   },
   {
    "fieldname": "daily_observations",
@@ -29,17 +39,60 @@
   {
    "fieldname": "mother_name",
    "fieldtype": "Data",
-   "label": "Mother Name"
+   "label": "Mother Name",
+   "read_only": 1
   },
   {
    "fieldname": "ent_and_swallow",
    "fieldtype": "Heading",
    "label": "ENT AND SWALLOW"
+  },
+  {
+   "fieldname": "new_diagnosis_for_discharge",
+   "fieldtype": "Data",
+   "label": "New Diagnosis for discharge ",
+   "read_only": 1
+  },
+  {
+   "fieldname": "text_box_for_discharge",
+   "fieldtype": "Text",
+   "label": "Text Box for Discharge",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_26xfl",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_sg62f",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_jgnf5",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "go_back_to_opthalmology",
+   "fieldtype": "Button",
+   "label": "Go Back to opthalmology"
+  },
+  {
+   "fieldname": "column_break_4vjgv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_ucayk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "save_and_goto_haematology",
+   "fieldtype": "Button",
+   "label": "Save and goto Haematology"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-04-06 17:37:31.849024",
+ "modified": "2023-04-10 17:33:19.224470",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "ENT and Swallow",

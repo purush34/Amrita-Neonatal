@@ -18,8 +18,7 @@
    "fieldname": "baby_id",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Baby ID",
-   "options": "Opening page"
+   "label": "Baby ID"
   },
   {
    "fieldname": "add_reports",
@@ -29,7 +28,7 @@
   },
   {
    "fieldname": "ng_tube_insertion",
-   "fieldtype": "Data",
+   "fieldtype": "Heading",
    "label": "NG TUBE INSERTION"
   },
   {
@@ -40,7 +39,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-04-06 23:38:53.478332",
+ "modified": "2023-04-10 01:14:43.617667",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "NG tube insertion",

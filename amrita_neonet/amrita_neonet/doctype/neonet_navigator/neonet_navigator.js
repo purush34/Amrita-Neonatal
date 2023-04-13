@@ -58,13 +58,25 @@
   "ng_tube_insertion",
   "naso_pharyngeal_tube"
 */
+/* 
+GI - done
+Endocrine - done
+Nurosonogram - done
+Lumbar puncture - done
+Genetic in investigation - done
+Respiratory secretions - done
+Umbilical lines  - done
+Peritoneal tab - done
+Surgical operative note - done
+Discharge-All
+*/
 frappe.ui.form.on('Neonet_Navigator', {
 	// refresh: function(frm) {
 
 	// }
 	opening_form: function (frm) {
 		// console.log(frm.doc.baby_id);
-		frappe.set_route("Form", "testbabies", frm.doc.baby_id)
+		frappe.set_route("Form", "Opening page", frm.doc.baby_id)
 	},
 	admission: function (frm) {
 		console.log("frm.doc.baby_id", frm.doc.baby_id);
@@ -84,7 +96,7 @@ frappe.ui.form.on('Neonet_Navigator', {
 	},
 	gi: function (frm) {
 		// console.log(frm.doc.baby_id);
-		frappe.set_route("Form", "GI", frm.doc.baby_id)
+		frappe.set_route("Form", "Gastrointestinal", frm.doc.baby_id)
 	},
 	cns: function (frm) {
 		// console.log(frm.doc.baby_id);
@@ -132,7 +144,7 @@ frappe.ui.form.on('Neonet_Navigator', {
 	},
 	nurosonogram: function (frm) {
 		// console.log(frm.doc.baby_id);
-		frappe.set_route("Form", "Nurosonogram", frm.doc.baby_id)
+		frappe.set_route("Form", "Neurosonogram", frm.doc.baby_id)
 	},
 	ct: function (frm) {
 		// console.log(frm.doc.baby_id);
@@ -172,7 +184,7 @@ frappe.ui.form.on('Neonet_Navigator', {
 	},
 	genetic_investigation: function (frm) {
 		// console.log(frm.doc.baby_id);
-		frappe.set_route("Form", "Genetic Investigation", frm.doc.baby_id)
+		frappe.set_route("Form", "Genetic Tests", frm.doc.baby_id)
 	},
 	pcr: function (frm) {
 		// console.log(frm.doc.baby_id);
@@ -184,7 +196,7 @@ frappe.ui.form.on('Neonet_Navigator', {
 	},
 	respiratory_secretions: function (frm) {
 		// console.log(frm.doc.baby_id);
-		frappe.set_route("Form", "Respiratory Secretions", frm.doc.baby_id)
+		frappe.set_route("Form", "Respiratory secreations", frm.doc.baby_id)
 	},
 	retinopathy_of_prematurity: function (frm) {
 		// console.log(frm.doc.baby_id);
@@ -196,7 +208,7 @@ frappe.ui.form.on('Neonet_Navigator', {
 	},
 	umbilical_lines: function (frm) {
 		// console.log(frm.doc.baby_id);
-		frappe.set_route("Form", "Umbilical Lines", frm.doc.baby_id)
+		frappe.set_route("Form", "Umbiilical lines", frm.doc.baby_id)
 	},
 	picc_lines: function (frm) {
 		// console.log(frm.doc.baby_id);
@@ -230,7 +242,7 @@ frappe.ui.form.on('Neonet_Navigator', {
 		// console.log(frm.doc.baby_id);
 		frappe.set_route("Form", "Peritoneal Drain", frm.doc.baby_id)
 	},
-	surgical_operative_notes: function (frm) {
+	surgical_operative_note: function (frm) {
 		// console.log(frm.doc.baby_id);
 		frappe.set_route("Form", "Surgical Operative Notes", frm.doc.baby_id)
 	},
@@ -249,7 +261,20 @@ frappe.ui.form.on('Neonet_Navigator', {
 	naso_pharyngeal_tube: function (frm) {
 		// console.log(frm.doc.baby_id);
 		frappe.set_route("Form", "Naso- Pharyngeal Tube", frm.doc.baby_id)
-	}
+	},
+	lumbar_puncture: function (frm) {
+		// console.log(frm.doc.baby_id);
+		frappe.set_route("Form", "Lumbar puncture", frm.doc.baby_id)
+	},
+	cooling_documentation: function (frm) {
+		// console.log(frm.doc.baby_id);
+		frappe.set_route("Form", "Cooling Documentation", frm.doc.baby_id)
+	},
+	cooling_criteria: function (frm) {
+		// console.log(frm.doc.baby_id);
+		frappe.set_route("Form", "Cooling Criteria", frm.doc.baby_id)
+	},
+
 
 
 

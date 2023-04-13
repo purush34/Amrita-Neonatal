@@ -18,7 +18,8 @@
    "fieldname": "baby_id",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Baby ID"
+   "label": "Baby ID",
+   "read_only": 1
   },
   {
    "fieldname": "add_reports",
@@ -29,7 +30,8 @@
   {
    "fieldname": "mother_name",
    "fieldtype": "Data",
-   "label": "Mother Name"
+   "label": "Mother Name",
+   "read_only": 1
   },
   {
    "fieldname": "electroencenphalography",
@@ -39,7 +41,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-04-06 17:49:09.373151",
+ "modified": "2023-04-10 17:38:33.682884",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Electroencephalography",

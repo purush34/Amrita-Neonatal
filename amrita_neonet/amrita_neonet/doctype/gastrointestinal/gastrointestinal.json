@@ -1,0 +1,186 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{baby_id} {mother_name}",
+ "creation": "2023-04-07 23:21:16.176722",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "gi",
+  "baby_id",
+  "mother_name",
+  "section_break_busax",
+  "total_no_of_tpn_days",
+  "day_to_reach_full_feeds",
+  "day_to_reach_full_feeds_orally",
+  "average_kcalories_per_day_during_stay",
+  "column_break_1ijyw",
+  "average_gir_content_per_day_during_stay",
+  "average_protein_content_per_day_during_stay",
+  "average_lipid_content_per_day_during_stay",
+  "maximum_bilirubin",
+  "total_no_of_days_of_phototherapy",
+  "section_break_q6t2r",
+  "new_diagnosis_for_discharge",
+  "any_surgery_for_past_24_hours",
+  "section_break_iv9fr",
+  "daily_observations",
+  "text_box_for_discharge",
+  "section_break_section",
+  "go_back_to_cvs",
+  "column_break_kxzle",
+  "column_break_bt50t",
+  "save_and_goto_cns"
+ ],
+ "fields": [
+  {
+   "fieldname": "gi",
+   "fieldtype": "Heading",
+   "label": "GI"
+  },
+  {
+   "fieldname": "baby_id",
+   "fieldtype": "Data",
+   "label": "Baby ID",
+   "read_only": 1
+  },
+  {
+   "fieldname": "mother_name",
+   "fieldtype": "Data",
+   "label": "Mother Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_busax",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "daily_observations",
+   "fieldtype": "Table",
+   "label": "Daily observations",
+   "options": "GI"
+  },
+  {
+   "fieldname": "total_no_of_tpn_days",
+   "fieldtype": "Data",
+   "label": "Total no of TPN days"
+  },
+  {
+   "fieldname": "day_to_reach_full_feeds",
+   "fieldtype": "Data",
+   "label": "Day to reach full feeds"
+  },
+  {
+   "fieldname": "day_to_reach_full_feeds_orally",
+   "fieldtype": "Data",
+   "label": "Day to reach full feeds Orally "
+  },
+  {
+   "fieldname": "average_kcalories_per_day_during_stay",
+   "fieldtype": "Data",
+   "label": "Average Kcalories per day during stay"
+  },
+  {
+   "fieldname": "column_break_1ijyw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "average_protein_content_per_day_during_stay",
+   "fieldtype": "Data",
+   "label": "Average Protein content per day during stay"
+  },
+  {
+   "fieldname": "maximum_bilirubin",
+   "fieldtype": "Data",
+   "label": "Maximum Bilirubin"
+  },
+  {
+   "fieldname": "total_no_of_days_of_phototherapy",
+   "fieldtype": "Data",
+   "label": "Total no of days of Phototherapy"
+  },
+  {
+   "fieldname": "section_break_q6t2r",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "new_diagnosis_for_discharge",
+   "fieldtype": "Data",
+   "label": "New Diagnosis for discharge"
+  },
+  {
+   "fieldname": "any_surgery_for_past_24_hours",
+   "fieldtype": "Data",
+   "label": "Any surgery for past 24 hours "
+  },
+  {
+   "fieldname": "text_box_for_discharge",
+   "fieldtype": "Text",
+   "label": "Text Box for Discharge "
+  },
+  {
+   "fieldname": "section_break_iv9fr",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_section",
+   "fieldtype": "Section Break",
+   "label": "Section Break"
+  },
+  {
+   "fieldname": "go_back_to_cvs",
+   "fieldtype": "Button",
+   "label": "Go Back to CVS"
+  },
+  {
+   "fieldname": "column_break_kxzle",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_bt50t",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "save_and_goto_cns",
+   "fieldtype": "Button",
+   "label": "Save and goto CNS"
+  },
+  {
+   "fieldname": "average_gir_content_per_day_during_stay",
+   "fieldtype": "Data",
+   "label": "Average GIR content per day during stay"
+  },
+  {
+   "fieldname": "average_lipid_content_per_day_during_stay",
+   "fieldtype": "Data",
+   "label": "Average Lipid content per day during stay"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-04-13 11:34:46.773916",
+ "modified_by": "Administrator",
+ "module": "Amrita Neonet",
+ "name": "Gastrointestinal",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
