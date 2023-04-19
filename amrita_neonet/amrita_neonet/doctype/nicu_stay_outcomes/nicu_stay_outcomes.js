@@ -143,5 +143,29 @@ frappe.ui.form.on('NICU Stay Outcomes', {
 				}
 			}
 		})
+		frappe.call({
+			method: "amrita_neonet.amrita_neonet.doctype.nicu_stay_outcomes.nicu_stay_outcomes.getAllInvestigations",
+			args: {
+				"baby_id": frm.doc.baby_id,
+			},
+			callback: function(r) {
+				if(r.message) {
+					frm.set_value("list_of_investigations", r.message);
+				}
+			}
+		})
+		frappe.call({
+			method: "amrita_neonet.amrita_neonet.doctype.nicu_stay_outcomes.nicu_stay_outcomes.getAllProcedures",
+			args: {
+				"baby_id": frm.doc.baby_id,
+			},
+			callback: function(r) {
+				if(r.message) {
+					frm.set_value("procedures_done_during_the_stay", r.message);
+				}
+			}
+		})
+		
+	
 	},
 });

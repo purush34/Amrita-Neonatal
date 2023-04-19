@@ -274,6 +274,10 @@ frappe.ui.form.on('Neonet_Navigator', {
 		// console.log(frm.doc.baby_id);
 		frappe.set_route("Form", "Cooling Criteria", frm.doc.baby_id)
 	},
+	nicu_outcomes: function (frm) {
+		// console.log(frm.doc.baby_id);
+		frappe.set_route("Form", "NICU Stay Outcomes", frm.doc.baby_id)
+	},
 
 
 

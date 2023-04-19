@@ -38,6 +38,7 @@ class Openingpage(Document):
         'Naso- Pharyngeal tube': 'naso__pharyngeal_tube',
         'Neogen': 'neogen',
         # 'Neonet Navigator': 'neonet_navigator',
+        "NICU Stay Outcomes": "nicu_stay_outcomes",
         'Neurosonogram': 'neurosonogram',
         'NG tube insertion': 'ng_tube_insertion',
         # 'Opening Page': 'opening_page',

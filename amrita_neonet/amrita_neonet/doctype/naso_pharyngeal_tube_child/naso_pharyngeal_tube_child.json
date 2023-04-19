@@ -6,26 +6,12 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "date_inserted",
-  "inserted_by",
+  "date_done",
+  "done_by",
   "size",
   "fixed_at"
  ],
  "fields": [
-  {
-   "fieldname": "date_inserted",
-   "fieldtype": "Date",
-   "in_list_view": 1,
-   "label": "Date Inserted",
-   "reqd": 1
-  },
-  {
-   "fieldname": "inserted_by",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Inserted by",
-   "reqd": 1
-  },
   {
    "fieldname": "size",
    "fieldtype": "Data",
@@ -39,12 +25,26 @@
    "in_list_view": 1,
    "label": "Fixed at",
    "reqd": 1
+  },
+  {
+   "fieldname": "done_by",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Done by",
+   "reqd": 1
+  },
+  {
+   "fieldname": "date_done",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date done",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-03-06 17:51:54.404082",
+ "modified": "2023-04-14 06:09:25.970656",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Naso-Pharyngeal tube_child",

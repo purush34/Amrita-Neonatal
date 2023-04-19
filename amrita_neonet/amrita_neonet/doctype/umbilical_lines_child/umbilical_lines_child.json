@@ -7,15 +7,15 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+  "date_done",
+  "section_break_qzx8r",
   "uac",
-  "uac_date_inserted",
   "uac_intially_fixed_at",
   "uac_line_tip",
   "uac_pulled_out_by",
   "uac_readjustments",
   "column_break_xrbbd",
   "uvc",
-  "uvc_date_inserted",
   "uvc_intially_fixed_at",
   "uvc_line_tip",
   "uvc_pulled_out_by",
@@ -27,16 +27,14 @@
    "fieldname": "uac",
    "fieldtype": "Check",
    "in_list_view": 1,
-   "label": "UAC",
-   "reqd": 1
+   "label": "UAC"
   },
   {
    "default": "0",
    "fieldname": "uvc",
    "fieldtype": "Check",
    "in_list_view": 1,
-   "label": "UVC",
-   "reqd": 1
+   "label": "UVC"
   },
   {
    "depends_on": "eval:doc.uac==1",
@@ -63,12 +61,6 @@
    "label": "Any further re-adjustments"
   },
   {
-   "depends_on": "eval:doc.uac==1",
-   "fieldname": "uac_date_inserted",
-   "fieldtype": "Date",
-   "label": "Date Inserted"
-  },
-  {
    "depends_on": "eval:doc.uvc==1",
    "fieldname": "uvc_intially_fixed_at",
    "fieldtype": "Data",
@@ -93,20 +85,24 @@
    "label": "Any further re-adjustments"
   },
   {
-   "depends_on": "eval:doc.uvc==1",
-   "fieldname": "uvc_date_inserted",
-   "fieldtype": "Data",
-   "label": "Date Inserted"
-  },
-  {
    "fieldname": "column_break_xrbbd",
    "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.uac==1",
+   "fieldname": "date_done",
+   "fieldtype": "Date",
+   "label": "Date done"
+  },
+  {
+   "fieldname": "section_break_qzx8r",
+   "fieldtype": "Section Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-03-16 18:39:12.293968",
+ "modified": "2023-04-14 06:04:31.743136",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Umbilical lines_child",

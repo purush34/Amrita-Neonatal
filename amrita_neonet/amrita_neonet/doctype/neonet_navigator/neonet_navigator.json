@@ -23,6 +23,7 @@
   "discharge_examination",
   "discharge_checklist",
   "death_summary",
+  "nicu_outcomes",
   "column_break_vxatl",
   "daily_summery",
   "respiratory",
@@ -377,12 +378,17 @@
    "fieldname": "cooling_documentation",
    "fieldtype": "Button",
    "label": "Cooling Documentation"
+  },
+  {
+   "fieldname": "nicu_outcomes",
+   "fieldtype": "Button",
+   "label": "NICU outcomes"
   }
  ],
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2023-04-10 14:05:34.852356",
+ "modified": "2023-04-14 06:18:45.369905",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Neonet_Navigator",

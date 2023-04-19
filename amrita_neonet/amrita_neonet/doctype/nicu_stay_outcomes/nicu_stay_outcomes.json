@@ -45,6 +45,7 @@
   "antenatal",
   "investigations_done_during_stay",
   "list_of_investigations",
+  "procedures_done_during_the_stay",
   "summary_of_stay",
   "respiratory_summery",
   "cvs_summery",
@@ -353,11 +354,16 @@
    "fieldname": "endocrine_and_metabolic_summery",
    "fieldtype": "Text Editor",
    "label": "Endocrine and metabolic summery"
+  },
+  {
+   "fieldname": "procedures_done_during_the_stay",
+   "fieldtype": "Text Editor",
+   "label": "Procedures done during the stay"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-04-13 00:13:02.836918",
+ "modified": "2023-04-14 05:41:14.016052",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "NICU Stay Outcomes",
