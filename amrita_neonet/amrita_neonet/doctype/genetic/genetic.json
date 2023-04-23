@@ -12,13 +12,8 @@
   "baby_id",
   "mother_name",
   "section_break_7zljj",
-  "new_diagnosis",
+  "diagnosis",
   "investigations",
-  "karyotype",
-  "fish",
-  "microarray",
-  "dna_isolation",
-  "section_break_jbfvu",
   "daily_observations",
   "text_box_for_discharge",
   "section_break_ub1xn",
@@ -52,20 +47,10 @@
    "label": "GENETIC "
   },
   {
-   "fieldname": "new_diagnosis",
-   "fieldtype": "Data",
-   "label": "Diagnosis ",
-   "read_only": 1
-  },
-  {
    "fieldname": "investigations",
-   "fieldtype": "Section Break",
+   "fieldtype": "Data",
    "label": "Investigations ",
    "read_only": 1
-  },
-  {
-   "fieldname": "section_break_jbfvu",
-   "fieldtype": "Section Break"
   },
   {
    "fieldname": "text_box_for_discharge",
@@ -100,37 +85,15 @@
    "label": "Save and goto Navigator"
   },
   {
-   "default": "0",
-   "fieldname": "karyotype",
-   "fieldtype": "Check",
-   "label": "Karyotype",
-   "read_only": 1
-  },
-  {
-   "default": "0",
-   "fieldname": "fish",
-   "fieldtype": "Check",
-   "label": "FISH",
-   "read_only": 1
-  },
-  {
-   "default": "0",
-   "fieldname": "microarray",
-   "fieldtype": "Check",
-   "label": "Microarray",
-   "read_only": 1
-  },
-  {
-   "default": "0",
-   "fieldname": "dna_isolation",
-   "fieldtype": "Check",
-   "label": "DNA Isolation",
+   "fieldname": "diagnosis",
+   "fieldtype": "Data",
+   "label": "Diagnosis ",
    "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-04-11 00:56:27.689967",
+ "modified": "2023-04-19 22:24:12.327156",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Genetic",

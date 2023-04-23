@@ -119,7 +119,8 @@
   {
    "fieldname": "new_diagnosis",
    "fieldtype": "Data",
-   "label": "New Diagnosis"
+   "label": "New Diagnosis",
+   "read_only": 1
   },
   {
    "fieldname": "section_break_nt35z",
@@ -153,7 +154,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-04-19 11:24:01.790700",
+ "modified": "2023-04-19 22:20:55.998589",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Respiratory",

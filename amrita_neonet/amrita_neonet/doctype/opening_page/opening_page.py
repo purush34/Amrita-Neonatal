@@ -2,6 +2,7 @@
 # For license information, please see license.txt
 
 import frappe
+import time
 from frappe.model.document import Document
 
 class Openingpage(Document):
@@ -16,12 +17,13 @@ class Openingpage(Document):
         'Cooling Criteria': 'cooling_criteria',
         'Cooling Documentation': 'cooling_documentation',
         'CRIB score': 'crib_score',
+        "Snappe II" : "snappe-ii",
         'CT': 'ct',
         'CVS': 'cvs',
-        'Death summery': 'death_summery',
+        # 'Death summery': 'death_summery',
         'Discharge checklist': 'discharge_checklist',
         'Discharge examination': 'discharge_examination',
-        'Discharge letter': 'discharge_letter',
+        # 'Discharge letter': 'discharge_letter',
         'Echocardiography': 'echocardiography',
         'Endocrine and metabolic': 'endocrine_and_metabolic',
         'Electroencephalography': 'electroencephalography',
@@ -64,12 +66,18 @@ class Openingpage(Document):
     }
     def before_insert(self):
         """Called before doc is saved."""
+        start = time.time()
         for i in self.all_dict_doctypes.keys():
-            temp = frappe.new_doc(i)
-            print(i)
-            temp.baby_id = self.baby_id
-            temp.mother_name = self.mother_name
-            temp.save()
+            try :
+                temp = frappe.new_doc(i)
+                temp.baby_id = self.baby_id
+                temp.mother_name = self.mother_name
+                temp.save()
+                print(i, "created")
+            except Exception as r:
+                print(f"{i} not created {r}")
+        end = time.time()
+        print(end - start)
 
         # ad = frappe.new_doc('Admission')
         # ad.baby_id = self.baby_id
@@ -83,7 +91,7 @@ class Openingpage(Document):
                 temp = frappe.get_doc(i, {'baby_id': self.baby_id})
                 frappe.delete_doc(i, temp.name)
             except:
-                pass
+                print(f"{i} not deleted ")
         # neogen = frappe.get_doc('Neogen', {'baby_id': self.baby_id})
         # neogen.delete()
         # open = frappe.get_doc('Opening Page', {'baby_id': self.baby_id})

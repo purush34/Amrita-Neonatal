@@ -9,6 +9,7 @@
  "engine": "InnoDB",
  "field_order": [
   "gi",
+  "date",
   "anthropometry_today",
   "section_break_jhiej",
   "weight",
@@ -25,7 +26,6 @@
   "text",
   "inguinalhernia_hydrocoel",
   "column_break_ilbib",
-  "text24hours",
   "section_break_vbgrg",
   "new1",
   "column_break_zimsd",
@@ -35,7 +35,6 @@
   "text1",
   "inguinalhernia_hydrocoel1",
   "column_break_yfd4c",
-  "textdischarge",
   "section_break_uwe6w",
   "any_surgery_in_past_24_hours",
   "column_break_aqxhq",
@@ -178,7 +177,7 @@
   "bowel",
   "color",
   "no_of_times",
-  "text_for_discharge"
+  "free_text_box_for_discharge_letter"
  ],
  "fields": [
   {
@@ -193,17 +192,17 @@
   {
    "fieldname": "weight",
    "fieldtype": "Data",
-   "label": "Weight"
+   "label": "Weight (Grams)"
   },
   {
    "fieldname": "ofc",
    "fieldtype": "Data",
-   "label": "OFC"
+   "label": "OFC (in cm)"
   },
   {
    "fieldname": "length",
    "fieldtype": "Data",
-   "label": "Length"
+   "label": "Length (in cm)"
   },
   {
    "fieldname": "column_break_kh0yp",
@@ -212,7 +211,7 @@
   {
    "fieldname": "working_weight",
    "fieldtype": "Data",
-   "label": "Working Weight"
+   "label": "Working Weight (KG)"
   },
   {
    "fieldname": "new",
@@ -256,11 +255,6 @@
   {
    "fieldname": "column_break_ilbib",
    "fieldtype": "Column Break"
-  },
-  {
-   "depends_on": "eval:doc.new==\"Yes\"",
-   "fieldname": "text24hours",
-   "fieldtype": "Data"
   },
   {
    "fieldname": "section_break_vbgrg",
@@ -310,11 +304,6 @@
    "fieldtype": "Column Break"
   },
   {
-   "depends_on": "eval:doc.new1==\"Yes\"",
-   "fieldname": "textdischarge",
-   "fieldtype": "Data"
-  },
-  {
    "fieldname": "section_break_uwe6w",
    "fieldtype": "Section Break"
   },
@@ -331,7 +320,8 @@
   {
    "depends_on": "eval:doc.any_surgery_in_past_24_hours==\"Yes\"",
    "fieldname": "stime",
-   "fieldtype": "Datetime"
+   "fieldtype": "Datetime",
+   "label": "Date done"
   },
   {
    "fieldname": "column_break_imobx",
@@ -340,7 +330,8 @@
   {
    "depends_on": "eval:doc.any_surgery_in_past_24_hours==\"Yes\"",
    "fieldname": "stext",
-   "fieldtype": "Data"
+   "fieldtype": "Data",
+   "label": "Procedure done"
   },
   {
    "fieldname": "section_break_5iwxg",
@@ -1000,10 +991,12 @@
    "read_only": 1
   },
   {
+   "default": "0",
    "fieldname": "total_kcal",
    "fieldtype": "Float",
    "label": "Total Kcal",
-   "max_height": "40px"
+   "max_height": "40px",
+   "read_only": 1
   },
   {
    "fieldname": "section_break_gjo8k",
@@ -1168,15 +1161,22 @@
    "label": "No of times"
   },
   {
-   "fieldname": "text_for_discharge",
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "free_text_box_for_discharge_letter",
    "fieldtype": "Text",
-   "label": "Text for Discharge"
+   "label": "Free text box for Discharge letter"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-04-13 14:35:29.106998",
+ "modified": "2023-04-23 12:31:48.135349",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "GI",

@@ -28,12 +28,12 @@
   "grade_dis",
   "ihd",
   "hydro_dis",
-  "column_break_8uo3r",
   "grade_hie_dis",
   "history_dis",
   "cooling_dis",
-  "seiz_dis",
   "other_dis",
+  "seiz_dis",
+  "column_break_8uo3r",
   "discharge",
   "section_break_z4edi",
   "any_procedure_in_past_24_hours",
@@ -102,7 +102,7 @@
    "fieldtype": "Column Break"
   },
   {
-   "depends_on": "eval:doc.new_diagnosis_past_24_hours == \"Hypoxic Ischaemic Encephalopathy\" && doc.new == \"Yes\"",
+   "depends_on": "eval:doc.new == \"Hypoxic Ischaemic Encephalopathy\" && doc.new_diagnosis_for_discharge == \"Yes\"",
    "fieldname": "grade_hie",
    "fieldtype": "Select",
    "label": "Grade",
@@ -139,7 +139,7 @@
    "fieldname": "diag_discharge",
    "fieldtype": "Select",
    "label": "New Diagnosis for discharge",
-   "options": "Intraventricular Haemorrhage\nPost Haemorrhagic Ventricular Dilatation\nHydrocephalous\nPeriventricular Leucomalacia\nAbsent Corpus Callosum\nPartial Agenisis of Corpus Callosum\nArnold- Chiari Malformation\nMeningocoel\nMeningomyelocoel\nHypoxic Ischaemic Encephalopathy\nSeizures\nOther"
+   "options": "Intraventricular Haemorrhage\nPost Haemorrhagic Ventricular Dilatation\nHydrocephalous\nPeriventricular Leucomalacia\nAbsent Corpus Callosum\nPartial Agenisis of Corpus Callosum\nArnold- Chiari Malformation\nMeningocoel\nMeningomyelocoel\nHypoxic Ischaemic Encephalopathy\nHistory of Therapeutic cooling\nSeizures\nOther"
   },
   {
    "depends_on": "eval:doc.diag_discharge == \"Intraventricular Haemorrhage\" && doc.new_diagnosis_for_discharge == \"Yes\"",
@@ -164,7 +164,7 @@
    "fieldtype": "Section Break"
   },
   {
-   "depends_on": "eval:doc.diag_discharge == \"Hypoxic Ischaemic Encephalopathy\" && doc.new == \"Yes\"",
+   "depends_on": "eval:doc.diag_discharge == \"Hypoxic Ischaemic Encephalopathy\" && doc.new_diagnosis_for_discharge == \"Yes\"",
    "fieldname": "grade_hie_dis",
    "fieldtype": "Select",
    "label": "Grade",
@@ -287,7 +287,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-04-13 00:03:08.834992",
+ "modified": "2023-04-23 16:50:37.054925",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "child_cns",

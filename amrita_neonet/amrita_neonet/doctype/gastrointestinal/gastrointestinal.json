@@ -38,12 +38,12 @@
   {
    "fieldname": "gi",
    "fieldtype": "Heading",
-   "label": "GI"
+   "label": "Gastrointestinal"
   },
   {
    "fieldname": "baby_id",
    "fieldtype": "Data",
-   "label": "Baby ID",
+   "label": "Baby Id",
    "read_only": 1
   },
   {
@@ -160,7 +160,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-04-13 11:34:46.773916",
+ "modified": "2023-04-23 12:17:57.219174",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Gastrointestinal",

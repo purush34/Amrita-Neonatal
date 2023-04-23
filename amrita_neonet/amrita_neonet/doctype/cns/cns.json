@@ -13,19 +13,23 @@
   "cns",
   "baby_id",
   "mother_name",
-  "section_break_gtmhp",
-  "new_diagnosis_for_discharge",
-  "any_procedure_in_past_24_hours",
-  "section_break_2ib2x",
+  "diagnosis",
+  "procedures_done",
   "daily_observations",
-  "text_box_for_discharge"
+  "text_box_for_discharge",
+  "_section",
+  "go_back_to_gi",
+  "column_break_ycimp",
+  "column_break_wweeu",
+  "save_and_goto_endocrine_and_metabolic"
  ],
  "fields": [
   {
    "fieldname": "baby_id",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Baby ID"
+   "label": "Baby ID",
+   "read_only": 1
   },
   {
    "fieldname": "daily_observations",
@@ -36,7 +40,8 @@
   {
    "fieldname": "mother_name",
    "fieldtype": "Data",
-   "label": "Mother Name"
+   "label": "Mother Name",
+   "read_only": 1
   },
   {
    "fieldname": "cns",
@@ -44,32 +49,47 @@
    "label": "CNS"
   },
   {
-   "fieldname": "new_diagnosis_for_discharge",
-   "fieldtype": "Data",
-   "label": "New Diagnosis for discharge"
-  },
-  {
-   "fieldname": "any_procedure_in_past_24_hours",
-   "fieldtype": "Data",
-   "label": "Any procedure in past 24 hours "
-  },
-  {
    "fieldname": "text_box_for_discharge",
    "fieldtype": "Text",
    "label": "Text Box for Discharge"
   },
   {
-   "fieldname": "section_break_gtmhp",
-   "fieldtype": "Section Break"
+   "fieldname": "diagnosis",
+   "fieldtype": "Data",
+   "label": "Diagnosis"
   },
   {
-   "fieldname": "section_break_2ib2x",
-   "fieldtype": "Section Break"
+   "fieldname": "procedures_done",
+   "fieldtype": "Data",
+   "label": "Procedures Done"
+  },
+  {
+   "fieldname": "_section",
+   "fieldtype": "Section Break",
+   "label": "    "
+  },
+  {
+   "fieldname": "go_back_to_gi",
+   "fieldtype": "Button",
+   "label": "Go Back to GI"
+  },
+  {
+   "fieldname": "column_break_ycimp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_wweeu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "save_and_goto_endocrine_and_metabolic",
+   "fieldtype": "Button",
+   "label": "Save and goto Endocrine and Metabolic"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-04-10 01:13:24.271991",
+ "modified": "2023-04-19 22:11:08.666172",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "CNS",

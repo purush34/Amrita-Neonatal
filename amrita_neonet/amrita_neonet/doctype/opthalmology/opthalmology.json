@@ -13,10 +13,7 @@
   "mother_name",
   "section_break_1edtl",
   "diagnosis",
-  "procedures_section",
-  "laser",
-  "anti_vgef_intravitral_injection",
-  "rop_screening",
+  "procedures",
   "daily_observations",
   "text_box_for_discharge",
   "section_break_d8avw",
@@ -88,36 +85,15 @@
    "read_only": 1
   },
   {
-   "fieldname": "procedures_section",
-   "fieldtype": "Section Break",
+   "fieldname": "procedures",
+   "fieldtype": "Data",
    "label": "Procedures ",
-   "read_only": 1
-  },
-  {
-   "default": "0",
-   "fieldname": "laser",
-   "fieldtype": "Check",
-   "label": "Laser",
-   "read_only": 1
-  },
-  {
-   "default": "0",
-   "fieldname": "anti_vgef_intravitral_injection",
-   "fieldtype": "Check",
-   "label": "Anti VGEF intravitral injection",
-   "read_only": 1
-  },
-  {
-   "default": "0",
-   "fieldname": "rop_screening",
-   "fieldtype": "Check",
-   "label": "ROP screening",
    "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-04-11 01:11:29.613772",
+ "modified": "2023-04-19 22:18:37.085975",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Opthalmology",

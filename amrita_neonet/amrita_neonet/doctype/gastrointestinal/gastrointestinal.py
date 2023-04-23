@@ -29,7 +29,7 @@ class Gastrointestinal(Document):
 		maximum_bilirubin = 0
 		total_no_of_days_of_phototherapy = 0
 
-		for row in self.gastrointestinal_child:
+		for row in self.get_all_children():
 			if row.tpn == 'Yes':
 				total_no_of_tpn_days += 1
 			if row.full_enteral_feeds == 'Yes':

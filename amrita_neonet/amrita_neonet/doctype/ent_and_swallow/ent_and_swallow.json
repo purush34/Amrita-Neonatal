@@ -11,9 +11,7 @@
   "ent_and_swallow",
   "baby_id",
   "mother_name",
-  "section_break_26xfl",
-  "new_diagnosis_for_discharge",
-  "section_break_sg62f",
+  "diagnosis",
   "daily_observations",
   "text_box_for_discharge",
   "section_break_jgnf5",
@@ -48,24 +46,10 @@
    "label": "ENT AND SWALLOW"
   },
   {
-   "fieldname": "new_diagnosis_for_discharge",
-   "fieldtype": "Data",
-   "label": "New Diagnosis for discharge ",
-   "read_only": 1
-  },
-  {
    "fieldname": "text_box_for_discharge",
    "fieldtype": "Text",
    "label": "Text Box for Discharge",
    "read_only": 1
-  },
-  {
-   "fieldname": "section_break_26xfl",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "section_break_sg62f",
-   "fieldtype": "Section Break"
   },
   {
    "fieldname": "section_break_jgnf5",
@@ -88,11 +72,17 @@
    "fieldname": "save_and_goto_haematology",
    "fieldtype": "Button",
    "label": "Save and goto Haematology"
+  },
+  {
+   "fieldname": "diagnosis",
+   "fieldtype": "Data",
+   "label": "Diagnosis ",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-04-10 17:33:19.224470",
+ "modified": "2023-04-19 22:21:58.016540",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "ENT and Swallow",

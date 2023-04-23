@@ -19,7 +19,8 @@
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Baby ID",
-   "options": "Opening page"
+   "options": "Opening page",
+   "read_only": 1
   },
   {
    "fieldname": "add_reports",
@@ -35,12 +36,13 @@
   {
    "fieldname": "mother_name",
    "fieldtype": "Data",
-   "label": "Mother Name"
+   "label": "Mother Name",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-04-06 23:43:13.531499",
+ "modified": "2023-04-23 12:26:51.510834",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Umbiilical lines",

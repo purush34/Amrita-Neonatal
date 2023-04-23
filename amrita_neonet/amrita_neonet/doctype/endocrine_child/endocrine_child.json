@@ -14,6 +14,8 @@
   "column_break_zqdnz",
   "new_diagnosis_text",
   "section_break_pdilk",
+  "new_diagnosis_for_discharge",
+  "section_break_chqxd",
   "discharge_diagnosis",
   "column_break_lpd4t",
   "diagnosis_for_discharge_text",
@@ -21,43 +23,49 @@
   "hypoglycaemia",
   "column_break_rz9jt",
   "lowest_value",
-  "section_break_avssb",
+  "low_data",
+  "column_break_fctsk",
   "critical_samples_taken",
-  "column_break_zyhev",
   "insulin_levels",
   "cortisol_levels",
-  "section_break_lxne8",
+  "growth_hormone_levels",
+  "column_break_zyhev",
   "iv_fluids",
-  "column_break_8eg9l",
   "bolus_given",
   "maximum_gir_past_24_hours",
-  "section_break_3jbsg",
+  "column_break_8eg9l",
   "glucogen",
-  "column_break_trmhd",
   "maximum_glucogen_dose_past_24_hours",
-  "section_break_qej7y",
+  "column_break_trmhd",
   "diazoxide",
-  "column_break_wcsa0",
   "maximum_diazoxide_dose_past_24_hours",
   "section_break_elqun",
   "hyperglycaemia",
   "column_break_bqxym",
   "highest_value",
-  "section_break_p1oqg",
+  "highest_value_text",
+  "column_break_bjbab",
   "sugar_in_urine",
-  "section_break_phjis",
+  "sugar_text",
+  "column_break_s9x7k",
   "change_in_gir",
-  "section_break_6oyuw",
+  "gir_text",
+  "column_break_cksjz",
   "insulin",
-  "column_break_r2d8y",
   "maximum_dose",
   "section_break_jmrp7",
   "thyroid",
+  "column_break_abimf",
   "ft4",
   "tsh",
   "ft3",
+  "column_break_u8zmo",
+  "ft4_txt",
+  "tsh_txt",
+  "ft3_txt",
   "section_break_v0kvs",
   "throxine",
+  "column_break_7aqjl",
   "dose",
   "section_break_lhwjt",
   "free_text_box_for_discharge_letter"
@@ -81,8 +89,9 @@
    "options": "No\nYes"
   },
   {
+   "depends_on": "eval:doc.new_diagnosis==\"Yes\"",
    "fieldname": "section_break_kxuoa",
-   "fieldtype": "Section Break"
+   "fieldtype": "Column Break"
   },
   {
    "depends_on": "eval:in_list([\"Yes\"],doc.new_diagnosis)",
@@ -99,13 +108,14 @@
    "depends_on": "eval:in_list([\"Disorders of Protein metabolism\",\"Disorders of Fat metabolism\",\"Disorders of Carbohydrate metabolism\",\"Other\"],doc.diagnosis)",
    "fieldname": "new_diagnosis_text",
    "fieldtype": "Small Text",
-   "label": "New Diagnosis Text"
+   "label": "New Diagnosis"
   },
   {
    "fieldname": "section_break_pdilk",
    "fieldtype": "Section Break"
   },
   {
+   "depends_on": "eval:doc.new_diagnosis_for_discharge==\"Yes\"",
    "fieldname": "discharge_diagnosis",
    "fieldtype": "Select",
    "label": "Diagnosis for discharge",
@@ -119,7 +129,7 @@
    "depends_on": "eval:in_list([\"Disorders of Protein metabolism\",\"Disorders of Fat metabolism\",\"Disorders of Carbohydrate metabolism\",\"Other\"],doc.discharge_diagnosis)",
    "fieldname": "diagnosis_for_discharge_text",
    "fieldtype": "Small Text",
-   "label": "Diagnosis for discharge text"
+   "label": "Diagnosis for discharge"
   },
   {
    "fieldname": "section_break_ovjwr",
@@ -132,108 +142,89 @@
    "options": "No\nYes"
   },
   {
+   "depends_on": "eval:doc.hypoglycaemia==\"Yes\"",
    "fieldname": "column_break_rz9jt",
    "fieldtype": "Section Break"
   },
   {
-   "depends_on": "eval:in_list([\"Yes\"],doc.hypoglycaemia)",
+   "default": "0",
    "fieldname": "lowest_value",
-   "fieldtype": "Data",
+   "fieldtype": "Check",
    "label": "Lowest value"
   },
   {
-   "fieldname": "section_break_avssb",
-   "fieldtype": "Section Break"
-  },
-  {
+   "default": "0",
    "depends_on": "eval:in_list([\"Yes\"],doc.hypoglycaemia)",
    "fieldname": "critical_samples_taken",
-   "fieldtype": "Select",
-   "label": "Critical samples taken",
-   "options": "No\nYes"
+   "fieldtype": "Check",
+   "label": "Critical samples taken"
   },
   {
    "fieldname": "column_break_zyhev",
    "fieldtype": "Column Break"
   },
   {
-   "depends_on": "eval:in_list([\"Yes\"],doc.critical_samples_taken)",
+   "depends_on": "eval:doc.critical_samples_taken==1",
    "fieldname": "insulin_levels",
    "fieldtype": "Data",
    "label": "Insulin Levels"
   },
   {
-   "depends_on": "eval:in_list([\"Yes\"],doc.critical_samples_taken)",
+   "depends_on": "eval:doc.critical_samples_taken==1",
    "fieldname": "cortisol_levels",
    "fieldtype": "Data",
    "label": "Cortisol levels"
   },
   {
-   "fieldname": "section_break_lxne8",
-   "fieldtype": "Section Break"
-  },
-  {
+   "default": "0",
    "depends_on": "eval:in_list([\"Yes\"],doc.hypoglycaemia)",
    "fieldname": "iv_fluids",
-   "fieldtype": "Select",
-   "label": "IV fluids for correction",
-   "options": "No\nYes"
+   "fieldtype": "Check",
+   "label": "IV fluids for correction"
   },
   {
    "fieldname": "column_break_8eg9l",
    "fieldtype": "Column Break"
   },
   {
-   "depends_on": "eval:in_list([\"Yes\"],doc.iv_fluids)",
+   "depends_on": "eval:doc.iv_fluids==1",
    "fieldname": "bolus_given",
    "fieldtype": "Select",
    "label": "Bolus given",
    "options": "No\nYes"
   },
   {
-   "depends_on": "eval:in_list([\"Yes\"],doc.iv_fluids)",
+   "depends_on": "eval:doc.iv_fluids==1",
    "fieldname": "maximum_gir_past_24_hours",
    "fieldtype": "Data",
    "label": "Maximum GIR past 24 hours"
   },
   {
-   "fieldname": "section_break_3jbsg",
-   "fieldtype": "Section Break"
-  },
-  {
+   "default": "0",
    "depends_on": "eval:in_list([\"Yes\"],doc.hypoglycaemia)",
    "fieldname": "glucogen",
-   "fieldtype": "Select",
-   "label": "Glucogen",
-   "options": "No\nYes"
+   "fieldtype": "Check",
+   "label": "Glucogen"
   },
   {
    "fieldname": "column_break_trmhd",
    "fieldtype": "Column Break"
   },
   {
-   "depends_on": "eval:in_list([\"Yes\"],doc.glucogen)",
+   "depends_on": "eval:doc.glucogen==1",
    "fieldname": "maximum_glucogen_dose_past_24_hours",
    "fieldtype": "Data",
    "label": "Maximum glucogen dose past 24 hours "
   },
   {
-   "fieldname": "section_break_qej7y",
-   "fieldtype": "Section Break"
-  },
-  {
+   "default": "0",
    "depends_on": "eval:in_list([\"Yes\"],doc.hypoglycaemia)",
    "fieldname": "diazoxide",
-   "fieldtype": "Select",
-   "label": "Diazoxide",
-   "options": "No\nYes"
+   "fieldtype": "Check",
+   "label": "Diazoxide"
   },
   {
-   "fieldname": "column_break_wcsa0",
-   "fieldtype": "Column Break"
-  },
-  {
-   "depends_on": "eval:in_list([\"Yes\"],doc.diazoxide)",
+   "depends_on": "eval:doc.diazoxide==1",
    "fieldname": "maximum_diazoxide_dose_past_24_hours",
    "fieldtype": "Data",
    "label": "Maximum diazoxide dose past 24 hours"
@@ -249,53 +240,40 @@
    "options": "No\nYes"
   },
   {
+   "depends_on": "eval:doc.hyperglycaemia==\"Yes\"",
    "fieldname": "column_break_bqxym",
    "fieldtype": "Section Break"
   },
   {
+   "default": "0",
    "depends_on": "eval:in_list([\"Yes\"],doc.hyperglycaemia)",
    "fieldname": "highest_value",
-   "fieldtype": "Data",
+   "fieldtype": "Check",
    "label": "Highest Value"
   },
   {
-   "fieldname": "section_break_p1oqg",
-   "fieldtype": "Section Break"
-  },
-  {
+   "default": "0",
    "depends_on": "eval:in_list([\"Yes\"],doc.hyperglycaemia)",
    "fieldname": "sugar_in_urine",
-   "fieldtype": "Data",
+   "fieldtype": "Check",
    "label": "Sugar in Urine"
   },
   {
-   "fieldname": "section_break_phjis",
-   "fieldtype": "Section Break"
-  },
-  {
+   "default": "0",
    "depends_on": "eval:in_list([\"Yes\"],doc.hyperglycaemia)",
    "fieldname": "change_in_gir",
-   "fieldtype": "Select",
-   "label": "Change in GIR",
-   "options": "No\nYes"
+   "fieldtype": "Check",
+   "label": "Change in GIR"
   },
   {
-   "fieldname": "section_break_6oyuw",
-   "fieldtype": "Section Break"
-  },
-  {
+   "default": "0",
    "depends_on": "eval:in_list([\"Yes\"],doc.hyperglycaemia)",
    "fieldname": "insulin",
-   "fieldtype": "Select",
-   "label": "Insulin",
-   "options": "No\nYes"
+   "fieldtype": "Check",
+   "label": "Insulin"
   },
   {
-   "fieldname": "column_break_r2d8y",
-   "fieldtype": "Column Break"
-  },
-  {
-   "depends_on": "eval:in_list([\"Yes\"],doc.insulin)",
+   "depends_on": "eval:doc.insulin==1",
    "fieldname": "maximum_dose",
    "fieldtype": "Data",
    "label": "Maximum dose"
@@ -311,21 +289,24 @@
    "options": "No\nYes"
   },
   {
+   "default": "0",
    "depends_on": "eval:in_list([\"Yes\"],doc.thyroid)",
    "fieldname": "ft4",
-   "fieldtype": "Data",
+   "fieldtype": "Check",
    "label": "FT4"
   },
   {
+   "default": "0",
    "depends_on": "eval:in_list([\"Yes\"],doc.thyroid)",
    "fieldname": "tsh",
-   "fieldtype": "Data",
+   "fieldtype": "Check",
    "label": "TSH"
   },
   {
+   "default": "0",
    "depends_on": "eval:in_list([\"Yes\"],doc.thyroid)",
    "fieldname": "ft3",
-   "fieldtype": "Data",
+   "fieldtype": "Check",
    "label": "FT3"
   },
   {
@@ -351,13 +332,92 @@
   {
    "fieldname": "free_text_box_for_discharge_letter",
    "fieldtype": "Text",
-   "label": "Free Text Box for Discharge Letter"
+   "label": "Text Box for Discharge Letter"
+  },
+  {
+   "fieldname": "column_break_bjbab",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.highest_value==1",
+   "fieldname": "highest_value_text",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "column_break_s9x7k",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.sugar_in_urine==1",
+   "fieldname": "sugar_text",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "column_break_cksjz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.change_in_gir==1",
+   "fieldname": "gir_text",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "new_diagnosis_for_discharge",
+   "fieldtype": "Select",
+   "label": "New diagnosis for discharge",
+   "options": "No\nYes"
+  },
+  {
+   "fieldname": "section_break_chqxd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_fctsk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.lowest_value==1",
+   "fieldname": "low_data",
+   "fieldtype": "Data"
+  },
+  {
+   "depends_on": "eval:doc.critical_samples_taken==1",
+   "fieldname": "growth_hormone_levels",
+   "fieldtype": "Data",
+   "label": "Growth Hormone levels "
+  },
+  {
+   "fieldname": "column_break_abimf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_u8zmo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.ft4==1",
+   "fieldname": "ft4_txt",
+   "fieldtype": "Data"
+  },
+  {
+   "depends_on": "eval:doc.tsh==1",
+   "fieldname": "tsh_txt",
+   "fieldtype": "Data"
+  },
+  {
+   "depends_on": "eval:doc.ft3==1",
+   "fieldname": "ft3_txt",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "column_break_7aqjl",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-04-13 00:02:54.892642",
+ "modified": "2023-04-23 15:57:15.236978",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "endocrine_child",

@@ -21,12 +21,6 @@
    "label": "Baby ID"
   },
   {
-   "fieldname": "add_reports",
-   "fieldtype": "Table",
-   "label": "Add Reports",
-   "options": "Lumbar Puncture_child"
-  },
-  {
    "fieldname": "mother_name",
    "fieldtype": "Data",
    "label": "Mother Name"
@@ -35,11 +29,17 @@
    "fieldname": "lumbar_puncture",
    "fieldtype": "Heading",
    "label": "LUMBAR PUNCTURE"
+  },
+  {
+   "fieldname": "add_reports",
+   "fieldtype": "Table",
+   "label": "Add reports",
+   "options": "Lumbar Puncture_child"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-04-06 17:54:02.301250",
+ "modified": "2023-04-23 11:33:18.848531",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Lumbar puncture",

@@ -1,0 +1,1302 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-04-20 22:41:21.315967",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "current_pregnancy_section",
+  "antenantal_follow_up",
+  "1st_visit_to_aims",
+  "section_break_jiuvc",
+  "conception",
+  "column_break_jcnjk",
+  "icsi_iui",
+  "donors",
+  "section_break_iy0qu",
+  "number_of_babies",
+  "section_break_no0ez",
+  "lmp",
+  "edd_by_dates",
+  "maternal_serology_column",
+  "blood_group",
+  "vdrl",
+  "hepatitis_b",
+  "hepatitis_c",
+  "column_break_ercoy",
+  "any_antibodies",
+  "torch",
+  "hiv",
+  "section_break_wcfmf",
+  "mmr_vaccination",
+  "tt",
+  "section_break_91chc",
+  "covid_immunisations",
+  "section_break_u2oir",
+  "one_dose",
+  "two_dose",
+  "booster",
+  "column_break_4u3cn",
+  "date_of_first_dose",
+  "year_of_2nd_dose",
+  "year_of_booster",
+  "tab_scans",
+  "scans",
+  "anomaly_scan",
+  "an_dos",
+  "an_ga",
+  "an_dopplers",
+  "an_findings",
+  "growth__scan",
+  "gs_dos",
+  "gs_ga",
+  "gs_doplers",
+  "gs_findings",
+  "efw_growth",
+  "additional_scans",
+  "number_of_additional_scans",
+  "section_break_osldw",
+  "ad_dos",
+  "ad_gestational",
+  "ad_dopplers",
+  "ad_findings",
+  "ewf_additional",
+  "edd_column",
+  "by_scan",
+  "by_dates",
+  "history_of_column",
+  "pih",
+  "explain_pih",
+  "section_break_lnpi5",
+  "gdm",
+  "column_break_skdke",
+  "diet",
+  "oha",
+  "insulin",
+  "section_break_gujxw",
+  "hypothyroidism",
+  "reason",
+  "column_break_spo3q",
+  "select_type",
+  "antibodies",
+  "section_break_cjsvo",
+  "medication",
+  "labour_and_delivery_column",
+  "pre_term_labour",
+  "rupture_of_membranes",
+  "section_break_sjmny",
+  "prolonged_rupture_of_membranes",
+  "column_break_sr8rn",
+  "date_and_time",
+  "column_break_k9cow",
+  "duration_of_prom",
+  "section_break_k8jlo",
+  "steroids",
+  "column_break_0ofys",
+  "steroids_no",
+  "if_steriods",
+  "first_dose",
+  "first_date",
+  "column_break_knyhe",
+  "second_dose",
+  "second_date",
+  "section_break_u0rwm",
+  "no_of_courses_of_steroids",
+  "column_break_erbr4",
+  "number_of_courses",
+  "gestation_age_at_which_given",
+  "section_break_hebca",
+  "use_of_magnesium_sulphate",
+  "column_break_wevzu",
+  "no_magnesium_sulphate",
+  "section_break_epa9f",
+  "meconium_staining_of_liquor",
+  "column_break_j3dtf",
+  "meconium_yes",
+  "risk_factors_for_sepsis",
+  "prom",
+  "maternal_pyrexia",
+  "uti",
+  "uti_text",
+  "hvs_positive",
+  "hvs_text",
+  "column_break_a6twn",
+  "prolonged_stay",
+  "foul_smelling_liquor",
+  "leaking_per_vagina",
+  "date_time_leaking",
+  "peripartum_antibiotics",
+  "peripartum_name",
+  "peripartum_date",
+  "last_dose_given",
+  "section_break_bbk0j",
+  "onset_of_labour",
+  "column_break_bl5so",
+  "medication_used",
+  "mode_of_delivery_column",
+  "mode_of_delivery",
+  "column_break_thfjz",
+  "if_vaginal",
+  "if_instrumentation",
+  "if_forceps",
+  "if_electivelscs",
+  "if_maternal_health",
+  "if_emlscs",
+  "if_maternal",
+  "if_fetal",
+  "if_fetal_distress",
+  "if_suboptimal",
+  "if_dopplers_concerns",
+  "if_umbilical_artery",
+  "if_umbilical_vein",
+  "section_break_wwkjt",
+  "anaesthesia",
+  "birth_and_resuscitation_column",
+  "cried_soon_after_birth",
+  "need_for_resuscitation",
+  "stimulation",
+  "bag_and_mask",
+  "noc",
+  "intubation",
+  "age_in_min",
+  "size",
+  "fixed_at",
+  "c_comp",
+  "started_at_age_in_min",
+  "no_of_cycles",
+  "adrenaline_doses",
+  "et_1",
+  "iv",
+  "apgars_section",
+  "spontaneous_breathing",
+  "one_min",
+  "sb_1",
+  "hr_1",
+  "c_1",
+  "t_1",
+  "r_1",
+  "total_1",
+  "five_min",
+  "sb_5",
+  "hr_5",
+  "c_5",
+  "t_5",
+  "r_5",
+  "total_5",
+  "ten_min",
+  "sb_10",
+  "hr_10",
+  "c_10",
+  "t_10",
+  "r_10",
+  "total_10",
+  "fifteen_min",
+  "sb_15",
+  "hr_15",
+  "c_15",
+  "t_15",
+  "r_15",
+  "total_15",
+  "twenty_min",
+  "sb_20",
+  "hr_20",
+  "c_20",
+  "t_20",
+  "r_20",
+  "total_20",
+  "section_break_tbudr",
+  "passive_cooling",
+  "age_in_minutes",
+  "cord_blood_gas",
+  "resuscitation"
+ ],
+ "fields": [
+  {
+   "fieldname": "current_pregnancy_section",
+   "fieldtype": "Tab Break",
+   "label": "Current pregnancy"
+  },
+  {
+   "fieldname": "antenantal_follow_up",
+   "fieldtype": "Select",
+   "label": "Antenantal Follow Up",
+   "options": "At AIMS\nLocally"
+  },
+  {
+   "fieldname": "1st_visit_to_aims",
+   "fieldtype": "Data",
+   "label": "1st Visit to AIMS"
+  },
+  {
+   "fieldname": "section_break_jiuvc",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "conception",
+   "fieldtype": "Select",
+   "label": "Conception",
+   "options": "Natural\nIVF"
+  },
+  {
+   "fieldname": "column_break_jcnjk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.conception==\"IVF\"",
+   "fieldname": "icsi_iui",
+   "fieldtype": "Select",
+   "options": "ICSI\nIUI"
+  },
+  {
+   "depends_on": "eval:in_list([\"IVF\"],doc.conception)",
+   "fieldname": "donors",
+   "fieldtype": "Select",
+   "label": "Donors",
+   "options": "Eggs\nSperms\nBoth"
+  },
+  {
+   "fieldname": "section_break_iy0qu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "number_of_babies",
+   "fieldtype": "Select",
+   "options": "Singleton\nTwin\nTriplets\nQuadruplets"
+  },
+  {
+   "fieldname": "section_break_no0ez",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "lmp",
+   "fieldtype": "Date",
+   "label": "LMP"
+  },
+  {
+   "fieldname": "edd_by_dates",
+   "fieldtype": "Data",
+   "label": "EDD by dates"
+  },
+  {
+   "fieldname": "maternal_serology_column",
+   "fieldtype": "Tab Break",
+   "label": "Maternal Serology"
+  },
+  {
+   "fieldname": "blood_group",
+   "fieldtype": "Select",
+   "label": "Blood Group",
+   "options": "A Positive\nA negative\nB Positive\nB Negative\nAB Positive\nAB Negative\nIndeterminate"
+  },
+  {
+   "fieldname": "vdrl",
+   "fieldtype": "Small Text",
+   "label": "VDRL"
+  },
+  {
+   "fieldname": "hepatitis_b",
+   "fieldtype": "Small Text",
+   "label": "Hepatitis B"
+  },
+  {
+   "fieldname": "hepatitis_c",
+   "fieldtype": "Small Text",
+   "label": "Hepatitis C"
+  },
+  {
+   "fieldname": "column_break_ercoy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "any_antibodies",
+   "fieldtype": "Small Text",
+   "label": "Any antibodies"
+  },
+  {
+   "fieldname": "torch",
+   "fieldtype": "Small Text",
+   "label": "TORCH"
+  },
+  {
+   "fieldname": "hiv",
+   "fieldtype": "Small Text",
+   "label": "HIV"
+  },
+  {
+   "fieldname": "section_break_wcfmf",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "mmr_vaccination",
+   "fieldtype": "Select",
+   "label": "MMR vaccination",
+   "options": "No\nYes"
+  },
+  {
+   "fieldname": "tt",
+   "fieldtype": "Select",
+   "label": "TT",
+   "options": "No\nYes"
+  },
+  {
+   "fieldname": "section_break_91chc",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "covid_immunisations",
+   "fieldtype": "Select",
+   "label": "COVID immunisations",
+   "options": "No\nYes"
+  },
+  {
+   "fieldname": "section_break_u2oir",
+   "fieldtype": "Section Break"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.covid_immunisations)",
+   "fieldname": "one_dose",
+   "fieldtype": "Select",
+   "label": "1st dose",
+   "options": "No\nYes"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.one_dose)",
+   "fieldname": "two_dose",
+   "fieldtype": "Select",
+   "label": "2nd dose",
+   "options": "No\nYes"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.two_dose)",
+   "fieldname": "booster",
+   "fieldtype": "Select",
+   "label": "Booster",
+   "options": "No\nYes"
+  },
+  {
+   "fieldname": "column_break_4u3cn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.one_dose)",
+   "fieldname": "date_of_first_dose",
+   "fieldtype": "Date",
+   "label": "Date of 1st dose"
+  },
+  {
+   "depends_on": "eval:doc.one_dose==\"Yes\" && doc.two_dose==\"Yes\"",
+   "fieldname": "year_of_2nd_dose",
+   "fieldtype": "Data",
+   "label": "Date of 2nd dose"
+  },
+  {
+   "depends_on": "eval:doc.booster==\"Yes\" && doc.two_dose==\"Yes\"",
+   "fieldname": "year_of_booster",
+   "fieldtype": "Data",
+   "label": "Date of booster"
+  },
+  {
+   "fieldname": "tab_scans",
+   "fieldtype": "Tab Break",
+   "label": "Scans"
+  },
+  {
+   "fieldname": "scans",
+   "fieldtype": "Select",
+   "options": "No\nYes"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.scans)",
+   "fieldname": "anomaly_scan",
+   "fieldtype": "Section Break",
+   "label": "Anomaly scan "
+  },
+  {
+   "fieldname": "an_dos",
+   "fieldtype": "Date",
+   "label": "Date of scan"
+  },
+  {
+   "fieldname": "an_ga",
+   "fieldtype": "Int",
+   "label": "Gestational Age"
+  },
+  {
+   "fieldname": "an_dopplers",
+   "fieldtype": "Select",
+   "label": "Dopplers",
+   "options": "Normal\nAbsent\nReversed"
+  },
+  {
+   "fieldname": "an_findings",
+   "fieldtype": "Small Text",
+   "label": "Findings"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.scans)",
+   "fieldname": "growth__scan",
+   "fieldtype": "Section Break",
+   "label": "Growth  scan "
+  },
+  {
+   "fieldname": "gs_dos",
+   "fieldtype": "Date",
+   "label": "Date of scan"
+  },
+  {
+   "fieldname": "gs_ga",
+   "fieldtype": "Int",
+   "label": "Gestational Age"
+  },
+  {
+   "fieldname": "gs_doplers",
+   "fieldtype": "Select",
+   "label": "Dopplers",
+   "options": "Normal\nAbsent\nReversed"
+  },
+  {
+   "fieldname": "gs_findings",
+   "fieldtype": "Small Text",
+   "label": "Findings"
+  },
+  {
+   "fieldname": "efw_growth",
+   "fieldtype": "Data",
+   "label": "EFW (in grams)"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.scans)",
+   "fieldname": "additional_scans",
+   "fieldtype": "Section Break",
+   "label": "Additional scans"
+  },
+  {
+   "fieldname": "number_of_additional_scans",
+   "fieldtype": "Int",
+   "label": "Number of Additional scans"
+  },
+  {
+   "depends_on": "eval:doc.number_of_additional_scans>0",
+   "fieldname": "section_break_osldw",
+   "fieldtype": "Section Break"
+  },
+  {
+   "depends_on": "eval:doc.number_of_additional_scans>0",
+   "fieldname": "ad_dos",
+   "fieldtype": "Date",
+   "label": "Date of scan"
+  },
+  {
+   "fieldname": "ad_gestational",
+   "fieldtype": "Int",
+   "label": "Gestational Age"
+  },
+  {
+   "fieldname": "ad_dopplers",
+   "fieldtype": "Select",
+   "label": "Dopplers",
+   "options": "Normal\nAbsent\nReversed"
+  },
+  {
+   "fieldname": "ad_findings",
+   "fieldtype": "Small Text",
+   "label": "Findings"
+  },
+  {
+   "fieldname": "ewf_additional",
+   "fieldtype": "Data",
+   "label": "EFW (in grams)"
+  },
+  {
+   "fieldname": "edd_column",
+   "fieldtype": "Section Break",
+   "label": "EDD"
+  },
+  {
+   "fieldname": "by_scan",
+   "fieldtype": "Date",
+   "label": "By scan"
+  },
+  {
+   "fieldname": "by_dates",
+   "fieldtype": "Date",
+   "label": "By dates"
+  },
+  {
+   "fieldname": "history_of_column",
+   "fieldtype": "Tab Break",
+   "label": "History of"
+  },
+  {
+   "fieldname": "pih",
+   "fieldtype": "Select",
+   "label": "PIH",
+   "options": "No\nYes"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.pih)",
+   "fieldname": "explain_pih",
+   "fieldtype": "Small Text",
+   "label": "Details of PIH"
+  },
+  {
+   "fieldname": "section_break_lnpi5",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "gdm",
+   "fieldtype": "Select",
+   "label": "GDM",
+   "options": "No\nYes"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.gdm)",
+   "fieldname": "column_break_skdke",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:in_list([\"Yes\"],doc.gdm)",
+   "fieldname": "diet",
+   "fieldtype": "Check",
+   "label": "Diet"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:in_list([\"Yes\"],doc.gdm)",
+   "fieldname": "oha",
+   "fieldtype": "Check",
+   "label": "OHA"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:in_list([\"Yes\"],doc.gdm)",
+   "fieldname": "insulin",
+   "fieldtype": "Check",
+   "label": "Insulin"
+  },
+  {
+   "fieldname": "section_break_gujxw",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "hypothyroidism",
+   "fieldtype": "Select",
+   "label": "Hypothyroidism",
+   "options": "No\nYes"
+  },
+  {
+   "depends_on": "eval:in_list([\"Post Thyroidectomy\"],doc.select_type)",
+   "fieldname": "reason",
+   "fieldtype": "Small Text",
+   "label": "Reason"
+  },
+  {
+   "fieldname": "column_break_spo3q",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.hypothyroidism)",
+   "fieldname": "select_type",
+   "fieldtype": "Select",
+   "label": "Select type",
+   "options": "Pre- pregnancy\nGestational\nPost Thyroidectomy"
+  },
+  {
+   "depends_on": "eval:in_list([\"Post Thyroidectomy\"],doc.select_type)",
+   "fieldname": "antibodies",
+   "fieldtype": "Small Text",
+   "label": "Antibodies"
+  },
+  {
+   "fieldname": "section_break_cjsvo",
+   "fieldtype": "Section Break"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.hypothyroidism)",
+   "fieldname": "medication",
+   "fieldtype": "Small Text",
+   "label": "Medication"
+  },
+  {
+   "fieldname": "labour_and_delivery_column",
+   "fieldtype": "Tab Break",
+   "label": "Labour and delivery"
+  },
+  {
+   "fieldname": "pre_term_labour",
+   "fieldtype": "Select",
+   "label": "Pre-term labour",
+   "options": "No\nYes"
+  },
+  {
+   "fieldname": "rupture_of_membranes",
+   "fieldtype": "Select",
+   "label": "Rupture of Membranes",
+   "options": "Spontaneous\nIntervention"
+  },
+  {
+   "fieldname": "section_break_sjmny",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "prolonged_rupture_of_membranes",
+   "fieldtype": "Select",
+   "label": "Prolonged Rupture of membranes",
+   "options": "No\nYes"
+  },
+  {
+   "fieldname": "column_break_sr8rn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.prolonged_rupture_of_membranes)",
+   "fieldname": "date_and_time",
+   "fieldtype": "Datetime",
+   "label": "Date and Time"
+  },
+  {
+   "fieldname": "column_break_k9cow",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.prolonged_rupture_of_membranes)",
+   "fieldname": "duration_of_prom",
+   "fieldtype": "Data",
+   "label": "Duration of PROM"
+  },
+  {
+   "fieldname": "section_break_k8jlo",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "steroids",
+   "fieldtype": "Select",
+   "label": "Steroids",
+   "options": "Yes\nNo"
+  },
+  {
+   "fieldname": "column_break_0ofys",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:in_list([\"No\"],doc.steroids)",
+   "fieldname": "steroids_no",
+   "fieldtype": "Select",
+   "options": "Does not meet criteria\nPrecipitous delivery\nEmergency C section\nMissed"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.steroids)",
+   "fieldname": "if_steriods",
+   "fieldtype": "Select",
+   "options": "Betamethasone\nDexamethasone"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:in_list([\"Yes\"],doc.steroids)",
+   "fieldname": "first_dose",
+   "fieldtype": "Check",
+   "label": "First Dose"
+  },
+  {
+   "depends_on": "eval:doc.first_dose==1",
+   "fieldname": "first_date",
+   "fieldtype": "Datetime"
+  },
+  {
+   "fieldname": "column_break_knyhe",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:in_list([\"Yes\"],doc.steroids) && doc.first_dose==1",
+   "fieldname": "second_dose",
+   "fieldtype": "Check",
+   "label": "Second Dose"
+  },
+  {
+   "depends_on": "eval:doc.second_dose==1",
+   "fieldname": "second_date",
+   "fieldtype": "Datetime"
+  },
+  {
+   "fieldname": "section_break_u0rwm",
+   "fieldtype": "Section Break"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.steroids)",
+   "fieldname": "no_of_courses_of_steroids",
+   "fieldtype": "Select",
+   "label": "No of courses of steroids",
+   "options": "Single\nMultiple"
+  },
+  {
+   "fieldname": "column_break_erbr4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:in_list([\"Multiple\"],doc.no_of_courses_of_steroids)",
+   "fieldname": "number_of_courses",
+   "fieldtype": "Data",
+   "label": "Number of courses "
+  },
+  {
+   "depends_on": "eval:in_list([\"Multiple\"],doc.no_of_courses_of_steroids)",
+   "fieldname": "gestation_age_at_which_given",
+   "fieldtype": "Data",
+   "label": "Gestation age at which given"
+  },
+  {
+   "fieldname": "section_break_hebca",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "use_of_magnesium_sulphate",
+   "fieldtype": "Select",
+   "label": "Use of Magnesium Sulphate",
+   "options": "Yes\nNo"
+  },
+  {
+   "fieldname": "column_break_wevzu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:in_list([\"No\"],doc.use_of_magnesium_sulphate)",
+   "fieldname": "no_magnesium_sulphate",
+   "fieldtype": "Select",
+   "options": "Not meeting criteria\nPrecipitous delivery\nEmergency C section\nFetal cause\nMaternal cause"
+  },
+  {
+   "fieldname": "section_break_epa9f",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "meconium_staining_of_liquor",
+   "fieldtype": "Select",
+   "label": "Meconium staining of liquor",
+   "options": "No\nYes"
+  },
+  {
+   "fieldname": "column_break_j3dtf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.meconium_staining_of_liquor)",
+   "fieldname": "meconium_yes",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "risk_factors_for_sepsis",
+   "fieldtype": "Section Break",
+   "label": "Risk factors for sepsis"
+  },
+  {
+   "default": "0",
+   "fieldname": "prom",
+   "fieldtype": "Check",
+   "label": "PROM"
+  },
+  {
+   "default": "0",
+   "fieldname": "maternal_pyrexia",
+   "fieldtype": "Check",
+   "label": "Maternal Pyrexia > 38 C"
+  },
+  {
+   "default": "0",
+   "fieldname": "uti",
+   "fieldtype": "Check",
+   "label": "UTI"
+  },
+  {
+   "depends_on": "eval:doc.uti==1",
+   "fieldname": "uti_text",
+   "fieldtype": "Data"
+  },
+  {
+   "default": "0",
+   "fieldname": "hvs_positive",
+   "fieldtype": "Check",
+   "label": "HVS Positive"
+  },
+  {
+   "depends_on": "eval:doc.hvs_positive==1",
+   "fieldname": "hvs_text",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "column_break_a6twn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "prolonged_stay",
+   "fieldtype": "Check",
+   "label": "Prolonged stay"
+  },
+  {
+   "default": "0",
+   "fieldname": "foul_smelling_liquor",
+   "fieldtype": "Check",
+   "label": "Foul smelling liquor "
+  },
+  {
+   "default": "0",
+   "fieldname": "leaking_per_vagina",
+   "fieldtype": "Check",
+   "label": "Leaking per vagina"
+  },
+  {
+   "depends_on": "eval:doc.leaking_per_vagina==1",
+   "fieldname": "date_time_leaking",
+   "fieldtype": "Datetime",
+   "label": "Date and time"
+  },
+  {
+   "fieldname": "peripartum_antibiotics",
+   "fieldtype": "Section Break",
+   "label": "Peripartum antibiotics"
+  },
+  {
+   "fieldname": "peripartum_name",
+   "fieldtype": "Data",
+   "label": "Name"
+  },
+  {
+   "fieldname": "peripartum_date",
+   "fieldtype": "Datetime",
+   "label": "Date and Time started"
+  },
+  {
+   "fieldname": "last_dose_given",
+   "fieldtype": "Data",
+   "label": "Last Dose given"
+  },
+  {
+   "fieldname": "section_break_bbk0j",
+   "fieldtype": "Section Break",
+   "label": "Onset Of Labour"
+  },
+  {
+   "fieldname": "onset_of_labour",
+   "fieldtype": "Select",
+   "options": "Natural\nAugmented"
+  },
+  {
+   "fieldname": "column_break_bl5so",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:in_list([\"Augmented\"],doc.onset_of_labour)",
+   "fieldname": "medication_used",
+   "fieldtype": "Data",
+   "label": "Medication used"
+  },
+  {
+   "fieldname": "mode_of_delivery_column",
+   "fieldtype": "Section Break",
+   "label": "Mode of delivery"
+  },
+  {
+   "fieldname": "mode_of_delivery",
+   "fieldtype": "Select",
+   "label": "Mode of delivery",
+   "options": "Vaginal\nElective LSCS\nEm LSCS"
+  },
+  {
+   "fieldname": "column_break_thfjz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:in_list([\"Vaginal\"],doc.mode_of_delivery)",
+   "fieldname": "if_vaginal",
+   "fieldtype": "Select",
+   "options": "Normal\nInstrumentation"
+  },
+  {
+   "depends_on": "eval:doc.mode_of_delivery==\"Vaginal\" && doc.if_vaginal==\"Instrumentation\"",
+   "fieldname": "if_instrumentation",
+   "fieldtype": "Select",
+   "options": "Vaccum\nForceps"
+  },
+  {
+   "depends_on": "eval:doc.mode_of_delivery==\"Vaginal\" && doc.if_vaginal==\"Instrumentation\"&& doc.if_instrumentation==\"Forceps\"",
+   "fieldname": "if_forceps",
+   "fieldtype": "Data"
+  },
+  {
+   "depends_on": "eval:in_list([\"Elective LSCS\"],doc.mode_of_delivery)",
+   "fieldname": "if_electivelscs",
+   "fieldtype": "Select",
+   "options": "Previous Section\nMaternal Health\nPatient Request"
+  },
+  {
+   "depends_on": "eval:doc.mode_of_delivery==\"Elective LSCS\" && doc.if_electivelscs==\"Maternal Health\"",
+   "fieldname": "if_maternal_health",
+   "fieldtype": "Data"
+  },
+  {
+   "depends_on": "eval:doc.mode_of_delivery==\"Em LSCS\"",
+   "fieldname": "if_emlscs",
+   "fieldtype": "Select",
+   "options": "Fetal\nMaternal"
+  },
+  {
+   "depends_on": "eval:doc.if_emlscs==\"Maternal\"",
+   "fieldname": "if_maternal",
+   "fieldtype": "Data"
+  },
+  {
+   "depends_on": "eval:in_list([\"Fetal\"],doc.if_emlscs)",
+   "fieldname": "if_fetal",
+   "fieldtype": "Select",
+   "options": "Fetal Distress\nSub-optimal CTG\nDopplers Concerns"
+  },
+  {
+   "depends_on": "eval:doc.mode_of_delivery==\"Em LSCS\" && doc.if_emlscs==\"Fetal Distress\"",
+   "fieldname": "if_fetal_distress",
+   "fieldtype": "Data"
+  },
+  {
+   "depends_on": "eval:doc.mode_of_delivery==\"Em LSCS\" && doc.if_emlscs==\"Sub-optimal CTG\"",
+   "fieldname": "if_suboptimal",
+   "fieldtype": "Data"
+  },
+  {
+   "depends_on": "eval:doc.mode_of_delivery==\"Em LSCS\" && doc.if_emlscs==\"Dopplers Concerns\"",
+   "fieldname": "if_dopplers_concerns",
+   "fieldtype": "Select",
+   "options": "Umbilical artery\nUmbilical vein\nReversal of CP ratio"
+  },
+  {
+   "depends_on": "eval:doc.mode_of_delivery==\"Em LSCS\" && doc.if_emlscs==\"Dopplers Concerns\" && doc.if_dopplers_concerns==\"Umbilical artery\"",
+   "fieldname": "if_umbilical_artery",
+   "fieldtype": "Select",
+   "options": "Absent\nReversed"
+  },
+  {
+   "depends_on": "eval:doc.mode_of_delivery==\"Em LSCS\" && doc.if_emlscs==\"Dopplers Concerns\" && doc.if_dopplers_concerns==\"Umbilical vein\"",
+   "fieldname": "if_umbilical_vein",
+   "fieldtype": "Select",
+   "options": "Absent\nReversed"
+  },
+  {
+   "fieldname": "section_break_wwkjt",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "anaesthesia",
+   "fieldtype": "Select",
+   "label": "Anaesthesia",
+   "options": "Epidural\nSpinal\nGeneral\nNone"
+  },
+  {
+   "fieldname": "birth_and_resuscitation_column",
+   "fieldtype": "Tab Break",
+   "label": "Birth and resuscitation"
+  },
+  {
+   "fieldname": "cried_soon_after_birth",
+   "fieldtype": "Select",
+   "label": "Cried soon after birth",
+   "options": "No\nYes"
+  },
+  {
+   "fieldname": "need_for_resuscitation",
+   "fieldtype": "Select",
+   "label": "Need for resuscitation",
+   "options": "No\nYes"
+  },
+  {
+   "depends_on": "eval:doc.need_for_resuscitation==\"Yes\"",
+   "fieldname": "stimulation",
+   "fieldtype": "Select",
+   "label": "Stimulation",
+   "options": "No\nYes"
+  },
+  {
+   "depends_on": "eval:doc.need_for_resuscitation==\"Yes\"",
+   "fieldname": "bag_and_mask",
+   "fieldtype": "Select",
+   "label": "Bag and Mask",
+   "options": "No\nYes"
+  },
+  {
+   "depends_on": "eval:doc.need_for_resuscitation==\"Yes\" && doc.bag_and_mask==\"Yes\"",
+   "fieldname": "noc",
+   "fieldtype": "Data",
+   "label": "No of cycles"
+  },
+  {
+   "depends_on": "eval:doc.need_for_resuscitation==\"Yes\"",
+   "fieldname": "intubation",
+   "fieldtype": "Select",
+   "label": "Intubation",
+   "options": "No\nYes"
+  },
+  {
+   "depends_on": "eval:doc.need_for_resuscitation==\"Yes\" && doc.intubation==\"Yes\"",
+   "fieldname": "age_in_min",
+   "fieldtype": "Data",
+   "label": "Age in min"
+  },
+  {
+   "depends_on": "eval:doc.need_for_resuscitation==\"Yes\" && doc.intubation==\"Yes\"",
+   "fieldname": "size",
+   "fieldtype": "Data",
+   "label": "Size"
+  },
+  {
+   "depends_on": "eval:doc.need_for_resuscitation==\"Yes\" && doc.intubation==\"Yes\"",
+   "fieldname": "fixed_at",
+   "fieldtype": "Data",
+   "label": "Fixed at"
+  },
+  {
+   "depends_on": "eval:doc.need_for_resuscitation==\"Yes\"",
+   "fieldname": "c_comp",
+   "fieldtype": "Select",
+   "label": "Chest compressions",
+   "options": "No\nYes"
+  },
+  {
+   "depends_on": "eval:doc.need_for_resuscitation==\"Yes\" && doc.c_comp==\"Yes\"",
+   "fieldname": "started_at_age_in_min",
+   "fieldtype": "Data",
+   "label": "Started at age in min"
+  },
+  {
+   "depends_on": "eval:doc.need_for_resuscitation==\"Yes\" && doc.c_comp==\"Yes\"",
+   "fieldname": "no_of_cycles",
+   "fieldtype": "Data",
+   "label": "No of cycles"
+  },
+  {
+   "depends_on": "eval:doc.need_for_resuscitation==\"Yes\" && doc.c_comp==\"Yes\"",
+   "fieldname": "adrenaline_doses",
+   "fieldtype": "Select",
+   "label": "Adrenaline doses",
+   "options": "No\nYes"
+  },
+  {
+   "depends_on": "eval:doc.need_for_resuscitation==\"Yes\" && doc.c_comp==\"Yes\" && doc.adrenaline_doses==\"Yes\"",
+   "fieldname": "et_1",
+   "fieldtype": "Data",
+   "label": "ET (No of doses)"
+  },
+  {
+   "depends_on": "eval:doc.need_for_resuscitation==\"Yes\" && doc.c_comp==\"Yes\" && doc.adrenaline_doses==\"Yes\"",
+   "fieldname": "iv",
+   "fieldtype": "Data",
+   "label": "IV (No of doses)"
+  },
+  {
+   "fieldname": "apgars_section",
+   "fieldtype": "Section Break",
+   "label": "APGARS"
+  },
+  {
+   "fieldname": "spontaneous_breathing",
+   "fieldtype": "HTML",
+   "options": "<h5><br><br><br>Spontaneous breathing<br><br><br>Heart Rate<br><br><br><br>Color<br><br><br><br><br>Tone<br><br><br><br>Reflexes<br><br><br><br>Total</h5>"
+  },
+  {
+   "fieldname": "one_min",
+   "fieldtype": "Column Break",
+   "label": "1 min"
+  },
+  {
+   "fieldname": "sb_1",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "hr_1",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "c_1",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "t_1",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "r_1",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "total_1",
+   "fieldtype": "Autocomplete"
+  },
+  {
+   "fieldname": "five_min",
+   "fieldtype": "Column Break",
+   "label": "5 min"
+  },
+  {
+   "fieldname": "sb_5",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "hr_5",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "c_5",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "t_5",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "r_5",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "total_5",
+   "fieldtype": "Autocomplete"
+  },
+  {
+   "fieldname": "ten_min",
+   "fieldtype": "Column Break",
+   "label": "10 min"
+  },
+  {
+   "fieldname": "sb_10",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "hr_10",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "c_10",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "t_10",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "r_10",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "total_10",
+   "fieldtype": "Autocomplete"
+  },
+  {
+   "fieldname": "fifteen_min",
+   "fieldtype": "Column Break",
+   "label": "15 min"
+  },
+  {
+   "fieldname": "sb_15",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "hr_15",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "c_15",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "t_15",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "r_15",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "total_15",
+   "fieldtype": "Autocomplete"
+  },
+  {
+   "fieldname": "twenty_min",
+   "fieldtype": "Column Break",
+   "label": "20 min"
+  },
+  {
+   "fieldname": "sb_20",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "hr_20",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "c_20",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "t_20",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "r_20",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "total_20",
+   "fieldtype": "Autocomplete"
+  },
+  {
+   "fieldname": "passive_cooling",
+   "fieldtype": "Select",
+   "label": "Passive cooling",
+   "options": "No\nYes"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.passive_cooling)",
+   "fieldname": "age_in_minutes",
+   "fieldtype": "Data",
+   "label": "Age in minutes "
+  },
+  {
+   "fieldname": "cord_blood_gas",
+   "fieldtype": "Select",
+   "label": "Cord Blood Gas ",
+   "options": "Arterial\nVenous"
+  },
+  {
+   "fieldname": "resuscitation",
+   "fieldtype": "Text",
+   "label": "Resuscitation"
+  },
+  {
+   "fieldname": "section_break_tbudr",
+   "fieldtype": "Section Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-04-20 22:49:43.745630",
+ "modified_by": "Administrator",
+ "module": "Amrita Neonet",
+ "name": "Antenatal",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

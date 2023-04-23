@@ -9,6 +9,7 @@
  "field_order": [
   "demographic_information_section",
   "name1",
+  "mother_id",
   "baby_id",
   "ddob",
   "age_now",
@@ -86,7 +87,9 @@
   "cardiac",
   "metabolic",
   "seizures",
-  "undiagnosed"
+  "undiagnosed",
+  "extra_text1",
+  "extra_text2"
  ],
  "fields": [
   {
@@ -107,8 +110,7 @@
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Baby ID",
-   "length": 50,
-   "reqd": 1
+   "length": 50
   },
   {
    "fieldname": "ddob",
@@ -550,11 +552,24 @@
    "fieldname": "undiagnosed",
    "fieldtype": "Small Text",
    "label": "Undiagnosed"
+  },
+  {
+   "fieldname": "mother_id",
+   "fieldtype": "Data",
+   "label": "Mother ID"
+  },
+  {
+   "fieldname": "extra_text1",
+   "fieldtype": "Small Text"
+  },
+  {
+   "fieldname": "extra_text2",
+   "fieldtype": "Small Text"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-04-11 00:52:58.419302",
+ "modified": "2023-04-20 14:46:45.596156",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Maternal details",
