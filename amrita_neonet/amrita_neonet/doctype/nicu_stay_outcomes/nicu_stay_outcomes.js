@@ -165,6 +165,19 @@ frappe.ui.form.on('NICU Stay Outcomes', {
 				}
 			}
 		})
+
+		frappe.call({
+			method: "amrita_neonet.amrita_neonet.doctype.nicu_stay_outcomes.nicu_stay_outcomes.getAllDiagnosis",
+			args: {
+				"baby_id": frm.doc.baby_id,
+			},
+			callback: function(r) {
+				if(r.message) {
+					frm.set_value("diagnosis_throughout_the_stay", r.message);
+				}
+			}
+		})
+
 		
 	
 	},

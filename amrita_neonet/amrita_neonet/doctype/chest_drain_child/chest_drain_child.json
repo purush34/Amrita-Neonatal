@@ -26,9 +26,8 @@
    "reqd": 1
   },
   {
-   "default": "0",
    "fieldname": "side",
-   "fieldtype": "Check",
+   "fieldtype": "Select",
    "label": "Side",
    "options": "Right\nLeft",
    "reqd": 1
@@ -44,7 +43,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-04-14 06:02:57.513663",
+ "modified": "2023-04-23 17:29:43.212416",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Chest drain_child",
