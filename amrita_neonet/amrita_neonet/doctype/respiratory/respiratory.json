@@ -25,7 +25,6 @@
   "new_diagnosis",
   "section_break_nt35z",
   "daily_observations",
-  "text_box_for_discharge_letter",
   "section_break_aokwo",
   "column_break_wzlq5",
   "column_break_qxbsk",
@@ -112,11 +111,6 @@
    "fieldtype": "Section Break"
   },
   {
-   "fieldname": "text_box_for_discharge_letter",
-   "fieldtype": "Text",
-   "label": "Text Box for Discharge Letter "
-  },
-  {
    "fieldname": "new_diagnosis",
    "fieldtype": "Data",
    "label": "New Diagnosis",
@@ -154,7 +148,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-04-19 22:20:55.998589",
+ "modified": "2023-04-30 22:45:44.467604",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Respiratory",

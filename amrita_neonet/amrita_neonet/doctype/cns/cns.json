@@ -1,6 +1,4 @@
 {
- "_comments": "[]",
- "_liked_by": "[]",
  "actions": [],
  "allow_rename": 1,
  "autoname": "format:{baby_id} {mother_name}",
@@ -16,7 +14,6 @@
   "diagnosis",
   "procedures_done",
   "daily_observations",
-  "text_box_for_discharge",
   "_section",
   "go_back_to_gi",
   "column_break_ycimp",
@@ -47,11 +44,6 @@
    "fieldname": "cns",
    "fieldtype": "Heading",
    "label": "CNS"
-  },
-  {
-   "fieldname": "text_box_for_discharge",
-   "fieldtype": "Text",
-   "label": "Text Box for Discharge"
   },
   {
    "fieldname": "diagnosis",
@@ -89,7 +81,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-04-19 22:11:08.666172",
+ "modified": "2023-05-01 10:47:08.440750",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "CNS",

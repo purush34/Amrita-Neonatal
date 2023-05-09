@@ -28,11 +28,10 @@
   "echo",
   "section_break_qbfql",
   "daily_observations",
-  "text_box_for_discharge_letter",
   "section_break_dii9y",
-  "go_back_to_respiratory",
-  "column_break_qjq3h",
   "column_break_vz6z9",
+  "column_break_0pi5b",
+  "column_break_aig8f",
   "save_and_goto_gi"
  ],
  "fields": [
@@ -66,11 +65,6 @@
    "fieldtype": "Section Break"
   },
   {
-   "fieldname": "text_box_for_discharge_letter",
-   "fieldtype": "Text",
-   "label": "Text Box for Discharge Letter"
-  },
-  {
    "fieldname": "echo",
    "fieldtype": "Data",
    "label": "ECHO "
@@ -80,22 +74,13 @@
    "fieldtype": "Section Break"
   },
   {
-   "fieldname": "go_back_to_respiratory",
-   "fieldtype": "Button",
-   "label": "Go Back to Respiratory"
-  },
-  {
-   "fieldname": "column_break_qjq3h",
-   "fieldtype": "Column Break"
-  },
-  {
    "fieldname": "column_break_vz6z9",
    "fieldtype": "Column Break"
   },
   {
    "fieldname": "save_and_goto_gi",
    "fieldtype": "Button",
-   "label": "Save and goto GI"
+   "label": "Save and go to GI"
   },
   {
    "fieldname": "section_break_dii9y",
@@ -128,7 +113,7 @@
   },
   {
    "fieldname": "no_of_days_need_for_prostin",
-   "fieldtype": "Icon",
+   "fieldtype": "Int",
    "label": "No of days need for prostin"
   },
   {
@@ -152,17 +137,25 @@
   },
   {
    "fieldname": "discharge_diag",
-   "fieldtype": "Text",
+   "fieldtype": "Data",
    "label": "Diagnosis"
   },
   {
    "fieldname": "section_break_hhkjx",
    "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_0pi5b",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_aig8f",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-04-23 15:32:17.615808",
+ "modified": "2023-05-09 15:05:28.503139",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "CVS",

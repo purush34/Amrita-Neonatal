@@ -27,7 +27,6 @@
   "any_surgery_for_past_24_hours",
   "section_break_iv9fr",
   "daily_observations",
-  "text_box_for_discharge",
   "section_break_section",
   "go_back_to_cvs",
   "column_break_kxzle",
@@ -116,11 +115,6 @@
    "label": "Any surgery for past 24 hours "
   },
   {
-   "fieldname": "text_box_for_discharge",
-   "fieldtype": "Text",
-   "label": "Text Box for Discharge "
-  },
-  {
    "fieldname": "section_break_iv9fr",
    "fieldtype": "Section Break"
   },
@@ -160,7 +154,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-04-23 12:17:57.219174",
+ "modified": "2023-05-01 09:27:57.818140",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Gastrointestinal",

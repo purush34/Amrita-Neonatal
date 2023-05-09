@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:{baby_id} {mother_name}",
  "creation": "2023-04-11 00:52:42.265868",
  "default_view": "List",
  "doctype": "DocType",
@@ -8,10 +9,11 @@
  "engine": "InnoDB",
  "field_order": [
   "demographic_information_section",
-  "name1",
-  "mother_id",
+  "mother_name",
+  "mother_mid",
   "baby_id",
   "ddob",
+  "age",
   "age_now",
   "section_break_39zfw",
   "education",
@@ -96,14 +98,6 @@
    "fieldname": "demographic_information_section",
    "fieldtype": "Tab Break",
    "label": "Demographic Information"
-  },
-  {
-   "fieldname": "name1",
-   "fieldtype": "Data",
-   "label": "Name",
-   "length": 100,
-   "print_width": "10",
-   "width": "10"
   },
   {
    "fieldname": "baby_id",
@@ -220,7 +214,7 @@
   {
    "fieldname": "paternal_details_section",
    "fieldtype": "Tab Break",
-   "label": "Parternal details"
+   "label": "Paternal details"
   },
   {
    "fieldname": "paternal_name",
@@ -498,13 +492,13 @@
    "depends_on": "eval:doc.para >0",
    "fieldname": "year_of_para",
    "fieldtype": "Data",
-   "label": "Year of para"
+   "label": "Year of parity"
   },
   {
    "depends_on": "eval:doc.live >0",
    "fieldname": "year_of_live",
    "fieldtype": "Data",
-   "label": "Year of live"
+   "label": "Year of live birth/s"
   },
   {
    "depends_on": "eval:doc.abortions >0",
@@ -554,25 +548,40 @@
    "label": "Undiagnosed"
   },
   {
-   "fieldname": "mother_id",
-   "fieldtype": "Data",
-   "label": "Mother ID"
-  },
-  {
    "fieldname": "extra_text1",
    "fieldtype": "Small Text"
   },
   {
    "fieldname": "extra_text2",
    "fieldtype": "Small Text"
+  },
+  {
+   "fieldname": "mother_name",
+   "fieldtype": "Data",
+   "label": "Mother Name",
+   "length": 100,
+   "print_width": "10",
+   "width": "10"
+  },
+  {
+   "fieldname": "mother_mid",
+   "fieldtype": "Data",
+   "label": "Mother MID"
+  },
+  {
+   "fieldname": "age",
+   "fieldtype": "Int",
+   "label": "Age",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-04-20 14:46:45.596156",
+ "modified": "2023-05-09 15:03:19.243221",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Maternal details",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

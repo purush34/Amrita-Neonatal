@@ -26,6 +26,7 @@
   "admission_ofc",
   "column_break_keffn",
   "gestational_age_at_discharge",
+  "gestational_age_at_death",
   "time_and_date_of_discharge",
   "time_and_date_of_death",
   "discharge_weight",
@@ -33,6 +34,7 @@
   "discharge_ofc",
   "section_break_atcrl",
   "length_of_hospital_stay",
+  "cause_of_death",
   "column_break_qnuwk",
   "discharge",
   "name_of_the_hospital",
@@ -58,12 +60,19 @@
   "haematology_summery",
   "renal_summery",
   "genetic_summery",
+  "section_break_lra6s",
   "any_genetic_samples_sent",
+  "column_break_q885w",
   "samples_stored",
+  "column_break_lpnfp",
   "date_of_discard",
+  "section_break_mo9fe",
   "medications_at_discharge",
   "advise_at_discharge",
-  "follow_up"
+  "follow_up",
+  "summary",
+  "results",
+  "result_text"
  ],
  "fields": [
   {
@@ -129,7 +138,6 @@
    "label": "Handover given to"
   },
   {
-   "depends_on": "eval:in_list([\"Discharge Letter\"],doc.outcome)",
    "fieldname": "gestational_age_at_admission",
    "fieldtype": "Data",
    "label": "Gestational Age at admission"
@@ -193,33 +201,39 @@
    "fieldtype": "Section Break"
   },
   {
+   "default": "Yes",
    "fieldname": "any_genetic_samples_sent",
    "fieldtype": "Select",
    "label": "Any genetic samples sent",
-   "options": "No\nYes"
+   "options": "Yes\nNo"
   },
   {
+   "depends_on": "eval:in_list([\"No\"],doc.any_genetic_samples_sent)",
    "fieldname": "samples_stored",
    "fieldtype": "Select",
    "label": "Samples Stored",
    "options": "No\nYes"
   },
   {
+   "depends_on": "eval:in_list([\"Yes\"],doc.samples_stored)",
    "fieldname": "date_of_discard",
    "fieldtype": "Date",
    "label": "Date to be discarded if no consent given"
   },
   {
+   "depends_on": "eval:in_list([\"Discharge Letter\"],doc.outcome)",
    "fieldname": "medications_at_discharge",
    "fieldtype": "Text Editor",
    "label": "Medications at discharge"
   },
   {
+   "depends_on": "eval:in_list([\"Discharge Letter\"],doc.outcome)",
    "fieldname": "advise_at_discharge",
    "fieldtype": "Text Editor",
    "label": "Advise at discharge"
   },
   {
+   "depends_on": "eval:in_list([\"Discharge Letter\"],doc.outcome)",
    "fieldname": "follow_up",
    "fieldtype": "Text Editor",
    "label": "Follow Up"
@@ -253,19 +267,16 @@
    "label": "Date and time of admission"
   },
   {
-   "depends_on": "eval:in_list([\"Discharge Letter\"],doc.outcome)",
    "fieldname": "admission_weight",
    "fieldtype": "Float",
    "label": "Admission weight (in kg)"
   },
   {
-   "depends_on": "eval:in_list([\"Discharge Letter\"],doc.outcome)",
    "fieldname": "admission_length",
    "fieldtype": "Int",
    "label": "Admission length (in cm)"
   },
   {
-   "depends_on": "eval:in_list([\"Discharge Letter\"],doc.outcome)",
    "fieldname": "admission_ofc",
    "fieldtype": "Data",
    "label": "Admission OFC (in cm)"
@@ -298,32 +309,32 @@
   {
    "fieldname": "respiratory_summery",
    "fieldtype": "Text Editor",
-   "label": "Respiratory summery "
+   "label": "Respiratory summary "
   },
   {
    "fieldname": "cvs_summery",
    "fieldtype": "Text Editor",
-   "label": "CVS summery"
+   "label": "CVS summary"
   },
   {
    "fieldname": "cns_summery",
    "fieldtype": "Text Editor",
-   "label": "CNS summery"
+   "label": "CNS summary"
   },
   {
    "fieldname": "sepsis_summery",
    "fieldtype": "Text Editor",
-   "label": "Sepsis summery"
+   "label": "Sepsis summary"
   },
   {
    "fieldname": "ophthalmology_summery",
    "fieldtype": "Text Editor",
-   "label": "Ophthalmology summery"
+   "label": "Ophthalmology summary"
   },
   {
    "fieldname": "haematology_summery",
    "fieldtype": "Text Editor",
-   "label": "Haematology summery"
+   "label": "Haematology summary"
   },
   {
    "fieldname": "refresh_data",
@@ -333,37 +344,82 @@
   {
    "fieldname": "ent_and_swallow_summery",
    "fieldtype": "Text Editor",
-   "label": "ENT and swallow summery"
+   "label": "ENT and swallow summary"
   },
   {
    "fieldname": "renal_summery",
    "fieldtype": "Text Editor",
-   "label": "Renal summery"
+   "label": "Renal summary"
   },
   {
    "fieldname": "gastroinstestine_summery",
    "fieldtype": "Text Editor",
-   "label": "GI summery"
+   "label": "GI summary"
   },
   {
    "fieldname": "genetic_summery",
    "fieldtype": "Text Editor",
-   "label": "Genetics summery"
+   "label": "Genetics summary"
   },
   {
    "fieldname": "endocrine_and_metabolic_summery",
    "fieldtype": "Text Editor",
-   "label": "Endocrine and metabolic summery"
+   "label": "Endocrine and metabolic summary"
   },
   {
    "fieldname": "procedures_done_during_the_stay",
    "fieldtype": "Text Editor",
    "label": "Procedures done during the stay"
+  },
+  {
+   "depends_on": "eval:in_list([\"Death Summary\"],doc.outcome)",
+   "fieldname": "gestational_age_at_death",
+   "fieldtype": "Data",
+   "label": "Gestational age at Death"
+  },
+  {
+   "fieldname": "cause_of_death",
+   "fieldtype": "Data",
+   "label": "Cause of Death"
+  },
+  {
+   "depends_on": "eval:in_list([\"Death Summary\"],doc.outcome)",
+   "fieldname": "summary",
+   "fieldtype": "Text",
+   "label": "Summary"
+  },
+  {
+   "fieldname": "results",
+   "fieldtype": "Select",
+   "label": "Any special investigation results awaited",
+   "options": "No\nYes"
+  },
+  {
+   "depends_on": "eval:doc.results==\"Yes\"",
+   "fieldname": "result_text",
+   "fieldtype": "Small Text",
+   "label": "Investigation and Date expected"
+  },
+  {
+   "fieldname": "column_break_q885w",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_lpnfp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_mo9fe",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_lra6s",
+   "fieldtype": "Section Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-04-14 05:41:14.016052",
+ "modified": "2023-05-09 17:24:02.899345",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "NICU Stay Outcomes",

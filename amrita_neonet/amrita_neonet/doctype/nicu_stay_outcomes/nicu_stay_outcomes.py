@@ -45,7 +45,7 @@ def getRespiratoryDailySummery(baby_id):
     htmlText += "Nasal Cannula Days: " + str(respiratory.nasal_days) + nextLine
     htmlText += "HHHFNC Days: " + str(respiratory.hhhfnc_days) + nextLine
     htmlText += "BCPAP Days: " + str(respiratory.bcpap_days) + nextLine
-    htmlText += "CPAP Days: " + str(respiratory.cpap_days) + nextLine
+    htmlText += "CPAP Days: " + str(respiratory.vent_days) + nextLine
     htmlText += "O2 Days: " + str(respiratory.o2_days) + nextLine
     htmlText += "Nitric Oxide Hours: " + str(respiratory.n_hour) + nextLine
     htmlText += nextLine + nextLine
@@ -54,7 +54,7 @@ def getRespiratoryDailySummery(baby_id):
         if child.free_text_box_for_discharge_letter:
             htmlText += str(child.date) + nextLine + \
                 child.free_text_box_for_discharge_letter + nextLine + nextLine
-    print("Sent Respiratory daily summery")
+    print("Sent Respiratory daily summary")
     if htmlText:
         return htmlText
     return "No Data"
@@ -93,7 +93,7 @@ def getCVSDailySummery(baby_id):
         if child.free_text_box_for_discharge_letter:
             htmlText += str(child.date) + nextLine + \
                 child.free_text_box_for_discharge_letter + nextLine + nextLine
-    print("Sent CVS daily summery")
+    print("Sent CVS daily summary")
     if htmlText:
         return htmlText
     return "No Data"
@@ -130,7 +130,7 @@ def getGastroinstestineDailySummery(baby_id):
         if child.free_text_box_for_discharge_letter:
             htmlText += str(child.date) + nextLine + \
                 child.free_text_box_for_discharge_letter + nextLine + nextLine
-    print("Sent Gastroinstestine daily summery")
+    print("Sent Gastroinstestine daily summary")
     if htmlText:
         return htmlText
     return "No Data"
@@ -145,7 +145,7 @@ def getCNSDailySummery(baby_id):
         if child.free_text_box_for_discharge_letter:
             htmlText += str(child.date) + nextLine + \
                 child.free_text_box_for_discharge_letter + nextLine + nextLine
-    print("Sent CNS daily summery")
+    print("Sent CNS daily summary")
     if htmlText:
         return htmlText
     return "No Data"
@@ -161,7 +161,7 @@ def getEndocrineAndMetabolicDailySummery(baby_id):
         if child.free_text_box_for_discharge_letter:
             htmlText += str(child.date) + nextLine + \
                 child.free_text_box_for_discharge_letter + nextLine + nextLine
-    print("Sent Endocrine and metabolic daily summery")
+    print("Sent Endocrine and metabolic daily summary")
     if htmlText:
         return htmlText
     return "No Data"
@@ -187,12 +187,52 @@ def getSepsisDailySummery(baby_id):
     htmlText += "Total duration of reserve antibiotics: " + str(sepsis.total_duration_of_reserve_antibiotics) + nextLine
     htmlText += "Total duration of antifungals: " + str(sepsis.total_duration_of_antifungals) + nextLine
     htmlText += "No of central lines days: " + str(sepsis.no_of_central_lines_days) + nextLine
+
+    sepsis_child = sepsis.get("daily_observations")
+    antibiotics = sepsis.get("antibiotics_used")
+    antifungals = sepsis.get("antifungals_used")
     htmlText += nextLine + nextLine
-    for child in sepsis.get_all_children():
+    center_lines = ""
+    start_date = ""
+    end_date = ""
+    s = 0
+    dd = 0
+    for child in sepsis_child:
+        if child.central_line_present=="Yes" and s == 0:
+            start_date = child.date
+            s = 1
+        elif child.central_line_present=="No" and s == 1:
+            end_date = frappe.utils.add_days(child.date, -1)
+            center_lines += str(start_date) + " to " + str(end_date)+" (" + dd+ " days)" + nextLine
+            s = 0
         if child.free_text_box_for_discharge_letter:
             htmlText += str(child.date) + nextLine + \
                 child.free_text_box_for_discharge_letter + nextLine + nextLine
-    print("Sent Sepsis daily summery")
+        dd = str(child.no_of_days_of_central_line_in_situ)
+    if s == 1:
+        center_lines += str(start_date) + " to continuing" + nextLine
+    htmlText += nextLine 
+    htmlText += "Central Lines: " + nextLine + center_lines + nextLine
+    
+    for child in antibiotics:
+        htmlText += "Antibiotic Used: " + str(child.antibiotic_used) + ", "
+        htmlText += "Type: " + str(child.type) + ", "
+        htmlText += "Start Date: " + str(child.start_date) + ", "
+        if not child.continuing:
+            htmlText += "End Date: " + str(child.end_date) + ", "
+        htmlText += "Number of Days: " + str(child.number_of_days) 
+        htmlText += nextLine 
+    htmlText += nextLine
+
+    for child in antifungals:
+        htmlText += "Antifungal Used: " + str(child.antibiotic_used) + ", "
+        htmlText += "Type: " + str(child.type) + ", "
+        htmlText += "Start Date: " + str(child.start_date) + ", "
+        if not child.continuing:
+            htmlText += "End Date: " + str(child.end_date) + ", "
+        htmlText += "Number of Days: " + str(child.number_of_days) 
+        htmlText += nextLine
+    print("Sent Sepsis daily summary")
     if htmlText:
         return htmlText
     return "No Data"
@@ -207,7 +247,7 @@ def getOphthalmologyDailySummery(baby_id):
         if child.free_text_box_for_discharge_letter:
             htmlText += str(child.date) + nextLine + \
                 child.free_text_box_for_discharge_letter + nextLine + nextLine
-    print("Sent Opthalmology daily summery")
+    print("Sent Opthalmology daily summary")
     if htmlText:
         return htmlText
     return "No Data"
@@ -222,7 +262,7 @@ def getENTAndSwallowDailySummery(baby_id):
         if child.free_text_box_for_discharge_letter:
             htmlText += str(child.date) + nextLine + \
                 child.free_text_box_for_discharge_letter + nextLine + nextLine
-    print("Sent ENT and Swallow daily summery")
+    print("Sent ENT and Swallow daily summary")
     if htmlText:
         return htmlText
     return "No Data"
@@ -253,7 +293,7 @@ def getHaematologyDailySummery(baby_id):
         if child.free_text_box_for_discharge_letter:
             htmlText += str(child.date) + nextLine + \
                 child.free_text_box_for_discharge_letter + nextLine + nextLine
-    print("Sent Haematology daily summery")
+    print("Sent Haematology daily summary")
     if htmlText:
         return htmlText
     return "No Data"
@@ -268,7 +308,7 @@ def getRenalDailySummery(baby_id):
         if child.free_text_box_for_discharge_letter:
             htmlText += str(child.date) + nextLine + \
                 child.free_text_box_for_discharge_letter + nextLine + nextLine
-    print("Sent Renal daily summery")
+    print("Sent Renal daily summary")
     if htmlText:
         return htmlText
     return "No Data"
@@ -283,7 +323,7 @@ def getGeneticDailySummery(baby_id):
         if child.free_text_box_for_discharge_letter:
             htmlText += str(child.date) + nextLine + \
                 child.free_text_box_for_discharge_letter + nextLine + nextLine
-    print("Sent Genetic daily summery")
+    print("Sent Genetic daily summary")
     if htmlText:
         return htmlText
     return "No Data"
@@ -862,7 +902,7 @@ def getAllDiagnosis(baby_id):
 
     sepsis = frappe.get_doc('Sepsis', {'baby_id': baby_id})
 
-    for child in sepsis.get_all_children():
+    for child in sepsis.get("daily_observations"):
         if child.if_diag_dis == "Yes":
             htmlText += str(child.date) + " Sepsis " + nextLine
             if child.diagnosis == "Suspected sepsis":

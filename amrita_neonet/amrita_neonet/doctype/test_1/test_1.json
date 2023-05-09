@@ -11,7 +11,9 @@
   "page1",
   "page2",
   "page3",
-  "sample"
+  "sample",
+  "child1",
+  "child2"
  ],
  "fields": [
   {
@@ -31,9 +33,8 @@
   },
   {
    "fieldname": "mid",
-   "fieldtype": "Link",
-   "label": "Baby ID",
-   "options": "testBabies"
+   "fieldtype": "Data",
+   "label": "Baby ID"
   },
   {
    "columns": 10,
@@ -43,12 +44,24 @@
    "max_height": "40px",
    "print_width": "100px",
    "width": "100px"
+  },
+  {
+   "fieldname": "child1",
+   "fieldtype": "Table",
+   "label": "child1",
+   "options": "Respiratory_child"
+  },
+  {
+   "fieldname": "child2",
+   "fieldtype": "Table",
+   "label": "child2",
+   "options": "CT_child"
   }
  ],
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2023-04-09 21:30:02.029972",
+ "modified": "2023-04-25 17:58:46.950836",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Test-1",

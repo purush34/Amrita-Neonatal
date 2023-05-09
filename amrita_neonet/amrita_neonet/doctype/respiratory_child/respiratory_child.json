@@ -29,13 +29,6 @@
   "o2_24",
   "column_break_jvxxf",
   "maximum_oxygen_requirement_in__past_24_hrs",
-  "section_break_eoevm",
-  "oxidation_calculation",
-  "o2c_m",
-  "o2c_o2",
-  "o2c_pa",
-  "column_break_rwv1j",
-  "highest_o2",
   "section_break_t7cl8",
   "intubation",
   "column_break_1m4ud",
@@ -53,11 +46,13 @@
   "ventilated",
   "column_break_rzzse",
   "simv_hfov",
-  "maximum_oxygenation_index_of_the_day_section",
-  "mapcm_h2o",
-  "o2_",
-  "pao2_mmh",
-  "oxygenation_index",
+  "section_break_eoevm",
+  "oxidation_calculation",
+  "o2c_m",
+  "o2c_o2",
+  "o2c_pa",
+  "column_break_rwv1j",
+  "highest_o2",
   "section_break_15cyk",
   "maximum_map_past_24_hours",
   "section_break_parfm",
@@ -73,13 +68,12 @@
   "sildenafil",
   "sildenafil_ivpo",
   "sil_dose",
+  "column_break_9w0zh",
   "bosentan",
   "bosentan_po",
+  "column_break_btm1e",
   "milrinone",
   "milrinone_iv",
-  "column_break_9w0zh",
-  "section_break_qpxuo",
-  "column_break_btm1e",
   "section_break_pocyh",
   "sedation_in_past_24_hours",
   "column_break_o3qsp",
@@ -99,16 +93,20 @@
   "column_break_sjdrz",
   "nasal_cannula",
   "nasal_cannula_dose",
+  "column_break_jj8oe",
   "hhhfnc",
   "hhhfnc_dose",
+  "column_break_z6f0f",
   "bcpap",
   "bcpap_dose",
+  "column_break_vdlgn",
   "vent_cpap",
   "vent_cpap_dose",
   "section_break_keu8c",
   "bpd_criteria",
   "column_break_lylsh",
   "o2_req",
+  "o2_check",
   "section_break_lts7n",
   "free_text_box_for_discharge_letter"
  ],
@@ -215,17 +213,17 @@
    "options": "No\nYes"
   },
   {
+   "depends_on": "eval:in_list([\"Yes\"],doc.ventilated)",
    "fieldname": "column_break_rwv1j",
    "fieldtype": "Column Break"
   },
   {
-   "depends_on": "eval:in_list([\"Yes\"],doc.o2_24)",
+   "depends_on": "eval:in_list([\"Yes\"],doc.ventilated)",
    "fieldname": "highest_o2",
    "fieldtype": "Float",
    "label": "Maximum Oxygenation Index of the day"
   },
   {
-   "depends_on": "eval:in_list([\"Yes\"],doc.o2_24)",
    "fieldname": "section_break_t7cl8",
    "fieldtype": "Section Break"
   },
@@ -322,8 +320,9 @@
    "options": "No\nYes"
   },
   {
+   "depends_on": "eval:in_list([\"Yes\"],doc.pulmonary_vasodilators)",
    "fieldname": "column_break_egfev",
-   "fieldtype": "Column Break"
+   "fieldtype": "Section Break"
   },
   {
    "depends_on": "eval:in_list([\"Nitric use in past 24 hours\"],doc.pul_vas)",
@@ -360,19 +359,20 @@
    "fieldtype": "Column Break"
   },
   {
-   "depends_on": "eval:in_list([\"Sildenafil\"],doc.pul_vas)",
+   "depends_on": "eval:doc.sildenafil==1",
    "fieldname": "sil_dose",
    "fieldtype": "Data",
    "label": "Dose"
   },
   {
-   "depends_on": "eval:in_list([\"Bosentan\"],doc.pul_vas)",
+   "depends_on": "eval:doc.bosentan==1",
    "fieldname": "bosentan_po",
    "fieldtype": "Data",
    "label": "PO"
   },
   {
    "default": "0",
+   "depends_on": "eval:in_list([\"Yes\"],doc.pulmonary_vasodilators)",
    "fieldname": "milrinone",
    "fieldtype": "Check",
    "label": "Milrinone"
@@ -454,8 +454,9 @@
    "options": "No\nYes"
   },
   {
+   "depends_on": "eval:in_list([\"Yes\"],doc.non_invasive)",
    "fieldname": "column_break_sjdrz",
-   "fieldtype": "Column Break"
+   "fieldtype": "Section Break"
   },
   {
    "fieldname": "section_break_keu8c",
@@ -475,7 +476,7 @@
    "depends_on": "eval:in_list([\"Yes\"],doc.bpd_criteria)",
    "fieldname": "o2_req",
    "fieldtype": "Select",
-   "options": "O2 requirement for a total of 28 days or more\nO2 requirement at 36 weeks corrected gestational age"
+   "label": "O2 requirement for a total of 28 days or more"
   },
   {
    "fieldname": "section_break_lts7n",
@@ -503,11 +504,6 @@
    "fieldtype": "Section Break"
   },
   {
-   "depends_on": "eval:in_list([\"Sildenafil\",\"Bosentan\",\"Milrinone\"],doc.pul_vas)",
-   "fieldname": "section_break_qpxuo",
-   "fieldtype": "Section Break"
-  },
-  {
    "depends_on": "eval:in_list([\"Yes\"],doc.intubation)",
    "fieldname": "size",
    "fieldtype": "Float",
@@ -531,32 +527,6 @@
    "fieldtype": "Select",
    "label": "SIMV/HFOV",
    "options": "SIMV\nHFOV"
-  },
-  {
-   "fieldname": "maximum_oxygenation_index_of_the_day_section",
-   "fieldtype": "Section Break",
-   "label": "Maximum Oxygenation Index of the day"
-  },
-  {
-   "fieldname": "mapcm_h2o",
-   "fieldtype": "Float",
-   "label": "MAP(cm H2O)"
-  },
-  {
-   "fieldname": "o2_",
-   "fieldtype": "Float",
-   "label": "O2 (%)"
-  },
-  {
-   "fieldname": "pao2_mmh",
-   "fieldtype": "Float",
-   "label": "PaO2 mmH"
-  },
-  {
-   "fieldname": "oxygenation_index",
-   "fieldtype": "Float",
-   "is_virtual": 1,
-   "label": "Oxygenation Index"
   },
   {
    "default": "0",
@@ -614,7 +584,7 @@
    "label": "Nitric use in past 24 hours "
   },
   {
-   "depends_on": "eval:doc.pulmonary_vasodilators == \"Yes\" && doc.pul_vas == \"Sildenafil\"",
+   "depends_on": "eval:doc.pulmonary_vasodilators == \"Yes\" && doc.sildenafil==1",
    "fieldname": "sildenafil_ivpo",
    "fieldtype": "Select",
    "options": "IV\nPO"
@@ -627,34 +597,34 @@
    "label": "Bosentan"
   },
   {
-   "depends_on": "eval:in_list([\"Milrinone\"],doc.pul_vas)",
+   "depends_on": "eval:doc.milrinone==1",
    "fieldname": "milrinone_iv",
    "fieldtype": "Data",
    "label": "IV"
   },
   {
-   "depends_on": "eval:in_list([\"Yes\"],doc.o2_24)",
+   "depends_on": "eval:in_list([\"Yes\"],doc.ventilated)",
    "fieldname": "oxidation_calculation",
    "fieldtype": "Heading",
    "label": "OI Calculation"
   },
   {
    "default": "0.0",
-   "depends_on": "eval:in_list([\"Yes\"],doc.o2_24)",
+   "depends_on": "eval:in_list([\"Yes\"],doc.ventilated)",
    "fieldname": "o2c_m",
    "fieldtype": "Data",
    "label": "MAP (cm H20)"
   },
   {
    "default": "0.0",
-   "depends_on": "eval:in_list([\"Yes\"],doc.o2_24)",
+   "depends_on": "eval:in_list([\"Yes\"],doc.ventilated)",
    "fieldname": "o2c_o2",
    "fieldtype": "Data",
    "label": "O2 (%)"
   },
   {
    "default": "1.0",
-   "depends_on": "eval:in_list([\"Yes\"],doc.o2_24)",
+   "depends_on": "eval:in_list([\"Yes\"],doc.ventilated)",
    "fieldname": "o2c_pa",
    "fieldtype": "Data",
    "label": "PaO2 mmHg"
@@ -666,6 +636,7 @@
    "label": "Duration (in hours)"
   },
   {
+   "depends_on": "eval:in_list([\"Yes\"],doc.ventilated)",
    "fieldname": "section_break_eoevm",
    "fieldtype": "Section Break"
   },
@@ -673,18 +644,37 @@
    "depends_on": "eval:in_list([\"Yes\"],doc.o2_24)",
    "fieldname": "maximum_oxygen_requirement_in__past_24_hrs",
    "fieldtype": "Int",
-   "label": "Maximum oxygen requirement (in %) past 24 hrs",
+   "label": "Maximum oxygen for the day",
    "non_negative": 1
   },
   {
    "fieldname": "column_break_jvxxf",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_jj8oe",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_z6f0f",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_vdlgn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:in_list([\"Yes\"],doc.bpd_criteria)",
+   "fieldname": "o2_check",
+   "fieldtype": "Check",
+   "label": "O2 requirement at 36 weeks corrected gestational age"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-04-15 11:08:07.118730",
+ "modified": "2023-04-30 23:27:20.488256",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Respiratory_child",

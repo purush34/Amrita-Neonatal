@@ -13,7 +13,9 @@
   "hours",
   "column_break_9jsdu",
   "cchd",
+  "cchd_other",
   "ahd",
+  "ahd_other",
   "tachy_brady",
   "section_break_9qu1h",
   "discharge",
@@ -21,11 +23,12 @@
   "discharge_diag",
   "column_break_63os5",
   "cchd_dis",
+  "cchd_other_dis",
   "ahd_dis",
+  "ahd_other_dis",
   "tachy_brady_dis",
   "section_break_9ibrx",
   "inotropic_support",
-  "if_any_other",
   "column_break_fjehq",
   "dopamine",
   "dopamine_dose",
@@ -42,6 +45,8 @@
   "hydroocortisone",
   "dose5",
   "section_break_olkkg",
+  "if_any_other",
+  "section_break_ip8cf",
   "echo",
   "column_break_dwl0j",
   "bedside_detailed",
@@ -76,6 +81,7 @@
   "arrhythmia",
   "column_break_d3mnf",
   "if_arr",
+  "column_break_eq8ta",
   "t_b",
   "section_break_spa2g",
   "feed_intolerence",
@@ -118,13 +124,13 @@
    "depends_on": "eval:doc.new_diagnosis == \"Yes\" && doc.hours == \"Cyanotic Congenital Heart Disease\"",
    "fieldname": "cchd",
    "fieldtype": "Select",
-   "options": "TGA\nTGA+IVS\nDORV\nTetology\nTAPVC\nPAPVC\nTruncus Arteriosus\nEbstein Anomaly\nInterruption of the Aorta"
+   "options": "TGA\nTGA+IVS\nDORV\nTetology\nTAPVC\nPAPVC\nTruncus Arteriosus\nEbstein Anomaly\nInterruption of the Aorta\nOther"
   },
   {
    "depends_on": "eval:doc.new_diagnosis == \"Yes\" && doc.hours == \"Acyanotci Heart Disease\"",
    "fieldname": "ahd",
    "fieldtype": "Select",
-   "options": "ASD\nVSD\nPDA\nPDA-heamodynamically significant\nCoarctation of Aorta"
+   "options": "ASD\nVSD\nPDA\nPDA-heamodynamically significant\nCoarctation of Aorta\nOther"
   },
   {
    "depends_on": "eval:in_list([\"Tachy arrythmias\",\"Brady Arrythmias\",\"Other\"],doc.hours)",
@@ -159,14 +165,13 @@
    "depends_on": "eval:doc.discharge == \"Yes\" && doc.discharge_diag == \"Cyanotic Congenital Heart Disease\"",
    "fieldname": "cchd_dis",
    "fieldtype": "Select",
-   "label": "Cyanotic Congenital Heart Disease",
-   "options": "TGA\nTGA+IVS\nDORV\nTetology\nTAPVC\nPAPVC\nTruncus Arteriosus\nEbstein Anomaly\nInterruption of the Aorta"
+   "options": "TGA\nTGA+IVS\nDORV\nTetology\nTAPVC\nPAPVC\nTruncus Arteriosus\nEbstein Anomaly\nInterruption of the Aorta\nOther"
   },
   {
    "depends_on": "eval:in_list([\"Acyanotci Heart Disease\"],doc.discharge_diag)",
    "fieldname": "ahd_dis",
    "fieldtype": "Select",
-   "options": "ASD\nVSD\nPDA\nPDA-heamodynamically significant\nCoarctation of Aorta"
+   "options": "ASD\nVSD\nPDA\nPDA-heamodynamically significant\nCoarctation of Aorta\nOther"
   },
   {
    "depends_on": "eval:in_list([\"Tachy arrythmias\",\"Brady Arrythmias\",\"Other\"],doc.discharge_diag)",
@@ -240,8 +245,8 @@
   {
    "depends_on": "eval:in_list([\"Yes\"],doc.echo)",
    "fieldname": "bedside_detailed",
-   "fieldtype": "Small Text",
-   "label": "Bedside Detailed"
+   "fieldtype": "Select",
+   "options": "Bedside\nDetailed"
   },
   {
    "fieldname": "section_break_xbk4f",
@@ -285,7 +290,7 @@
    "depends_on": "eval:in_list([\"Yes\"],doc.hs_pda)",
    "fieldname": "hs_type",
    "fieldtype": "Select",
-   "label": "Type",
+   "label": "Type of Treatment",
    "options": "Medical\nSurgical"
   },
   {
@@ -293,10 +298,11 @@
    "fieldtype": "Column Break"
   },
   {
+   "default": "Paracetamol",
    "depends_on": "eval:doc.hs_type == \"Medical\" && doc.hs_pda == \"Yes\"",
    "fieldname": "medicine",
    "fieldtype": "Select",
-   "options": "Paracetmol\nIbuprofin"
+   "options": "Paracetamol\nIbuprofen"
   },
   {
    "fieldname": "column_break_vo8ni",
@@ -493,12 +499,44 @@
   {
    "fieldname": "column_break_qhng5",
    "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.hours == \"Cyanotic Congenital Heart Disease\" && doc.cchd == \"Other\"",
+   "fieldname": "cchd_other",
+   "fieldtype": "Data",
+   "label": "Other"
+  },
+  {
+   "depends_on": "eval:doc.ahd == \"Other\" && doc.hours == \"Acyanotci Heart Disease\"",
+   "fieldname": "ahd_other",
+   "fieldtype": "Data",
+   "label": "Other"
+  },
+  {
+   "depends_on": "eval:doc.discharge_diag == \"Cyanotic Congenital Heart Disease\" && doc.cchd_dis == \"Other\"",
+   "fieldname": "cchd_other_dis",
+   "fieldtype": "Data",
+   "label": "Other"
+  },
+  {
+   "depends_on": "eval:doc.discharge_diag == \"Acyanotci Heart Disease\" && doc.ahd_dis == \"Other\"",
+   "fieldname": "ahd_other_dis",
+   "fieldtype": "Data",
+   "label": "Other"
+  },
+  {
+   "fieldname": "section_break_ip8cf",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_eq8ta",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-04-22 21:34:36.951006",
+ "modified": "2023-05-03 15:40:15.690555",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "CVS_child",

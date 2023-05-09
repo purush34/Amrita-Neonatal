@@ -24,7 +24,23 @@
   "column_break_gkbfb",
   "smrithi",
   "if_smrithi",
-  "section_break_pvism"
+  "section_break_pvism",
+  "criteria_a",
+  "a1",
+  "a2",
+  "a3",
+  "a4",
+  "a5",
+  "column_break_5lxpk",
+  "criteria_b",
+  "b1",
+  "b2",
+  "b3",
+  "section_break_klez0",
+  "c1",
+  "c2",
+  "column_break_2yc7v",
+  "c3"
  ],
  "fields": [
   {
@@ -47,7 +63,7 @@
    "depends_on": "eval:doc.jayasree==1",
    "fieldname": "if_jayasree",
    "fieldtype": "Select",
-   "options": "Yes\nNo\nNot Discussed"
+   "options": "Yes\nNo"
   },
   {
    "fieldname": "column_break_rvlud",
@@ -63,7 +79,7 @@
    "depends_on": "eval:doc.perraju==1",
    "fieldname": "if_perraju",
    "fieldtype": "Select",
-   "options": "Yes\nNo\nNot Discussed"
+   "options": "Yes\nNo"
   },
   {
    "fieldname": "column_break_rr47s",
@@ -79,7 +95,7 @@
    "depends_on": "eval:doc.ashwin==1",
    "fieldname": "if_ashwin",
    "fieldtype": "Select",
-   "options": "Yes\nNo\nNot Discussed"
+   "options": "Yes\nNo"
   },
   {
    "fieldname": "column_break_gltap",
@@ -95,7 +111,7 @@
    "depends_on": "eval:doc.lakshmi==1",
    "fieldname": "if_lakshmi",
    "fieldtype": "Select",
-   "options": "Yes\nNo\nNot Discussed"
+   "options": "Yes\nNo"
   },
   {
    "fieldname": "column_break_gkbfb",
@@ -111,7 +127,7 @@
    "depends_on": "eval:doc.smrithi==1",
    "fieldname": "if_smrithi",
    "fieldtype": "Select",
-   "options": "Yes\nNo\nNot Discussed"
+   "options": "Yes\nNo"
   },
   {
    "fieldname": "section_break_pvism",
@@ -121,11 +137,99 @@
    "fieldname": "mother_name",
    "fieldtype": "Data",
    "label": "Mother name"
+  },
+  {
+   "fieldname": "criteria_a",
+   "fieldtype": "Heading",
+   "label": "Criteria A"
+  },
+  {
+   "fieldname": "a1",
+   "fieldtype": "Select",
+   "label": "Greater or equal to 36 weeks Gestation",
+   "options": "Yes\nNo"
+  },
+  {
+   "fieldname": "a2",
+   "fieldtype": "Select",
+   "label": "APGAR Score of Less than or Equal to 5 at 10min",
+   "options": "Yes\nNo"
+  },
+  {
+   "fieldname": "a3",
+   "fieldtype": "Select",
+   "label": "Need for Resiuscitation (ET OR MASK) at 10 min of age",
+   "options": "Yes\nNo"
+  },
+  {
+   "fieldname": "a4",
+   "fieldtype": "Select",
+   "label": "Acidosis within 1st hour of life ( UA or capillary gast Ph<7.0)",
+   "options": "Yes\nNo"
+  },
+  {
+   "fieldname": "a5",
+   "fieldtype": "Select",
+   "label": "Base Deficit of > or equal to 12 in any form of blood gas (Arterial/ Venous or Capillary)",
+   "options": "Yes\nNo"
+  },
+  {
+   "fieldname": "column_break_5lxpk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "criteria_b",
+   "fieldtype": "Heading",
+   "label": "Criteria B"
+  },
+  {
+   "fieldname": "b1",
+   "fieldtype": "Select",
+   "label": "Altered state of counsciousness ( reduced or absent response to stimulation)",
+   "options": "Yes\nNo"
+  },
+  {
+   "fieldname": "b2",
+   "fieldtype": "Select",
+   "label": "Abnormal tone (focal or general hypotonia, or flaccid)",
+   "options": "Yes\nNo"
+  },
+  {
+   "fieldname": "b3",
+   "fieldtype": "Select",
+   "label": "Abnormal primitive reflexes (weak or absent suck or Moro response)",
+   "options": "Yes\nNo"
+  },
+  {
+   "fieldname": "section_break_klez0",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "c1",
+   "fieldtype": "Select",
+   "label": "Baby meeting Crteria A1 + 2 more in Criteria A",
+   "options": "Yes\nNo"
+  },
+  {
+   "fieldname": "c2",
+   "fieldtype": "Select",
+   "label": "Coolig Criteria met",
+   "options": "Yes\nNo"
+  },
+  {
+   "fieldname": "column_break_2yc7v",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "c3",
+   "fieldtype": "Select",
+   "label": "Baby meeting at least one Criteria B",
+   "options": "Yes\nNo"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-04-10 13:55:20.765337",
+ "modified": "2023-05-09 17:20:26.744010",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Cooling Criteria",

@@ -14,8 +14,6 @@
   "diagnosis",
   "daily_observations",
   "section_break_gv1xr",
-  "text_box_for_dicharge",
-  "section_break_xpp1t",
   "go_back_to_cns",
   "column_break_pyfzr",
   "column_break_zibov",
@@ -47,16 +45,7 @@
    "label": "ENDOCRINE AND METABOLIC"
   },
   {
-   "fieldname": "text_box_for_dicharge",
-   "fieldtype": "Text",
-   "label": "Text Box for dicharge"
-  },
-  {
    "fieldname": "section_break_gv1xr",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "section_break_xpp1t",
    "fieldtype": "Section Break"
   },
   {
@@ -85,7 +74,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-04-19 22:13:34.709568",
+ "modified": "2023-05-01 10:47:26.573609",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Endocrine and metabolic",

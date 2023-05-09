@@ -57,7 +57,18 @@ frappe.ui.form.on('Respiratory_child', {
 			child.size = -1;
 			frm.refresh_fields();
 		}
-	}
+	},
+	"daily_observations_add": function(frm, cdt, cdn) {
+        var row = locals[cdt][cdn];
+        if (frm.doc.daily_observations.length > 1){
+			var date = frm.doc.daily_observations[frm.doc.daily_observations.length - 2].date;
+			row.date = frappe.datetime.add_days(date,1);
+		}
+		else{
+			row.date = frappe.datetime.get_today();
+		}
+		frm.refresh_field("daily_observations");
+    },
 })
 
 function calc_maximum_oxidatio(frm, cdt, cdn) {

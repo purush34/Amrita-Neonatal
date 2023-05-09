@@ -1,6 +1,9 @@
 // Copyright (c) 2023, ICTS and contributors
 // For license information, please see license.txt
 
+// import time
+
+
 frappe.ui.form.on('NICU Stay Outcomes', {
 	// refresh: function(frm) {
 
@@ -22,6 +25,7 @@ frappe.ui.form.on('NICU Stay Outcomes', {
 		Renal
 		Genetic 
 		*/
+		var startTime = new Date().getTime();
 		frappe.call({
 			method: "amrita_neonet.amrita_neonet.doctype.nicu_stay_outcomes.nicu_stay_outcomes.getRespiratoryDailySummery",
 			args: {
@@ -177,8 +181,8 @@ frappe.ui.form.on('NICU Stay Outcomes', {
 				}
 			}
 		})
-
-		
+		var endTime = new Date().getTime();
+		console.log("Fetching data from NICU Stay Outcomes for baby: " + frm.doc.baby_id + " completed" + " in " + (endTime - startTime) + " ms");
 	
 	},
 });

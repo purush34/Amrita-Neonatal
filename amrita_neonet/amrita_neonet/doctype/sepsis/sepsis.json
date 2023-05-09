@@ -20,16 +20,13 @@
   "total_duration_of_antifungals",
   "no_of_central_lines_days",
   "section_break_rvbyj",
-  "new_diagnosis_for_discharge",
-  "new_episode_of_sepsis_suspected_over_past_24_hours",
-  "antibiotics_used",
-  "antifungals_used",
   "daily_observations",
   "section_break_r1iia",
-  "text_box_for_discharge",
-  "section_break_fvfix",
+  "antibiotics_used",
+  "section_break_ibigu",
+  "antifungals_used",
+  "section_break_x8zz4",
   "go_back_to_endocrine_and_metabolic",
-  "column_break_kcrzp",
   "column_break_ycjxo",
   "save_and_goto_ophthalmology"
  ],
@@ -37,8 +34,7 @@
   {
    "fieldname": "baby_id",
    "fieldtype": "Data",
-   "label": "Baby ID",
-   "read_only": 1
+   "label": "Baby ID"
   },
   {
    "fieldname": "daily_observations",
@@ -49,8 +45,7 @@
   {
    "fieldname": "mother_name",
    "fieldtype": "Data",
-   "label": "Mother Name",
-   "read_only": 1
+   "label": "Mother Name"
   },
   {
    "fieldname": "sepsis",
@@ -64,20 +59,17 @@
   {
    "fieldname": "no_of_episodes_of_culture_postive_sepsis",
    "fieldtype": "Data",
-   "label": "No of episodes of culture postive sepsis ",
-   "read_only": 1
+   "label": "No of episodes of culture postive sepsis "
   },
   {
    "fieldname": "no_of_episodes_of_culture_negative_sepsis",
    "fieldtype": "Data",
-   "label": "No of episodes of culture negative sepsis ",
-   "read_only": 1
+   "label": "No of episodes of culture negative sepsis "
   },
   {
    "fieldname": "total_duration_of_iv_antibiotics_in_days",
    "fieldtype": "Data",
-   "label": "Total duration of IV antibiotics in days",
-   "read_only": 1
+   "label": "Total duration of IV antibiotics in days"
   },
   {
    "fieldname": "column_break_x9iwe",
@@ -86,71 +78,30 @@
   {
    "fieldname": "total_duration_of_reserve_antibiotics",
    "fieldtype": "Data",
-   "label": "Total duration of Reserve Antibiotics",
-   "read_only": 1
+   "label": "Total duration of Reserve Antibiotics"
   },
   {
    "fieldname": "total_duration_of_antifungals",
    "fieldtype": "Data",
-   "label": "Total Duration of antifungals",
-   "read_only": 1
+   "label": "Total Duration of antifungals"
   },
   {
    "fieldname": "no_of_central_lines_days",
    "fieldtype": "Data",
-   "label": "No of central lines days",
-   "read_only": 1
+   "label": "No of central lines days"
   },
   {
    "fieldname": "section_break_rvbyj",
    "fieldtype": "Section Break"
   },
   {
-   "fieldname": "new_diagnosis_for_discharge",
-   "fieldtype": "Data",
-   "label": "New Diagnosis for discharge",
-   "read_only": 1
-  },
-  {
-   "fieldname": "new_episode_of_sepsis_suspected_over_past_24_hours",
-   "fieldtype": "Data",
-   "label": "New episode of Sepsis suspected over past 24 hours",
-   "read_only": 1
-  },
-  {
-   "fieldname": "antibiotics_used",
-   "fieldtype": "Data",
-   "label": "Antibiotics Used ",
-   "read_only": 1
-  },
-  {
-   "fieldname": "antifungals_used",
-   "fieldtype": "Data",
-   "label": "Antifungals used ",
-   "read_only": 1
-  },
-  {
    "fieldname": "section_break_r1iia",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "text_box_for_discharge",
-   "fieldtype": "Text",
-   "label": "Text Box for discharge",
-   "read_only": 1
-  },
-  {
-   "fieldname": "section_break_fvfix",
    "fieldtype": "Section Break"
   },
   {
    "fieldname": "go_back_to_endocrine_and_metabolic",
    "fieldtype": "Button",
    "label": "Go Back to Endocrine and Metabolic"
-  },
-  {
-   "fieldname": "column_break_kcrzp",
-   "fieldtype": "Column Break"
   },
   {
    "fieldname": "column_break_ycjxo",
@@ -160,11 +111,31 @@
    "fieldname": "save_and_goto_ophthalmology",
    "fieldtype": "Button",
    "label": "Save and goto Ophthalmology"
+  },
+  {
+   "fieldname": "antibiotics_used",
+   "fieldtype": "Table",
+   "label": "Antibiotics Used",
+   "options": "Sepsis Antibiotics"
+  },
+  {
+   "fieldname": "section_break_ibigu",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "antifungals_used",
+   "fieldtype": "Table",
+   "label": "Antifungals Used",
+   "options": "Sepsis Antifungals"
+  },
+  {
+   "fieldname": "section_break_x8zz4",
+   "fieldtype": "Section Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-04-10 17:24:16.445953",
+ "modified": "2023-04-25 18:46:29.799660",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Sepsis",
@@ -182,6 +153,13 @@
    "report": 1,
    "role": "System Manager",
    "share": 1,
+   "write": 1
+  },
+  {
+   "export": 1,
+   "read": 1,
+   "report": 1,
+   "role": "User",
    "write": 1
   }
  ],

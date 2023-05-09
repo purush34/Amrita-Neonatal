@@ -232,6 +232,30 @@ frappe.ui.form.on('GI', {
 		frm.refresh_fields();
 
 	},
+	working_weight(frm, cdt, cdn) {
+		var d = locals[cdt][cdn];
+		var ww = d.working_weight;
+		if (ww>5){
+			frappe.msgprint("Working weight should be less than 5");
+			d.working_weight = 0;
+			frm.refresh_fields();
+		} 
+
+	},
 
 },
 );
+frappe.ui.form.on('GI', {
+	"daily_observations_add": function(frm, cdt, cdn) {
+        var row = locals[cdt][cdn];
+        if (frm.doc.daily_observations.length > 1){
+			var date = frm.doc.daily_observations[frm.doc.daily_observations.length - 2].date;
+			row.date = frappe.datetime.add_days(date,1);
+			frm.refresh_field("daily_observations");
+		}
+		else{
+			row.date = frappe.datetime.get_today();
+			frm.refresh_field("daily_observations");
+		}
+    },
+});

@@ -1,89 +1,17 @@
 {
  "actions": [],
  "allow_rename": 1,
- "creation": "2023-04-20 22:41:21.315967",
+ "autoname": "format:{baby_id} {mother_name}",
+ "creation": "2023-05-09 14:41:42.042407",
  "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "current_pregnancy_section",
-  "antenantal_follow_up",
-  "1st_visit_to_aims",
-  "section_break_jiuvc",
-  "conception",
-  "column_break_jcnjk",
-  "icsi_iui",
-  "donors",
-  "section_break_iy0qu",
-  "number_of_babies",
-  "section_break_no0ez",
-  "lmp",
-  "edd_by_dates",
-  "maternal_serology_column",
-  "blood_group",
-  "vdrl",
-  "hepatitis_b",
-  "hepatitis_c",
-  "column_break_ercoy",
-  "any_antibodies",
-  "torch",
-  "hiv",
-  "section_break_wcfmf",
-  "mmr_vaccination",
-  "tt",
-  "section_break_91chc",
-  "covid_immunisations",
-  "section_break_u2oir",
-  "one_dose",
-  "two_dose",
-  "booster",
-  "column_break_4u3cn",
-  "date_of_first_dose",
-  "year_of_2nd_dose",
-  "year_of_booster",
-  "tab_scans",
-  "scans",
-  "anomaly_scan",
-  "an_dos",
-  "an_ga",
-  "an_dopplers",
-  "an_findings",
-  "growth__scan",
-  "gs_dos",
-  "gs_ga",
-  "gs_doplers",
-  "gs_findings",
-  "efw_growth",
-  "additional_scans",
-  "number_of_additional_scans",
-  "section_break_osldw",
-  "ad_dos",
-  "ad_gestational",
-  "ad_dopplers",
-  "ad_findings",
-  "ewf_additional",
-  "edd_column",
-  "by_scan",
-  "by_dates",
-  "history_of_column",
-  "pih",
-  "explain_pih",
-  "section_break_lnpi5",
-  "gdm",
-  "column_break_skdke",
-  "diet",
-  "oha",
-  "insulin",
-  "section_break_gujxw",
-  "hypothyroidism",
-  "reason",
-  "column_break_spo3q",
-  "select_type",
-  "antibodies",
-  "section_break_cjsvo",
-  "medication",
   "labour_and_delivery_column",
+  "baby_id",
+  "mother_name",
+  "mother_mid",
   "pre_term_labour",
   "rupture_of_membranes",
   "section_break_sjmny",
@@ -213,413 +141,6 @@
   "resuscitation"
  ],
  "fields": [
-  {
-   "fieldname": "current_pregnancy_section",
-   "fieldtype": "Tab Break",
-   "label": "Current pregnancy"
-  },
-  {
-   "fieldname": "antenantal_follow_up",
-   "fieldtype": "Select",
-   "label": "Antenantal Follow Up",
-   "options": "At AIMS\nLocally"
-  },
-  {
-   "fieldname": "1st_visit_to_aims",
-   "fieldtype": "Data",
-   "label": "1st Visit to AIMS"
-  },
-  {
-   "fieldname": "section_break_jiuvc",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "conception",
-   "fieldtype": "Select",
-   "label": "Conception",
-   "options": "Natural\nIVF"
-  },
-  {
-   "fieldname": "column_break_jcnjk",
-   "fieldtype": "Column Break"
-  },
-  {
-   "depends_on": "eval:doc.conception==\"IVF\"",
-   "fieldname": "icsi_iui",
-   "fieldtype": "Select",
-   "options": "ICSI\nIUI"
-  },
-  {
-   "depends_on": "eval:in_list([\"IVF\"],doc.conception)",
-   "fieldname": "donors",
-   "fieldtype": "Select",
-   "label": "Donors",
-   "options": "Eggs\nSperms\nBoth"
-  },
-  {
-   "fieldname": "section_break_iy0qu",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "number_of_babies",
-   "fieldtype": "Select",
-   "options": "Singleton\nTwin\nTriplets\nQuadruplets"
-  },
-  {
-   "fieldname": "section_break_no0ez",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "lmp",
-   "fieldtype": "Date",
-   "label": "LMP"
-  },
-  {
-   "fieldname": "edd_by_dates",
-   "fieldtype": "Data",
-   "label": "EDD by dates"
-  },
-  {
-   "fieldname": "maternal_serology_column",
-   "fieldtype": "Tab Break",
-   "label": "Maternal Serology"
-  },
-  {
-   "fieldname": "blood_group",
-   "fieldtype": "Select",
-   "label": "Blood Group",
-   "options": "A Positive\nA negative\nB Positive\nB Negative\nAB Positive\nAB Negative\nIndeterminate"
-  },
-  {
-   "fieldname": "vdrl",
-   "fieldtype": "Small Text",
-   "label": "VDRL"
-  },
-  {
-   "fieldname": "hepatitis_b",
-   "fieldtype": "Small Text",
-   "label": "Hepatitis B"
-  },
-  {
-   "fieldname": "hepatitis_c",
-   "fieldtype": "Small Text",
-   "label": "Hepatitis C"
-  },
-  {
-   "fieldname": "column_break_ercoy",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "any_antibodies",
-   "fieldtype": "Small Text",
-   "label": "Any antibodies"
-  },
-  {
-   "fieldname": "torch",
-   "fieldtype": "Small Text",
-   "label": "TORCH"
-  },
-  {
-   "fieldname": "hiv",
-   "fieldtype": "Small Text",
-   "label": "HIV"
-  },
-  {
-   "fieldname": "section_break_wcfmf",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "mmr_vaccination",
-   "fieldtype": "Select",
-   "label": "MMR vaccination",
-   "options": "No\nYes"
-  },
-  {
-   "fieldname": "tt",
-   "fieldtype": "Select",
-   "label": "TT",
-   "options": "No\nYes"
-  },
-  {
-   "fieldname": "section_break_91chc",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "covid_immunisations",
-   "fieldtype": "Select",
-   "label": "COVID immunisations",
-   "options": "No\nYes"
-  },
-  {
-   "fieldname": "section_break_u2oir",
-   "fieldtype": "Section Break"
-  },
-  {
-   "depends_on": "eval:in_list([\"Yes\"],doc.covid_immunisations)",
-   "fieldname": "one_dose",
-   "fieldtype": "Select",
-   "label": "1st dose",
-   "options": "No\nYes"
-  },
-  {
-   "depends_on": "eval:in_list([\"Yes\"],doc.one_dose)",
-   "fieldname": "two_dose",
-   "fieldtype": "Select",
-   "label": "2nd dose",
-   "options": "No\nYes"
-  },
-  {
-   "depends_on": "eval:in_list([\"Yes\"],doc.two_dose)",
-   "fieldname": "booster",
-   "fieldtype": "Select",
-   "label": "Booster",
-   "options": "No\nYes"
-  },
-  {
-   "fieldname": "column_break_4u3cn",
-   "fieldtype": "Column Break"
-  },
-  {
-   "depends_on": "eval:in_list([\"Yes\"],doc.one_dose)",
-   "fieldname": "date_of_first_dose",
-   "fieldtype": "Date",
-   "label": "Date of 1st dose"
-  },
-  {
-   "depends_on": "eval:doc.one_dose==\"Yes\" && doc.two_dose==\"Yes\"",
-   "fieldname": "year_of_2nd_dose",
-   "fieldtype": "Data",
-   "label": "Date of 2nd dose"
-  },
-  {
-   "depends_on": "eval:doc.booster==\"Yes\" && doc.two_dose==\"Yes\"",
-   "fieldname": "year_of_booster",
-   "fieldtype": "Data",
-   "label": "Date of booster"
-  },
-  {
-   "fieldname": "tab_scans",
-   "fieldtype": "Tab Break",
-   "label": "Scans"
-  },
-  {
-   "fieldname": "scans",
-   "fieldtype": "Select",
-   "options": "No\nYes"
-  },
-  {
-   "depends_on": "eval:in_list([\"Yes\"],doc.scans)",
-   "fieldname": "anomaly_scan",
-   "fieldtype": "Section Break",
-   "label": "Anomaly scan "
-  },
-  {
-   "fieldname": "an_dos",
-   "fieldtype": "Date",
-   "label": "Date of scan"
-  },
-  {
-   "fieldname": "an_ga",
-   "fieldtype": "Int",
-   "label": "Gestational Age"
-  },
-  {
-   "fieldname": "an_dopplers",
-   "fieldtype": "Select",
-   "label": "Dopplers",
-   "options": "Normal\nAbsent\nReversed"
-  },
-  {
-   "fieldname": "an_findings",
-   "fieldtype": "Small Text",
-   "label": "Findings"
-  },
-  {
-   "depends_on": "eval:in_list([\"Yes\"],doc.scans)",
-   "fieldname": "growth__scan",
-   "fieldtype": "Section Break",
-   "label": "Growth  scan "
-  },
-  {
-   "fieldname": "gs_dos",
-   "fieldtype": "Date",
-   "label": "Date of scan"
-  },
-  {
-   "fieldname": "gs_ga",
-   "fieldtype": "Int",
-   "label": "Gestational Age"
-  },
-  {
-   "fieldname": "gs_doplers",
-   "fieldtype": "Select",
-   "label": "Dopplers",
-   "options": "Normal\nAbsent\nReversed"
-  },
-  {
-   "fieldname": "gs_findings",
-   "fieldtype": "Small Text",
-   "label": "Findings"
-  },
-  {
-   "fieldname": "efw_growth",
-   "fieldtype": "Data",
-   "label": "EFW (in grams)"
-  },
-  {
-   "depends_on": "eval:in_list([\"Yes\"],doc.scans)",
-   "fieldname": "additional_scans",
-   "fieldtype": "Section Break",
-   "label": "Additional scans"
-  },
-  {
-   "fieldname": "number_of_additional_scans",
-   "fieldtype": "Int",
-   "label": "Number of Additional scans"
-  },
-  {
-   "depends_on": "eval:doc.number_of_additional_scans>0",
-   "fieldname": "section_break_osldw",
-   "fieldtype": "Section Break"
-  },
-  {
-   "depends_on": "eval:doc.number_of_additional_scans>0",
-   "fieldname": "ad_dos",
-   "fieldtype": "Date",
-   "label": "Date of scan"
-  },
-  {
-   "fieldname": "ad_gestational",
-   "fieldtype": "Int",
-   "label": "Gestational Age"
-  },
-  {
-   "fieldname": "ad_dopplers",
-   "fieldtype": "Select",
-   "label": "Dopplers",
-   "options": "Normal\nAbsent\nReversed"
-  },
-  {
-   "fieldname": "ad_findings",
-   "fieldtype": "Small Text",
-   "label": "Findings"
-  },
-  {
-   "fieldname": "ewf_additional",
-   "fieldtype": "Data",
-   "label": "EFW (in grams)"
-  },
-  {
-   "fieldname": "edd_column",
-   "fieldtype": "Section Break",
-   "label": "EDD"
-  },
-  {
-   "fieldname": "by_scan",
-   "fieldtype": "Date",
-   "label": "By scan"
-  },
-  {
-   "fieldname": "by_dates",
-   "fieldtype": "Date",
-   "label": "By dates"
-  },
-  {
-   "fieldname": "history_of_column",
-   "fieldtype": "Tab Break",
-   "label": "History of"
-  },
-  {
-   "fieldname": "pih",
-   "fieldtype": "Select",
-   "label": "PIH",
-   "options": "No\nYes"
-  },
-  {
-   "depends_on": "eval:in_list([\"Yes\"],doc.pih)",
-   "fieldname": "explain_pih",
-   "fieldtype": "Small Text",
-   "label": "Details of PIH"
-  },
-  {
-   "fieldname": "section_break_lnpi5",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "gdm",
-   "fieldtype": "Select",
-   "label": "GDM",
-   "options": "No\nYes"
-  },
-  {
-   "depends_on": "eval:in_list([\"Yes\"],doc.gdm)",
-   "fieldname": "column_break_skdke",
-   "fieldtype": "Column Break"
-  },
-  {
-   "default": "0",
-   "depends_on": "eval:in_list([\"Yes\"],doc.gdm)",
-   "fieldname": "diet",
-   "fieldtype": "Check",
-   "label": "Diet"
-  },
-  {
-   "default": "0",
-   "depends_on": "eval:in_list([\"Yes\"],doc.gdm)",
-   "fieldname": "oha",
-   "fieldtype": "Check",
-   "label": "OHA"
-  },
-  {
-   "default": "0",
-   "depends_on": "eval:in_list([\"Yes\"],doc.gdm)",
-   "fieldname": "insulin",
-   "fieldtype": "Check",
-   "label": "Insulin"
-  },
-  {
-   "fieldname": "section_break_gujxw",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "hypothyroidism",
-   "fieldtype": "Select",
-   "label": "Hypothyroidism",
-   "options": "No\nYes"
-  },
-  {
-   "depends_on": "eval:in_list([\"Post Thyroidectomy\"],doc.select_type)",
-   "fieldname": "reason",
-   "fieldtype": "Small Text",
-   "label": "Reason"
-  },
-  {
-   "fieldname": "column_break_spo3q",
-   "fieldtype": "Column Break"
-  },
-  {
-   "depends_on": "eval:in_list([\"Yes\"],doc.hypothyroidism)",
-   "fieldname": "select_type",
-   "fieldtype": "Select",
-   "label": "Select type",
-   "options": "Pre- pregnancy\nGestational\nPost Thyroidectomy"
-  },
-  {
-   "depends_on": "eval:in_list([\"Post Thyroidectomy\"],doc.select_type)",
-   "fieldname": "antibodies",
-   "fieldtype": "Small Text",
-   "label": "Antibodies"
-  },
-  {
-   "fieldname": "section_break_cjsvo",
-   "fieldtype": "Section Break"
-  },
-  {
-   "depends_on": "eval:in_list([\"Yes\"],doc.hypothyroidism)",
-   "fieldname": "medication",
-   "fieldtype": "Small Text",
-   "label": "Medication"
-  },
   {
    "fieldname": "labour_and_delivery_column",
    "fieldtype": "Tab Break",
@@ -1248,6 +769,10 @@
    "fieldtype": "Autocomplete"
   },
   {
+   "fieldname": "section_break_tbudr",
+   "fieldtype": "Section Break"
+  },
+  {
    "fieldname": "passive_cooling",
    "fieldtype": "Select",
    "label": "Passive cooling",
@@ -1271,16 +796,28 @@
    "label": "Resuscitation"
   },
   {
-   "fieldname": "section_break_tbudr",
-   "fieldtype": "Section Break"
+   "fieldname": "baby_id",
+   "fieldtype": "Data",
+   "label": "Baby Id"
+  },
+  {
+   "fieldname": "mother_name",
+   "fieldtype": "Data",
+   "label": "Mother Name"
+  },
+  {
+   "fieldname": "mother_mid",
+   "fieldtype": "Data",
+   "label": "Mother MID"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-04-20 22:49:43.745630",
+ "modified": "2023-05-09 14:51:52.580533",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
- "name": "Antenatal",
+ "name": "Antenatal-2",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

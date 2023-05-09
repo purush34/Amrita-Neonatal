@@ -4,5 +4,5 @@
 # import frappe
 from frappe.model.document import Document
 
-class Antenatal(Document):
+class Antenatal2(Document):
 	pass

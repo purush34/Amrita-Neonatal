@@ -61,6 +61,9 @@
   "section_break_oucwy",
   "central_line_present",
   "no_of_days_of_central_line_in_situ",
+  "risk_warning2",
+  "risk_warning",
+  "risk_status",
   "section_break_pcy9v",
   "lumbar_puncture_done_past_24_hours",
   "section_break_ixy5g",
@@ -72,74 +75,6 @@
   "column_break_qixvp",
   "culture_bacteria",
   "cul",
-  "section_break_nhqk7",
-  "antibiotics",
-  "section_break_borur",
-  "antibiotics_used",
-  "antibiotics_2",
-  "antibiotics_3",
-  "antibiotics_4",
-  "antibiotics_5",
-  "column_break_d9vsl",
-  "type_antibiotics",
-  "type_antibiotics_2",
-  "type_antibiotics_3",
-  "type_antibiotics_4",
-  "type_antibiotics_5",
-  "column_break_8uph9",
-  "status_biotics",
-  "start_date_2",
-  "start_date_3",
-  "start_date_4",
-  "start_date_5",
-  "column_break_g1ogk",
-  "end_date",
-  "stop_date_2",
-  "stop_date_3",
-  "stop_date_4",
-  "stop_date_5",
-  "column_break_rvde9",
-  "days_1",
-  "days_2",
-  "days_3",
-  "days_4",
-  "days_5",
-  "column_break_ifnfn",
-  "add_biotics_1",
-  "add_biotics_2",
-  "add_biotics_3",
-  "add_biotics_4",
-  "section_break_aypkr",
-  "antifungals",
-  "section_break_w86dz",
-  "antifungals_used",
-  "antifungals_used_2",
-  "antifungals_used_3",
-  "antifungals_used_4",
-  "column_break_ezjqk",
-  "type_antifungals",
-  "type_fungals_2",
-  "type_fungals_3",
-  "type_fungals_4",
-  "column_break_i7h9h",
-  "start_antifungal",
-  "start_antifungals_2",
-  "start_antifungals_3",
-  "start_antifungals_4",
-  "column_break_udyvh",
-  "end_antifungal",
-  "end_antifungal_2",
-  "end_antifungal_3",
-  "end_antifungal_4",
-  "column_break_dlsjt",
-  "days_antifungal",
-  "days_antifungals_2",
-  "days_antifungals_3",
-  "days_antifungals_4",
-  "column_break_5hwrh",
-  "add_fungal_1",
-  "add_fungal_2",
-  "add_fungal_3",
   "section_break_podco",
   "free_text_box_for_discharge_letter"
  ],
@@ -328,88 +263,7 @@
    "fieldtype": "Data"
   },
   {
-   "fieldname": "section_break_nhqk7",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "antibiotics",
-   "fieldtype": "Select",
-   "label": "Antibiotics in past 24 hours",
-   "options": "No\nYes"
-  },
-  {
-   "fieldname": "column_break_d9vsl",
-   "fieldtype": "Column Break",
-   "label": "Type"
-  },
-  {
-   "fieldname": "type_antibiotics",
-   "fieldtype": "Select",
-   "options": "IV\nPO\nIntra ventricular\nIntrathecal\nTopical"
-  },
-  {
-   "fieldname": "column_break_8uph9",
-   "fieldtype": "Column Break",
-   "label": "Start Date"
-  },
-  {
-   "fieldname": "column_break_rvde9",
-   "fieldtype": "Column Break",
-   "label": "No of days"
-  },
-  {
-   "fieldname": "end_date",
-   "fieldtype": "Data"
-  },
-  {
-   "fieldname": "antifungals",
-   "fieldtype": "Select",
-   "label": "Antifungals in past 24 hours",
-   "options": "No\nYes"
-  },
-  {
-   "depends_on": "eval:in_list([\"Yes\"],doc.antifungals)",
-   "fieldname": "section_break_w86dz",
-   "fieldtype": "Section Break"
-  },
-  {
-   "depends_on": "eval:in_list([\"Yes\"],doc.antifungals)",
-   "fieldname": "antifungals_used",
-   "fieldtype": "Select",
-   "label": "Antifungals used",
-   "options": "Fluconazole\nVoriconazole\nAmphotericin Micafungin\nClotrimazole 1% (candid mouth paint)\nCandid cream"
-  },
-  {
-   "fieldname": "column_break_ezjqk",
-   "fieldtype": "Column Break",
-   "label": "Type"
-  },
-  {
-   "depends_on": "eval:in_list([\"Yes\"],doc.antifungals)",
-   "fieldname": "start_antifungal",
-   "fieldtype": "Date"
-  },
-  {
-   "fieldname": "column_break_udyvh",
-   "fieldtype": "Column Break",
-   "label": "End Date"
-  },
-  {
-   "fieldname": "end_antifungal",
-   "fieldtype": "Date"
-  },
-  {
-   "depends_on": "eval:in_list([\"Stopped\"],doc.status_fungals)",
-   "fieldname": "days_antifungal",
-   "fieldtype": "Data"
-  },
-  {
    "fieldname": "section_break_podco",
-   "fieldtype": "Section Break"
-  },
-  {
-   "depends_on": "eval:in_list([\"Yes\"],doc.antibiotics)",
-   "fieldname": "section_break_borur",
    "fieldtype": "Section Break"
   },
   {
@@ -601,308 +455,42 @@
    "label": "Culture"
   },
   {
-   "fieldname": "antibiotics_used",
-   "fieldtype": "Select",
-   "label": "Antibiotics used",
-   "options": "Ampicillin\nAmikacin\nPipercillin-Tazobactam\nCefaperozone-Sulbactam\nCefaperazone\nCeftazidime\nCefotaxime\nCefuroxime\nMeropenam\nAzithromycin\nErythromycin\nGentamicin\nVancomycin\nLinezolid\nSulfamethoxozole+Trimethoprim\nTrimethoprim\nCefixime\nColistin\nCiprofloxacin eye drops\nMoxifloxacin eye drops\nMupirocin ointment\nOthers"
-  },
-  {
    "depends_on": "eval:doc.others==1",
    "fieldname": "other_text",
    "fieldtype": "Data",
    "label": "Others"
   },
   {
-   "fieldname": "status_biotics",
-   "fieldtype": "Date"
-  },
-  {
-   "fieldname": "column_break_g1ogk",
-   "fieldtype": "Column Break",
-   "label": "End Date"
-  },
-  {
-   "fieldname": "column_break_dlsjt",
-   "fieldtype": "Column Break",
-   "label": "No of days"
-  },
-  {
-   "depends_on": "eval:in_list([\"Yes\"],doc.antifungals)",
-   "fieldname": "type_antifungals",
-   "fieldtype": "Select",
-   "options": "IV\nPO\nIntra ventricular\nIntrathecal\nTopical"
-  },
-  {
-   "fieldname": "column_break_i7h9h",
-   "fieldtype": "Column Break",
-   "label": "Start Date"
-  },
-  {
-   "default": "0",
-   "fieldname": "add_biotics_1",
-   "fieldtype": "Check",
-   "label": "Add more"
-  },
-  {
-   "depends_on": "eval:doc.add_biotics_1==1",
-   "fieldname": "antibiotics_2",
-   "fieldtype": "Select",
-   "label": "Antibiotics used",
-   "options": "Ampicillin\nAmikacin\nPipercillin-Tazobactam\nCefaperozone-Sulbactam\nCefaperazone\nCeftazidime\nCefotaxime\nCefuroxime\nMeropenam\nAzithromycin\nErythromycin\nGentamicin\nVancomycin\nLinezolid\nSulfamethoxozole+Trimethoprim\nTrimethoprim\nCefixime\nColistin\nCiprofloxacin eye drops\nMoxifloxacin eye drops\nMupirocin ointment\nOthers"
-  },
-  {
-   "depends_on": "eval:doc.add_biotics_1==1",
-   "fieldname": "type_antibiotics_2",
-   "fieldtype": "Select",
-   "options": "IV\nPO\nIntra ventricular\nIntrathecal\nTopical"
-  },
-  {
-   "depends_on": "eval:doc.add_biotics_1==1",
-   "fieldname": "start_date_2",
-   "fieldtype": "Date"
-  },
-  {
-   "depends_on": "eval:doc.add_biotics_1==1",
-   "fieldname": "stop_date_2",
-   "fieldtype": "Date"
-  },
-  {
-   "depends_on": "eval:doc.add_biotics_1==1",
-   "fieldname": "days_2",
-   "fieldtype": "Data"
-  },
-  {
-   "depends_on": "eval:doc.add_biotics_2==1",
-   "fieldname": "antibiotics_3",
-   "fieldtype": "Select",
-   "label": "Antibiotics used",
-   "options": "Ampicillin\nAmikacin\nPipercillin-Tazobactam\nCefaperozone-Sulbactam\nCefaperazone\nCeftazidime\nCefotaxime\nCefuroxime\nMeropenam\nAzithromycin\nErythromycin\nGentamicin\nVancomycin\nLinezolid\nSulfamethoxozole+Trimethoprim\nTrimethoprim\nCefixime\nColistin\nCiprofloxacin eye drops\nMoxifloxacin eye drops\nMupirocin ointment\nOthers"
-  },
-  {
-   "depends_on": "eval:doc.add_biotics_2==1",
-   "fieldname": "type_antibiotics_3",
-   "fieldtype": "Select",
-   "options": "IV\nPO\nIntra ventricular\nIntrathecal\nTopical"
-  },
-  {
-   "depends_on": "eval:doc.add_biotics_3==1",
-   "fieldname": "antibiotics_4",
-   "fieldtype": "Select",
-   "label": "Antibiotics used",
-   "options": "Ampicillin\nAmikacin\nPipercillin-Tazobactam\nCefaperozone-Sulbactam\nCefaperazone\nCeftazidime\nCefotaxime\nCefuroxime\nMeropenam\nAzithromycin\nErythromycin\nGentamicin\nVancomycin\nLinezolid\nSulfamethoxozole+Trimethoprim\nTrimethoprim\nCefixime\nColistin\nCiprofloxacin eye drops\nMoxifloxacin eye drops\nMupirocin ointment\nOthers"
-  },
-  {
-   "depends_on": "eval:doc.add_biotics_3==1",
-   "fieldname": "type_antibiotics_4",
-   "fieldtype": "Select",
-   "options": "IV\nPO\nIntra ventricular\nIntrathecal\nTopical"
-  },
-  {
-   "depends_on": "eval:doc.add_biotics_4==1",
-   "fieldname": "antibiotics_5",
-   "fieldtype": "Select",
-   "label": "Antibiotics used",
-   "options": "Ampicillin\nAmikacin\nPipercillin-Tazobactam\nCefaperozone-Sulbactam\nCefaperazone\nCeftazidime\nCefotaxime\nCefuroxime\nMeropenam\nAzithromycin\nErythromycin\nGentamicin\nVancomycin\nLinezolid\nSulfamethoxozole+Trimethoprim\nTrimethoprim\nCefixime\nColistin\nCiprofloxacin eye drops\nMoxifloxacin eye drops\nMupirocin ointment\nOthers"
-  },
-  {
-   "depends_on": "eval:doc.add_biotics_4==1",
-   "fieldname": "type_antibiotics_5",
-   "fieldtype": "Select",
-   "options": "IV\nPO\nIntra ventricular\nIntrathecal\nTopical"
-  },
-  {
-   "depends_on": "eval:doc.add_biotics_2==1",
-   "fieldname": "start_date_3",
-   "fieldtype": "Date"
-  },
-  {
-   "depends_on": "eval:doc.add_biotics_3==1",
-   "fieldname": "start_date_4",
-   "fieldtype": "Date"
-  },
-  {
-   "depends_on": "eval:doc.add_biotics_4==1",
-   "fieldname": "start_date_5",
-   "fieldtype": "Date"
-  },
-  {
-   "depends_on": "eval:doc.add_biotics_2==1",
-   "fieldname": "stop_date_3",
-   "fieldtype": "Date"
-  },
-  {
-   "depends_on": "eval:doc.add_biotics_3==1",
-   "fieldname": "stop_date_4",
-   "fieldtype": "Date"
-  },
-  {
-   "depends_on": "eval:doc.add_biotics_4==1",
-   "fieldname": "stop_date_5",
-   "fieldtype": "Date"
-  },
-  {
-   "fieldname": "days_1",
-   "fieldtype": "Data"
-  },
-  {
-   "depends_on": "eval:doc.add_biotics_2==1",
-   "fieldname": "days_3",
-   "fieldtype": "Data"
-  },
-  {
-   "depends_on": "eval:doc.add_biotics_3==1",
-   "fieldname": "days_4",
-   "fieldtype": "Data"
-  },
-  {
-   "depends_on": "eval:doc.add_biotics_4==1",
-   "fieldname": "days_5",
-   "fieldtype": "Data"
-  },
-  {
-   "fieldname": "column_break_ifnfn",
-   "fieldtype": "Column Break"
-  },
-  {
-   "default": "0",
-   "depends_on": "eval:doc.add_biotics_1==1",
-   "fieldname": "add_biotics_2",
-   "fieldtype": "Check",
-   "label": "Add more"
-  },
-  {
-   "default": "0",
-   "depends_on": "eval:doc.add_biotics_2==1",
-   "fieldname": "add_biotics_3",
-   "fieldtype": "Check",
-   "label": "Add more"
-  },
-  {
-   "default": "0",
-   "depends_on": "eval:doc.add_biotics_3==1",
-   "fieldname": "add_biotics_4",
-   "fieldtype": "Check",
-   "label": "Add more"
-  },
-  {
-   "fieldname": "section_break_aypkr",
-   "fieldtype": "Section Break"
-  },
-  {
-   "depends_on": "eval:doc.add_fungal_1==1",
-   "fieldname": "antifungals_used_2",
-   "fieldtype": "Select",
-   "options": "Fluconazole\nVoriconazole\nAmphotericin Micafungin\nClotrimazole 1% (candid mouth paint)\nCandid cream"
-  },
-  {
-   "depends_on": "eval:doc.add_fungal_2==1",
-   "fieldname": "antifungals_used_3",
-   "fieldtype": "Select",
-   "options": "Fluconazole\nVoriconazole\nAmphotericin Micafungin\nClotrimazole 1% (candid mouth paint)\nCandid cream"
-  },
-  {
-   "depends_on": "eval:doc.add_fungal_3 ==1",
-   "fieldname": "antifungals_used_4",
-   "fieldtype": "Select",
-   "options": "Fluconazole\nVoriconazole\nAmphotericin Micafungin\nClotrimazole 1% (candid mouth paint)\nCandid cream"
-  },
-  {
-   "depends_on": "eval:doc.add_fungal_1==1",
-   "fieldname": "type_fungals_2",
-   "fieldtype": "Select",
-   "options": "IV\nPO\nIntra ventricular\nIntrathecal\nTopical"
-  },
-  {
-   "depends_on": "eval:doc.add_fungal_2==1",
-   "fieldname": "type_fungals_3",
-   "fieldtype": "Select",
-   "options": "IV\nPO\nIntra ventricular\nIntrathecal\nTopical"
-  },
-  {
-   "depends_on": "eval:doc.add_fungal_3==1",
-   "fieldname": "type_fungals_4",
-   "fieldtype": "Select",
-   "options": "IV\nPO\nIntra ventricular\nIntrathecal\nTopical"
-  },
-  {
-   "depends_on": "eval:doc.add_fungal_1==1",
-   "fieldname": "start_antifungals_2",
-   "fieldtype": "Date"
-  },
-  {
-   "depends_on": "eval:doc.add_fungal_2==1",
-   "fieldname": "start_antifungals_3",
-   "fieldtype": "Date"
-  },
-  {
-   "depends_on": "eval:doc.add_fungal_3==1",
-   "fieldname": "start_antifungals_4",
-   "fieldtype": "Date"
-  },
-  {
-   "depends_on": "eval:doc.add_fungal_1==1",
-   "fieldname": "end_antifungal_2",
-   "fieldtype": "Data"
-  },
-  {
-   "depends_on": "eval:doc.add_fungal_2==1",
-   "fieldname": "end_antifungal_3",
-   "fieldtype": "Data"
-  },
-  {
-   "depends_on": "eval:doc.add_fungal_3==1",
-   "fieldname": "end_antifungal_4",
-   "fieldtype": "Data"
-  },
-  {
-   "depends_on": "eval:doc.add_fungal_1==1",
-   "fieldname": "days_antifungals_2",
-   "fieldtype": "Data"
-  },
-  {
-   "depends_on": "eval:doc.add_fungal_2==1",
-   "fieldname": "days_antifungals_3",
-   "fieldtype": "Data"
-  },
-  {
-   "depends_on": "eval:doc.add_fungal_3==1",
-   "fieldname": "days_antifungals_4",
-   "fieldtype": "Data"
-  },
-  {
-   "fieldname": "column_break_5hwrh",
-   "fieldtype": "Column Break"
-  },
-  {
-   "default": "0",
-   "fieldname": "add_fungal_1",
-   "fieldtype": "Check",
-   "label": "Add more"
-  },
-  {
-   "default": "0",
-   "depends_on": "eval:doc.add_fungal_1==1",
-   "fieldname": "add_fungal_2",
-   "fieldtype": "Check",
-   "label": "Add more"
-  },
-  {
-   "default": "0",
-   "depends_on": "eval:doc.add_fungal_2==1",
-   "fieldname": "add_fungal_3",
-   "fieldtype": "Check",
-   "label": "Add more"
-  },
-  {
    "fieldname": "free_text_box_for_discharge_letter",
    "fieldtype": "Text",
    "label": "Free Text Box for Discharge Letter"
+  },
+  {
+   "depends_on": "eval:doc.central_line_present==\"Yes\" && doc.no_of_days_of_central_line_in_situ>10 && doc.no_of_days_of_central_line_in_situ<22",
+   "fieldname": "risk_status",
+   "fieldtype": "HTML",
+   "label": "Risk Status ",
+   "options": "<button class=\"btn btn-warning\" style=\"display: inline-block; width: 100%; height: 100%; overflow: hidden;\" type=\"button\">Warning</button>"
+  },
+  {
+   "depends_on": "eval:doc.central_line_present==\"Yes\" && doc.no_of_days_of_central_line_in_situ>21",
+   "fieldname": "risk_warning",
+   "fieldtype": "HTML",
+   "label": "Risk Status",
+   "options": "<button class=\"btn btn-danger\" style=\"display: inline-block; width: 100%; height: 100%; overflow: hidden;\" type=\"button\">Danger</button>"
+  },
+  {
+   "depends_on": "eval:doc.central_line_present==\"Yes\" && doc.no_of_days_of_central_line_in_situ<11",
+   "fieldname": "risk_warning2",
+   "fieldtype": "HTML",
+   "label": "Risk Status ",
+   "options": "<button class=\"btn btn-success\" style=\"display: inline-block; width: 100%; height: 100%; overflow: hidden;\" type=\"button\">Safe</button>"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-04-12 23:59:28.820910",
+ "modified": "2023-05-09 16:47:05.056098",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "child_sepsis",

@@ -5,5 +5,5 @@
 from frappe.tests.utils import FrappeTestCase
 
 
-class TestDeathsummery(FrappeTestCase):
+class TestAntenatal1(FrappeTestCase):
 	pass

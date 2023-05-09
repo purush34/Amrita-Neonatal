@@ -20,7 +20,7 @@ class Openingpage(Document):
         "Snappe II" : "snappe-ii",
         'CT': 'ct',
         'CVS': 'cvs',
-        # 'Death summery': 'death_summery',
+        # 'Death summary': 'death_summery',
         'Discharge checklist': 'discharge_checklist',
         'Discharge examination': 'discharge_examination',
         # 'Discharge letter': 'discharge_letter',
