@@ -18,16 +18,19 @@ function total_calories(frm, cdt, cdn) {
 	var d = locals[cdt][cdn];
 	var calories = parseFloat(d.ebm_pre_term_calories) + parseFloat(d.ebm_term_calories) + parseFloat(d.no_of_fortifier_sachets_calories) + parseFloat(d.pre_term_formula_calories) + parseFloat(d.term_formula_calories) + parseFloat(d.neocate_calories) + parseFloat(d.sagar_calories) + parseFloat(d.mct_oil_calories) + parseFloat(d.beneprotien_calories);
 	d.total_calories = (calories);
+
 	var per_kilo = parseFloat(d.ebm_pre_term_per_kilo) + parseFloat(d.ebm_term_per_kilo) + parseFloat(d.no_of_fortifier_sachets_per_kilo) + parseFloat(d.pre_term_formula_per_kilo) + parseFloat(d.term_formula_per_kilo) + parseFloat(d.neocate_per_kilo) + parseFloat(d.sagar_per_kilo) + parseFloat(d.mct_oil_per_kilo) + parseFloat(d.beneprotien_per_kilo);
 	d.total_per_kilo = (per_kilo);
+
 	var protein = parseFloat(d.ebm_pre_term_protein) + parseFloat(d.ebm_term_protein_content) + parseFloat(d.no_of_fortifier_sachets_protein_content) + parseFloat(d.pre_term_formula_protein) + parseFloat(d.term_formula_protein_content) + parseFloat(d.neocate_protein_content) + parseFloat(d.sagar_protein_content) + parseFloat(d.beneprotien_protein_content);
-	/* console.log(parseFloat(d.ebm_pre_term_protein_content) , parseFloat(d.ebm_term_protein_content) , parseFloat(d.no_of_fortifier_sachets_protein_content) , parseFloat(d.pre_term_formula_protein) , parseFloat(d.term_formula_protein_content) , parseFloat(d.neocate_protein_content) , parseFloat(d.sagar_protein_content) , parseFloat(d.beneprotien_protein_content)); */
+	
 	d.total_protein_content = (protein);
 	d.feeds_and_supplement_kcals = per_kilo;
 }
 function avg_total_calories(frm, cdt, cdn) {
 	var d = locals[cdt][cdn];
 	var kcal = parseFloat(d.gir_kcal) + parseFloat(d.protein_kcal) + parseFloat(d.lipid_kcal) + parseFloat(d.feeds_and_supplement_kcals);
+	d.total_kcal = (kcal);
 }
 frappe.ui.form.on('GI', {
 	// refresh: function(frm) {
@@ -82,7 +85,7 @@ frappe.ui.form.on('GI', {
 	*/
 	ebm_pre_term_ml(frm, cdt, cdn) {
 		var d = locals[cdt][cdn];
-		var k_cal = 67;
+		var k_cal = 0.67;
 		var calories = d.ebm_pre_term_ml * k_cal;
 		d.ebm_pre_term_calories = calories;
 		var working_weight = d.working_weight;
@@ -90,19 +93,21 @@ frappe.ui.form.on('GI', {
 		var protein = 0.016;
 		d.ebm_pre_term_protein = d.ebm_pre_term_ml * protein;
 		total_calories(frm, cdt, cdn);
+		avg_total_calories(frm, cdt, cdn)
 		frm.refresh_fields();
 
 	},
 	ebm_term_mlday(frm, cdt, cdn) {
 		var d = locals[cdt][cdn];
 		var k_cal = 0.67;
-		var calories = (d.ebm_term_mlday * k_cal)/1000;
+		var calories = (d.ebm_term_mlday * k_cal);
 		d.ebm_term_calories = calories;
 		var working_weight = d.working_weight;
 		d.ebm_term_per_kilo = calories / parseFloat(working_weight);
 		var protein = 0.011;
 		d.ebm_term_protein_content = d.ebm_term_mlday * protein;
 		total_calories(frm, cdt, cdn);
+		avg_total_calories(frm, cdt, cdn)
 		frm.refresh_fields();
 
 	},
@@ -116,19 +121,21 @@ frappe.ui.form.on('GI', {
 		var protein = 0.3;
 		d.no_of_fortifier_sachets_protein_content = d.no_of_fortifier_sachets_mlday * protein;
 		total_calories(frm, cdt, cdn);
+		avg_total_calories(frm, cdt, cdn)
 		frm.refresh_fields();
 
 	},
 	pre_term_formula_ml(frm, cdt, cdn) {
 		var d = locals[cdt][cdn];
-		var k_cal = 0.68;
+		var k_cal = 0.792;
 		var calories = d.pre_term_formula_ml * k_cal;
 		d.pre_term_formula_calories = calories;
 		var working_weight = d.working_weight;
 		d.pre_term_formula_per_kilo = calories / parseFloat(working_weight);
-		var protein = 0.017;
+		var protein = 0.0267;
 		d.pre_term_formula_protein = d.pre_term_formula_ml * protein;
 		total_calories(frm, cdt, cdn);
+		avg_total_calories(frm, cdt, cdn)
 		frm.refresh_fields();
 
 	},
@@ -142,6 +149,7 @@ frappe.ui.form.on('GI', {
 		var protein = 0.014;
 		d.term_formula_protein_content = d.term_formula_mlday * protein;
 		total_calories(frm, cdt, cdn);
+		avg_total_calories(frm, cdt, cdn)
 		frm.refresh_fields();
 
 	},
@@ -155,6 +163,7 @@ frappe.ui.form.on('GI', {
 		var protein = 0.0186;
 		d.neocate_protein_content = d.neocate_mlday * protein;
 		total_calories(frm, cdt, cdn);
+		avg_total_calories(frm, cdt, cdn)
 		frm.refresh_fields();
 
 	},
@@ -168,6 +177,7 @@ frappe.ui.form.on('GI', {
 		var protein = 0.03;
 		d.sagar_protein_content = d.sagar_mlday * protein;
 		total_calories(frm, cdt, cdn);
+		avg_total_calories(frm, cdt, cdn)
 		frm.refresh_fields();
 
 	},
@@ -181,6 +191,7 @@ frappe.ui.form.on('GI', {
 		var protein = 0.00;
 		d.mct_oil_protein_content = d.mct_oil_dropsday * protein;
 		total_calories(frm, cdt, cdn);
+		avg_total_calories(frm, cdt, cdn)
 		frm.refresh_fields();
 
 	},
@@ -191,9 +202,10 @@ frappe.ui.form.on('GI', {
 		var calories = d.beneprotien_gmkgday * k_cal * parseFloat(working_weight);
 		d.beneprotien_calories = calories;
 		d.beneprotien_per_kilo = calories / parseFloat(working_weight);
-		var protein = 0.011;
-		d.beneprotien_protein_content = d.beneprotien_gmkgday * protein;
+		var protein = 1;
+		d.beneprotien_protein_content = d.beneprotien_gmkgday * protein * working_weight;
 		total_calories(frm, cdt, cdn);
+		avg_total_calories(frm, cdt, cdn)
 		frm.refresh_fields();
 
 	},
@@ -213,6 +225,7 @@ frappe.ui.form.on('GI', {
 		var working_weight = d.working_weight;
 		var k_cal = 5.76* working_weight*d.gir_mg;
 		d.gir_kcal = k_cal;
+		avg_total_calories(frm, cdt, cdn)
 		frm.refresh_fields();
 
 	},
@@ -221,6 +234,7 @@ frappe.ui.form.on('GI', {
 		var working_weight = d.working_weight;
 		var k_cal = 4* working_weight*d.protein_grams;
 		d.protein_kcal = k_cal;
+		avg_total_calories(frm, cdt, cdn)
 		frm.refresh_fields();
 
 	},
@@ -229,6 +243,7 @@ frappe.ui.form.on('GI', {
 		var working_weight = d.working_weight;
 		var k_cal = 9* working_weight*d.lipid_grams;
 		d.lipid_kcal = k_cal;
+		avg_total_calories(frm, cdt, cdn)
 		frm.refresh_fields();
 
 	},

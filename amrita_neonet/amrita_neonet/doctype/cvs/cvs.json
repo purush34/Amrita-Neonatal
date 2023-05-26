@@ -123,17 +123,17 @@
   {
    "fieldname": "no_of_hs_pda_medical_courses_paracetmol",
    "fieldtype": "Int",
-   "label": "No of Hs PDA Medical courses (Paracetmol)"
+   "label": "Hs PDA Medical courses during stay (Paracetmol)"
   },
   {
    "fieldname": "no_of_hs_pda_medical_courses_ibuprofin",
    "fieldtype": "Int",
-   "label": "No of Hs PDA Medical courses (Ibuprofin)"
+   "label": "Hs PDA Medical courses during stay (Ibuprofin)"
   },
   {
    "fieldname": "no_hs_pda_surgical",
    "fieldtype": "Int",
-   "label": "No Hs PDA Surgical"
+   "label": "Hs PDA Surgical during stay"
   },
   {
    "fieldname": "discharge_diag",
@@ -155,7 +155,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-05-09 15:05:28.503139",
+ "modified": "2023-05-26 22:02:47.896168",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "CVS",

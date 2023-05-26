@@ -43,7 +43,6 @@
   "section_break_sesg3",
   "imaging",
   "mri",
-  "cooling_criteria_met",
   "section_break_ryftw",
   "therapeutic_cooling_past_24_hours",
   "date_and_time_started",
@@ -232,12 +231,6 @@
    "options": "CT\nMRI\nNeurosonogram"
   },
   {
-   "fieldname": "cooling_criteria_met",
-   "fieldtype": "Select",
-   "label": "Cooling Criteria Met",
-   "options": "No\nYes"
-  },
-  {
    "fieldname": "section_break_ryftw",
    "fieldtype": "Section Break"
   },
@@ -287,7 +280,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-04-23 16:50:37.054925",
+ "modified": "2023-05-09 18:06:11.474188",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "child_cns",

@@ -35,7 +35,11 @@ frappe.ui.form.on('Opening page', {
 	},
 	"dob":function(frm){
 		setGAA(frm);
+	},
+	"go_to_admission": function(frm){
+		frm.save();
+		frappe.set_route("Form", "Admission", frm.doc.name);
 	}
 
-
+ 
 });

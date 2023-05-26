@@ -76,7 +76,7 @@
   {
    "fieldname": "save_and_goto_ent_swallow",
    "fieldtype": "Button",
-   "label": "Save and goto ENT Swallow"
+   "label": "Save and go to ENT Swallow"
   },
   {
    "fieldname": "diagnosis",

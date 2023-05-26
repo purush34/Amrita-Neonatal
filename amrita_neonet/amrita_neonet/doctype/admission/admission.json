@@ -12,7 +12,7 @@
   "baby_id",
   "mother_name",
   "gestation_age_at_birth",
-  "temp",
+  "temperature",
   "heart_rate",
   "column_break_l6bkf",
   "saturations",
@@ -140,7 +140,9 @@
   "cooling_criteria",
   "column_break_k9jwe",
   "cooling_start_time",
-  "cooling_stop_time"
+  "cooling_stop_time",
+  "section_break_nivjf",
+  "goto_maternal"
  ],
  "fields": [
   {
@@ -152,12 +154,8 @@
    "fetch_from": "name1.gestation_age_at_birth",
    "fieldname": "gestation_age_at_birth",
    "fieldtype": "Data",
-   "label": "Gestation age at birth"
-  },
-  {
-   "fieldname": "temp",
-   "fieldtype": "Data",
-   "label": "Temp"
+   "label": "Gestation age at birth",
+   "read_only": 1
   },
   {
    "fieldname": "heart_rate",
@@ -191,7 +189,8 @@
    "fetch_from": "name1.admission_weight",
    "fieldname": "admission_weight",
    "fieldtype": "Data",
-   "label": "Admission weight (in grams)"
+   "label": "Admission weight (in grams)",
+   "read_only": 1
   },
   {
    "fieldname": "admission_ofc",
@@ -861,11 +860,25 @@
    "fieldname": "other_cardio",
    "fieldtype": "Data",
    "label": "Other"
+  },
+  {
+   "fieldname": "temperature",
+   "fieldtype": "Data",
+   "label": "Temperature"
+  },
+  {
+   "fieldname": "section_break_nivjf",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "goto_maternal",
+   "fieldtype": "Button",
+   "label": "Go to Maternal"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-04-11 00:39:12.370655",
+ "modified": "2023-05-09 18:28:38.392652",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Admission",

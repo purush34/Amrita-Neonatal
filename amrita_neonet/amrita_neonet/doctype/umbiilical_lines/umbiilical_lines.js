@@ -6,3 +6,17 @@ frappe.ui.form.on('Umbiilical lines', {
 
 	// }
 });
+frappe.ui.form.on('Umbilical lines_child', {
+	"add_reports_add": function(frm, cdt, cdn) {
+        var row = locals[cdt][cdn];
+        if (frm.doc.add_reports.length > 1){
+			var date = frm.doc.add_reports[frm.doc.add_reports.length - 2].date_done;
+			row.date_done = frappe.datetime.add_days(date,1);
+			frm.refresh_field("add_reports");
+		}
+		else{
+			row.date_done = frappe.datetime.get_today();
+			frm.refresh_field("add_reports");
+		}
+    },
+});

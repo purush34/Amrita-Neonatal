@@ -68,10 +68,13 @@
   "lumbar_puncture_done_past_24_hours",
   "section_break_ixy5g",
   "wcc",
+  "wc",
   "column_break_rgufy",
   "glucose",
+  "glu",
   "column_break_mlyvx",
   "protein",
+  "pro",
   "column_break_qixvp",
   "culture_bacteria",
   "cul",
@@ -485,12 +488,27 @@
    "fieldtype": "HTML",
    "label": "Risk Status ",
    "options": "<button class=\"btn btn-success\" style=\"display: inline-block; width: 100%; height: 100%; overflow: hidden;\" type=\"button\">Safe</button>"
+  },
+  {
+   "depends_on": "eval:doc.wcc==1",
+   "fieldname": "wc",
+   "fieldtype": "Data"
+  },
+  {
+   "depends_on": "eval:doc.glucose==1",
+   "fieldname": "glu",
+   "fieldtype": "Data"
+  },
+  {
+   "depends_on": "eval:doc.protein==1",
+   "fieldname": "pro",
+   "fieldtype": "Data"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-05-09 16:47:05.056098",
+ "modified": "2023-05-26 22:58:30.682996",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "child_sepsis",

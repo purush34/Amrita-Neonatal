@@ -18,3 +18,4 @@ def create_gi(baby_id,mother_name):
 def delete_gi(doc, method):
 	gi = frappe.get_doc('GI', {'baby_id': doc.baby_id})
 	gi.delete()
+ 

@@ -19,7 +19,13 @@ frappe.ui.form.on('Maternal details', {
 		var ag = frappe.datetime.get_diff(today, frm.doc.p_dob);
 		// calculate age in years
 		ag = ag/365;
+		ag = Math.floor(ag);
 		frm.set_value("p_age", ag);
 		frm.refresh_field("p_age");
 	},
+	"go_to_antenatal_1": function(frm){
+		frm.save();
+		frappe.set_route("Form", "Antenatal-1", frm.doc.name);
+	}
 });
+ 

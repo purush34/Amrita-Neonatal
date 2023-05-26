@@ -13,14 +13,13 @@
   "baby_id",
   "mother_name",
   "dob",
-  "tob",
   "pgestation_age_at_birthp",
-  "gab_v",
   "section_break_pztdn",
   "gab_w",
   "column_break_byhiu",
   "gab_d",
   "section_break_xu1nm",
+  "gab_v",
   "singleton_or_multiple",
   "twins",
   "triplets",
@@ -36,13 +35,14 @@
   "section_break_5pkbg",
   "admission_to",
   "doa",
-  "time_of_admission",
   "day_of_life",
   "gaa_v",
   "birth_weight",
   "admission_weight",
   "admission_under",
-  "gender"
+  "gender",
+  "section_break_pr5i1",
+  "go_to_admission"
  ],
  "fields": [
   {
@@ -64,13 +64,8 @@
   },
   {
    "fieldname": "dob",
-   "fieldtype": "Date",
-   "label": "Date of birth"
-  },
-  {
-   "fieldname": "tob",
-   "fieldtype": "Time",
-   "label": "Time of birth"
+   "fieldtype": "Datetime",
+   "label": "Date and Time of birth"
   },
   {
    "fieldname": "section_break_xu1nm",
@@ -150,11 +145,6 @@
    "options": "NICU\nStep Down\nWard"
   },
   {
-   "fieldname": "time_of_admission",
-   "fieldtype": "Time",
-   "label": "Time of admission"
-  },
-  {
    "fieldname": "day_of_life",
    "fieldtype": "Int",
    "label": "Day of life"
@@ -204,31 +194,32 @@
    "default": "0",
    "fieldname": "gab_w",
    "fieldtype": "Int",
-   "label": "weeks"
+   "label": "weeks",
+   "reqd": 1
   },
   {
    "fieldname": "gab_d",
    "fieldtype": "Select",
    "label": "days",
-   "options": "0\n1\n2\n3\n4\n5\n6"
+   "options": "0\n1\n2\n3\n4\n5\n6",
+   "reqd": 1
   },
   {
    "default": "0 Weeks 0 Days",
    "fieldname": "gab_v",
    "fieldtype": "Data",
-   "is_virtual": 1,
    "label": "Gestation Age At Birth (Auto)"
   },
   {
    "fieldname": "gaa_v",
    "fieldtype": "Data",
-   "is_virtual": 1,
-   "label": "Gestational Age at admission"
+   "label": "Gestational Age at admission",
+   "read_only": 1
   },
   {
    "fieldname": "doa",
-   "fieldtype": "Date",
-   "label": "Date of Admission"
+   "fieldtype": "Datetime",
+   "label": "Date and Time of Admission"
   },
   {
    "depends_on": "eval:doc.singleton_or_multiple==\"Other\"",
@@ -240,11 +231,20 @@
    "depends_on": "eval:in_list([\"Outborn\"],doc.hospital)",
    "fieldname": "column_break_ije3",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "go_to_admission",
+   "fieldtype": "Button",
+   "label": "Go to Admission"
+  },
+  {
+   "fieldname": "section_break_pr5i1",
+   "fieldtype": "Section Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-04-12 16:11:01.280216",
+ "modified": "2023-05-11 18:39:45.762741",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Opening page",

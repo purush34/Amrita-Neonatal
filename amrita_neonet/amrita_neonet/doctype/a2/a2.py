@@ -4,5 +4,5 @@
 # import frappe
 from frappe.model.document import Document
 
-class SS(Document):
+class a2(Document):
 	pass

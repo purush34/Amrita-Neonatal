@@ -13,6 +13,10 @@ frappe.ui.form.on('CNS', {
 		frm.save();
 		frappe.set_route("Form", "Endocrine and Metabolic", frm.doc.name);
 	},
+	cooling_details: function (frm) {
+		// console.log(frm.doc.baby_id);
+		frappe.set_route("Form", "Cooling Criteria", frm.doc.name)
+	},
 });
 frappe.ui.form.on('child_cns', {
 	// refresh: function(frm) {

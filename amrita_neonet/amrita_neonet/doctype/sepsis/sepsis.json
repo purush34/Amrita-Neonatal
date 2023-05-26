@@ -110,7 +110,7 @@
   {
    "fieldname": "save_and_goto_ophthalmology",
    "fieldtype": "Button",
-   "label": "Save and goto Ophthalmology"
+   "label": "Save and go to Ophthalmology"
   },
   {
    "fieldname": "antibiotics_used",

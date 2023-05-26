@@ -64,7 +64,7 @@
   {
    "fieldname": "save_and_goto_sepsis",
    "fieldtype": "Button",
-   "label": "Save and goto Sepsis"
+   "label": "Save and go to Sepsis"
   },
   {
    "fieldname": "diagnosis",

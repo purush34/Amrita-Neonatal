@@ -91,7 +91,9 @@
   "seizures",
   "undiagnosed",
   "extra_text1",
-  "extra_text2"
+  "extra_text2",
+  "section_break_lggn8",
+  "go_to_antenatal_1"
  ],
  "fields": [
   {
@@ -234,9 +236,8 @@
    "label": "Date of birth"
   },
   {
-   "depends_on": "var dob = new Date(frm.doc.p_dob);\r\nvar now = new Date();\r\nvar age_now = now.getFullYear() - dob.getFullYear();\r\n\r\ncur_frm.set_value(\"age\", p_age);\r\ncur_frm.refresh();",
    "fieldname": "p_age",
-   "fieldtype": "Autocomplete",
+   "fieldtype": "Data",
    "label": "Age"
   },
   {
@@ -345,14 +346,14 @@
   {
    "fieldname": "any_malignancises",
    "fieldtype": "Select",
-   "label": "Any malignancises",
+   "label": "Any malignancies",
    "options": "No\nYes"
   },
   {
    "depends_on": "eval:in_list([\"Yes\"],doc.any_malignancises)",
    "fieldname": "any_malignancises_report",
    "fieldtype": "Small Text",
-   "label": "Any malignancises report"
+   "label": "Any malignancies report"
   },
   {
    "fieldname": "cardiac_conditions",
@@ -566,18 +567,27 @@
   {
    "fieldname": "mother_mid",
    "fieldtype": "Data",
-   "label": "Mother MID"
+   "label": "Mother MRD"
   },
   {
    "fieldname": "age",
    "fieldtype": "Int",
    "label": "Age",
    "read_only": 1
+  },
+  {
+   "fieldname": "go_to_antenatal_1",
+   "fieldtype": "Button",
+   "label": "Go To Antenatal 1"
+  },
+  {
+   "fieldname": "section_break_lggn8",
+   "fieldtype": "Section Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-05-09 15:03:19.243221",
+ "modified": "2023-05-25 05:05:39.377992",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Maternal details",

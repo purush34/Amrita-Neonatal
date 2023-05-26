@@ -14,6 +14,8 @@
   "opening_form",
   "admission",
   "maternal",
+  "antenatal_1",
+  "antenatal_2",
   "cooling_criteria",
   "cooling_documentation",
   "crib_ii_score",
@@ -22,7 +24,6 @@
   "discharge",
   "discharge_examination",
   "discharge_checklist",
-  "death_summary",
   "nicu_outcomes",
   "column_break_vxatl",
   "daily_summery",
@@ -281,17 +282,17 @@
   {
    "fieldname": "pericardial_tab",
    "fieldtype": "Button",
-   "label": "Pericardial tab"
+   "label": "Pericardial tap"
   },
   {
    "fieldname": "pleural_tab",
    "fieldtype": "Button",
-   "label": "Pleural tab"
+   "label": "Pleural tap"
   },
   {
    "fieldname": "peritoneal_tab",
    "fieldtype": "Button",
-   "label": "Peritoneal tab"
+   "label": "Peritoneal tap"
   },
   {
    "fieldname": "chest_drain",
@@ -344,11 +345,6 @@
    "label": "Discharge checklist"
   },
   {
-   "fieldname": "death_summary",
-   "fieldtype": "Button",
-   "label": "Death summary"
-  },
-  {
    "fieldname": "swabs",
    "fieldtype": "Button",
    "label": "Swabs"
@@ -366,7 +362,7 @@
   {
    "fieldname": "baby_id",
    "fieldtype": "Link",
-   "label": "Enter Baby MID",
+   "label": "Enter Baby MRD",
    "options": "Opening page"
   },
   {
@@ -383,12 +379,22 @@
    "fieldname": "nicu_outcomes",
    "fieldtype": "Button",
    "label": "NICU outcomes"
+  },
+  {
+   "fieldname": "antenatal_1",
+   "fieldtype": "Button",
+   "label": "Antenatal 1"
+  },
+  {
+   "fieldname": "antenatal_2",
+   "fieldtype": "Button",
+   "label": "Antenatal 2"
   }
  ],
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2023-04-14 06:18:45.369905",
+ "modified": "2023-05-26 21:49:37.036079",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Neonet_Navigator",

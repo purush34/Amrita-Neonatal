@@ -42,14 +42,12 @@
   {
    "fieldname": "baby_id",
    "fieldtype": "Data",
-   "label": "Baby Id",
-   "read_only": 1
+   "label": "Baby Id"
   },
   {
    "fieldname": "mother_name",
    "fieldtype": "Data",
-   "label": "Mother Name",
-   "read_only": 1
+   "label": "Mother Name"
   },
   {
    "fieldname": "section_break_busax",
@@ -139,7 +137,7 @@
   {
    "fieldname": "save_and_goto_cns",
    "fieldtype": "Button",
-   "label": "Save and goto CNS"
+   "label": "Save and go to CNS"
   },
   {
    "fieldname": "average_gir_content_per_day_during_stay",
@@ -154,7 +152,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-05-01 09:27:57.818140",
+ "modified": "2023-05-11 09:35:26.691715",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Gastrointestinal",

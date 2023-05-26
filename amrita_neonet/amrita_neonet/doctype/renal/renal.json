@@ -103,7 +103,7 @@
   {
    "fieldname": "save_and_goto_genetic",
    "fieldtype": "Button",
-   "label": "Save and goto Genetic"
+   "label": "Save and go to Genetic"
   }
  ],
  "index_web_pages_for_search": 1,

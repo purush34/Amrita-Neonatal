@@ -8,6 +8,9 @@ from frappe.model.document import Document
 class Openingpage(Document):
     all_dict_doctypes = {
         'Admission': 'admission',
+        'Maternal details': 'maternal_details',
+        'Antenatal-1': 'antenatal-1',  
+        'Antenatal-2' : 'antenatal-2',
         # 'Antibiotics': 'antibiotics',
         'Baby Documents': 'baby_documents',
         'Blood culture': 'blood_culture',

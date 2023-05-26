@@ -205,7 +205,7 @@
    "depends_on": "eval:in_list([\"Yes\"],doc.hypoglycaemia)",
    "fieldname": "glucogen",
    "fieldtype": "Check",
-   "label": "Glucogen"
+   "label": "Glucagon"
   },
   {
    "fieldname": "column_break_trmhd",
@@ -423,7 +423,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-05-01 22:46:03.366076",
+ "modified": "2023-05-26 17:13:25.116703",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "endocrine_child",

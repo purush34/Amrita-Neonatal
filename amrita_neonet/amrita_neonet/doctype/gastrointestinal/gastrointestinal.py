@@ -28,7 +28,8 @@ class Gastrointestinal(Document):
 		average_lipid_content_per_day_during_stay = 0
 		maximum_bilirubin = 0
 		total_no_of_days_of_phototherapy = 0
-
+		day = 0
+		tot_protein = 0
 		for row in self.get_all_children():
 			if row.tpn == 'Yes':
 				total_no_of_tpn_days += 1
@@ -38,12 +39,17 @@ class Gastrointestinal(Document):
 				day_to_reach_full_feeds_orally += 1
 			average_kcalories_per_day_during_stay += row.total_kcal
 			average_gir_content_per_day_during_stay += row.gir_kcal
-			average_protein_content_per_day_during_stay += row.protein_kcal
+			average_protein_content_per_day_during_stay += row.protein_grams + (row.total_protein_content/row.working_weight)
 			average_lipid_content_per_day_during_stay += row.lipid_kcal
 			if row.jaundice == 'Yes':
 				maximum_bilirubin += 1
 			if row.phototherapy == 'Yes':
 				total_no_of_days_of_phototherapy += 1
+			if row.central_line_present == 'Yes':
+				day += 1
+			else:
+				day = 0
+			row.no_of_days_of_central_line_in_situ = str(day)
 
 		self.total_no_of_tpn_days = total_no_of_tpn_days
 		self.day_to_reach_full_feeds = day_to_reach_full_feeds

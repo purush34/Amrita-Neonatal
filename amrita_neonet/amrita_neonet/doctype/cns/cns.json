@@ -13,6 +13,8 @@
   "mother_name",
   "diagnosis",
   "procedures_done",
+  "cooling_criteria_met",
+  "cooling_details",
   "daily_observations",
   "_section",
   "go_back_to_gi",
@@ -76,12 +78,25 @@
   {
    "fieldname": "save_and_goto_endocrine_and_metabolic",
    "fieldtype": "Button",
-   "label": "Save and goto Endocrine and Metabolic"
+   "label": "Save and go to Endocrine and Metabolic"
+  },
+  {
+   "default": "No",
+   "fieldname": "cooling_criteria_met",
+   "fieldtype": "Select",
+   "label": "Cooling criteria met",
+   "options": "No\nYes"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.cooling_criteria_met)",
+   "fieldname": "cooling_details",
+   "fieldtype": "Button",
+   "label": "Cooling criteria Details"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-05-01 10:47:08.440750",
+ "modified": "2023-05-09 18:04:48.890478",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "CNS",

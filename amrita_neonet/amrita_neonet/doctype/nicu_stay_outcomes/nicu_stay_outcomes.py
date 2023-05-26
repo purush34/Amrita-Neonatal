@@ -125,11 +125,28 @@ def getGastroinstestineDailySummery(baby_id):
     htmlText += "Average Lipid: " + str(gastroinstestine.average_lipid_content_per_day_during_stay) + nextLine
     htmlText += "Maximum Bilirubin: " + str(gastroinstestine.maximum_bilirubin) + nextLine
     htmlText += "Phototherapy Days: " + str(gastroinstestine.total_no_of_days_of_phototherapy) + nextLine
-    htmlText += nextLine + nextLine
+    htmlText += nextLine 
+    s = 0
+    center_lines = ""
+    start_date = ""
+    end_date = ""
+    dd = 0
     for child in gastroinstestine.get_all_children():
+        if child.central_line_present == "Yes" and s == 0:
+            start_date = child.date
+            s = 1
+        elif child.central_line_present == "No" and s == 1:
+            end_date = frappe.utils.add_days(child.date, -1)
+            center_lines += str(start_date) + " to " + str(end_date)+" (" + str(dd) + " days)" + nextLine
+            s = 0
         if child.free_text_box_for_discharge_letter:
             htmlText += str(child.date) + nextLine + \
                 child.free_text_box_for_discharge_letter + nextLine + nextLine
+        dd = str(child.no_of_days_of_central_line_in_situ)
+    if s == 1:
+        center_lines += str(start_date) + " to continuing" + nextLine
+    htmlText += nextLine
+    htmlText += "Central Lines: " + nextLine + center_lines + nextLine
     print("Sent Gastroinstestine daily summary")
     if htmlText:
         return htmlText

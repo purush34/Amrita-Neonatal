@@ -71,7 +71,7 @@
   {
    "fieldname": "save_and_goto_haematology",
    "fieldtype": "Button",
-   "label": "Save and goto Haematology"
+   "label": "Save and go to Haematology"
   },
   {
    "fieldname": "diagnosis",

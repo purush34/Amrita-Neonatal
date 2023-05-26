@@ -278,6 +278,26 @@ frappe.ui.form.on('Neonet_Navigator', {
 		// console.log(frm.doc.baby_id);
 		frappe.set_route("Form", "NICU Stay Outcomes", frm.doc.baby_id)
 	},
+	maternal: function (frm) {
+		// console.log(frm.doc.baby_id);
+		frappe.set_route("Form", "Maternal details", frm.doc.baby_id)
+	},
+	antenatal_1: function (frm) {
+		// console.log(frm.doc.baby_id);
+		frappe.set_route("Form", "Antenatal-1", frm.doc.baby_id)
+	},
+	antenatal_2: function (frm) {
+		// console.log(frm.doc.baby_id);
+		frappe.set_route("Form", "Antenatal-2", frm.doc.baby_id)
+	},
+	discharge_examination: function (frm) {
+		// console.log(frm.doc.baby_id);
+		frappe.set_route("Form", "Discharge Examination", frm.doc.baby_id)
+	},
+	discharge_checklist : function (frm) {
+		// console.log(frm.doc.baby_id);
+		frappe.set_route("Form", "Discharge Checklist", frm.doc.baby_id)
+	},
 
 
 

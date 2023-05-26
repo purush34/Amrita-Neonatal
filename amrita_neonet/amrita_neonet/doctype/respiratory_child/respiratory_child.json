@@ -476,7 +476,8 @@
    "depends_on": "eval:in_list([\"Yes\"],doc.bpd_criteria)",
    "fieldname": "o2_req",
    "fieldtype": "Select",
-   "label": "O2 requirement for a total of 28 days or more"
+   "label": "O2 requirement for a total of 28 days or more",
+   "options": "O2 requirement for a total of 28 days or more\nO2 requirement at 36 weeks corrected gestational age"
   },
   {
    "fieldname": "section_break_lts7n",
@@ -674,7 +675,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-04-30 23:27:20.488256",
+ "modified": "2023-05-26 22:51:23.045974",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Respiratory_child",

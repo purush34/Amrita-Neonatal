@@ -89,7 +89,7 @@ class Respiratory(Document):
 			if i.new_diag_dis == 'Yes':
 				types[i.diag_dis.strip()] = 1
 			if i.nitric_use_in_past_24_hours:
-				duration_of_nitric += i.duration
+				duration_of_nitric += float(i.duration)
 			if i.o2_24 == "Yes":
 				days_of_o2 += 1
 		

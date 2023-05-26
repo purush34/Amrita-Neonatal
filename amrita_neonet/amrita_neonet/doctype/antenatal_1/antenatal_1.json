@@ -65,11 +65,6 @@
   "additional_scans",
   "number_of_additional_scans",
   "section_break_osldw",
-  "ad_dos",
-  "ad_gestational",
-  "ad_dopplers",
-  "ad_findings",
-  "ewf_additional",
   "edd_column",
   "by_scan",
   "by_dates",
@@ -89,7 +84,16 @@
   "select_type",
   "antibodies",
   "section_break_cjsvo",
-  "medication"
+  "medication",
+  "section_break_qqemp",
+  "hyperthyroidism",
+  "last_text",
+  "column_break_a8dxc",
+  "back_to_maternal",
+  "column_break_gqmsw",
+  "column_break_ppvhb",
+  "column_break_qwrxw",
+  "go_to_antenatal_2"
  ],
  "fields": [
   {
@@ -100,17 +104,19 @@
   {
    "fieldname": "baby_id",
    "fieldtype": "Data",
-   "label": "Baby Id"
+   "label": "Baby Id",
+   "read_only": 1
   },
   {
    "fieldname": "mother_name",
    "fieldtype": "Data",
-   "label": "Mother Name"
+   "label": "Mother Name",
+   "read_only": 1
   },
   {
    "fieldname": "mother_mid",
    "fieldtype": "Data",
-   "label": "Mother MID"
+   "label": "Mother MRD"
   },
   {
    "fieldname": "antenantal_follow_up",
@@ -202,7 +208,7 @@
    "fieldname": "blood_group",
    "fieldtype": "Select",
    "label": "Blood Group",
-   "options": "A Positive\nA negative\nB Positive\nB Negative\nAB Positive\nAB Negative\nO Positive\nO Negative\nIndeterminate"
+   "options": "A Positive\nA Negative\nB Positive\nB Negative\nAB Positive\nAB Negative\nO Positive\nO Negative\nIndeterminate"
   },
   {
    "fieldname": "vdrl",
@@ -388,40 +394,13 @@
   },
   {
    "fieldname": "number_of_additional_scans",
-   "fieldtype": "Int",
-   "label": "Number of Additional scans"
+   "fieldtype": "Table",
+   "options": "additional scans"
   },
   {
    "depends_on": "eval:doc.number_of_additional_scans>0",
    "fieldname": "section_break_osldw",
    "fieldtype": "Section Break"
-  },
-  {
-   "depends_on": "eval:doc.number_of_additional_scans>0",
-   "fieldname": "ad_dos",
-   "fieldtype": "Date",
-   "label": "Date of scan"
-  },
-  {
-   "fieldname": "ad_gestational",
-   "fieldtype": "Int",
-   "label": "Gestational Age"
-  },
-  {
-   "fieldname": "ad_dopplers",
-   "fieldtype": "Select",
-   "label": "Dopplers",
-   "options": "Normal\nAbsent\nReversed"
-  },
-  {
-   "fieldname": "ad_findings",
-   "fieldtype": "Small Text",
-   "label": "Findings"
-  },
-  {
-   "fieldname": "ewf_additional",
-   "fieldtype": "Data",
-   "label": "EFW (in grams)"
   },
   {
    "fieldname": "edd_column",
@@ -533,11 +512,51 @@
    "fieldname": "medication",
    "fieldtype": "Small Text",
    "label": "Medication"
+  },
+  {
+   "fieldname": "section_break_qqemp",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "back_to_maternal",
+   "fieldtype": "Button",
+   "label": "Back to Maternal"
+  },
+  {
+   "fieldname": "column_break_gqmsw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "go_to_antenatal_2",
+   "fieldtype": "Button",
+   "label": "Go to Antenatal 2"
+  },
+  {
+   "fieldname": "column_break_a8dxc",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_ppvhb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_qwrxw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "hyperthyroidism",
+   "fieldtype": "Select",
+   "label": "Hyperthyroidism",
+   "options": "No\nYes"
+  },
+  {
+   "fieldname": "last_text",
+   "fieldtype": "Small Text"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-05-09 17:16:50.141635",
+ "modified": "2023-05-26 22:11:59.967437",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Antenatal-1",

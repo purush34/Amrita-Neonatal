@@ -2,7 +2,7 @@
  "actions": [],
  "allow_rename": 1,
  "autoname": "format:{baby_id} {mother_name}",
- "creation": "2023-05-09 14:41:42.042407",
+ "creation": "2023-05-11 19:12:08.824605",
  "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -25,6 +25,7 @@
   "column_break_0ofys",
   "steroids_no",
   "if_steriods",
+  "section_break_nubdt",
   "first_dose",
   "first_date",
   "column_break_knyhe",
@@ -59,6 +60,10 @@
   "peripartum_name",
   "peripartum_date",
   "last_dose_given",
+  "column_break_dpnlu",
+  "name_2",
+  "dt_2",
+  "last_2",
   "section_break_bbk0j",
   "onset_of_labour",
   "column_break_bl5so",
@@ -67,13 +72,15 @@
   "mode_of_delivery",
   "column_break_thfjz",
   "if_vaginal",
-  "if_instrumentation",
-  "if_forceps",
   "if_electivelscs",
-  "if_maternal_health",
   "if_emlscs",
+  "if_maternal_health",
+  "section_break_9pplf",
+  "if_instrumentation",
   "if_maternal",
   "if_fetal",
+  "column_break_iesdo",
+  "if_forceps",
   "if_fetal_distress",
   "if_suboptimal",
   "if_dopplers_concerns",
@@ -84,19 +91,25 @@
   "birth_and_resuscitation_column",
   "cried_soon_after_birth",
   "need_for_resuscitation",
+  "section_break_ez6sw",
   "stimulation",
+  "column_break_q1dck",
   "bag_and_mask",
   "noc",
+  "column_break_k77na",
   "intubation",
   "age_in_min",
   "size",
   "fixed_at",
+  "column_break_tq5zf",
   "c_comp",
   "started_at_age_in_min",
   "no_of_cycles",
   "adrenaline_doses",
   "et_1",
   "iv",
+  "dextrose",
+  "fluid_bolus",
   "apgars_section",
   "spontaneous_breathing",
   "one_min",
@@ -138,7 +151,19 @@
   "calculate",
   "passive_cooling",
   "age_in_minutes",
+  "section_break_inll0",
   "cord_blood_gas",
+  "ph_column",
+  "ph_t",
+  "pco2_column",
+  "pco2_t",
+  "hco3_column",
+  "hco3_t",
+  "be_column",
+  "b_t",
+  "lactate_column",
+  "lactate_t",
+  "section_break_n5yoc",
   "resuscitation"
  ],
  "fields": [
@@ -146,6 +171,21 @@
    "fieldname": "labour_and_delivery_column",
    "fieldtype": "Tab Break",
    "label": "Labour and delivery"
+  },
+  {
+   "fieldname": "baby_id",
+   "fieldtype": "Data",
+   "label": "Baby Id"
+  },
+  {
+   "fieldname": "mother_name",
+   "fieldtype": "Data",
+   "label": "Mother Name"
+  },
+  {
+   "fieldname": "mother_mid",
+   "fieldtype": "Data",
+   "label": "Mother MID"
   },
   {
    "fieldname": "pre_term_labour",
@@ -216,6 +256,10 @@
    "options": "Betamethasone\nDexamethasone"
   },
   {
+   "fieldname": "section_break_nubdt",
+   "fieldtype": "Section Break"
+  },
+  {
    "default": "0",
    "depends_on": "eval:in_list([\"Yes\"],doc.steroids)",
    "fieldname": "first_dose",
@@ -239,7 +283,7 @@
    "label": "Second Dose"
   },
   {
-   "depends_on": "eval:doc.second_dose==1",
+   "depends_on": "eval:doc.second_dose==1 && doc.first_dose==1",
    "fieldname": "second_date",
    "fieldtype": "Datetime"
   },
@@ -397,6 +441,25 @@
    "label": "Last Dose given"
   },
   {
+   "fieldname": "column_break_dpnlu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "name_2",
+   "fieldtype": "Data",
+   "label": "Name"
+  },
+  {
+   "fieldname": "dt_2",
+   "fieldtype": "Datetime",
+   "label": "Date and time started"
+  },
+  {
+   "fieldname": "last_2",
+   "fieldtype": "Data",
+   "label": "Last dose given"
+  },
+  {
    "fieldname": "section_break_bbk0j",
    "fieldtype": "Section Break",
    "label": "Onset Of Labour"
@@ -438,26 +501,10 @@
    "options": "Normal\nInstrumentation"
   },
   {
-   "depends_on": "eval:doc.mode_of_delivery==\"Vaginal\" && doc.if_vaginal==\"Instrumentation\"",
-   "fieldname": "if_instrumentation",
-   "fieldtype": "Select",
-   "options": "Vaccum\nForceps"
-  },
-  {
-   "depends_on": "eval:doc.mode_of_delivery==\"Vaginal\" && doc.if_vaginal==\"Instrumentation\"&& doc.if_instrumentation==\"Forceps\"",
-   "fieldname": "if_forceps",
-   "fieldtype": "Data"
-  },
-  {
    "depends_on": "eval:in_list([\"Elective LSCS\"],doc.mode_of_delivery)",
    "fieldname": "if_electivelscs",
    "fieldtype": "Select",
    "options": "Previous Section\nMaternal Health\nPatient Request"
-  },
-  {
-   "depends_on": "eval:doc.mode_of_delivery==\"Elective LSCS\" && doc.if_electivelscs==\"Maternal Health\"",
-   "fieldname": "if_maternal_health",
-   "fieldtype": "Data"
   },
   {
    "depends_on": "eval:doc.mode_of_delivery==\"Em LSCS\"",
@@ -466,40 +513,64 @@
    "options": "Fetal\nMaternal"
   },
   {
+   "depends_on": "eval:doc.mode_of_delivery==\"Elective LSCS\" && doc.if_electivelscs==\"Maternal Health\"",
+   "fieldname": "if_maternal_health",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "section_break_9pplf",
+   "fieldtype": "Section Break"
+  },
+  {
+   "depends_on": "eval:doc.mode_of_delivery==\"Vaginal\" && doc.if_vaginal==\"Instrumentation\"",
+   "fieldname": "if_instrumentation",
+   "fieldtype": "Select",
+   "options": "Vaccum\nForceps"
+  },
+  {
    "depends_on": "eval:doc.if_emlscs==\"Maternal\"",
    "fieldname": "if_maternal",
    "fieldtype": "Data"
   },
   {
-   "depends_on": "eval:in_list([\"Fetal\"],doc.if_emlscs)",
+   "depends_on": "eval:doc.if_emlscs==\"Fetal\" && doc.mode_of_delivery==\"Em LSCS\"",
    "fieldname": "if_fetal",
    "fieldtype": "Select",
    "options": "Fetal Distress\nSub-optimal CTG\nDopplers Concerns"
   },
   {
-   "depends_on": "eval:doc.mode_of_delivery==\"Em LSCS\" && doc.if_emlscs==\"Fetal Distress\"",
+   "fieldname": "column_break_iesdo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.mode_of_delivery==\"Vaginal\" && doc.if_vaginal==\"Instrumentation\"&& doc.if_instrumentation==\"Forceps\"",
+   "fieldname": "if_forceps",
+   "fieldtype": "Data"
+  },
+  {
+   "depends_on": "eval:doc.mode_of_delivery==\"Em LSCS\" && doc.if_fetal==\"Fetal Distress\"",
    "fieldname": "if_fetal_distress",
    "fieldtype": "Data"
   },
   {
-   "depends_on": "eval:doc.mode_of_delivery==\"Em LSCS\" && doc.if_emlscs==\"Sub-optimal CTG\"",
+   "depends_on": "eval:doc.mode_of_delivery==\"Em LSCS\" && doc.if_fetal==\"Sub-optimal CTG\"",
    "fieldname": "if_suboptimal",
    "fieldtype": "Data"
   },
   {
-   "depends_on": "eval:doc.mode_of_delivery==\"Em LSCS\" && doc.if_emlscs==\"Dopplers Concerns\"",
+   "depends_on": "eval:doc.mode_of_delivery==\"Em LSCS\" && doc.if_fetal==\"Dopplers Concerns\"",
    "fieldname": "if_dopplers_concerns",
    "fieldtype": "Select",
    "options": "Umbilical artery\nUmbilical vein\nReversal of CP ratio"
   },
   {
-   "depends_on": "eval:doc.mode_of_delivery==\"Em LSCS\" && doc.if_emlscs==\"Dopplers Concerns\" && doc.if_dopplers_concerns==\"Umbilical artery\"",
+   "depends_on": "eval:doc.mode_of_delivery==\"Em LSCS\" && doc.if_fetal==\"Dopplers Concerns\" && doc.if_dopplers_concerns==\"Umbilical artery\"",
    "fieldname": "if_umbilical_artery",
    "fieldtype": "Select",
    "options": "Absent\nReversed"
   },
   {
-   "depends_on": "eval:doc.mode_of_delivery==\"Em LSCS\" && doc.if_emlscs==\"Dopplers Concerns\" && doc.if_dopplers_concerns==\"Umbilical vein\"",
+   "depends_on": "eval:doc.mode_of_delivery==\"Em LSCS\" && doc.if_fetal==\"Dopplers Concerns\" && doc.if_dopplers_concerns==\"Umbilical vein\"",
    "fieldname": "if_umbilical_vein",
    "fieldtype": "Select",
    "options": "Absent\nReversed"
@@ -533,86 +604,117 @@
   },
   {
    "depends_on": "eval:doc.need_for_resuscitation==\"Yes\"",
-   "fieldname": "stimulation",
-   "fieldtype": "Select",
-   "label": "Stimulation",
-   "options": "No\nYes"
+   "fieldname": "section_break_ez6sw",
+   "fieldtype": "Section Break"
   },
   {
+   "default": "0",
+   "depends_on": "eval:doc.need_for_resuscitation==\"Yes\"",
+   "fieldname": "stimulation",
+   "fieldtype": "Check",
+   "label": "Stimulation"
+  },
+  {
+   "fieldname": "column_break_q1dck",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
    "depends_on": "eval:doc.need_for_resuscitation==\"Yes\"",
    "fieldname": "bag_and_mask",
-   "fieldtype": "Select",
-   "label": "Bag and Mask",
-   "options": "No\nYes"
+   "fieldtype": "Check",
+   "label": "Bag and Mask"
   },
   {
-   "depends_on": "eval:doc.need_for_resuscitation==\"Yes\" && doc.bag_and_mask==\"Yes\"",
+   "depends_on": "eval:doc.need_for_resuscitation==\"Yes\" && doc.bag_and_mask==1",
    "fieldname": "noc",
    "fieldtype": "Data",
    "label": "No of cycles"
   },
   {
-   "depends_on": "eval:doc.need_for_resuscitation==\"Yes\"",
-   "fieldname": "intubation",
-   "fieldtype": "Select",
-   "label": "Intubation",
-   "options": "No\nYes"
+   "fieldname": "column_break_k77na",
+   "fieldtype": "Column Break"
   },
   {
-   "depends_on": "eval:doc.need_for_resuscitation==\"Yes\" && doc.intubation==\"Yes\"",
+   "default": "0",
+   "depends_on": "eval:doc.need_for_resuscitation==\"Yes\"",
+   "fieldname": "intubation",
+   "fieldtype": "Check",
+   "label": "Intubation"
+  },
+  {
+   "depends_on": "eval:doc.need_for_resuscitation==\"Yes\" && doc.intubation==1",
    "fieldname": "age_in_min",
    "fieldtype": "Data",
    "label": "Age in min"
   },
   {
-   "depends_on": "eval:doc.need_for_resuscitation==\"Yes\" && doc.intubation==\"Yes\"",
+   "depends_on": "eval:doc.need_for_resuscitation==\"Yes\" && doc.intubation==1",
    "fieldname": "size",
    "fieldtype": "Data",
    "label": "Size"
   },
   {
-   "depends_on": "eval:doc.need_for_resuscitation==\"Yes\" && doc.intubation==\"Yes\"",
+   "depends_on": "eval:doc.need_for_resuscitation==\"Yes\" && doc.intubation==1",
    "fieldname": "fixed_at",
    "fieldtype": "Data",
    "label": "Fixed at"
   },
   {
-   "depends_on": "eval:doc.need_for_resuscitation==\"Yes\"",
-   "fieldname": "c_comp",
-   "fieldtype": "Select",
-   "label": "Chest compressions",
-   "options": "No\nYes"
+   "fieldname": "column_break_tq5zf",
+   "fieldtype": "Column Break"
   },
   {
-   "depends_on": "eval:doc.need_for_resuscitation==\"Yes\" && doc.c_comp==\"Yes\"",
+   "default": "0",
+   "depends_on": "eval:doc.need_for_resuscitation==\"Yes\"",
+   "fieldname": "c_comp",
+   "fieldtype": "Check",
+   "label": "Chest compressions"
+  },
+  {
+   "depends_on": "eval:doc.need_for_resuscitation==\"Yes\" && doc.c_comp==1",
    "fieldname": "started_at_age_in_min",
    "fieldtype": "Data",
    "label": "Started at age in min"
   },
   {
-   "depends_on": "eval:doc.need_for_resuscitation==\"Yes\" && doc.c_comp==\"Yes\"",
+   "depends_on": "eval:doc.need_for_resuscitation==\"Yes\" && doc.c_comp==1",
    "fieldname": "no_of_cycles",
    "fieldtype": "Data",
    "label": "No of cycles"
   },
   {
-   "depends_on": "eval:doc.need_for_resuscitation==\"Yes\" && doc.c_comp==\"Yes\"",
+   "depends_on": "eval:doc.need_for_resuscitation==\"Yes\" && doc.c_comp==1",
    "fieldname": "adrenaline_doses",
    "fieldtype": "Select",
    "label": "Adrenaline doses",
    "options": "No\nYes"
   },
   {
-   "depends_on": "eval:doc.need_for_resuscitation==\"Yes\" && doc.c_comp==\"Yes\" && doc.adrenaline_doses==\"Yes\"",
+   "depends_on": "eval:doc.need_for_resuscitation==\"Yes\" && doc.c_comp==1 && doc.adrenaline_doses==\"Yes\"",
    "fieldname": "et_1",
    "fieldtype": "Data",
    "label": "ET (No of doses)"
   },
   {
-   "depends_on": "eval:doc.need_for_resuscitation==\"Yes\" && doc.c_comp==\"Yes\" && doc.adrenaline_doses==\"Yes\"",
+   "depends_on": "eval:doc.need_for_resuscitation==\"Yes\" && doc.c_comp==1 && doc.adrenaline_doses==\"Yes\"",
    "fieldname": "iv",
    "fieldtype": "Data",
    "label": "IV (No of doses)"
+  },
+  {
+   "depends_on": "eval:doc.need_for_resuscitation==\"Yes\" && doc.c_comp==1",
+   "fieldname": "dextrose",
+   "fieldtype": "Select",
+   "label": "Dextrose",
+   "options": "No\nYes"
+  },
+  {
+   "depends_on": "eval:doc.need_for_resuscitation==\"Yes\" && doc.c_comp==1",
+   "fieldname": "fluid_bolus",
+   "fieldtype": "Select",
+   "label": "Fluid Bolus",
+   "options": "No\nYes"
   },
   {
    "fieldname": "apgars_section",
@@ -631,27 +733,38 @@
   },
   {
    "fieldname": "sb_1",
-   "fieldtype": "Data"
+   "fieldtype": "Float",
+   "options": "0",
+   "precision": "2"
   },
   {
    "fieldname": "hr_1",
-   "fieldtype": "Data"
+   "fieldtype": "Float",
+   "options": "0",
+   "precision": "2"
   },
   {
    "fieldname": "c_1",
-   "fieldtype": "Data"
+   "fieldtype": "Float",
+   "options": "0",
+   "precision": "2"
   },
   {
    "fieldname": "t_1",
-   "fieldtype": "Data"
+   "fieldtype": "Float",
+   "options": "0",
+   "precision": "2"
   },
   {
    "fieldname": "r_1",
-   "fieldtype": "Data"
+   "fieldtype": "Float",
+   "options": "0",
+   "precision": "2"
   },
   {
    "fieldname": "total_1",
-   "fieldtype": "Autocomplete"
+   "fieldtype": "Float",
+   "precision": "2"
   },
   {
    "fieldname": "five_min",
@@ -660,56 +773,81 @@
   },
   {
    "fieldname": "sb_5",
-   "fieldtype": "Data"
+   "fieldtype": "Float",
+   "options": "0",
+   "precision": "2"
   },
   {
+   "default": "0",
    "fieldname": "hr_5",
-   "fieldtype": "Data"
+   "fieldtype": "Float",
+   "precision": "2"
   },
   {
+   "default": "0",
    "fieldname": "c_5",
-   "fieldtype": "Data"
+   "fieldtype": "Float",
+   "precision": "2"
   },
   {
+   "default": "0",
    "fieldname": "t_5",
-   "fieldtype": "Data"
+   "fieldtype": "Float",
+   "precision": "2"
   },
   {
+   "default": "0",
    "fieldname": "r_5",
-   "fieldtype": "Data"
+   "fieldtype": "Float",
+   "precision": "2"
   },
   {
+   "default": "0",
    "fieldname": "total_5",
-   "fieldtype": "Autocomplete"
+   "fieldtype": "Float",
+   "precision": "2"
   },
   {
    "fieldname": "ten_min",
    "fieldtype": "Column Break",
-   "label": "10 min"
+   "label": "10 min",
+   "precision": "2"
   },
   {
+   "default": "0",
    "fieldname": "sb_10",
-   "fieldtype": "Data"
+   "fieldtype": "Float",
+   "precision": "2"
   },
   {
+   "default": "0",
    "fieldname": "hr_10",
-   "fieldtype": "Data"
+   "fieldtype": "Float",
+   "precision": "2"
   },
   {
+   "default": "0",
    "fieldname": "c_10",
-   "fieldtype": "Data"
+   "fieldtype": "Float",
+   "precision": "2"
   },
   {
+   "default": "0",
    "fieldname": "t_10",
-   "fieldtype": "Data"
+   "fieldtype": "Float",
+   "precision": "2"
   },
   {
+   "default": "0",
    "fieldname": "r_10",
-   "fieldtype": "Data"
+   "fieldtype": "Float",
+   "precision": "2"
   },
   {
+   "default": "0",
    "fieldname": "total_10",
-   "fieldtype": "Autocomplete"
+   "fieldtype": "Float",
+   "precision": "2"
   },
   {
    "fieldname": "fifteen_min",
@@ -717,28 +855,40 @@
    "label": "15 min"
   },
   {
+   "default": "0",
    "fieldname": "sb_15",
-   "fieldtype": "Data"
+   "fieldtype": "Float",
+   "precision": "2"
   },
   {
+   "default": "0",
    "fieldname": "hr_15",
-   "fieldtype": "Data"
+   "fieldtype": "Float",
+   "precision": "2"
   },
   {
+   "default": "0",
    "fieldname": "c_15",
-   "fieldtype": "Data"
+   "fieldtype": "Float",
+   "precision": "2"
   },
   {
+   "default": "0",
    "fieldname": "t_15",
-   "fieldtype": "Data"
+   "fieldtype": "Float",
+   "precision": "2"
   },
   {
+   "default": "0",
    "fieldname": "r_15",
-   "fieldtype": "Data"
+   "fieldtype": "Float",
+   "precision": "2"
   },
   {
+   "default": "0",
    "fieldname": "total_15",
-   "fieldtype": "Autocomplete"
+   "fieldtype": "Float",
+   "precision": "2"
   },
   {
    "fieldname": "twenty_min",
@@ -746,32 +896,49 @@
    "label": "20 min"
   },
   {
+   "default": "0",
    "fieldname": "sb_20",
-   "fieldtype": "Data"
+   "fieldtype": "Float",
+   "precision": "2"
   },
   {
+   "default": "0",
    "fieldname": "hr_20",
-   "fieldtype": "Data"
+   "fieldtype": "Float",
+   "precision": "2"
   },
   {
+   "default": "0",
    "fieldname": "c_20",
-   "fieldtype": "Data"
+   "fieldtype": "Float",
+   "precision": "2"
   },
   {
+   "default": "0",
    "fieldname": "t_20",
-   "fieldtype": "Data"
+   "fieldtype": "Float",
+   "precision": "2"
   },
   {
+   "default": "0",
    "fieldname": "r_20",
-   "fieldtype": "Data"
+   "fieldtype": "Float",
+   "precision": "2"
   },
   {
+   "default": "0",
    "fieldname": "total_20",
-   "fieldtype": "Autocomplete"
+   "fieldtype": "Float",
+   "precision": "2"
   },
   {
    "fieldname": "section_break_tbudr",
    "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "calculate",
+   "fieldtype": "Button",
+   "label": "Calculate Total"
   },
   {
    "fieldname": "passive_cooling",
@@ -786,45 +953,76 @@
    "label": "Age in minutes "
   },
   {
+   "fieldname": "section_break_inll0",
+   "fieldtype": "Section Break"
+  },
+  {
    "fieldname": "cord_blood_gas",
    "fieldtype": "Select",
    "label": "Cord Blood Gas ",
    "options": "Arterial\nVenous"
   },
   {
+   "fieldname": "ph_column",
+   "fieldtype": "Column Break",
+   "label": "Ph"
+  },
+  {
+   "fieldname": "ph_t",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "pco2_column",
+   "fieldtype": "Column Break",
+   "label": "PCo2"
+  },
+  {
+   "fieldname": "pco2_t",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "hco3_column",
+   "fieldtype": "Column Break",
+   "label": "HCO3"
+  },
+  {
+   "fieldname": "hco3_t",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "be_column",
+   "fieldtype": "Column Break",
+   "label": "BE"
+  },
+  {
+   "fieldname": "b_t",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "lactate_column",
+   "fieldtype": "Column Break",
+   "label": "Lactate"
+  },
+  {
+   "fieldname": "lactate_t",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "section_break_n5yoc",
+   "fieldtype": "Section Break"
+  },
+  {
    "fieldname": "resuscitation",
    "fieldtype": "Text",
    "label": "Resuscitation"
-  },
-  {
-   "fieldname": "baby_id",
-   "fieldtype": "Data",
-   "label": "Baby Id",
-   "read_only": 1
-  },
-  {
-   "fieldname": "mother_name",
-   "fieldtype": "Data",
-   "label": "Mother Name",
-   "read_only": 1
-  },
-  {
-   "fieldname": "mother_mid",
-   "fieldtype": "Data",
-   "label": "Mother MRD"
-  },
-  {
-   "fieldname": "calculate",
-   "fieldtype": "Button",
-   "label": "Calculate Total"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-05-26 22:10:33.660346",
+ "modified": "2023-05-11 19:12:08.824605",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
- "name": "Antenatal-2",
+ "name": "a2",
  "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [

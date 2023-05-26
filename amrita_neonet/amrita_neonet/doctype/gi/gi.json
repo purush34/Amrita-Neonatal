@@ -1,7 +1,6 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:{baby_id} {mother_name}",
  "creation": "2023-03-06 17:28:55.601975",
  "default_view": "List",
  "doctype": "DocType",
@@ -42,11 +41,11 @@
   "column_break_imobx",
   "stext",
   "section_break_5iwxg",
-  "central_line",
+  "central_line_present",
   "column_break_0m9s4",
   "coptions",
   "column_break_oa5mz",
-  "no_of_days",
+  "no_of_days_of_central_line_in_situ",
   "section_break_fiyme",
   "total_fluid_volume_in_mlkg",
   "section_break_5jekd",
@@ -113,6 +112,7 @@
   "sagar_mlday",
   "mct_oil_dropsday",
   "beneprotien_gmkgday",
+  "column_break_1jile",
   "column_break_k9clm",
   "ebm_pre_term_calories",
   "ebm_term_calories",
@@ -124,6 +124,7 @@
   "mct_oil_calories",
   "beneprotien_calories",
   "total_calories",
+  "column_break_ugrry",
   "column_break_ayqn8",
   "ebm_pre_term_per_kilo",
   "ebm_term_per_kilo",
@@ -135,7 +136,8 @@
   "mct_oil_per_kilo",
   "beneprotien_per_kilo",
   "total_per_kilo",
-  "column_break_e3521",
+  "cb_column",
+  "protein_content",
   "ebm_pre_term_protein",
   "ebm_term_protein_content",
   "no_of_fortifier_sachets_protein_content",
@@ -217,8 +219,9 @@
   },
   {
    "fieldname": "working_weight",
-   "fieldtype": "Data",
-   "label": "Working Weight (KG)"
+   "fieldtype": "Int",
+   "label": "Working Weight (KG)",
+   "non_negative": 1
   },
   {
    "fieldname": "new",
@@ -336,12 +339,6 @@
    "fieldtype": "Section Break"
   },
   {
-   "fieldname": "central_line",
-   "fieldtype": "Select",
-   "label": "Central line",
-   "options": "No\nYes"
-  },
-  {
    "fieldname": "column_break_0m9s4",
    "fieldtype": "Column Break"
   },
@@ -354,12 +351,6 @@
   {
    "fieldname": "column_break_oa5mz",
    "fieldtype": "Column Break"
-  },
-  {
-   "depends_on": "eval:in_list([\"Yes\"],doc.central_line)",
-   "fieldname": "no_of_days",
-   "fieldtype": "Int",
-   "label": "No of days"
   },
   {
    "fieldname": "section_break_fiyme",
@@ -661,14 +652,14 @@
   },
   {
    "fieldname": "column_break_k9clm",
-   "fieldtype": "Column Break",
-   "label": "CALORIES"
+   "fieldtype": "Heading",
+   "label": "Kilo calories"
   },
   {
    "default": "0",
    "fieldname": "ebm_pre_term_calories",
    "fieldtype": "Float",
-   "label": "EBM Pre-Term calories",
+   "label": "EBM Pre-Term ",
    "max_height": "40px",
    "read_only": 1
   },
@@ -676,7 +667,7 @@
    "default": "0",
    "fieldname": "ebm_term_calories",
    "fieldtype": "Float",
-   "label": "EBM Term calories",
+   "label": "EBM Term ",
    "max_height": "40px",
    "read_only": 1
   },
@@ -684,7 +675,7 @@
    "default": "0",
    "fieldname": "no_of_fortifier_sachets_calories",
    "fieldtype": "Float",
-   "label": "No of Fortifier Sachets calories",
+   "label": "No of Fortifier Sachets ",
    "max_height": "40px",
    "read_only": 1
   },
@@ -692,7 +683,7 @@
    "default": "0",
    "fieldname": "pre_term_formula_calories",
    "fieldtype": "Float",
-   "label": "Pre-Term Formula calories",
+   "label": "Pre-Term Formula ",
    "max_height": "40px",
    "read_only": 1
   },
@@ -700,7 +691,7 @@
    "default": "0",
    "fieldname": "term_formula_calories",
    "fieldtype": "Float",
-   "label": "Term Formula calories",
+   "label": "Term Formula ",
    "max_height": "40px",
    "read_only": 1
   },
@@ -708,7 +699,7 @@
    "default": "0",
    "fieldname": "neocate_calories",
    "fieldtype": "Float",
-   "label": "Neocate calories",
+   "label": "Neocate ",
    "max_height": "40px",
    "read_only": 1
   },
@@ -716,7 +707,7 @@
    "default": "0",
    "fieldname": "sagar_calories",
    "fieldtype": "Float",
-   "label": "Sagar calories",
+   "label": "Sagar ",
    "max_height": "40px",
    "read_only": 1
   },
@@ -724,7 +715,7 @@
    "default": "0",
    "fieldname": "mct_oil_calories",
    "fieldtype": "Float",
-   "label": "MCT oil calories",
+   "label": "MCT oil ",
    "max_height": "40px",
    "read_only": 1
   },
@@ -732,7 +723,7 @@
    "default": "0",
    "fieldname": "beneprotien_calories",
    "fieldtype": "Float",
-   "label": "Beneprotien calories",
+   "label": "Beneprotien ",
    "max_height": "40px",
    "read_only": 1
   },
@@ -740,20 +731,20 @@
    "default": "0",
    "fieldname": "total_calories",
    "fieldtype": "Float",
-   "label": "Total calories",
+   "label": "Total ",
    "max_height": "40px",
    "read_only": 1
   },
   {
    "fieldname": "column_break_ayqn8",
-   "fieldtype": "Column Break",
+   "fieldtype": "Heading",
    "label": "Kcal/kg/day"
   },
   {
    "default": "0",
    "fieldname": "ebm_pre_term_per_kilo",
    "fieldtype": "Float",
-   "label": "EBM Pre-Term per kilo cal",
+   "label": "EBM Pre-Term ",
    "max_height": "40px",
    "read_only": 1
   },
@@ -761,7 +752,7 @@
    "default": "0",
    "fieldname": "ebm_term_per_kilo",
    "fieldtype": "Float",
-   "label": "EBM Term per kilo",
+   "label": "EBM Term per ",
    "max_height": "40px",
    "read_only": 1
   },
@@ -769,7 +760,7 @@
    "default": "0",
    "fieldname": "no_of_fortifier_sachets_per_kilo",
    "fieldtype": "Float",
-   "label": "No of Fortifier Sachets per kilo",
+   "label": "No of Fortifier Sachets ",
    "max_height": "40px",
    "read_only": 1
   },
@@ -777,7 +768,7 @@
    "default": "0",
    "fieldname": "pre_term_formula_per_kilo",
    "fieldtype": "Float",
-   "label": "Pre-Term Formula per kilo",
+   "label": "Pre-Term Formula ",
    "max_height": "40px",
    "read_only": 1
   },
@@ -785,7 +776,7 @@
    "default": "0",
    "fieldname": "term_formula_per_kilo",
    "fieldtype": "Float",
-   "label": "Term Formula per kilo",
+   "label": "Term Formula ",
    "max_height": "40px",
    "read_only": 1
   },
@@ -793,7 +784,7 @@
    "default": "0",
    "fieldname": "neocate_per_kilo",
    "fieldtype": "Float",
-   "label": "Neocate per kilo",
+   "label": "Neocate ",
    "max_height": "40px",
    "read_only": 1
   },
@@ -801,7 +792,7 @@
    "default": "0",
    "fieldname": "sagar_per_kilo",
    "fieldtype": "Float",
-   "label": "Sagar per kilo",
+   "label": "Sagar ",
    "max_height": "40px",
    "read_only": 1
   },
@@ -809,7 +800,7 @@
    "default": "0",
    "fieldname": "mct_oil_per_kilo",
    "fieldtype": "Float",
-   "label": "MCT oil per kilo",
+   "label": "MCT oil ",
    "max_height": "40px",
    "read_only": 1
   },
@@ -817,7 +808,7 @@
    "default": "0",
    "fieldname": "beneprotien_per_kilo",
    "fieldtype": "Float",
-   "label": "Beneprotien per kilo",
+   "label": "Beneprotien ",
    "max_height": "40px",
    "read_only": 1
   },
@@ -825,20 +816,15 @@
    "default": "0",
    "fieldname": "total_per_kilo",
    "fieldtype": "Float",
-   "label": "Total per kilo",
+   "label": "Total ",
    "max_height": "40px",
    "read_only": 1
-  },
-  {
-   "fieldname": "column_break_e3521",
-   "fieldtype": "Column Break",
-   "label": "PROTEIN CONTENT"
   },
   {
    "default": "0",
    "fieldname": "ebm_pre_term_protein",
    "fieldtype": "Float",
-   "label": "EBM Pre-Term Protein content",
+   "label": "EBM Pre-Term ",
    "max_height": "40px",
    "read_only": 1
   },
@@ -846,7 +832,7 @@
    "default": "0",
    "fieldname": "ebm_term_protein_content",
    "fieldtype": "Float",
-   "label": "EBM Term Protein content",
+   "label": "EBM Term ",
    "max_height": "40px",
    "read_only": 1
   },
@@ -854,7 +840,7 @@
    "default": "0",
    "fieldname": "no_of_fortifier_sachets_protein_content",
    "fieldtype": "Float",
-   "label": "No of Fortifier Sachets Protein content",
+   "label": "No of Fortifier Sachets ",
    "max_height": "40px",
    "read_only": 1
   },
@@ -862,7 +848,7 @@
    "default": "0",
    "fieldname": "pre_term_formula_protein",
    "fieldtype": "Float",
-   "label": "Pre-Term Formula Protein content",
+   "label": "Pre-Term Formula ",
    "max_height": "40px",
    "read_only": 1
   },
@@ -870,7 +856,7 @@
    "default": "0",
    "fieldname": "term_formula_protein_content",
    "fieldtype": "Float",
-   "label": "Term Formula Protein content",
+   "label": "Term Formula ",
    "max_height": "40px",
    "read_only": 1
   },
@@ -878,7 +864,7 @@
    "default": "0",
    "fieldname": "neocate_protein_content",
    "fieldtype": "Float",
-   "label": "Neocate Protein content",
+   "label": "Neocate ",
    "max_height": "40px",
    "read_only": 1
   },
@@ -886,7 +872,7 @@
    "default": "0",
    "fieldname": "sagar_protein_content",
    "fieldtype": "Float",
-   "label": "Sagar Protein content",
+   "label": "Sagar ",
    "max_height": "40px",
    "read_only": 1
   },
@@ -894,7 +880,7 @@
    "default": "0",
    "fieldname": "mct_oil_protein_content",
    "fieldtype": "Float",
-   "label": "MCT oil Protein content",
+   "label": "MCT oil ",
    "max_height": "40px",
    "read_only": 1
   },
@@ -902,7 +888,7 @@
    "default": "0",
    "fieldname": "beneprotien_protein_content",
    "fieldtype": "Float",
-   "label": "Beneprotien Protein content",
+   "label": "Beneprotien ",
    "max_height": "40px",
    "read_only": 1
   },
@@ -910,7 +896,7 @@
    "default": "0",
    "fieldname": "total_protein_content",
    "fieldtype": "Float",
-   "label": "Total Protein content",
+   "label": "Total ",
    "max_height": "40px",
    "read_only": 1
   },
@@ -1210,17 +1196,45 @@
   {
    "fieldname": "column_break_yea8e",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "central_line_present",
+   "fieldtype": "Select",
+   "label": "Central line",
+   "options": "No\nYes"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.central_line)",
+   "fieldname": "no_of_days_of_central_line_in_situ",
+   "fieldtype": "Int",
+   "label": "No of days"
+  },
+  {
+   "fieldname": "cb_column",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "protein_content",
+   "fieldtype": "Heading",
+   "label": "Protein content"
+  },
+  {
+   "fieldname": "column_break_ugrry",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_1jile",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-05-01 22:40:53.171389",
+ "modified": "2023-05-26 22:22:20.329138",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "GI",
  "name_case": "Title Case",
- "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [],
  "sort_field": "modified",

@@ -9,16 +9,16 @@ frappe.ui.form.on('Chest drain', {
 });
 
 frappe.ui.form.on('Chest drain_child', {
-	"add_reports_add": function(frm, cdt, cdn) {
-        var row = locals[cdt][cdn];
-        if (frm.doc.daily_observations.length > 1){
-			var date = frm.doc.daily_observations[frm.doc.daily_observations.length - 2].date;
-			row.date = frappe.datetime.add_days(date,1);
-			frm.refresh_field("daily_observations");
-		}
-		else{
-			row.date = frappe.datetime.get_today();
-			frm.refresh_field("daily_observations");
-		}
-    },
-});
+		"add_reports_add": function(frm, cdt, cdn) {
+			var row = locals[cdt][cdn];
+			if (frm.doc.add_reports.length > 1){
+				var date = frm.doc.add_reports[frm.doc.add_reports.length - 2].date_done;
+				row.date_done = frappe.datetime.add_days(date,1);
+				frm.refresh_field("add_reports");
+			}
+			else{
+				row.date_done = frappe.datetime.get_today();
+				frm.refresh_field("add_reports");
+			}
+	    },
+	});

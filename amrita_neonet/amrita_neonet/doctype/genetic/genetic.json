@@ -82,7 +82,7 @@
   {
    "fieldname": "save_and_goto_navigator",
    "fieldtype": "Button",
-   "label": "Save and goto Navigator"
+   "label": "Save and go to Navigator"
   },
   {
    "fieldname": "diagnosis",
