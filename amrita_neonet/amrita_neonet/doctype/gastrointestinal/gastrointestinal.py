@@ -1,7 +1,7 @@
 # Copyright (c) 2023, ICTS and contributors
 # For license information, please see license.txt
 
-# import frappe
+import frappe
 from frappe.model.document import Document
 
 class Gastrointestinal(Document):
@@ -61,3 +61,11 @@ class Gastrointestinal(Document):
 		self.maximum_bilirubin = maximum_bilirubin
 		self.total_no_of_days_of_phototherapy = total_no_of_days_of_phototherapy
 		
+
+
+
+@frappe.whitelist()
+def getDayOfLife(baby_id):
+	baby = frappe.get_doc("Opening page",  {'baby_id': baby_id})
+	days = frappe.utils.date_diff(frappe.utils.nowdate(), baby.dob)
+	return days

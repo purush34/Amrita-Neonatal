@@ -16,8 +16,13 @@ frappe.ui.form.on('Opening page', {
 	// }
 	
 	"onload":function(frm){
-		frm.set_value("doa", frappe.datetime.get_today())
-		frm.set_value("dob", frappe.datetime.get_today())
+		if (frm.doc.doa == null) {
+			frm.set_value("doa", frappe.datetime.get_today())
+		}
+			
+		if (frm.doc.dob == null) {
+			frm.set_value("dob", frappe.datetime.get_today())
+		}
 	},
 	"gab_w":function(frm){
 		// console.log(frm.doc.gab_w)

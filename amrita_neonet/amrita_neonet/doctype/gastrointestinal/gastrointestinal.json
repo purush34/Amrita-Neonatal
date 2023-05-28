@@ -86,7 +86,7 @@
   {
    "fieldname": "average_protein_content_per_day_during_stay",
    "fieldtype": "Data",
-   "label": "Average Protein content per day during stay"
+   "label": "Average Protein content per day per kilo during stay"
   },
   {
    "fieldname": "maximum_bilirubin",
@@ -142,17 +142,17 @@
   {
    "fieldname": "average_gir_content_per_day_during_stay",
    "fieldtype": "Data",
-   "label": "Average GIR content per day during stay"
+   "label": "Average GIR content per day per kilo during stay"
   },
   {
    "fieldname": "average_lipid_content_per_day_during_stay",
    "fieldtype": "Data",
-   "label": "Average Lipid content per day during stay"
+   "label": "Average Lipid content per day per kilo during stay"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-05-11 09:35:26.691715",
+ "modified": "2023-05-28 10:06:46.046793",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Gastrointestinal",

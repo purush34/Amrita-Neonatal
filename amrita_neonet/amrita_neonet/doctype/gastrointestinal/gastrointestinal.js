@@ -257,6 +257,42 @@ frappe.ui.form.on('GI', {
 		} 
 
 	},
+	full_enteral_feeds(frm, cdt, cdn) {
+		var d = locals[cdt][cdn];
+		// console.log("full_enternal_feeds");
+		frappe.call({
+			method: "amrita_neonet.amrita_neonet.doctype.gastrointestinal.gastrointestinal.getDayOfLife",
+			args: {
+				"baby_id": frm.doc.baby_id,
+			},
+			callback: function(r) {
+				if(r.message) {
+					// d.day1 = parseInt(r.message);
+					d.day_of_life = parseInt(r.message);
+					frm.refresh_fields();
+				}
+			}
+		})
+
+	},
+	full_oral_feeds(frm, cdt, cdn) {
+		var d = locals[cdt][cdn];
+		// console.log("full_enternal_feeds");
+		frappe.call({
+			method: "amrita_neonet.amrita_neonet.doctype.gastrointestinal.gastrointestinal.getDayOfLife",
+			args: {
+				"baby_id": frm.doc.baby_id,
+			},
+			callback: function(r) {
+				if(r.message) {
+					d.day1 = parseInt(r.message);
+					// d.day_of_life = parseInt(r.message);
+					frm.refresh_fields();
+				}
+			}
+		})
+
+	}
 
 },
 );
