@@ -1,7 +1,7 @@
 # Copyright (c) 2023, ICTS and contributors
 # For license information, please see license.txt
 
-import frappe
+import frappe,json
 from frappe.model.document import Document
 
 
@@ -1037,3 +1037,29 @@ def getAllDiagnosis(baby_id):
     htmlText += nextLine
 
     return htmlText
+
+
+@frappe.whitelist()
+def getAntenatalHistory(baby_id):
+    """
+    Antenatal History
+    """
+    antenatal_history = frappe.get_doc('Antenatal-1', {'baby_id': baby_id})
+    antenatal_history2 = frappe.get_doc('Antenatal-2', {'baby_id': baby_id})
+    dict1 = antenatal_history.as_dict()
+    dict2 = antenatal_history2.as_dict()
+    final_dict = {**dict1, **dict2}
+    final_json = json.dumps(final_dict, default=str)
+    
+    return final_json
+
+
+@frappe.whitelist()
+def getAdmissionDetails(baby_id):
+    """
+    Admission Details
+    """
+    admission_details = frappe.get_doc('Admission', {'baby_id': baby_id})
+    final_json = admission_details.as_json()
+    
+    return final_json

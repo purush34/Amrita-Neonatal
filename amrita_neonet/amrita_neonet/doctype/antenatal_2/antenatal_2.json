@@ -25,6 +25,7 @@
   "column_break_0ofys",
   "steroids_no",
   "if_steriods",
+  "column_break_q8cme",
   "first_dose",
   "first_date",
   "column_break_knyhe",
@@ -817,11 +818,16 @@
    "fieldname": "calculate",
    "fieldtype": "Button",
    "label": "Calculate Total"
+  },
+  {
+   "fieldname": "column_break_q8cme",
+   "fieldtype": "Section Break",
+   "label": " "
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-05-26 22:10:33.660346",
+ "modified": "2023-06-14 22:16:26.156740",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Antenatal-2",

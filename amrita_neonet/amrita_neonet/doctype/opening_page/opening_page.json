@@ -11,6 +11,7 @@
   "new_admission",
   "section_break_gvax8",
   "baby_id",
+  "mother_mrd",
   "mother_name",
   "dob",
   "pgestation_age_at_birthp",
@@ -240,11 +241,16 @@
   {
    "fieldname": "section_break_pr5i1",
    "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "mother_mrd",
+   "fieldtype": "Data",
+   "label": "Mother MRD"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-05-11 18:39:45.762741",
+ "modified": "2023-06-20 00:02:18.961425",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Opening page",

@@ -14,9 +14,9 @@
   "death_summary",
   "section_break_kzfwt",
   "baby_id",
-  "mother_id",
-  "column_break_hpttl",
   "date_and_time_of_birth",
+  "column_break_hpttl",
+  "mother_id",
   "mother_name",
   "section_break_yjhp2",
   "date_of_admission",
@@ -45,6 +45,7 @@
   "diagnosis_throughout_the_stay",
   "antenatal_history_labour_and_delivery",
   "antenatal",
+  "admission_details",
   "investigations_done_during_stay",
   "list_of_investigations",
   "procedures_done_during_the_stay",
@@ -109,7 +110,7 @@
   },
   {
    "fieldname": "date_and_time_of_birth",
-   "fieldtype": "Data",
+   "fieldtype": "Datetime",
    "label": "Date and Time of Birth"
   },
   {
@@ -416,11 +417,16 @@
   {
    "fieldname": "section_break_lra6s",
    "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "admission_details",
+   "fieldtype": "Text Editor",
+   "label": "Admission Details"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-05-12 13:39:35.400454",
+ "modified": "2023-06-20 00:44:04.477231",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "NICU Stay Outcomes",

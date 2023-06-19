@@ -8,7 +8,10 @@
  "engine": "InnoDB",
  "field_order": [
   "baby_navigation",
+  "section_break_fabai",
   "baby_id",
+  "column_break_poaw9",
+  "mother_mrd",
   "section_break_puihb",
   "repiratory_page",
   "opening_form",
@@ -38,6 +41,8 @@
   "haematology",
   "renal",
   "genetic",
+  "dermatology",
+  "musculoskeletal",
   "section_break_gmvir",
   "investigations",
   "nurosonogram",
@@ -141,7 +146,7 @@
   {
    "fieldname": "opthalmology",
    "fieldtype": "Button",
-   "label": "Opthalmology"
+   "label": "Ophthalmology"
   },
   {
    "fieldname": "ent_and_swallow",
@@ -389,12 +394,38 @@
    "fieldname": "antenatal_2",
    "fieldtype": "Button",
    "label": "Antenatal 2"
+  },
+  {
+   "fieldname": "dermatology",
+   "fieldtype": "Button",
+   "label": "Dermatology "
+  },
+  {
+   "fieldname": "musculoskeletal",
+   "fieldtype": "Button",
+   "label": "Musculoskeletal "
+  },
+  {
+   "default": "Mother MRD",
+   "fetch_from": "baby_id.mother_mrd",
+   "fieldname": "mother_mrd",
+   "fieldtype": "Data",
+   "label": "Mother MRD",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_poaw9",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_fabai",
+   "fieldtype": "Section Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2023-05-26 21:49:37.036079",
+ "modified": "2023-06-20 00:24:09.645154",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Neonet_Navigator",

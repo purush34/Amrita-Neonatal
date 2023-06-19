@@ -204,6 +204,34 @@ frappe.ui.form.on('NICU Stay Outcomes', {
 			}
 
 		});
+		frappe.call({
+			method: "amrita_neonet.amrita_neonet.doctype.nicu_stay_outcomes.nicu_stay_outcomes.getAntenatalHistory",
+			args: {
+				"baby_id": frm.doc.baby_id,
+			},
+			callback: function(r) {
+				// console.log("Hello", r.message)
+				if(r.message) {
+					var data = JSON.parse(r.message);
+					console.log(data);
+					frm.set_value("antenatal", Object.keys(data));
+				}
+			}
+		});
+		frappe.call({
+			method: "amrita_neonet.amrita_neonet.doctype.nicu_stay_outcomes.nicu_stay_outcomes.getAdmissionDetails",
+			args: {
+				"baby_id": frm.doc.baby_id,
+			},
+			callback: function(r) {
+				// console.log("Hello", r.message)
+				if(r.message) {
+					var data = JSON.parse(r.message);
+					frm.set_value("admission_details", Object.keys(data));
+				}
+			}
+		});
+
 		var endTime = new Date().getTime();
 		console.log("Fetching data from NICU Stay Outcomes for baby: " + frm.doc.baby_id + " completed" + " in " + (endTime - startTime) + " ms");
 	
@@ -212,19 +240,27 @@ frappe.ui.form.on('NICU Stay Outcomes', {
 		var startTime = new Date(frm.doc.date_of_admission)
 		var endTime = new Date(frm.doc.time_and_date_of_discharge)
 		var diff = endTime.getTime() - startTime.getTime();
-		var days = diff / (1000 * 3600 * 24);
-		days = Math.round(days);
+		var ldays = diff / (1000 * 3600 * 24);
+		ldays = Math.round(ldays);
 		var ag = frm.doc.gestational_age_at_admission;
 		ag = ag.split(" ");
 		var gw = parseInt(ag[0]);
 		var gd = parseInt(ag[2]);
 		var gd = gw * 7 + gd;
-		days = days + gd;
+		var days = ldays + gd; 
 		// convert days to weeks
 		var weeks = days / 7;
 		weeks = Math.round(weeks);
 		var day = days % 7;
-		frm.set_value("length_of_hospital_stay", days);
+		frm.set_value("length_of_hospital_stay", ldays);
 		frm.set_value("gestational_age_at_discharge", weeks + " " + "weeks" + " " + day + " " + "days");
+	},
+	"time_and_date_of_death": function(frm) {
+		var startTime = new Date(frm.doc.date_of_admission)
+		var endTime = new Date(frm.doc.time_and_date_of_death)
+		var diff = endTime.getTime() - startTime.getTime();
+		var days = diff / (1000 * 3600 * 24);
+		days = Math.round(days);
+		frm.set_value("length_of_hospital_stay", days);
 	}
 });

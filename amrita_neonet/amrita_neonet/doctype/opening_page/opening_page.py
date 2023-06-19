@@ -66,6 +66,8 @@ class Openingpage(Document):
         'Umbiilical lines': 'umbiilical_lines',
         'Urine_Peritoneal_Pleural fluid': 'urine_peritoneal_pleural_fluid',
         'USS KUB_Abdomen': 'uss_kub_abdomen',
+        'Dermatology': 'dermatology',
+        'Musculoskeletal': 'musculoskeletal',
     }
     def before_insert(self):
         """Called before doc is saved."""
@@ -76,7 +78,7 @@ class Openingpage(Document):
                 temp.baby_id = self.baby_id
                 temp.mother_name = self.mother_name
                 temp.save()
-                print(i, "created")
+                # print(i, "created")
             except Exception as r:
                 print(f"{i} not created {r}")
         end = time.time()
