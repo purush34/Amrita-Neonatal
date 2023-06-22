@@ -1,0 +1,67 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-06-20 13:18:32.584642",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "status",
+  "incharge",
+  "remind_on",
+  "created_by",
+  "task",
+  "task_description"
+ ],
+ "fields": [
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Pending\nCompleted"
+  },
+  {
+   "depends_on": "eval:doc.status == 'Completed';",
+   "fieldname": "incharge",
+   "fieldtype": "Data",
+   "label": "Incharge (when completed)",
+   "mandatory_depends_on": "eval:doc.status == 'Completed'"
+  },
+  {
+   "fieldname": "remind_on",
+   "fieldtype": "Date",
+   "label": "Remind on "
+  },
+  {
+   "fieldname": "task",
+   "fieldtype": "Data",
+   "label": "Task",
+   "length": 50,
+   "reqd": 1
+  },
+  {
+   "fieldname": "task_description",
+   "fieldtype": "Data",
+   "label": "Task Description"
+  },
+  {
+   "fieldname": "created_by",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Created by",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-06-20 16:37:14.966482",
+ "modified_by": "Administrator",
+ "module": "Amrita Neonet",
+ "name": "child_reminders",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -8,9 +8,6 @@ from frappe.model.document import Document
 class Openingpage(Document):
     all_dict_doctypes = {
         'Admission': 'admission',
-        'Maternal details': 'maternal_details',
-        'Antenatal-1': 'antenatal-1',  
-        'Antenatal-2' : 'antenatal-2',
         # 'Antibiotics': 'antibiotics',
         'Baby Documents': 'baby_documents',
         'Blood culture': 'blood_culture',
@@ -68,10 +65,15 @@ class Openingpage(Document):
         'USS KUB_Abdomen': 'uss_kub_abdomen',
         'Dermatology': 'dermatology',
         'Musculoskeletal': 'musculoskeletal',
+        'Reminders': 'reminders',
+    }
+    motherDocs = {
+        'Maternal details': 'maternal_details',
+        'Antenatal-1': 'antenatal-1',
+        'Antenatal-2': 'antenatal-2',
     }
     def before_insert(self):
         """Called before doc is saved."""
-        start = time.time()
         for i in self.all_dict_doctypes.keys():
             try :
                 temp = frappe.new_doc(i)
@@ -81,8 +83,16 @@ class Openingpage(Document):
                 # print(i, "created")
             except Exception as r:
                 print(f"{i} not created {r}")
-        end = time.time()
-        print(end - start)
+        if not frappe.db.exists('Maternal details', {'mother_mrd': self.mother_mrd}):
+            for i in self.motherDocs.keys():
+                try :
+                    temp = frappe.new_doc(i)
+                    temp.mother_name = self.mother_name
+                    temp.mother_mrd = self.mother_mrd
+                    temp.save()
+                    # print(i, "created")
+                except Exception as r:
+                    print(f"{i} not created {r}")
 
         # ad = frappe.new_doc('Admission')
         # ad.baby_id = self.baby_id
@@ -97,6 +107,13 @@ class Openingpage(Document):
                 frappe.delete_doc(i, temp.name)
             except:
                 print(f"{i} not deleted ")
+        for i in self.motherDocs.keys():
+            try :
+                temp = frappe.get_doc(i, {'mother_mrd': self.mother_mrd})
+                frappe.delete_doc(i, temp.name)
+            except:
+                print(f"{i} not deleted ")
+
         # neogen = frappe.get_doc('Neogen', {'baby_id': self.baby_id})
         # neogen.delete()
         # open = frappe.get_doc('Opening Page', {'baby_id': self.baby_id})

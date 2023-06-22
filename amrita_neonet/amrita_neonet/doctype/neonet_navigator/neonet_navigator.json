@@ -13,6 +13,9 @@
   "column_break_poaw9",
   "mother_mrd",
   "section_break_puihb",
+  "edit_reminders",
+  "reminders",
+  "section_break_m6hdu",
   "repiratory_page",
   "opening_form",
   "admission",
@@ -420,12 +423,28 @@
   {
    "fieldname": "section_break_fabai",
    "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "reminders",
+   "fieldtype": "Text Editor",
+   "label": "Reminders",
+   "max_height": "200px",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_m6hdu",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "edit_reminders",
+   "fieldtype": "Button",
+   "label": "Edit Reminders"
   }
  ],
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2023-06-20 00:24:09.645154",
+ "modified": "2023-06-20 16:08:59.953845",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Neonet_Navigator",

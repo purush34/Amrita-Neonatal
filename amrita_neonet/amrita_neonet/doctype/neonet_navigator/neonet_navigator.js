@@ -86,7 +86,19 @@ frappe.ui.form.on('Neonet_Navigator', {
 					frm.set_value("mother_mrd", r.message);
 				}
 			}
-		})
+		});
+		frappe.call({
+			method: "amrita_neonet.amrita_neonet.doctype.neonet_navigator.neonet_navigator.getReminders",
+			args: {
+				"baby_id": frm.doc.baby_id,
+			},
+			callback: function(r) {
+				if(r.message) {
+					frm.set_value("reminders", r.message);
+					frm.refresh_field("reminders");
+				}
+			}
+		});
 	},
 	opening_form: function (frm) {
 		// console.log(frm.doc.baby_id);
@@ -97,11 +109,6 @@ frappe.ui.form.on('Neonet_Navigator', {
 		// console.log("frm.doc.baby_id", frm.doc.baby_id);
 		if(verifyID(frm)) return;
 		frappe.set_route("Form", "Admission", frm.doc.baby_id)
-	},
-	maternal: function (frm) {
-		// console.log(frm.doc.baby_id);
-        if(verifyID(frm)) return;
-		frappe.set_route("Form", "Maternal And Antenatal Details", frm.doc.baby_id)
 	},
 	respiratory: function (frm) {
 		// console.log(frm.doc.baby_id);
@@ -346,17 +353,30 @@ frappe.ui.form.on('Neonet_Navigator', {
 	maternal: function (frm) {
 		// console.log(frm.doc.baby_id);
         if(verifyID(frm)) return;
-		frappe.set_route("Form", "Maternal details", frm.doc.baby_id)
+		if(frm.doc.mother_mrd.trim() == "MOTHER MRD NOT FOUND") {
+			frappe.msgprint("MOTHER MRD NOT FOUND")
+			return;
+		}
+		frappe.set_route("Form", "Maternal details", frm.doc.mother_mrd)
 	},
 	antenatal_1: function (frm) {
 		// console.log(frm.doc.baby_id);
         if(verifyID(frm)) return;
-		frappe.set_route("Form", "Antenatal-1", frm.doc.baby_id)
+		// console.log(frm.doc.mother_mrd)
+		if(frm.doc.mother_mrd.trim() == "MOTHER MRD NOT FOUND") {
+			frappe.msgprint("MOTHER MRD NOT FOUND")
+			return;
+		}
+		frappe.set_route("Form", "Antenatal-1", frm.doc.mother_mrd)
 	},
 	antenatal_2: function (frm) {
 		// console.log(frm.doc.baby_id);
         if(verifyID(frm)) return;
-		frappe.set_route("Form", "Antenatal-2", frm.doc.baby_id)
+		if(frm.doc.mother_mrd.trim() == "MOTHER MRD NOT FOUND") {
+			frappe.msgprint("MOTHER MRD NOT FOUND")
+			return;
+		}
+		frappe.set_route("Form", "Antenatal-2", frm.doc.mother_mrd)
 	},
 	discharge_examination: function (frm) {
 		// console.log(frm.doc.baby_id);
@@ -371,12 +391,16 @@ frappe.ui.form.on('Neonet_Navigator', {
 	dermatology: function (frm) {
 		// console.log(frm.doc.baby_id);
         if(verifyID(frm)) return;
-		frappe.set_route("Form", "Dermotology", frm.doc.baby_id)
+		frappe.set_route("Form", "Dermatology", frm.doc.baby_id)
 	},
 	musculoskeletal: function (frm) {
 		// console.log(frm.doc.baby_id);
         if(verifyID(frm)) return;
 		frappe.set_route("Form", "Musculoskeletal", frm.doc.baby_id)
+	},
+	edit_reminders: function (frm) {
+		if(verifyID(frm)) return;
+		frappe.set_route("Form", "Reminders", frm.doc.baby_id)
 	},
 
 	

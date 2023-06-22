@@ -1,27 +1,41 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:{baby_id} {mother_name}",
  "creation": "2023-06-17 18:29:11.183281",
  "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "musculoskeletal"
+  "musculoskeletal",
+  "baby_id",
+  "mother_name"
  ],
  "fields": [
   {
    "fieldname": "musculoskeletal",
    "fieldtype": "Heading",
    "label": "Musculoskeletal "
+  },
+  {
+   "fieldname": "baby_id",
+   "fieldtype": "Data",
+   "label": "Baby ID"
+  },
+  {
+   "fieldname": "mother_name",
+   "fieldtype": "Data",
+   "label": "Mother Name"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-06-17 18:29:11.183281",
+ "modified": "2023-06-22 19:52:13.833859",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Musculoskeletal",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

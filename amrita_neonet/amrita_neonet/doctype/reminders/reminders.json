@@ -2,21 +2,22 @@
  "actions": [],
  "allow_rename": 1,
  "autoname": "format:{baby_id} {mother_name}",
- "creation": "2023-06-17 18:28:46.189156",
+ "creation": "2023-06-20 13:03:48.506388",
  "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "dermatology",
+  "reminders",
   "baby_id",
-  "mother_name"
+  "mother_name",
+  "task_list"
  ],
  "fields": [
   {
-   "fieldname": "dermatology",
+   "fieldname": "reminders",
    "fieldtype": "Heading",
-   "label": "Dermatology "
+   "label": "Reminders"
   },
   {
    "fieldname": "baby_id",
@@ -27,14 +28,20 @@
    "fieldname": "mother_name",
    "fieldtype": "Data",
    "label": "Mother Name"
+  },
+  {
+   "fieldname": "task_list",
+   "fieldtype": "Table",
+   "label": "Task List",
+   "options": "child_reminders"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-06-22 19:52:35.119368",
+ "modified": "2023-06-20 13:41:51.082743",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
- "name": "Dermatology",
+ "name": "Reminders",
  "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [

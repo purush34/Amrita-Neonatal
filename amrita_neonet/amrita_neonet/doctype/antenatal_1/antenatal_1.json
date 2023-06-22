@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:{baby_id} {mother_name}",
+ "autoname": "format:{mother_mrd} {mother_name}",
  "creation": "2023-05-09 17:16:50.141635",
  "default_view": "List",
  "doctype": "DocType",
@@ -9,9 +9,8 @@
  "engine": "InnoDB",
  "field_order": [
   "current_pregnancy_section",
-  "baby_id",
+  "mother_mrd",
   "mother_name",
-  "mother_mid",
   "antenantal_follow_up",
   "1st_visit_to_aims",
   "section_break_jiuvc",
@@ -102,21 +101,10 @@
    "label": "Current pregnancy"
   },
   {
-   "fieldname": "baby_id",
-   "fieldtype": "Data",
-   "label": "Baby Id",
-   "read_only": 1
-  },
-  {
    "fieldname": "mother_name",
    "fieldtype": "Data",
    "label": "Mother Name",
    "read_only": 1
-  },
-  {
-   "fieldname": "mother_mid",
-   "fieldtype": "Data",
-   "label": "Mother MRD"
   },
   {
    "fieldname": "antenantal_follow_up",
@@ -552,11 +540,16 @@
   {
    "fieldname": "last_text",
    "fieldtype": "Small Text"
+  },
+  {
+   "fieldname": "mother_mrd",
+   "fieldtype": "Data",
+   "label": "Mother MRD"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-05-26 22:11:59.967437",
+ "modified": "2023-06-20 21:12:07.395220",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Antenatal-1",

@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:{baby_id} {mother_name}",
+ "autoname": "format:{mother_mrd} {mother_name}",
  "creation": "2023-04-11 00:52:42.265868",
  "default_view": "List",
  "doctype": "DocType",
@@ -10,8 +10,7 @@
  "field_order": [
   "demographic_information_section",
   "mother_name",
-  "mother_mid",
-  "baby_id",
+  "mother_mrd",
   "ddob",
   "age",
   "age_now",
@@ -100,13 +99,6 @@
    "fieldname": "demographic_information_section",
    "fieldtype": "Tab Break",
    "label": "Demographic Information"
-  },
-  {
-   "fieldname": "baby_id",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Baby ID",
-   "length": 50
   },
   {
    "fieldname": "ddob",
@@ -565,11 +557,6 @@
    "width": "10"
   },
   {
-   "fieldname": "mother_mid",
-   "fieldtype": "Data",
-   "label": "Mother MRD"
-  },
-  {
    "fieldname": "age",
    "fieldtype": "Int",
    "label": "Age",
@@ -583,11 +570,16 @@
   {
    "fieldname": "section_break_lggn8",
    "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "mother_mrd",
+   "fieldtype": "Data",
+   "label": "Mother MRD"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-05-25 05:05:39.377992",
+ "modified": "2023-06-22 18:29:46.477646",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Maternal details",
