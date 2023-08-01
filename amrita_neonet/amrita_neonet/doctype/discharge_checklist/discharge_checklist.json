@@ -29,6 +29,9 @@
   "neurosurgery_team",
   "column_break_pocnw",
   "opthalmology_team",
+  "column_break_luiaj",
+  "other",
+  "please_specify",
   "section_break_nx4tv",
   "oxygen_requirement",
   "column_break_prlyx",
@@ -64,6 +67,7 @@
   "neurosurgery",
   "ent",
   "swallow_team",
+  "others",
   "section_break_i5k6t",
   "discharge_examination_done",
   "review_of_medications_at_discharge"
@@ -397,11 +401,32 @@
    "fieldname": "mother_name",
    "fieldtype": "Data",
    "label": "Mother Name"
+  },
+  {
+   "fieldname": "column_break_luiaj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "other",
+   "fieldtype": "Check",
+   "label": "Other"
+  },
+  {
+   "depends_on": "eval:doc.other==1",
+   "fieldname": "please_specify",
+   "fieldtype": "Data",
+   "label": "Please Specify:"
+  },
+  {
+   "fieldname": "others",
+   "fieldtype": "Data",
+   "label": "Others"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-04-10 12:20:04.318797",
+ "modified": "2023-07-31 20:01:22.623280",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Discharge checklist",

@@ -14,6 +14,7 @@
   "column_break_qj3sh",
   "cdh_24",
   "evnt_pnemo_pe_chylo_24",
+  "if_pneumo_24",
   "toa_24",
   "diag_24_text",
   "section_break_4zckn",
@@ -23,6 +24,7 @@
   "column_break_eglxp",
   "cdh_dis",
   "evnt_pnemo_pe_chylo_dis",
+  "if_pneumo",
   "toa_dis",
   "diag_dis_text",
   "section_break_hlrrj",
@@ -75,6 +77,20 @@
   "milrinone",
   "milrinone_iv",
   "section_break_pocyh",
+  "diuretics",
+  "column_break_ukl52",
+  "if_diuretics",
+  "column_break_kd5gz",
+  "if_lasix",
+  "column_break_lk9n4",
+  "diuretics_dose",
+  "section_break_27fgv",
+  "caffeine",
+  "column_break_zbuad",
+  "if_caffeine",
+  "column_break_u6vei",
+  "caf_dose",
+  "section_break_emzg8",
   "sedation_in_past_24_hours",
   "column_break_o3qsp",
   "if_sedation",
@@ -125,6 +141,7 @@
    "depends_on": "eval:in_list([\"Yes\"],doc.new_diag_24)",
    "fieldname": "diag_24",
    "fieldtype": "Select",
+   "label": "Type",
    "options": "Type 1 RDS\nType II RDS\nARDS\nVAP\nCongenital Pneumonia\nCPAM\nCongenital Diaphragmatic Hernia\nEventeration\nPulmonary Hypoplasia\nDelayed Perinatal Transition\nTransient Tachypnoea of Newborn\nTracheo-Oesophageal Atresia\nPneumothorax\nPleural Effusion\nChylothorax\nSequestration\nOther"
   },
   {
@@ -132,27 +149,31 @@
    "fieldtype": "Column Break"
   },
   {
-   "depends_on": "eval:in_list([\"Congenital Diaphragmatic Hernia\"],doc.diag_24)",
+   "depends_on": "eval:in_list([\"Congenital Diaphragmatic Hernia\"],doc.diag_24) && in_list([\"Yes\"],doc.new_diag_24)",
    "fieldname": "cdh_24",
    "fieldtype": "Select",
+   "label": "Select",
    "options": "Left\nRight\nBilateral"
   },
   {
-   "depends_on": "eval:in_list([\"Eventeration\",\"Pneumothorax\",\"Pleural Effusion\",\"Chylothorax\"],doc.diag_24)",
+   "depends_on": "eval:in_list([\"Eventeration\",\"Pleural Effusion\",\"Chylothorax\"],doc.diag_24) && in_list([\"Yes\"],doc.new_diag_24)",
    "fieldname": "evnt_pnemo_pe_chylo_24",
    "fieldtype": "Select",
+   "label": "Select",
    "options": "Left\nRight"
   },
   {
-   "depends_on": "eval:in_list([\"Tracheo-Oesophageal Atresia\"],doc.diag_24)",
+   "depends_on": "eval:in_list([\"Tracheo-Oesophageal Atresia\"],doc.diag_24)  && in_list([\"Yes\"],doc.new_diag_24)",
    "fieldname": "toa_24",
    "fieldtype": "Select",
+   "label": "Select",
    "options": "Type 1\nType 2\nType 3\nType 4"
   },
   {
-   "depends_on": "eval:in_list([\"VAP\",\"CPAM\",\"Other\"],doc.diag_24)",
+   "depends_on": "eval:in_list([\"VAP\",\"CPAM\",\"Other\"],doc.diag_24) && in_list([\"Yes\"],doc.new_diag_24)",
    "fieldname": "diag_24_text",
-   "fieldtype": "Data"
+   "fieldtype": "Data",
+   "label": "Other"
   },
   {
    "fieldname": "section_break_4zckn",
@@ -186,7 +207,7 @@
    "options": "Left\nRight\nBilateral"
   },
   {
-   "depends_on": "eval:in_list([\"Eventeration\",\"Pneumothorax\",\"Pleural Effusion\",\"Chylothorax\"],doc.diag_dis)",
+   "depends_on": "eval:in_list([\"Eventeration\",\"Pleural Effusion\",\"Chylothorax\"],doc.diag_dis)",
    "fieldname": "evnt_pnemo_pe_chylo_dis",
    "fieldtype": "Select",
    "options": "Left\nRight"
@@ -198,9 +219,10 @@
    "options": "Type 1\nType 2\nType 3\nType 4"
   },
   {
-   "depends_on": "eval:in_list([\"VAP\",\"CPAM\",\"Other\"],doc.diag_dis)",
+   "depends_on": "eval:in_list([\"VAP\",\"CPAM\",\"Other\"],doc.diag_dis) && in_list([\"Yes\"],doc.new_diag_dis)",
    "fieldname": "diag_dis_text",
-   "fieldtype": "Data"
+   "fieldtype": "Data",
+   "label": "Other"
   },
   {
    "fieldname": "section_break_hlrrj",
@@ -238,6 +260,7 @@
    "fieldtype": "Column Break"
   },
   {
+   "depends_on": "eval:in_list([\"Yes\"],doc.intubation)",
    "fieldname": "reason",
    "fieldtype": "Select",
    "label": "Reason",
@@ -518,9 +541,10 @@
    "label": "Fixed At"
   },
   {
-   "depends_on": "eval:in_list([\"Other\"],doc.reason)",
+   "depends_on": "eval:in_list([\"Other\"],doc.reason) && in_list([\"Yes\"],doc.intubation)",
    "fieldname": "if_other",
-   "fieldtype": "Data"
+   "fieldtype": "Data",
+   "label": "Other"
   },
   {
    "depends_on": "eval:in_list([\"Yes\"],doc.ventilated)",
@@ -670,12 +694,99 @@
    "fieldname": "o2_check",
    "fieldtype": "Check",
    "label": "O2 requirement at 36 weeks corrected gestational age"
+  },
+  {
+   "depends_on": "eval:in_list([\"Pneumothorax\"],doc.diag_24)  && in_list([\"Yes\"],doc.new_diag_24)\n",
+   "fieldname": "if_pneumo_24",
+   "fieldtype": "Select",
+   "label": "Select",
+   "options": "Left\nRight\nBilateral"
+  },
+  {
+   "depends_on": "eval:in_list([\"Pneumothorax\"],doc.diag_dis)",
+   "fieldname": "if_pneumo",
+   "fieldtype": "Select",
+   "options": "Left\nRight\nBilateral"
+  },
+  {
+   "fieldname": "diuretics",
+   "fieldtype": "Select",
+   "label": "Diuretics",
+   "options": "No\nYes"
+  },
+  {
+   "fieldname": "column_break_ukl52",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.diuretics==\"Yes\"",
+   "fieldname": "if_diuretics",
+   "fieldtype": "Select",
+   "label": "Type",
+   "options": "Lasix\nHydrochlorothiazide\nAldactone"
+  },
+  {
+   "depends_on": "eval:doc.if_diuretics==\"Lasix\" && doc.diuretics==\"Yes\"",
+   "fieldname": "column_break_kd5gz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.if_diuretics==\"Lasix\" && doc.diuretics==\"Yes\"",
+   "fieldname": "if_lasix",
+   "fieldtype": "Select",
+   "label": "Select",
+   "options": "PO\nIV\nInfusion"
+  },
+  {
+   "fieldname": "column_break_lk9n4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.diuretics==\"Yes\"",
+   "fieldname": "diuretics_dose",
+   "fieldtype": "Data",
+   "label": "Dose (Mg/kg)"
+  },
+  {
+   "fieldname": "section_break_27fgv",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "caffeine",
+   "fieldtype": "Select",
+   "label": "Caffeine",
+   "options": "No\nYes"
+  },
+  {
+   "fieldname": "column_break_zbuad",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.caffeine==\"Yes\"",
+   "fieldname": "if_caffeine",
+   "fieldtype": "Select",
+   "label": "Type",
+   "options": "IV\nPO"
+  },
+  {
+   "fieldname": "column_break_u6vei",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.caffeine==\"Yes\"",
+   "fieldname": "caf_dose",
+   "fieldtype": "Data",
+   "label": "Dose (Mg/kg)"
+  },
+  {
+   "fieldname": "section_break_emzg8",
+   "fieldtype": "Section Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-05-26 22:51:23.045974",
+ "modified": "2023-07-25 18:40:00.826418",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Respiratory_child",

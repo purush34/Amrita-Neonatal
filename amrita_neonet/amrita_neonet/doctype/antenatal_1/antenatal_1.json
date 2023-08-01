@@ -50,15 +50,31 @@
   "year_of_booster",
   "tab_scans",
   "scans",
+  "dating_scan_section",
+  "d_dos",
+  "d_ga",
+  "d_find",
   "anomaly_scan",
   "an_dos",
   "an_ga",
   "an_dopplers",
+  "section_break_jcvvs",
+  "d_u",
+  "d_n",
+  "column_break_klaae",
+  "d_ua",
+  "d_uao",
+  "column_break_totqa",
+  "d_d",
+  "d_do",
+  "section_break_gwbpe",
   "an_findings",
   "growth__scan",
   "gs_dos",
   "gs_ga",
   "gs_doplers",
+  "gs_n",
+  "gs_a",
   "gs_findings",
   "efw_growth",
   "additional_scans",
@@ -114,7 +130,7 @@
   },
   {
    "fieldname": "1st_visit_to_aims",
-   "fieldtype": "Data",
+   "fieldtype": "Date",
    "label": "1st Visit to AIMS"
   },
   {
@@ -151,6 +167,7 @@
   {
    "fieldname": "number_of_babies",
    "fieldtype": "Select",
+   "label": "No. of babies",
    "options": "Singleton\nTwins\nTriplets\nQuadruplets\nOthers"
   },
   {
@@ -296,7 +313,7 @@
   {
    "depends_on": "eval:doc.one_dose==\"Yes\" && doc.two_dose==\"Yes\"",
    "fieldname": "year_of_2nd_dose",
-   "fieldtype": "Data",
+   "fieldtype": "Date",
    "label": "Date of 2nd dose"
   },
   {
@@ -313,6 +330,7 @@
   {
    "fieldname": "scans",
    "fieldtype": "Select",
+   "label": "Scans",
    "options": "No\nYes"
   },
   {
@@ -328,14 +346,14 @@
   },
   {
    "fieldname": "an_ga",
-   "fieldtype": "Int",
-   "label": "Gestational Age"
+   "fieldtype": "Data",
+   "label": "Gestational Age (X Weeks,Y days))"
   },
   {
    "fieldname": "an_dopplers",
    "fieldtype": "Select",
    "label": "Dopplers",
-   "options": "Normal\nAbsent\nReversed"
+   "options": "Normal\nAbnormal"
   },
   {
    "fieldname": "an_findings",
@@ -362,7 +380,7 @@
    "fieldname": "gs_doplers",
    "fieldtype": "Select",
    "label": "Dopplers",
-   "options": "Normal\nAbsent\nReversed"
+   "options": "Normal\nAbnormal"
   },
   {
    "fieldname": "gs_findings",
@@ -545,11 +563,99 @@
    "fieldname": "mother_mrd",
    "fieldtype": "Data",
    "label": "Mother MRD"
+  },
+  {
+   "depends_on": "eval:doc.d_u==1 && in_list([\"Abnormal\"],doc.an_dopplers)",
+   "fieldname": "d_n",
+   "fieldtype": "Select",
+   "options": "High Resistance\nAbsent\nReversed"
+  },
+  {
+   "depends_on": "eval:doc.gs_doplers==\"Normal\"",
+   "fieldname": "gs_n",
+   "fieldtype": "Select",
+   "options": "Absent\nReversed\nHigh Resistance"
+  },
+  {
+   "depends_on": "eval:doc.gs_doplers==\"Abnormal\"",
+   "fieldname": "gs_a",
+   "fieldtype": "Select",
+   "options": "Uterine artery\nUmbilical artery\nDuctus venosus"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.scans)",
+   "fieldname": "dating_scan_section",
+   "fieldtype": "Section Break",
+   "label": "Dating Scan"
+  },
+  {
+   "fieldname": "d_dos",
+   "fieldtype": "Date",
+   "label": "Date of Scan"
+  },
+  {
+   "fieldname": "d_ga",
+   "fieldtype": "Int",
+   "label": "Gestational Age"
+  },
+  {
+   "fieldname": "d_find",
+   "fieldtype": "Text",
+   "label": "Findings"
+  },
+  {
+   "fieldname": "section_break_jcvvs",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.an_dopplers==\"Abnormal\"",
+   "fieldname": "d_u",
+   "fieldtype": "Check",
+   "label": "Uterine artery"
+  },
+  {
+   "fieldname": "column_break_klaae",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.an_dopplers==\"Abnormal\"",
+   "fieldname": "d_ua",
+   "fieldtype": "Check",
+   "label": "Umbilical artery"
+  },
+  {
+   "depends_on": "eval:doc.d_ua==1 && in_list([\"Abnormal\"],doc.an_dopplers)",
+   "fieldname": "d_uao",
+   "fieldtype": "Select",
+   "options": "High Resistance\nAbsent\nReversed"
+  },
+  {
+   "fieldname": "column_break_totqa",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.an_dopplers==\"Abnormal\"",
+   "fieldname": "d_d",
+   "fieldtype": "Check",
+   "label": "Ductus venosus"
+  },
+  {
+   "depends_on": "eval:doc.d_d==1 && in_list([\"Abnormal\"],doc.an_dopplers)",
+   "fieldname": "d_do",
+   "fieldtype": "Select",
+   "options": "High Resistance\nAbsent\nReversed"
+  },
+  {
+   "fieldname": "section_break_gwbpe",
+   "fieldtype": "Section Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-06-20 21:12:07.395220",
+ "modified": "2023-07-31 15:18:37.707337",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Antenatal-1",

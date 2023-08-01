@@ -164,7 +164,7 @@
    "fieldname": "admission_under",
    "fieldtype": "Select",
    "label": "Admission under",
-   "options": "Neonatology\nPaediatric Surgery\nNeurology\nNeurosurgery\nOphthalmology\nCardiology"
+   "options": "Neonatology\nPaediatric Surgery\nNeurology\nNeurosurgery\nOphthalmology\nCardiology\nOther Department"
   },
   {
    "fieldname": "gender",
@@ -250,7 +250,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-06-20 00:02:18.961425",
+ "modified": "2023-07-31 14:53:09.785543",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Opening page",

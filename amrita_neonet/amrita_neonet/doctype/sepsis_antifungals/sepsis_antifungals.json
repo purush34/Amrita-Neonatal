@@ -19,7 +19,7 @@
    "fieldname": "antibiotic_used",
    "fieldtype": "Select",
    "label": "Antifungal used",
-   "options": "Fluconazole\nVoriconazole\nAmphotericin Micafungin\nClotrimazole 1% (candid mouth paint)\nCandid cream"
+   "options": "Fluconazole\nVoriconazole\nAmphotericin\nMicafungin\nClotrimazole 1% (candid mouth paint)\nCandid cream"
   },
   {
    "fieldname": "type",
@@ -58,7 +58,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-06-20 13:33:55.522988",
+ "modified": "2023-07-30 11:50:56.775296",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Sepsis Antifungals",

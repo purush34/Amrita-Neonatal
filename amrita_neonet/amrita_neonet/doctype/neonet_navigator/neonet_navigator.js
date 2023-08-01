@@ -82,8 +82,19 @@ frappe.ui.form.on('Neonet_Navigator', {
 				"baby_id": frm.doc.baby_id,
 			},
 			callback: function(r) {
+				console.log(r.message[0]);
 				if(r.message) {
-					frm.set_value("mother_mrd", r.message);
+					// if (r.message != "MOTHER MRD NOT FOUND"){
+						var jsondata = JSON.parse(r.message);
+						frm.set_value("mother_mrd", jsondata["mother_mrd"]);
+						frm.set_value("date_of_birth", jsondata["dob"]);
+						frm.set_value("date_of_admission", jsondata["doa"]);
+						var dof = frappe.datetime.get_day_diff(frappe.datetime.get_today(), jsondata["dob"]);
+						frm.set_value("day_of_life", dof);
+						var g_days = parseInt(jsondata["gabw"]) * 7 + parseInt(jsondata["gabd"]);
+						dof = dof + g_days
+						frm.set_value("current_gestational_age", Math.floor(dof / 7) + " Weeks " + (dof % 7) + " Days");
+					// }
 				}
 			}
 		});
@@ -308,7 +319,7 @@ frappe.ui.form.on('Neonet_Navigator', {
 	surgical_operative_note: function (frm) {
 		// console.log(frm.doc.baby_id);
         if(verifyID(frm)) return;
-		frappe.set_route("Form", "Surgical Operative Notes", frm.doc.baby_id)
+		frappe.set_route("Form", "Surgical Operative Note", frm.doc.baby_id)
 	},
 	catheterisation: function (frm) {
 		// console.log(frm.doc.baby_id);

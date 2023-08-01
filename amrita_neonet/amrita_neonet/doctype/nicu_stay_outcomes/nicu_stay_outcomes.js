@@ -27,6 +27,18 @@ frappe.ui.form.on('NICU Stay Outcomes', {
 		*/
 		var startTime = new Date().getTime();
 		frappe.call({
+			method: "amrita_neonet.amrita_neonet.doctype.nicu_stay_outcomes.nicu_stay_outcomes.getMotherMRD",
+			args: {
+				"baby_id": frm.doc.baby_id,
+			},
+			callback: function(r) {
+				if(r.message) {
+					// console.log(r.message);
+					frm.set_value("mother_id", r.message);
+				}
+			}
+		})
+		frappe.call({
 			method: "amrita_neonet.amrita_neonet.doctype.nicu_stay_outcomes.nicu_stay_outcomes.getRespiratoryDailySummery",
 			args: {
 				"baby_id": frm.doc.baby_id,
@@ -212,9 +224,11 @@ frappe.ui.form.on('NICU Stay Outcomes', {
 			callback: function(r) {
 				// console.log("Hello", r.message)
 				if(r.message) {
-					var data = JSON.parse(r.message);
-					console.log(data);
-					frm.set_value("antenatal", Object.keys(data));
+					// console.log(r.message);
+					// var data = JSON.parse(r.message);
+					// console.log(data);
+					// frm.set_value("antenatal", Object.keys(data));
+					frm.set_value("antenatal", (r.message));
 				}
 			}
 		});

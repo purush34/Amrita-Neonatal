@@ -58,4 +58,24 @@ frappe.ui.form.on('Antenatal-2', {
 		frm.refresh_field("total_15");
 		frm.refresh_field("total_20");
 	},
+  "date_and_time": function(frm){
+    calcPROM(frm);
+  },
+  "duration_of_prom": function(frm){
+    calcPROM(frm);
+  },
 });
+
+function calcPROM(frm){
+  if (!frm.doc.date_and_time || !frm.doc.duration_of_prom){
+    return;
+  }
+  var date1 = new Date(frm.doc.date_and_time);
+  var date2 = new Date(frm.doc.duration_of_prom);
+  var hourDiff = date2 - date1; //in ms
+  // var secDiff = hourDiff / 1000; //in s
+  // var minDiff = hourDiff / 60 / 1000; //in minutes
+  var hDiff = hourDiff / 3600 / 1000 / 24; //in hours
+  frm.set_value("duration_in_days", hDiff);
+
+}

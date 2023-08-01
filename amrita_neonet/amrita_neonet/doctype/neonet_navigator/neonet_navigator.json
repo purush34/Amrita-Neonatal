@@ -8,11 +8,25 @@
  "engine": "InnoDB",
  "field_order": [
   "baby_navigation",
+  "column_break_ojtgm",
+  "column_break_k0xwa",
+  "column_break_kl3jo",
+  "column_break_nasc3",
+  "column_break_6sr1y",
+  "new_admission",
   "section_break_fabai",
   "baby_id",
   "column_break_poaw9",
   "mother_mrd",
   "section_break_puihb",
+  "date_of_birth",
+  "column_break_csh3l",
+  "date_of_admission",
+  "column_break_vcoq6",
+  "current_gestational_age",
+  "column_break_1zsoz",
+  "day_of_life",
+  "section_break_k9thm",
   "edit_reminders",
   "reminders",
   "section_break_m6hdu",
@@ -75,7 +89,7 @@
   "chest_drain",
   "peritoneal_drain",
   "surgical_operative_note",
-  "catheterisation",
+  "catheterization",
   "intubation",
   "ng_tube_insertion",
   "naso_pharyngeal_tube"
@@ -114,7 +128,7 @@
   {
    "fieldname": "daily_summery",
    "fieldtype": "Heading",
-   "label": "Daily Summery"
+   "label": "Daily Summary"
   },
   {
    "fieldname": "respiratory",
@@ -318,11 +332,6 @@
    "label": "Surgical Operative Note"
   },
   {
-   "fieldname": "catheterisation",
-   "fieldtype": "Button",
-   "label": "Catheterisation"
-  },
-  {
    "fieldname": "intubation",
    "fieldtype": "Button",
    "label": "Intubation"
@@ -439,12 +448,85 @@
    "fieldname": "edit_reminders",
    "fieldtype": "Button",
    "label": "Edit Reminders"
+  },
+  {
+   "fieldname": "column_break_ojtgm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_k0xwa",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_kl3jo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_nasc3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "new_admission",
+   "fieldtype": "Button",
+   "label": "New Admission"
+  },
+  {
+   "fieldname": "column_break_6sr1y",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "-----------",
+   "fieldname": "date_of_birth",
+   "fieldtype": "Date",
+   "label": "Date of Birth",
+   "read_only": 1
+  },
+  {
+   "default": "--------------",
+   "fieldname": "date_of_admission",
+   "fieldtype": "Date",
+   "label": "Date of Admission ",
+   "read_only": 1
+  },
+  {
+   "default": "-----------",
+   "fieldname": "current_gestational_age",
+   "fieldtype": "Data",
+   "label": "Current Gestational age",
+   "read_only": 1
+  },
+  {
+   "fieldname": "day_of_life",
+   "fieldtype": "Int",
+   "label": "Day of Life",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_csh3l",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_vcoq6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_1zsoz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_k9thm",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "catheterization",
+   "fieldtype": "Button",
+   "label": "Urinary Catheterization"
   }
  ],
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2023-06-20 16:08:59.953845",
+ "modified": "2023-07-31 14:34:13.096416",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Neonet_Navigator",

@@ -11,7 +11,8 @@
   "done_by",
   "size",
   "fixed_at",
-  "position"
+  "position",
+  "position_on_x_ray"
  ],
  "fields": [
   {
@@ -47,12 +48,17 @@
    "fieldtype": "Select",
    "label": "Position of ETT",
    "options": "Midline\nAngle of mouth"
+  },
+  {
+   "fieldname": "position_on_x_ray",
+   "fieldtype": "Small Text",
+   "label": "Position on X RAY"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-03-06 18:04:40.604625",
+ "modified": "2023-07-25 17:59:59.941474",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Intubation_child",

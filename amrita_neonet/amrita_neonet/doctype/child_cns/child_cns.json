@@ -14,7 +14,8 @@
   "new_diagnosis_past_24_hours",
   "column_break_hxj52",
   "grade",
-  "ihrg",
+  "r_grade",
+  "l_grade",
   "hydro",
   "grade_hie",
   "history_of",
@@ -25,6 +26,7 @@
   "new_diagnosis_for_discharge",
   "column_break_onuqw",
   "diag_discharge",
+  "column_break_sullj",
   "grade_dis",
   "ihd",
   "left_grade",
@@ -83,13 +85,7 @@
    "depends_on": "eval:doc.new_diagnosis_past_24_hours == \"Intraventricular Haemorrhage\" && doc.new == \"Yes\"",
    "fieldname": "grade",
    "fieldtype": "Select",
-   "options": "Right-Grade\nLeft-Grade"
-  },
-  {
-   "depends_on": "eval:doc.new_diagnosis_past_24_hours == \"Intraventricular Haemorrhage\" && doc.new == \"Yes\"",
-   "fieldname": "ihrg",
-   "fieldtype": "Select",
-   "options": "I\nII\nIII\nIV"
+   "options": "Right-Grade\nLeft-Grade\nBilateral"
   },
   {
    "depends_on": "eval:doc.new_diagnosis_past_24_hours == \"Hydrocephalous\" && doc.new == \"Yes\"",
@@ -102,7 +98,7 @@
    "fieldtype": "Column Break"
   },
   {
-   "depends_on": "eval:doc.new == \"Hypoxic Ischaemic Encephalopathy\" && doc.new_diagnosis_for_discharge == \"Yes\"",
+   "depends_on": "eval:doc.new == \"Yes\" && doc.new_diagnosis_for_discharge == \"Hypoxic Ischaemic Encephalopathy\"",
    "fieldname": "grade_hie",
    "fieldtype": "Select",
    "label": "Grade",
@@ -145,10 +141,10 @@
    "depends_on": "eval:doc.diag_discharge == \"Intraventricular Haemorrhage\" && doc.new_diagnosis_for_discharge == \"Yes\"",
    "fieldname": "grade_dis",
    "fieldtype": "Select",
-   "options": "Right-Grade\nLeft-Grade\nBi-Lateral"
+   "options": "Right-Grade\nLeft-Grade\nBilateral"
   },
   {
-   "depends_on": "eval:doc.diag_discharge == \"Intraventricular Haemorrhage\" && doc.new_diagnosis_for_discharge == \"Yes\"",
+   "depends_on": "eval:doc.diag_discharge == \"Intraventricular Haemorrhage\" && doc.new_diagnosis_for_discharge == \"Yes\" && (doc.grade_dis==\"Right-Grade\" || doc.grade_dis == \"Bilateral\")",
    "fieldname": "ihd",
    "fieldtype": "Select",
    "label": "Right Grade",
@@ -279,17 +275,35 @@
    "label": "Free Text Box for Discharge Letter"
   },
   {
-   "depends_on": "eval:doc.diag_discharge == \"Intraventricular Haemorrhage\" && doc.new_diagnosis_for_discharge == \"Yes\"",
+   "depends_on": "eval:doc.diag_discharge == \"Intraventricular Haemorrhage\" && doc.new_diagnosis_for_discharge == \"Yes\" && (doc.grade_dis==\"Left-Grade\" || doc.grade_dis == \"Bilateral\")",
    "fieldname": "left_grade",
    "fieldtype": "Select",
    "label": "Left Grade",
    "options": "I\nII\nIII\nIV"
+  },
+  {
+   "depends_on": "eval:doc.new_diagnosis_past_24_hours == \"Intraventricular Haemorrhage\" && doc.new == \"Yes\" && (doc.grade==\"Right-Grade\" || doc.grade == \"Bilateral\")",
+   "fieldname": "r_grade",
+   "fieldtype": "Select",
+   "label": "Right Grade",
+   "options": "I\nII\nIII\nIV"
+  },
+  {
+   "depends_on": "eval:doc.new_diagnosis_past_24_hours == \"Intraventricular Haemorrhage\" && doc.new == \"Yes\" && (doc.grade==\"Left-Grade\" || doc.grade==\"Bilateral\")",
+   "fieldname": "l_grade",
+   "fieldtype": "Select",
+   "label": "Left Grade",
+   "options": "I\nII\nIII\nIV"
+  },
+  {
+   "fieldname": "column_break_sullj",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-06-17 11:38:52.280094",
+ "modified": "2023-07-16 00:57:06.870571",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "child_cns",

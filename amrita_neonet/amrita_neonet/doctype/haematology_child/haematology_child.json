@@ -42,7 +42,7 @@
   "section_break_zfq6d",
   "platelets",
   "if_platelets",
-  "platelets_no",
+  "pre_transfusion_platelets",
   "section_break_87i3c",
   "ffp",
   "if_ffp_units",
@@ -206,9 +206,10 @@
    "label": "HCT"
   },
   {
-   "depends_on": "eval:in_list([\"No\"],doc.prbc)",
+   "depends_on": "eval:in_list([\"Yes\"],doc.prbc)",
    "fieldname": "prbc_no",
-   "fieldtype": "Data"
+   "fieldtype": "Data",
+   "label": "No.of units"
   },
   {
    "fieldname": "section_break_zfq6d",
@@ -225,11 +226,6 @@
    "fieldname": "if_platelets",
    "fieldtype": "Data",
    "label": "No.of Units"
-  },
-  {
-   "depends_on": "eval:in_list([\"No\"],doc.platelets)",
-   "fieldname": "platelets_no",
-   "fieldtype": "Data"
   },
   {
    "fieldname": "section_break_87i3c",
@@ -306,18 +302,24 @@
   {
    "depends_on": "eval:in_list([\"Other\"],doc.if_diag_24)",
    "fieldname": "text1",
-   "fieldtype": "Text"
+   "fieldtype": "Data"
   },
   {
-   "depends_on": "eval:in_list([\"Other\"],doc.coagulopathy_dis)",
+   "depends_on": "eval:in_list([\"Other\"],doc.if_diag_discharge)",
    "fieldname": "text2",
-   "fieldtype": "Text"
+   "fieldtype": "Data"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.platelets)",
+   "fieldname": "pre_transfusion_platelets",
+   "fieldtype": "Data",
+   "label": "Pre Transfusion"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-05-26 17:05:28.474812",
+ "modified": "2023-07-29 10:45:38.907968",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Haematology_child",

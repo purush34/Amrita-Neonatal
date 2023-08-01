@@ -52,6 +52,8 @@
   "p_familyhyst",
   "p_prev_marr",
   "maternal_medical_history_section",
+  "diabetes",
+  "diabetes_text",
   "_hypothyroidism",
   "hypothyroidism_report",
   "any_malignancises",
@@ -84,13 +86,14 @@
   "year_of_abortion",
   "year_of_miscarriage",
   "section_break_5acni",
+  "iud",
   "any_neonatal_death",
   "cardiac",
   "metabolic",
   "seizures",
   "undiagnosed",
-  "extra_text1",
   "extra_text2",
+  "extra_text1",
   "section_break_lggn8",
   "go_to_antenatal_1"
  ],
@@ -541,10 +544,12 @@
    "label": "Undiagnosed"
   },
   {
+   "depends_on": "eval:in_list([\"Yes\"],doc.prev_preg)",
    "fieldname": "extra_text1",
    "fieldtype": "Small Text"
   },
   {
+   "depends_on": "eval:in_list([\"Yes\"],doc.prev_preg)",
    "fieldname": "extra_text2",
    "fieldtype": "Small Text"
   },
@@ -575,11 +580,28 @@
    "fieldname": "mother_mrd",
    "fieldtype": "Data",
    "label": "Mother MRD"
+  },
+  {
+   "fieldname": "diabetes",
+   "fieldtype": "Select",
+   "label": "Diabetes",
+   "options": "No\nYes"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.diabetes)",
+   "fieldname": "diabetes_text",
+   "fieldtype": "Small Text"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.prev_preg)",
+   "fieldname": "iud",
+   "fieldtype": "Small Text",
+   "label": "IUD"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-06-22 18:29:46.477646",
+ "modified": "2023-07-31 09:32:00.767893",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Maternal details",

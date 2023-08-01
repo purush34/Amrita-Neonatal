@@ -23,8 +23,6 @@
   "maximum_bilirubin",
   "total_no_of_days_of_phototherapy",
   "section_break_q6t2r",
-  "new_diagnosis_for_discharge",
-  "any_surgery_for_past_24_hours",
   "section_break_iv9fr",
   "daily_observations",
   "section_break_section",
@@ -103,16 +101,6 @@
    "fieldtype": "Section Break"
   },
   {
-   "fieldname": "new_diagnosis_for_discharge",
-   "fieldtype": "Data",
-   "label": "New Diagnosis for discharge"
-  },
-  {
-   "fieldname": "any_surgery_for_past_24_hours",
-   "fieldtype": "Data",
-   "label": "Any surgery for past 24 hours "
-  },
-  {
    "fieldname": "section_break_iv9fr",
    "fieldtype": "Section Break"
   },
@@ -152,7 +140,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-05-28 10:06:46.046793",
+ "modified": "2023-07-25 18:47:41.792505",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Gastrointestinal",

@@ -7,10 +7,14 @@
  "engine": "InnoDB",
  "field_order": [
   "date_inserted",
-  "ul_right",
-  "ul_left",
-  "ll_right",
-  "ll_left"
+  "section_break_bbvki",
+  "left",
+  "column_break_5vmj5",
+  "right",
+  "section_break_icung",
+  "lower_left_limb",
+  "column_break_ju3wm",
+  "lower_right_limb"
  ],
  "fields": [
   {
@@ -21,34 +25,50 @@
    "reqd": 1
   },
   {
-   "fieldname": "ul_right",
-   "fieldtype": "Data",
-   "label": "Upper Limb Radial : Right",
-   "reqd": 1
+   "default": "0",
+   "fieldname": "left",
+   "fieldtype": "Check",
+   "label": "Upper Left Limb"
   },
   {
-   "fieldname": "ul_left",
-   "fieldtype": "Data",
-   "label": "Upper Limb Radial : Left",
-   "reqd": 1
+   "default": "0",
+   "fieldname": "right",
+   "fieldtype": "Check",
+   "label": "Upper Right Limb"
   },
   {
-   "fieldname": "ll_right",
-   "fieldtype": "Data",
-   "label": "Lower Limb Post Tibial : Right",
-   "reqd": 1
+   "fieldname": "column_break_5vmj5",
+   "fieldtype": "Column Break"
   },
   {
-   "fieldname": "ll_left",
-   "fieldtype": "Data",
-   "label": "Lower Limb Post Tibial : Left",
-   "reqd": 1
+   "fieldname": "section_break_bbvki",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_icung",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "lower_left_limb",
+   "fieldtype": "Check",
+   "label": "Lower Left Limb"
+  },
+  {
+   "fieldname": "column_break_ju3wm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "lower_right_limb",
+   "fieldtype": "Check",
+   "label": "Lower Right Limb"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-03-06 17:54:04.715738",
+ "modified": "2023-07-30 12:09:00.977132",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Peripheral Arterial line_child",

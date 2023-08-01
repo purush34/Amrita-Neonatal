@@ -9,6 +9,8 @@
   "date_of_scan",
   "gestational_age",
   "dopplers",
+  "d_normal",
+  "d_abnormal",
   "findings",
   "efw_in_grams"
  ],
@@ -27,7 +29,7 @@
    "fieldname": "dopplers",
    "fieldtype": "Select",
    "label": "Dopplers",
-   "options": "Normal\nAbsent\nReversed"
+   "options": "Normal\nAbnormal"
   },
   {
    "fieldname": "findings",
@@ -38,12 +40,24 @@
    "fieldname": "efw_in_grams",
    "fieldtype": "Data",
    "label": "EFW (in grams)"
+  },
+  {
+   "depends_on": "eval:doc.dopplers==\"Normal\"",
+   "fieldname": "d_normal",
+   "fieldtype": "Select",
+   "options": "Absent\nReversed\nHigh Resistance"
+  },
+  {
+   "depends_on": "eval:doc.dopplers==\"Abnormal\"",
+   "fieldname": "d_abnormal",
+   "fieldtype": "Select",
+   "options": "Uterine Artery\nUmbilical artery\nDuctus Venosus"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-05-09 14:24:03.052337",
+ "modified": "2023-07-15 23:26:04.108080",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "additional scans",

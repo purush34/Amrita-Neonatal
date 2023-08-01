@@ -25,12 +25,12 @@ function total_calories(frm, cdt, cdn) {
 	var protein = parseFloat(d.ebm_pre_term_protein) + parseFloat(d.ebm_term_protein_content) + parseFloat(d.no_of_fortifier_sachets_protein_content) + parseFloat(d.pre_term_formula_protein) + parseFloat(d.term_formula_protein_content) + parseFloat(d.neocate_protein_content) + parseFloat(d.sagar_protein_content) + parseFloat(d.beneprotien_protein_content);
 	
 	d.total_protein_content = (protein);
-	d.feeds_and_supplement_kcals = per_kilo;
+	d.feeds_and_supplement_kcals = calories;
 }
 function avg_total_calories(frm, cdt, cdn) {
 	var d = locals[cdt][cdn];
 	var kcal = parseFloat(d.gir_kcal) + parseFloat(d.protein_kcal) + parseFloat(d.lipid_kcal) + parseFloat(d.feeds_and_supplement_kcals);
-	d.total_kcal = (kcal);
+	d.total_kcal = (kcal) / parseFloat(d.working_weight);
 }
 frappe.ui.form.on('GI', {
 	// refresh: function(frm) {
@@ -264,6 +264,7 @@ frappe.ui.form.on('GI', {
 			method: "amrita_neonet.amrita_neonet.doctype.gastrointestinal.gastrointestinal.getDayOfLife",
 			args: {
 				"baby_id": frm.doc.baby_id,
+				"date" : d.date,
 			},
 			callback: function(r) {
 				if(r.message) {
@@ -277,11 +278,13 @@ frappe.ui.form.on('GI', {
 	},
 	full_oral_feeds(frm, cdt, cdn) {
 		var d = locals[cdt][cdn];
-		// console.log("full_enternal_feeds");
+
+		console.log("full_enternal_feeds",d.date);
 		frappe.call({
 			method: "amrita_neonet.amrita_neonet.doctype.gastrointestinal.gastrointestinal.getDayOfLife",
 			args: {
 				"baby_id": frm.doc.baby_id,
+				"date" : d.date,
 			},
 			callback: function(r) {
 				if(r.message) {

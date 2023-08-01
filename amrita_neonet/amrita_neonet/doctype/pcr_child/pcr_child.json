@@ -8,10 +8,8 @@
  "engine": "InnoDB",
  "field_order": [
   "date_done",
+  "pcr",
   "blood_fluid",
-  "csf",
-  "urine",
-  "body",
   "report"
  ],
  "fields": [
@@ -23,24 +21,10 @@
    "reqd": 1
   },
   {
+   "depends_on": "eval:doc.pcr == \"Body Fluid\"",
    "fieldname": "blood_fluid",
    "fieldtype": "Text",
-   "label": "Blood Fluid"
-  },
-  {
-   "fieldname": "csf",
-   "fieldtype": "Data",
-   "label": "CSF"
-  },
-  {
-   "fieldname": "urine",
-   "fieldtype": "Data",
-   "label": "Urine"
-  },
-  {
-   "fieldname": "body",
-   "fieldtype": "Data",
-   "label": "Body"
+   "label": "Text Box"
   },
   {
    "fieldname": "report",
@@ -48,12 +32,18 @@
    "in_list_view": 1,
    "label": "Report",
    "reqd": 1
+  },
+  {
+   "fieldname": "pcr",
+   "fieldtype": "Select",
+   "label": "PCR",
+   "options": "Blood\nUrine\nCSF\nBody Fluid"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-03-06 17:19:38.242292",
+ "modified": "2023-07-31 19:00:38.480747",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "PCR_child",

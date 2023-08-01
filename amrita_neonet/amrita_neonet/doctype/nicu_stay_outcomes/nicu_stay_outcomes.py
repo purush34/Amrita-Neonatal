@@ -712,32 +712,33 @@ def getAllDiagnosis(baby_id):
     for child in cvs.get_all_children():
         if child.discharge == "Yes":
             htmlText += str(child.date) + " CVS " + nextLine
-            if child.discharge_diag == "Cyanotic Congenital Heart Disease":
-                htmlText += "Cyanotic Congenital Heart Disease " + child.cchd_dis + nextLine
-            elif child.discharge_diag == "Acyanotci Heart Disease":
-                htmlText += "Acyanotci Heart Disease " + child.achd_dis + nextLine
-            elif child.discharge_diag == "Hypotension":
-                htmlText += "Hypotension " + nextLine
-            elif child.discharge_diag == "Persistent Pulmonary Hpertension of Newborn":
-                htmlText += "Persistent Pulmonary Hpertension of Newborn " + nextLine
-            elif child.discharge_diag == "Heart failure":
-                htmlText += "Heart failure " + nextLine
-            elif child.discharge_diag == "Hypertension":
-                htmlText += "Hypertension " + nextLine
-            elif child.discharge_diag == "Aberrant right sub-clavian artery":
-                htmlText += "Aberrant right sub-clavian artery " + nextLine
-            elif child.discharge_diag == "Vascular ring":
-                htmlText += "Vascular ring " + nextLine
-            elif child.discharge_diag == "Premature Atrial Contraction":
-                htmlText += "Premature Atrial Contraction " + nextLine
-            elif child.discharge_diag == "Premature Ventricular Contraction":
-                htmlText += "Premature Ventricular Contraction " + nextLine
-            elif child.discharge_diag == "Tachy arrythmias":
-                htmlText += "Tachy arrythmias " + child.tachy_brady_dis + nextLine
-            elif child.discharge_diag == "Brady Arrythmias":
-                htmlText += "Brady Arrythmias " + child.tachy_brady_dis + nextLine
-            elif child.discharge_diag == "Other":
-                htmlText += "Other " + child.tachy_brady_dis + nextLine
+            if child.discharge == "Yes":
+                if child.discharge_diag == "Cyanotic Congenital Heart Disease":
+                    htmlText += "Cyanotic Congenital Heart Disease " + child.cchd_dis + nextLine
+                elif child.discharge_diag == "Acyanotci Heart Disease":
+                    htmlText += "Acyanotci Heart Disease " + child.ahd_dis + nextLine
+                elif child.discharge_diag == "Hypotension":
+                    htmlText += "Hypotension " + nextLine
+                elif child.discharge_diag == "Persistent Pulmonary Hpertension of Newborn":
+                    htmlText += "Persistent Pulmonary Hpertension of Newborn " + nextLine
+                elif child.discharge_diag == "Heart failure":
+                    htmlText += "Heart failure " + nextLine
+                elif child.discharge_diag == "Hypertension":
+                    htmlText += "Hypertension " + nextLine
+                elif child.discharge_diag == "Aberrant right sub-clavian artery":
+                    htmlText += "Aberrant right sub-clavian artery " + nextLine
+                elif child.discharge_diag == "Vascular ring":
+                    htmlText += "Vascular ring " + nextLine
+                elif child.discharge_diag == "Premature Atrial Contraction":
+                    htmlText += "Premature Atrial Contraction " + nextLine
+                elif child.discharge_diag == "Premature Ventricular Contraction":
+                    htmlText += "Premature Ventricular Contraction " + nextLine
+                elif child.discharge_diag == "Tachy arrythmias":
+                    htmlText += "Tachy arrythmias " + child.tachy_brady_dis + nextLine
+                elif child.discharge_diag == "Brady Arrythmias":
+                    htmlText += "Brady Arrythmias " + child.tachy_brady_dis + nextLine
+                elif child.discharge_diag == "Other":
+                    htmlText += "Other " + child.tachy_brady_dis + nextLine
 
     htmlText += nextLine
     htmlText += nextLine
@@ -794,7 +795,7 @@ def getAllDiagnosis(baby_id):
             elif child.discharge == "Choledocal cyst":
                 htmlText += "Choledocal cyst " + nextLine
             elif child.discharge == "Other":
-                htmlText += "Other " + child.other1 + nextLine
+                htmlText += "Other " + child.text1 + nextLine
 
     htmlText += nextLine
     htmlText += nextLine
@@ -1039,19 +1040,386 @@ def getAllDiagnosis(baby_id):
     return htmlText
 
 
+"""
+name,owner,creation,modified,modified_by,docstatus,idx,mother_mrd,mother_name,antenantal_follow_up,1st_visit_to_aims,conception,icsi_iui,donors,number_of_babies,twins,triplets,others,lmp,edd_by_dates,blood_group,vdrl,hepatitis_b,hepatitis_c,any_antibodies,torch,hiv,mmr_vaccination,tt,covid_immunisations,one_dose,two_dose,booster,date_of_first_dose,year_of_2nd_dose,year_of_booster,scans,an_dos,an_ga,an_dopplers,d_n,d_a,an_findings,gs_dos,gs_ga,gs_doplers,gs_n,gs_a,gs_findings,efw_growth,by_scan,by_dates,pih,explain_pih,gdm,diet,oha,insulin,hypothyroidism,reason,select_type,antibodies,medication,hyperthyroidism,last_text,doctype,number_of_additional_scans,pre_term_labour,rupture_of_membranes,prolonged_rupture_of_membranes,date_and_time,duration_of_prom,steroids,steroids_no,if_steriods,first_dose,first_date,second_dose,second_date,no_of_courses_of_steroids,number_of_courses,gestation_age_at_which_given,use_of_magnesium_sulphate,no_magnesium_sulphate,meconium_staining_of_liquor,meconium_yes,prom,maternal_pyrexia,uti,uti_text,hvs_positive,hvs_text,prolonged_stay,foul_smelling_liquor,leaking_per_vagina,date_time_leaking,peripartum_name,peripartum_date,last_dose_given,onset_of_labour,medication_used,mode_of_delivery,if_vaginal,if_instrumentation,if_forceps,if_electivelscs,if_maternal_health,if_emlscs,if_maternal,if_fetal,if_fetal_distress,if_suboptimal,if_dopplers_concerns,if_umbilical_artery,if_umbilical_vein,anaesthesia,cried_soon_after_birth,need_for_resuscitation,stimulation,bag_and_mask,noc,intubation,age_in_min,size,fixed_at,c_comp,started_at_age_in_min,no_of_cycles,adrenaline_doses,et_1,iv,sb_1,hr_1,c_1,t_1,r_1,total_1,sb_5,hr_5,c_5,t_5,r_5,total_5,sb_10,hr_10,c_10,t_10,r_10,total_10,sb_15,hr_15,c_15,t_15,r_15,total_15,sb_20,hr_20,c_20,t_20,r_20,total_20,passive_cooling,age_in_minutes,cord_blood_gas,resuscitation
+"""
+
 @frappe.whitelist()
 def getAntenatalHistory(baby_id):
     """
     Antenatal History
     """
-    antenatal_history = frappe.get_doc('Antenatal-1', {'baby_id': baby_id})
-    antenatal_history2 = frappe.get_doc('Antenatal-2', {'baby_id': baby_id})
+    opening_page = frappe.get_doc("Opening page", {'baby_id':baby_id})
+    mother_mrd = opening_page.mother_mrd
+    antenatal_history = frappe.get_doc('Antenatal-1', {'mother_mrd': mother_mrd})
+    antenatal_history2 = frappe.get_doc(
+        'Antenatal-2', {'mother_mrd': mother_mrd})
     dict1 = antenatal_history.as_dict()
     dict2 = antenatal_history2.as_dict()
     final_dict = {**dict1, **dict2}
+    for i,j in final_dict.items():
+        final_dict[i] = str(j)
     final_json = json.dumps(final_dict, default=str)
+    htmlText = ''
+    table = '<table>'
+    tableEnd = '</table>'
+    row = '<tr>'
+    rowEnd = '</tr>'
+    col = '<td>'
+    colEnd = '</td>'
+    linebreak = '<br>'
+
+    htmlText += "Antenatal 1 Follow up :" + final_dict["antenantal_follow_up"] + linebreak
+    htmlText += "First Visit to AIMS :" + str(final_dict["1st_visit_to_aims"]) + linebreak
+    if final_dict["conception"]=="IVF":
+        htmlText += "Conception :" + final_dict["conception"] + "<br>" + final_dict["icsi_iui"] + " " + final_dict["donors"] + linebreak
+    else:
+        htmlText += "Conception :" + final_dict["conception"] + linebreak
+    htmlText += "Number of Babies :" + final_dict["number_of_babies"] + linebreak
+    htmlText += "LMP :" + str(final_dict["lmp"]) + linebreak
+    htmlText += "EDD by Dates :" + str(final_dict["edd_by_dates"]) + linebreak
+
+    htmlText += "Blood Group :" + final_dict["blood_group"] + linebreak
+    htmlText += "VDRL :" + str(final_dict["vdrl"]) + linebreak
+    htmlText += "Hepatitis B :" + str(final_dict["hepatitis_b"]) + linebreak
+    htmlText += "Hepatitis C :" + str(final_dict["hepatitis_c"]) + linebreak
+    if final_dict["any_antibodies"]:htmlText += "Any Antibodies :" + final_dict["any_antibodies"] + linebreak
+    if final_dict["torch"] :htmlText += "TORCH :" + final_dict["torch"] + linebreak
+    if final_dict["hiv"]: htmlText += "HIV :" + final_dict["hiv"] + linebreak
+    if final_dict["mmr_vaccination"]:htmlText += "MMR Vaccination :" + final_dict["mmr_vaccination"] + linebreak
+    if final_dict["tt"]:htmlText += "TT :" + final_dict["tt"] + linebreak
+    if final_dict["covid_immunisations"]=="Yes":
+        htmlText += "Covid Immunisations :" + final_dict["covid_immunisations"] +linebreak
+        if final_dict["one_dose"]=="Yes":
+            htmlText +=  final_dict["one_dose"] + ":" + str(final_dict["date_of_first_dose"])+linebreak
+        if final_dict["two_dose"]=="Yes":
+            htmlText +=  final_dict["two_dose"] + ":" + str(final_dict["year_of_2nd_dose"])+linebreak
+        if final_dict["booster"]=="Yes":
+            htmlText +=  final_dict["booster"] + ":" + str(final_dict["year_of_booster"])+linebreak
+    else:
+        htmlText += "Covid Immunisations :" + final_dict["covid_immunisations"] +linebreak
     
-    return final_json
+    htmlText += "Scans :" + final_dict["scans"] + linebreak
+    if final_dict['scans']=="Yes":
+        # htmlText += "Dating Scan :" + str(final_dict["d_dos"]) + linebreak
+        # htmlText += "GA :" + final_dict["d_ga"] + linebreak
+        # htmlText += "Findings :" + final_dict["d_findings"] + linebreak
+        htmlText += "Anaomaly Scan :" + str(final_dict["an_dos"]) + linebreak
+        htmlText += "GA :" + final_dict["an_ga"] + linebreak
+        if final_dict["an_findings"]:htmlText += "Findings :" + final_dict["an_findings"] + linebreak
+        htmlText += "Growth Scan :" + str(final_dict["gs_dos"]) + linebreak
+        htmlText += "GA :" + final_dict["gs_ga"] + linebreak
+        if final_dict["gs_doplers"]=="Normal":
+            htmlText += "Dopplers :" + final_dict["gs_doplers"] + linebreak
+            htmlText += "Dopplers type:" + final_dict["gs_n"] + linebreak
+        else:
+            htmlText += "Dopplers :" + final_dict["gs_doplers"] + linebreak
+            htmlText += "Dopplers type:" + final_dict["gs_a"] + linebreak
+        htmlText += "Findings :" + final_dict["gs_findings"] + linebreak
+        htmlText += "EFW :" + final_dict["efw_growth"] + linebreak
+        # for i in antenatal_history.get_all_children():
+
+        #     if i.doctype=="Additional Scans":
+        #         htmlText += "Additional Scans :" + str(i.dos) + linebreak
+        #         htmlText += "GA :" + i.ga + linebreak
+        #         htmlText += "Findings :" + i.findings + linebreak
+    elif final_dict['scans']=="No":
+        htmlText += "Findings :" + final_dict["an_findings"] + linebreak    
+    htmlText += "EDD : By Scan:" + str(final_dict["by_scan"]) + linebreak
+    htmlText += "EDD : By Dates:" + str(final_dict["by_dates"]) + linebreak
+
+    htmlText += "History Of:" + linebreak
+    if final_dict["pih"]=="Yes":
+        htmlText += "PIH :" + final_dict["pih"] + linebreak
+        htmlText += "Details of PIH :" + final_dict["explain_pih"] + linebreak
+    else:
+        htmlText += "PIH :" + final_dict["pih"] + linebreak
+    if final_dict["gdm"]=="Yes":
+        ##doubt : how to show checkbox data
+        htmlText += "GDM :" + final_dict["gdm"] + linebreak
+        if final_dict["diet"]==True:            
+            htmlText += "Diet :" + final_dict["diet"] + linebreak
+        if final_dict["oha"]==True:
+            htmlText += "OHA :" + final_dict["oha"] + linebreak
+        if final_dict["insulin"]==True:
+            htmlText += "Insulin :" + final_dict["insulin"] + linebreak
+    else:
+        htmlText += "GDM :" + final_dict["gdm"] + linebreak
+    if final_dict["hypothyroidism"]=="Yes":
+        htmlText += "Hypothyroidism :" + final_dict["hypothyroidism"] + linebreak
+        if final_dict["select_type"]=="Pre- pregnancy":
+            htmlText += "Pre- pregnancy :" + final_dict["medication"] + linebreak
+        elif final_dict["select_type"]=="Gestation":
+            htmlText += "Gestation :" + final_dict["medication"] + linebreak
+        elif final_dict["select_type"]=="Post- Thyroidectomy":
+            htmlText += "Post- Thyroidectomy :" + linebreak
+            htmlText += "Reason :" + final_dict["reason"] + linebreak
+            htmlText += "Anti-bodies :" + final_dict["antibodies"] + linebreak
+            htmlText += "Medication :" + final_dict["medication"] + linebreak
+    else:
+        htmlText += "Hypothyroidism :" + final_dict["hypothyroidism"] + linebreak
+    htmlText += "Hyperthyroidism :" + final_dict["hyperthyroidism"] + linebreak
+    htmlText += final_dict["last_text"] + linebreak
+
+    htmlText += "Antenatal 2 Follow up :" + final_dict["doctype"] + linebreak
+    htmlText +="Pre Term Labour :" + final_dict["pre_term_labour"] + linebreak
+    htmlText +="Rupture of Membranes :" + final_dict["rupture_of_membranes"] + linebreak
+    if final_dict["prolonged_rupture_of_membranes"]=="Yes":
+        htmlText += "Prolonged Rupture of Membranes :" + final_dict["prolonged_rupture_of_membranes"] + linebreak
+        htmlText += "Date and Time :" + str(final_dict["date_and_time"]) + linebreak
+        htmlText += "Duration of PROM :" + final_dict["duration_of_prom"] + linebreak
+        htmlText += "Duration in days :" + final_dict["duration_in_days"] + linebreak
+    else:
+        htmlText += "Prolonged Rupture of Membranes :" + final_dict["prolonged_rupture_of_membranes"] + linebreak
+    if final_dict["steroids"]=="Yes":
+        htmlText += "Steroids :" + final_dict["steroids"] + linebreak
+        htmlText += "Type : " + final_dict["if_steriods"] + linebreak
+        if final_dict["first_dose"]:
+            htmlText += "First Dose :" + str(final_dict["first_date"]) + linebreak
+        if final_dict["second_dose"]:
+            htmlText += "Second Dose :" + str(final_dict["second_date"]) + linebreak
+        if final_dict["no_of_courses_of_steroids"]=="Multiple":
+            htmlText += "Number of Corses :" + final_dict["no_of_courses_of_steroids"] + linebreak
+            htmlText += "Number of Courses :" + final_dict["number_of_courses"] + linebreak
+            htmlText += "Gestation Age at which given :" + final_dict["gestation_age_at_which_given"] + linebreak
+        elif final_dict["no_of_courses_of_steroids"]=="Single":
+            htmlText += "Number of Corses :" + final_dict["no_of_courses_of_steroids"] + linebreak
+    else:
+        htmlText += "Steroids :" + final_dict["steroids"] + linebreak
+        htmlText += "Type : " + final_dict["if_steriods"] + linebreak
+
+
+    htmlText += "Use of Magnesium Sulphate :" + final_dict["use_of_magnesium_sulphate"] + linebreak
+    if final_dict["use_of_magnesium_sulphate"]=="No":
+        htmlText += "Reason :" + final_dict["no_magnesium_sulphate"] + linebreak
+    if final_dict["meconium_staining_of_liquor"]=="Yes":
+        htmlText += "Meconium Staining of Liquor :" + final_dict["meconium_staining_of_liquor"] + linebreak
+        htmlText += "Meconium :" + final_dict["meconium_yes"] + linebreak
+    else:
+        htmlText += "Meconium Staining of Liquor :" + final_dict["meconium_staining_of_liquor"] + linebreak
+    
+    htmlText += "PROM :" + final_dict["prom"] + linebreak
+    htmlText += "Maternal Pyrexia :" + final_dict["maternal_pyrexia"] + linebreak
+    htmlText += "Prolonged Stay :" + final_dict["prolonged_stay"] + linebreak
+    htmlText += "Foul Smelling Liquor :" + final_dict["foul_smelling_liquor"] + linebreak
+    htmlText += linebreak
+    htmlText += "UTI :" + final_dict["uti"] + linebreak
+    if final_dict["uti"]:
+        htmlText += "UTI :" + final_dict["uti_text"] + linebreak
+    htmlText += "HVS :" + final_dict["hvs_positive"] + linebreak
+    if final_dict["hvs_positive"]:
+        htmlText += "HVS :" + final_dict["hvs_text"] + linebreak
+    htmlText += "Leaking per vagina :" + final_dict["leaking_per_vagina"] + linebreak
+    if final_dict["leaking_per_vagina"]:
+        htmlText += "Date and Time of leaking " + final_dict["date_time_leaking"]
+
+    htmlText += linebreak
+    htmlText += "Peripartum name: " + final_dict["peripartum_name"]+ linebreak
+    htmlText += "Peripartum date: " + final_dict["peripartum_date"] + linebreak
+    htmlText += "Last Dose given: "+ final_dict["last_dose_given"] + linebreak
+    htmlText += "Onset of labour: " + final_dict["onset_of_labour"] + linebreak
+    """
+    onset_of_labour,medication_used,mode_of_delivery,if_vaginal,if_instrumentation,if_forceps,if_electivelscs,if_maternal_health,if_emlscs,if_maternal,if_fetal,if_fetal_distress,if_suboptimal,if_dopplers_concerns,if_umbilical_artery,if_umbilical_vein,anaesthesia,cried_soon_after_birth,need_for_resuscitation,stimulation,bag_and_mask,noc,intubation,age_in_min,size,fixed_at,c_comp,started_at_age_in_min,no_of_cycles,adrenaline_doses,et_1,iv,sb_1,hr_1,c_1,t_1,r_1,total_1,sb_5,hr_5,c_5,t_5,r_5,total_5,sb_10,hr_10,c_10,t_10,r_10,total_10,sb_15,hr_15,c_15,t_15,r_15,total_15,sb_20,hr_20,c_20,t_20,r_20,total_20,passive_cooling,age_in_minutes,cord_blood_gas,resuscitation
+    """
+    if final_dict["mode_of_delivery"] == "Vaginal":
+        htmlText += "Mode of Delivery :" + final_dict["mode_of_delivery"] + linebreak
+        htmlText += "If Vaginal :" + final_dict["if_vaginal"] + linebreak
+        if final_dict["if_vaginal"] == "Instrumentation":
+            htmlText += "If Instrumentation :" + final_dict["if_instrumentation"] + linebreak
+            if final_dict["if_instrumentation"] == "Forceps":
+                htmlText += "If Forceps :" + final_dict["if_forceps"] + linebreak
+        else:
+            htmlText += "Vaginal :" + final_dict["if_vaginal"] + linebreak
+        
+    elif final_dict["mode_of_delivery"] == "Elective LSCS":
+        htmlText += "Mode of Delivery :" + final_dict["mode_of_delivery"] + linebreak
+        htmlText += "If Elective LSCS :" + final_dict["if_electivelscs"] + linebreak
+        if final_dict["if_electivelscs"] == "Previous Section" or final_dict["if_electivelscs"] == "Patient Request":
+            htmlText += "If Maternal :" + final_dict["if_maternal"] + linebreak
+        elif final_dict["if_electivelscs"]=="Maternal Health":
+            htmlText += "If Maternal Health :" + final_dict["if_maternal_health"] + linebreak
+        elif final_dict["if_electivelscs"]=="Fetal":
+            htmlText += "If Fetal Distress :" + final_dict["text_fetal"] + linebreak
+        
+    elif final_dict["mode_of_delivery"] == "Em LSCS":
+        htmlText += "Mode of Delivery :" + final_dict["mode_of_delivery"] + linebreak
+        if final_dict["if_emlscs"] == "Maternal":
+            htmlText += "If Maternal :" + final_dict["if_maternal"] + linebreak
+        elif final_dict["if_emlscs"] == "Fetal":
+            htmlText += "Fetal  :" + final_dict["if_fetal"] + linebreak
+            if final_dict["if_fetal"]=="Fetal Distress":
+                htmlText += "If Fetal Distress :" + final_dict["if_fetal_distress"] + linebreak
+            elif final_dict["if_fetal"]=="Sub-optimal CTG":
+                htmlText += "If Sub-optimal CTG :" + final_dict["if_suboptimal"] + linebreak
+            elif final_dict["if_fetal"]=="Dopplers Concerns":
+                htmlText += "If Dopplers Concerns :" + final_dict["if_dopplers_concerns"] + linebreak
+        else:
+            htmlText += "If Maternal :" + final_dict["if_emlscs"] + linebreak
+            htmlText += "Both :" + final_dict["text_f_m"] + linebreak
+    htmlText += "Anaesthesia :" + final_dict["anaesthesia"] + linebreak
+
+    htmlText += "Cried soon after birth :" + final_dict["cried_soon_after_birth"] + linebreak
+    htmlText += "Need for Resuscitation :" + final_dict["need_for_resuscitation"] + linebreak
+    if final_dict["need_for_resuscitation"]=="Yes":
+        htmlText += "Stimulation :" + final_dict["stimulation"] + linebreak
+        htmlText += "Bag and Mask :" + final_dict["bag_and_mask"] + linebreak
+        if final_dict["bag_and_mask"]=="Yes":
+            htmlText += "NOC :" + final_dict["noc"] + linebreak
+        htmlText += "Intubation :" + final_dict["intubation"] + linebreak
+        if final_dict["intubation"]=="Yes":
+            htmlText += "Age in min :" + final_dict["age_in_min"] + " " + "Size :" + final_dict["size"] + " " + "Fixed at :" + final_dict["fixed_at"] + linebreak
+        
+        htmlText += "C-Comp :" + final_dict["c_comp"] + linebreak
+        if final_dict["c_comp"]=="Yes":
+            htmlText += "Started at age in min :" + final_dict["started_at_age_in_min"] + " " + "No of cycles :" + final_dict["no_of_cycles"] + linebreak
+            htmlText += "Adrenaline Doses :" + final_dict["adrenaline_doses"] + linebreak
+            if final_dict["adrenaline_doses"]=="Yes":
+                htmlText += "ET 1 :" + final_dict["et_1"] + " " + "IV :" + final_dict["iv"] + linebreak
+    
+    colHead = '<td>'
+    colHeadEnd = '</td>'
+
+    htmlText += table
+
+    htmlText += row
+    htmlText += colHead + "Title" + colHeadEnd
+    htmlText += colHead + "Age in 1 min" + colHeadEnd
+    htmlText += colHead + "Age in 5 min" + colHeadEnd
+    htmlText += colHead + "Age in 10 min" + colHeadEnd
+    htmlText += colHead + "Age in 15 min" + colHeadEnd
+    htmlText += colHead + "Age in 20 min" + colHeadEnd
+    htmlText += rowEnd
+
+    htmlText += row
+    
+    htmlText += col + "Spontaneous breathing" + colEnd
+    htmlText += col + final_dict["sb_1"] + colEnd
+    htmlText += col + final_dict["sb_5"] + colEnd
+    htmlText += col + final_dict["sb_10"] + colEnd
+    htmlText += col + final_dict["sb_15"] + colEnd
+    htmlText += col + final_dict["sb_20"] + colEnd
+    htmlText += rowEnd
+
+    htmlText += row
+    htmlText += col + "Heart Rate" + colEnd
+    htmlText += col + final_dict["hr_1"] + colEnd
+    htmlText += col + final_dict["hr_5"] + colEnd
+    htmlText += col + final_dict["hr_10"] + colEnd
+    htmlText += col + final_dict["hr_15"] + colEnd
+    htmlText += col + final_dict["hr_20"] + colEnd
+    htmlText += rowEnd
+
+    htmlText += row
+    htmlText += col + "Colour" + colEnd
+    htmlText += col + final_dict["c_1"] + colEnd
+    htmlText += col + final_dict["c_5"] + colEnd
+    htmlText += col + final_dict["c_10"] + colEnd
+    htmlText += col + final_dict["c_15"] + colEnd
+    htmlText += col + final_dict["c_20"] + colEnd
+    htmlText += rowEnd
+
+    htmlText += row
+    htmlText += col + "Tone" + colEnd
+    htmlText += col + final_dict["t_1"] + colEnd
+    htmlText += col + final_dict["t_5"] + colEnd
+    htmlText += col + final_dict["t_10"] + colEnd
+    htmlText += col + final_dict["t_15"] + colEnd
+    htmlText += col + final_dict["t_20"] + colEnd
+    htmlText += rowEnd
+
+    htmlText += row
+    htmlText += col + "Respiratory Effort" + colEnd
+    htmlText += col + final_dict["r_1"] + colEnd
+    htmlText += col + final_dict["r_5"] + colEnd
+    htmlText += col + final_dict["r_10"] + colEnd
+    htmlText += col + final_dict["r_15"] + colEnd
+    htmlText += col + final_dict["r_20"] + colEnd
+    htmlText += rowEnd
+
+    htmlText += row
+    htmlText += col + "Total" + colEnd
+    htmlText += col + final_dict["total_1"] + colEnd
+    htmlText += col + final_dict["total_5"] + colEnd
+    htmlText += col + final_dict["total_10"] + colEnd
+    htmlText += col + final_dict["total_15"] + colEnd
+    htmlText += col + final_dict["total_20"] + colEnd
+    htmlText += rowEnd
+
+    htmlText += tableEnd
+    
+
+    htmlText += linebreak
+
+    
+
+
+
+    
+
+        
+        
+
+    htmlText += linebreak
+    htmlText += linebreak
+
+    htmlText += "Passive Cooling :" + final_dict["passive_cooling"] + linebreak
+    if final_dict["passive_cooling"]=="Yes":
+        htmlText += "Age in minutes :" + final_dict["age_in_minutes"] + linebreak
+    """
+    "arterial",
+    "ph_column",
+    "ph",
+    "pco2_column",
+    "pco2",
+    "hco3_column",
+    "hco3",
+    "be_column",
+    "be",
+    "lactate_column",
+    "lactate",
+    "section_break_ibq8d",
+    "venous",
+    "ph_v",
+    "ph_d",
+    "pco2_v",
+    "pco2_vd",
+    "hco3_v",
+    "hco3_vd",
+    "be_v",
+    "be_vd",
+    "lactate_v",
+    "lactate_vd",
+    "section_break_iwuvv",
+    "delayed_cord_clamping",
+    "section_break_cmr7k",
+    "resuscitation"
+    """
+    htmlText += linebreak
+    if final_dict["arterial"]:
+        htmlText += "Arterial :" + linebreak
+        htmlText += "Ph :" +  final_dict["ph"] + linebreak
+        htmlText += "PCO2 :" +  final_dict["pco2"] + linebreak
+        htmlText += "HCO3 :" +  final_dict["hco3"] + linebreak
+        htmlText += "BE :" +  final_dict["be"] + linebreak
+        htmlText += "Lactate :" +  final_dict["lactate"] + linebreak
+    htmlText += linebreak
+    if final_dict["venous"]:
+        htmlText += "Venous :" + linebreak
+        htmlText += "Ph :" +  final_dict["ph_d"] + linebreak
+        htmlText += "PCO2 :" +  final_dict["pco2_vd"] + linebreak
+        htmlText += "HCO3 :" +  final_dict["hco3_vd"] + linebreak
+        htmlText += "BE :" +  final_dict["be_vd"] + linebreak
+        htmlText += "Lactate :" +  final_dict["lactate_vd"] + linebreak
+    htmlText += linebreak
+
+    htmlText += "Delayed Cord Clamping :" + final_dict["delayed_cord_clamping"] + linebreak
+    htmlText += "Resuscitation :" + final_dict["resuscitation"] + linebreak
+
+
+
+
+    
+    return htmlText
 
 
 @frappe.whitelist()
@@ -1063,3 +1431,12 @@ def getAdmissionDetails(baby_id):
     final_json = admission_details.as_json()
     
     return final_json
+
+
+@frappe.whitelist()
+def getMotherMRD(baby_id):
+    """
+    Opening page
+    """
+    op = frappe.get_doc('Opening page', {'baby_id': baby_id})
+    return op.mother_mrd

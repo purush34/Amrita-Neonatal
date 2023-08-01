@@ -161,16 +161,24 @@
   "feeds_and_supplement_kcals",
   "total_kcal",
   "section_break_cye4p",
+  "highest_gbrs_of_the_day",
+  "lowest_gbrs_of_the_day",
+  "section_break_mljya",
   "jaundice",
-  "unconjugated_section",
+  "column_break_stb1d",
+  "conjugated",
+  "column_break_xuj83",
+  "ifconjugated",
+  "section_break_i0wdi",
   "un_text",
+  "column_break_097tq",
+  "lowest_value_last_24_hours",
   "section_break_nywnf",
   "haemolytic",
   "unh_options",
   "column_break_cqkpa",
   "non_haemolytic",
   "un_non",
-  "conjugated_section",
   "c_text",
   "column_break_yea8e",
   "c_options",
@@ -218,10 +226,12 @@
    "fieldtype": "Column Break"
   },
   {
+   "default": "1",
    "fieldname": "working_weight",
-   "fieldtype": "Int",
+   "fieldtype": "Float",
    "label": "Working Weight (KG)",
-   "non_negative": 1
+   "non_negative": 1,
+   "precision": "2"
   },
   {
    "fieldname": "new",
@@ -478,16 +488,19 @@
    "label": "ml/kg"
   },
   {
+   "depends_on": "eval:doc.enteral_feeds_in_last_24_hours==\"Yes\"",
    "fieldname": "section_break_eaezt",
    "fieldtype": "Section Break"
   },
   {
+   "depends_on": "eval:doc.enteral_feeds_in_last_24_hours==\"Yes\"",
    "fieldname": "route_of_feeds",
    "fieldtype": "Select",
    "label": "Route of feeds",
    "options": "Tube\nOral\nBoth"
   },
   {
+   "depends_on": "eval:doc.enteral_feeds_in_last_24_hours==\"Yes\"",
    "fieldname": "total_volume_of_feeds_over_past_24_hours",
    "fieldtype": "Data",
    "label": "Total volume of feeds over past 24 hours"
@@ -568,7 +581,7 @@
    "default": "0",
    "fieldname": "dextrose",
    "fieldtype": "Check",
-   "label": "10% Dextrose"
+   "label": "Dextrose"
   },
   {
    "depends_on": "eval:doc.isop_check==1",
@@ -1006,7 +1019,7 @@
    "default": "0",
    "fieldname": "isop_check",
    "fieldtype": "Check",
-   "label": "10% ISOP"
+   "label": " ISOP"
   },
   {
    "fieldname": "column_break_pzmaf",
@@ -1035,7 +1048,8 @@
   },
   {
    "fieldname": "section_break_cye4p",
-   "fieldtype": "Section Break"
+   "fieldtype": "Section Break",
+   "label": "GRBS"
   },
   {
    "fieldname": "jaundice",
@@ -1044,26 +1058,20 @@
    "options": "No\nYes"
   },
   {
-   "depends_on": "eval:doc.jaundice==\"Yes\"",
-   "fieldname": "unconjugated_section",
-   "fieldtype": "Section Break",
-   "label": "Unconjugated"
-  },
-  {
-   "depends_on": "eval:doc.jaundice==\"Yes\"",
+   "depends_on": "in_list([\"Yes\"],doc.jaundice)",
    "fieldname": "un_text",
    "fieldtype": "Data",
    "label": "Highest value last 24 hours"
   },
   {
    "default": "0",
-   "depends_on": "eval:doc.jaundice==\"Yes\"",
+   "depends_on": "in_list([\"Yes\"],doc.jaundice)",
    "fieldname": "haemolytic",
    "fieldtype": "Check",
    "label": "Haemolytic"
   },
   {
-   "depends_on": "eval:doc.haemolytic==1",
+   "depends_on": "eval:doc.haemolytic==1 && in_list([\"Yes\"],doc.jaundice)",
    "fieldname": "unh_options",
    "fieldtype": "Select",
    "options": "O-A\nO-B\nRh\nMinor antibodies\nSepsis"
@@ -1074,7 +1082,7 @@
   },
   {
    "default": "0",
-   "depends_on": "eval:doc.jaundice==\"Yes\"",
+   "depends_on": "in_list([\"Yes\"],doc.jaundice)",
    "fieldname": "non_haemolytic",
    "fieldtype": "Check",
    "label": "Non-Haemolytic"
@@ -1084,12 +1092,6 @@
    "fieldname": "un_non",
    "fieldtype": "Select",
    "options": "Physiological.\nDehydration\nLactational Failure"
-  },
-  {
-   "depends_on": "eval:doc.jaundice==\"Yes\"",
-   "fieldname": "conjugated_section",
-   "fieldtype": "Section Break",
-   "label": "Conjugated"
   },
   {
    "depends_on": "eval:doc.jaundice==\"Yes\"",
@@ -1189,7 +1191,6 @@
    "fieldtype": "Section Break"
   },
   {
-   "depends_on": "eval:doc.jaundice==\"Yes\"",
    "fieldname": "section_break_nywnf",
    "fieldtype": "Section Break"
   },
@@ -1225,12 +1226,63 @@
   {
    "fieldname": "column_break_1jile",
    "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "in_list([\"Yes\"],doc.jaundice)",
+   "fieldname": "lowest_value_last_24_hours",
+   "fieldtype": "Data",
+   "label": "Lowest value last 24 hours"
+  },
+  {
+   "fieldname": "column_break_097tq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.jaundice)",
+   "fieldname": "conjugated",
+   "fieldtype": "Select",
+   "label": "Conjugated",
+   "options": "Yes\nNo",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_stb1d",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_i0wdi",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "highest_gbrs_of_the_day",
+   "fieldtype": "Data",
+   "label": "Highest GRBS of the day"
+  },
+  {
+   "fieldname": "lowest_gbrs_of_the_day",
+   "fieldtype": "Data",
+   "label": "Lowest GBRS of the day"
+  },
+  {
+   "fieldname": "section_break_mljya",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_xuj83",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:in_list([\"Yes\"],doc.conjugated) && in_list([\"Yes\"],doc.jaundice)",
+   "fieldname": "ifconjugated",
+   "fieldtype": "Select",
+   "label": "Select",
+   "options": "TPN cholestasis\nSepsis\nBiliary Atresia\nCholedochal cyst\nUTI\nHypo/Hyper Thyroidism"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-05-26 22:22:20.329138",
+ "modified": "2023-07-31 14:14:50.467976",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "GI",

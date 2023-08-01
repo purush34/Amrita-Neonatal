@@ -25,6 +25,8 @@
   "microarray",
   "column_break_vsqoj",
   "dna_isolation",
+  "column_break_ccfok",
+  "wes",
   "section_break_cpvx6",
   "free_text_box_for_discharge_letter"
  ],
@@ -135,12 +137,22 @@
    "fieldname": "free_text_box_for_discharge_letter",
    "fieldtype": "Text",
    "label": "Free Text Box for Discharge Letter"
+  },
+  {
+   "fieldname": "column_break_ccfok",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "wes",
+   "fieldtype": "Check",
+   "label": "WES"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-04-12 23:59:56.580652",
+ "modified": "2023-07-31 14:45:08.695864",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "child_genetic",

@@ -11,6 +11,7 @@
   "done_by",
   "size_of_drain",
   "side",
+  "select_side",
   "nature_of_effusion"
  ],
  "fields": [
@@ -31,7 +32,6 @@
    "fieldname": "side",
    "fieldtype": "Check",
    "label": "Side",
-   "options": "Right\nLeft",
    "reqd": 1
   },
   {
@@ -47,12 +47,19 @@
    "in_list_view": 1,
    "label": "Date Done",
    "reqd": 1
+  },
+  {
+   "depends_on": "eval: doc.side==1",
+   "fieldname": "select_side",
+   "fieldtype": "Select",
+   "label": "Select",
+   "options": "Right\nLeft"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-04-14 06:02:43.703206",
+ "modified": "2023-07-25 17:57:03.950233",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Peritoneal drain_child",

@@ -1,7 +1,7 @@
 # Copyright (c) 2023, ICTS and contributors
 # For license information, please see license.txt
 
-import frappe
+import frappe,json
 from frappe.model.document import Document
 
 class Neonet_Navigator(Document):
@@ -12,15 +12,23 @@ class Neonet_Navigator(Document):
 	
 @frappe.whitelist()
 def getMotherMrd(baby_id):
+	dashboard = {}
 	try:
 		opening_page = frappe.get_doc("Opening page", baby_id)
 		mother_mrd = opening_page.mother_mrd
 		if mother_mrd == None:
-			return "MOTHER MRD NOT FOUND"
+			dashboard["mother_mrd"] =  "MOTHER MRD NOT FOUND"
 		maternalDetails = frappe.get_doc("Maternal details", {'mother_mrd':mother_mrd})
-		return maternalDetails.get_title()
+		dashboard["mother_mrd"] = maternalDetails.get_title()
+		dashboard["dob"] = str(opening_page.dob)
+		dashboard["doa"] = str(opening_page.doa)
+		dashboard["gabw"] = opening_page.gab_w
+		dashboard["gabd"] = opening_page.gab_d
+		jsondata = json.dumps(dashboard)
+		return jsondata
 	except:
-		return "MOTHER MRD NOT FOUND"
+		return "	"
+	
 
 """ 
 
