@@ -94,6 +94,7 @@ frappe.ui.form.on('Neonet_Navigator', {
 						var g_days = parseInt(jsondata["gabw"]) * 7 + parseInt(jsondata["gabd"]);
 						dof = dof + g_days
 						frm.set_value("current_gestational_age", Math.floor(dof / 7) + " Weeks " + (dof % 7) + " Days");
+						frm.set_value("gestational_age_at_birth", jsondata["gabw"] + " Weeks " + jsondata["gabd"] + " Days");
 					// }
 				}
 			}
@@ -413,6 +414,10 @@ frappe.ui.form.on('Neonet_Navigator', {
 		if(verifyID(frm)) return;
 		frappe.set_route("Form", "Reminders", frm.doc.baby_id)
 	},
+	new_admission: function (frm) {
+		frappe.open_in_new_tab = true;
+		frappe.set_route("Form", "Opening page")
+	}
 
 	
 });

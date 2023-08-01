@@ -215,6 +215,18 @@ def getSepsisDailySummery(baby_id):
     s = 0
     dd = 0
     for child in sepsis_child:
+        htmlText += str(child.date) + nextLine
+        if child.discharge_diag == "Yes":
+            if child.if_diag_dis == "Culture Positive sepsis":
+                htmlText += "Culture Positive sepsis: " + " Blood:"+child.blood_dis + "Urine:"+child.urine_dis  + nextLine
+            elif child.if_diag_dis == "Ventilator associated pneumonia":
+                htmlText += "Ventilator associated pneumonia: " + 'Bacteria ' + child.bacteria_dis + nextLine
+            elif child.if_diag_dis == "Meningitis":
+                htmlText += "Meningitis: " + 'Bacteria ' + child.bacteria_dis + nextLine
+            elif child.if_diag_dis == "Candida Sepsis" :
+                htmlText += "Candida Sepsis: " + " Blood: " + child.blood_dis + "Urine: " + child.urine_dis + "Bacteria: " + child.bacteria_dis + nextLine
+            else:
+                htmlText += "Diagnosis: " + child.if_diag_dis + " " + child.other_dis + nextLine
         if child.central_line_present=="Yes" and s == 0:
             start_date = child.date
             s = 1
@@ -223,8 +235,7 @@ def getSepsisDailySummery(baby_id):
             center_lines += str(start_date) + " to " + str(end_date)+" (" + dd+ " days)" + nextLine
             s = 0
         if child.free_text_box_for_discharge_letter:
-            htmlText += str(child.date) + nextLine + \
-                child.free_text_box_for_discharge_letter + nextLine + nextLine
+            htmlText +=  child.free_text_box_for_discharge_letter + nextLine + nextLine
         dd = str(child.no_of_days_of_central_line_in_situ)
     if s == 1:
         center_lines += str(start_date) + " to continuing" + nextLine
@@ -376,28 +387,28 @@ def getAllDiagnosisSummery(baby_id):
 
     htmlText = ""
     nextLine = "<br>"
-    for child in respiratory.get_all_children():
-        pass
-    for child in cvs.get_all_children():
-        pass
-    for child in gastroinstestine.get_all_children():
-        pass
-    for child in cns.get_all_children():
-        pass
-    for child in endocrine_and_metabolic.get_all_children():
-        pass
-    for child in sepsis.get_all_children():
-        pass
-    for child in ophthalmology.get_all_children():
-        pass
-    for child in ent_and_swallow.get_all_children():
-        pass
-    for child in haematology.get_all_children():
-        pass
-    for child in renal.get_all_children():
-        pass
-    for child in genetic.get_all_children():
-        pass
+    # for child in respiratory.get_all_children():
+    #     pass
+    # for child in cvs.get_all_children():
+    #     pass
+    # for child in gastroinstestine.get_all_children():
+    #     pass
+    # for child in cns.get_all_children():
+    #     pass
+    # for child in endocrine_and_metabolic.get_all_children():
+    #     pass
+    # for child in sepsis.get_all_children():
+    #     pass
+    # for child in ophthalmology.get_all_children():
+    #     pass
+    # for child in ent_and_swallow.get_all_children():
+    #     pass
+    # for child in haematology.get_all_children():
+    #     pass
+    # for child in renal.get_all_children():
+    #     pass
+    # for child in genetic.get_all_children():
+    #     pass
     if htmlText:
         return htmlText
     return "No Data"
@@ -1427,16 +1438,176 @@ def getAdmissionDetails(baby_id):
     """
     Admission Details
     """
+    """
+    Opening page
+    abdomen,activity,admission_length,admission_ofc,admission_weight,ahd,anterior_fontanelle,anus,baby_id,birth_trauma,birth_trauma_text,blood_group_incompatabilities,blood_group_incompatabilities_2,blood_group_incompatabilities_3,bp,bp_diastolic,bp_mean,brady_arrythmias,c_be,c_bloodsugar,c_hco3,c_lactate,c_pco2,c_ph,cardio_text,cchd,cdh,chd_1,chd_2,chd_3,chest,cns_text,congenital_anamoly,cooling_criteria,cooling_start_time,cooling_stop_time,creation,cry,cva,diagnosis,diagnosis_cardio,docstatus,doctype,eventeration,facies,fixed_at,genitalia,gestation_age_at_birth,grasp,hairline,heart_rate,hydrops_1,hydrops_2,hydrops_3,idx,if_transillum,intubated,invasive,left,left_ear,left_eye,left_hip,left_moro,modified,modified_by,mother_name,mouth,name,neck,non_invasive,o2,other,other_cardio,owner,palate,pleural_effusion,pneumothorax,posterior_fontanelle,reason_1,reason_2,reason_3,respiratory_text,right,right_ear,right_eye,right_hip,right_moro,saturations,scalp,sepsis_1,sepsis_2,sepsis_3,size,spine,suck,support,tachy_arrythmias,temperature,text_gastro,toa,tone,transillum,umbilical_cord,unspecified_1,unspecified_2,unspecified_3,vap
+    """
     admission_details = frappe.get_doc('Admission', {'baby_id': baby_id})
     final_json = admission_details.as_json()
+    finalDict = admission_details.as_dict()
+    for i,j in finalDict.items():
+        finalDict[i] = str(j)
     
-    return final_json
+    htmlText = ''
+    table = '<table>'
+    tableEnd = '</table>'
+    row = '<tr>'
+    rowEnd = '</tr>'
+    col = '<td>'
+    colEnd = '</td>'
+    linebreak = '<br>'
+
+    htmlText += "Saturation :" + finalDict["saturations"] + linebreak
+    htmlText += "Heart Rate :" + finalDict["heart_rate"] + linebreak
+    htmlText += "Temperature :" + finalDict["temperature"] + linebreak
+    htmlText += "BP(Systolic) :" + finalDict["bp"] + linebreak
+    htmlText += "BP Diastolic :" + finalDict["bp_diastolic"] + linebreak
+    htmlText += "BP Mean :" + finalDict["bp_mean"] + linebreak
+    htmlText += "Admission Weight :" + finalDict["admission_weight"] + linebreak
+    htmlText += "Admission OFC :" + finalDict["admission_ofc"] + linebreak
+    htmlText += "Admission Length :" + finalDict["admission_length"] + linebreak
+    htmlText += "Transillumination" + finalDict["transillum"] + linebreak
+    if finalDict["transillum"] == "Yes":
+        htmlText += "If Transillumination :" + finalDict["if_transillum"] + linebreak
+    htmlText += "Reason for Admission 1 : " + finalDict["reason_1"] + linebreak
+    """
+       "options": "Pre- term\nType I Respiratory Distress Syndrome\nType II Respiratory Distress Syndrome\nIntra Uterine Growth retardation\nBlood Group Incompatabilities\nSepsis\nMeningitis\nAbsent/ Reversed End Diastolic flow/ AREDF\nInguinal Hernia\nCongenital Diaphragmatic Hernia- CDH\nTracheo-oesphageal Atresia- TEF\nPosterior Urethral Valve- PUV\nCongenital Heart Disease- CHD\nHydrops\nHypoglycaemia\nSigns of respiratory distress\nMeningomyelocoel\nAntenatally detected anomaly\nUnspecified"
+
+    """
+    if finalDict["reason_1"] == "Congenital Heart Disease- CHD":
+        if finalDict["chd_1"] == "Other":
+            htmlText += "Other: " + finalDict["chd_other"] + linebreak
+        else:
+            htmlText += "CHD: " + finalDict["chd_1"] + linebreak
+    if finalDict["reason_1"] == "Hydrops":
+        htmlText += "Hydrops: " + finalDict["hydrops_1"] + linebreak
+    if not finalDict["reason_1"] == "Unspecified":
+        htmlText += "Reason for Admission 2 : " + finalDict["reason_2"] + linebreak
+        if finalDict["reason_2"] == "Congenital Heart Disease- CHD":
+            if finalDict["chd_2"] == "Other":
+                htmlText += "Other: " + finalDict["chd_other_2"] + linebreak
+            else:
+                htmlText += "CHD: " + finalDict["chd_2"] + linebreak
+        if finalDict["reason_2"] == "Hydrops":
+            htmlText += "Hydrops: " + finalDict["hydrops_2"] + linebreak
+        if not finalDict["reason_2"] == "Unspecified":
+            htmlText += "Reason for Admission 3 : " + finalDict["reason_3"] + linebreak
+            if finalDict["reason_3"] == "Congenital Heart Disease- CHD":
+                if finalDict["chd_3"] == "Other":
+                    htmlText += "Other: " + finalDict["chd_other_3"] + linebreak
+                else:
+                    htmlText += "CHD: " + finalDict["chd_3"] + linebreak
+            if finalDict["reason_3"] == "Hydrops":
+                htmlText += "Hydrops: " + finalDict["hydrops_3"] + linebreak
+    # htmlText += "Reason for Admission 3 : " + finalDict["reason_3"] + linebreak
+    htmlText += "Admission Examination :" + linebreak
+    htmlText += "Facies: " + finalDict["facies"] + linebreak
+    htmlText += "Anterior Fontanelle: " + finalDict["anterior_fontanelle"] + linebreak
+    htmlText += "Neck: " + finalDict["neck"] + linebreak
+    htmlText += "Umbilical Cord: " + finalDict["umbilical_cord"] + linebreak
+    htmlText += "Scalp: " + finalDict["scalp"] + linebreak
+    htmlText += "Posterior Fontanelle: " + finalDict["posterior_fontanelle"] + linebreak
+    htmlText += "Chest: " + finalDict["chest"] + linebreak
+    htmlText += "Suck :" + finalDict["suck"] + linebreak
+    htmlText += "Hairline :" + finalDict["hairline"] + linebreak
+    htmlText += "Palate :" + finalDict["palate"] + linebreak
+    htmlText += "Genitalia :" + finalDict["genitalia"] + linebreak
+    # htmlText += "Genitalia :" + finalDict["genitalia_text"] + linebreak
+    if finalDict["genitalia"]=="Male" :
+        htmlText += "Testes Descended :" + finalDict["testes_descended"] + linebreak
+    htmlText += "Grasp :" + finalDict["grasp"] + linebreak
+    htmlText += "Anus: " + finalDict["anus"] + linebreak
+    htmlText += "Mouth :" + finalDict["mouth"] + linebreak
+    htmlText += "Abdomen :" + finalDict["abdomen"] + linebreak
+    htmlText += "Spine :" + finalDict["spine"] + linebreak
+    htmlText += "Cry :" + finalDict["cry"] + linebreak
+    htmlText += "Activity :" + finalDict["activity"] + linebreak
+    htmlText += "Tone :" + finalDict["tone"] + linebreak
+    htmlText += "Right eye :" + finalDict["right_eye"] + linebreak
+    htmlText += "Left eye :" + finalDict["left_eye"] + linebreak
+    htmlText += "Right ear :" + finalDict["right_ear"] + linebreak
+    htmlText += "Left ear :" + finalDict["left_ear"] + linebreak
+    htmlText += "Right hip :" + finalDict["right_hip"] + linebreak
+    htmlText += "Left hip :" + finalDict["left_hip"] + linebreak
+    htmlText += "Right Moro :" + finalDict["right_moro"] + linebreak
+    htmlText += "Left Moro :" + finalDict["left_moro"] + linebreak
+    htmlText += "Birth Trauma :" + finalDict["birth_trauma"] + linebreak
+    if finalDict["birth_trauma"]=="Yes":
+        htmlText += "Birth Trauma :" + finalDict["birth_trauma_text"] + linebreak
+    htmlText += "Congenital Anamoly :" + finalDict["congenital_anamoly"] + linebreak
+
+    htmlText += "Respiratory :" + linebreak
+    htmlText += "Diagnostic :" + finalDict["diagnosis"] + linebreak
+    if finalDict["diagnosis"]=="Other":
+        htmlText += "Other :" + finalDict["other"] + linebreak
+    elif finalDict["diagnosis"] == "VAP":
+        htmlText += "VAP :" + finalDict["vap"] + linebreak
+    elif finalDict["diagnosis"] == "Congenital Diaphragmatic Hernia":
+        htmlText += "CDH :" + finalDict["cdh"] + linebreak
+    elif finalDict["diagnosis"] == "Eventeration":
+        htmlText += "Eventeration :" + finalDict["eventeration"] + linebreak
+    elif finalDict["diagnosis"] == "Tracheo-Oesophageal Atresia":
+        htmlText += "TOA :" + finalDict["toa"] + linebreak
+    elif finalDict["diagnosis"] == "Pneumothorax":
+        htmlText += "Pneumothorax :" + finalDict["pneumothorax"] + linebreak
+    elif finalDict["diagnosis"] == "Pleural Effusion":
+        htmlText += "Pleural Effusion :" + finalDict["pleural_effusion"] + linebreak
+    htmlText += "Intubated :" + finalDict["intubated"] + linebreak
+    if finalDict["intubated"]=="Yes":
+        htmlText += "Size :" + finalDict["size"] + linebreak
+        htmlText += "Fixed at :" + finalDict["fixed_at"] + linebreak
+    htmlText += "Support :" + finalDict["support"] + linebreak
+    if finalDict["support"] == "Non-Invasive":
+        htmlText += "Non-Invasive :" + finalDict["non_invasive"] + linebreak
+    elif finalDict["support"] == "Invasive":
+        htmlText += "Invasive :" + finalDict["invasive"] + linebreak
+    htmlText += "CVA" + finalDict["cva"] + linebreak
+    htmlText += "Ph :" + finalDict["c_ph"] + linebreak
+    htmlText += "PCO2 :" + finalDict["c_pco2"] + linebreak
+    htmlText += "HCO3 :" + finalDict["c_hco3"] + linebreak
+    htmlText += "BE :" + finalDict["c_be"] + linebreak
+    htmlText += "Lactate :" + finalDict["c_lactate"] + linebreak
+    htmlText += "Blood Sugar :" + finalDict["c_bloodsugar"] + linebreak
+    htmlText += "Text for Respiratory :" + finalDict["respiratory_text"] + linebreak
+    htmlText += "Cardiovascular" + linebreak
+    htmlText += "Diagnostic :" + finalDict["diagnosis_cardio"] + linebreak
+    if finalDict["diagnosis_cardio"]=="Other":
+        htmlText += "Other :" + finalDict["other_cardio"] + linebreak
+    elif finalDict["diagnosis_cardio"] == "Cyanotic Congenital Heart Disease":
+        htmlText += "CHD :" + finalDict["cchd"] + linebreak
+    elif finalDict["diagnosis_cardio"] == "Tachy Arrythmias":
+        htmlText += "Tachy Arrythmias :" + finalDict["tachy_arrythmias"] + linebreak
+    elif finalDict["brady_arrythmias"] == "Brady Arrythmias":
+        htmlText += "Brady Arrythmias :" + finalDict["brady_arrythmias"] + linebreak
+    htmlText += "Left Fermoral Pulse :" + finalDict["left"] + linebreak
+    htmlText +="Right Fermoral Pulse :" + finalDict["right"] + linebreak
+    htmlText += "Text for Cardio :" + finalDict["cardio_text"] + linebreak
+    htmlText += "Gastro Intestinal" + linebreak
+    htmlText += "Text :" + finalDict["gastro_test"] + linebreak
+    htmlText += "CNS" + linebreak
+    htmlText += "Text :" + finalDict["cns_text"] + linebreak
+    htmlText += "Cooling Criteria :" + finalDict["cooling_criteria"] + linebreak
+    if finalDict["cooling_criteria"]=="Yes":
+        htmlText += "Cooling Start Time :" + str(finalDict["cooling_start_time"]) + linebreak
+        htmlText += "Cooling Stop Time :" + str(finalDict["cooling_stop_time"]) + linebreak
+    if finalDict["miscellaneous_system"]:
+        htmlText += "Miscellaneous System :" + finalDict["mis_text"] + linebreak
+    htmlText += "Plans of Admission :" + linebreak
+    htmlText += "Text : " + finalDict["plans_on_admission"] +linebreak 
+
+
+    
+
+
+    
+
+
+    
+    return htmlText
 
 
 @frappe.whitelist()
 def getMotherMRD(baby_id):
-    """
-    Opening page
-    """
+    
     op = frappe.get_doc('Opening page', {'baby_id': baby_id})
     return op.mother_mrd

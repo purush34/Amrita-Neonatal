@@ -10,6 +10,7 @@
  "field_order": [
   "baby_id",
   "mother_name",
+  "section_break_ibxqh",
   "facies",
   "scalp",
   "hairline",
@@ -24,10 +25,15 @@
   "column_break_vkx22",
   "neck",
   "chest",
-  "genitalia",
   "spine",
   "activity",
+  "genitalia",
+  "column_break_9myao",
+  "umbilical_cord",
+  "suck",
+  "grasp",
   "anus",
+  "testes_descended",
   "section_break_3aw4c",
   "eyes",
   "right_eye",
@@ -37,7 +43,10 @@
   "left_ear",
   "hips_column",
   "right_hip",
-  "left_hip"
+  "left_hip",
+  "moros_column",
+  "right_moro",
+  "left_moro"
  ],
  "fields": [
   {
@@ -112,7 +121,7 @@
    "fieldname": "genitalia",
    "fieldtype": "Select",
    "label": "Genitalia",
-   "options": "Male\nFemale"
+   "options": "Male\nFemale\nIndeterminate"
   },
   {
    "fieldname": "spine",
@@ -187,11 +196,56 @@
    "fieldname": "mother_name",
    "fieldtype": "Data",
    "label": "Mother Name"
+  },
+  {
+   "depends_on": "eval:doc.genitalia==\"Male\"",
+   "fieldname": "testes_descended",
+   "fieldtype": "Select",
+   "label": "Testes Descended",
+   "options": "Right\nLeft\nBoth\nNone"
+  },
+  {
+   "fieldname": "section_break_ibxqh",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_9myao",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "umbilical_cord",
+   "fieldtype": "Data",
+   "label": "Umbilical Cord"
+  },
+  {
+   "fieldname": "suck",
+   "fieldtype": "Data",
+   "label": "Suck"
+  },
+  {
+   "fieldname": "grasp",
+   "fieldtype": "Data",
+   "label": "Grasp"
+  },
+  {
+   "fieldname": "moros_column",
+   "fieldtype": "Column Break",
+   "label": "Moro's"
+  },
+  {
+   "fieldname": "right_moro",
+   "fieldtype": "Data",
+   "label": "Right Moro"
+  },
+  {
+   "fieldname": "left_moro",
+   "fieldtype": "Data",
+   "label": "Left Moro"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-04-10 12:19:30.693766",
+ "modified": "2023-08-01 17:48:58.668525",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Discharge examination",

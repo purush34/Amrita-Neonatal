@@ -24,6 +24,7 @@ def getMotherMrd(baby_id):
 		dashboard["doa"] = str(opening_page.doa)
 		dashboard["gabw"] = opening_page.gab_w
 		dashboard["gabd"] = opening_page.gab_d
+		
 		jsondata = json.dumps(dashboard)
 		return jsondata
 	except:

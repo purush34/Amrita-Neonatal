@@ -18,6 +18,8 @@
   "saturations",
   "o2",
   "bp",
+  "bp_diastolic",
+  "bp_mean",
   "column_break_b7ni9",
   "admission_weight",
   "admission_ofc",
@@ -29,6 +31,7 @@
   "blood_group_incompatabilities",
   "sepsis_1",
   "chd_1",
+  "chd_other",
   "hydrops_1",
   "unspecified_1",
   "section_break_wrv6d",
@@ -36,6 +39,7 @@
   "blood_group_incompatabilities_2",
   "sepsis_2",
   "chd_2",
+  "chd_other_2",
   "hydrops_2",
   "unspecified_2",
   "section_break_pbzop",
@@ -43,6 +47,7 @@
   "blood_group_incompatabilities_3",
   "sepsis_3",
   "chd_3",
+  "chd_other_3",
   "hydrops_3",
   "unspecified_3",
   "admission_examination_section",
@@ -60,14 +65,15 @@
   "column_break_vkx22",
   "neck",
   "chest",
-  "genitalia",
   "spine",
   "activity",
+  "genitalia",
   "column_break_v16kv",
   "umbilical_cord",
   "suck",
   "grasp",
   "anus",
+  "testes_descended",
   "section_break_3aw4c",
   "eyes",
   "right_eye",
@@ -133,14 +139,32 @@
   "section_break_a75hg",
   "cardio_text",
   "gastro_intestinal_section",
-  "text_gastro",
+  "gastro_test",
+  "discharge",
+  "column_break_zqxla",
+  "atresia1",
+  "nec_bells",
+  "gi_text",
+  "inguinalhernia_hydrocoel1",
   "cns_section",
   "cns_text",
+  "new_diagnosis_past_24_hours",
+  "grade",
+  "ihrg",
+  "hydro",
+  "grade_hie",
+  "history_of",
+  "therapeutic_cooling",
+  "text2",
   "section_break_anccs",
   "cooling_criteria",
   "column_break_k9jwe",
   "cooling_start_time",
   "cooling_stop_time",
+  "section_break_6werp",
+  "miscellaneous_system",
+  "mis_text",
+  "plans_on_admission",
   "section_break_nivjf",
   "goto_maternal"
  ],
@@ -178,8 +202,8 @@
   },
   {
    "fieldname": "bp",
-   "fieldtype": "Data",
-   "label": "BP"
+   "fieldtype": "Float",
+   "label": "BP (Systolic)"
   },
   {
    "fieldname": "column_break_b7ni9",
@@ -220,57 +244,68 @@
   },
   {
    "fieldname": "facies",
-   "fieldtype": "Data",
-   "label": "Facies"
+   "fieldtype": "Small Text",
+   "label": "Facies",
+   "max_height": "40px"
   },
   {
    "fieldname": "scalp",
-   "fieldtype": "Data",
-   "label": "Scalp"
+   "fieldtype": "Small Text",
+   "label": "Scalp",
+   "max_height": "40px"
   },
   {
    "fieldname": "hairline",
-   "fieldtype": "Data",
-   "label": "Hairline"
+   "fieldtype": "Small Text",
+   "label": "Hairline",
+   "max_height": "40px"
   },
   {
    "fieldname": "mouth",
-   "fieldtype": "Data",
-   "label": "Mouth"
+   "fieldtype": "Small Text",
+   "label": "Mouth",
+   "max_height": "40px"
   },
   {
    "fieldname": "cry",
-   "fieldtype": "Data",
-   "label": "Cry"
+   "fieldtype": "Small Text",
+   "label": "Cry",
+   "max_height": "40px"
   },
   {
    "fieldname": "column_break_05ypn",
-   "fieldtype": "Column Break"
+   "fieldtype": "Column Break",
+   "max_height": "40px"
   },
   {
    "fieldname": "anterior_fontanelle",
-   "fieldtype": "Data",
-   "label": "Anterior Fontanelle"
+   "fieldtype": "Small Text",
+   "label": "Anterior Fontanelle",
+   "max_height": "40px"
   },
   {
    "fieldname": "posterior_fontanelle",
-   "fieldtype": "Data",
-   "label": "Posterior Fontanelle"
+   "fieldtype": "Small Text",
+   "label": "Posterior Fontanelle",
+   "max_height": "40px"
   },
   {
    "fieldname": "palate",
-   "fieldtype": "Data",
-   "label": "Palate"
+   "fieldtype": "Small Text",
+   "label": "Palate",
+   "max_height": "40px"
   },
   {
    "fieldname": "abdomen",
-   "fieldtype": "Data",
-   "label": "Abdomen"
+   "fieldtype": "Small Text",
+   "label": "Abdomen",
+   "max_height": "40px"
   },
   {
    "fieldname": "tone",
-   "fieldtype": "Data",
-   "label": "Tone"
+   "fieldtype": "Small Text",
+   "label": "Tone",
+   "max_height": "40px"
   },
   {
    "fieldname": "column_break_vkx22",
@@ -278,13 +313,15 @@
   },
   {
    "fieldname": "neck",
-   "fieldtype": "Data",
-   "label": "Neck"
+   "fieldtype": "Small Text",
+   "label": "Neck",
+   "max_height": "40px"
   },
   {
    "fieldname": "chest",
-   "fieldtype": "Data",
-   "label": "Chest"
+   "fieldtype": "Small Text",
+   "label": "Chest",
+   "max_height": "40px"
   },
   {
    "fieldname": "genitalia",
@@ -294,13 +331,15 @@
   },
   {
    "fieldname": "spine",
-   "fieldtype": "Data",
-   "label": "Spine"
+   "fieldtype": "Small Text",
+   "label": "Spine",
+   "max_height": "40px"
   },
   {
    "fieldname": "activity",
-   "fieldtype": "Data",
-   "label": "Activity"
+   "fieldtype": "Small Text",
+   "label": "Activity",
+   "max_height": "40px"
   },
   {
    "fieldname": "column_break_v16kv",
@@ -308,23 +347,27 @@
   },
   {
    "fieldname": "umbilical_cord",
-   "fieldtype": "Data",
-   "label": "Umbilical cord"
+   "fieldtype": "Small Text",
+   "label": "Umbilical cord",
+   "max_height": "40px"
   },
   {
    "fieldname": "suck",
-   "fieldtype": "Data",
-   "label": "Suck"
+   "fieldtype": "Small Text",
+   "label": "Suck",
+   "max_height": "40px"
   },
   {
    "fieldname": "grasp",
-   "fieldtype": "Data",
-   "label": "Grasp"
+   "fieldtype": "Small Text",
+   "label": "Grasp",
+   "max_height": "40px"
   },
   {
    "fieldname": "anus",
-   "fieldtype": "Data",
-   "label": "Anus"
+   "fieldtype": "Small Text",
+   "label": "Anus",
+   "max_height": "40px"
   },
   {
    "fieldname": "section_break_3aw4c",
@@ -337,13 +380,15 @@
   },
   {
    "fieldname": "right_eye",
-   "fieldtype": "Data",
-   "label": "Right Eye"
+   "fieldtype": "Small Text",
+   "label": "Right Eye",
+   "max_height": "40px"
   },
   {
    "fieldname": "left_eye",
-   "fieldtype": "Data",
-   "label": "Left Eye"
+   "fieldtype": "Small Text",
+   "label": "Left Eye",
+   "max_height": "40px"
   },
   {
    "fieldname": "column_break_hlmlp",
@@ -352,13 +397,15 @@
   },
   {
    "fieldname": "right_ear",
-   "fieldtype": "Data",
-   "label": "Right Ear"
+   "fieldtype": "Small Text",
+   "label": "Right Ear",
+   "max_height": "40px"
   },
   {
    "fieldname": "left_ear",
-   "fieldtype": "Data",
-   "label": "Left Ear"
+   "fieldtype": "Small Text",
+   "label": "Left Ear",
+   "max_height": "40px"
   },
   {
    "fieldname": "hips_column",
@@ -367,13 +414,15 @@
   },
   {
    "fieldname": "right_hip",
-   "fieldtype": "Data",
-   "label": "Right Hip"
+   "fieldtype": "Small Text",
+   "label": "Right Hip",
+   "max_height": "40px"
   },
   {
    "fieldname": "left_hip",
-   "fieldtype": "Data",
-   "label": "Left Hip"
+   "fieldtype": "Small Text",
+   "label": "Left Hip",
+   "max_height": "40px"
   },
   {
    "fieldname": "moros_column",
@@ -382,13 +431,15 @@
   },
   {
    "fieldname": "right_moro",
-   "fieldtype": "Data",
-   "label": "Right Moro"
+   "fieldtype": "Small Text",
+   "label": "Right Moro",
+   "max_height": "40px"
   },
   {
    "fieldname": "left_moro",
-   "fieldtype": "Data",
-   "label": "Left Moro"
+   "fieldtype": "Small Text",
+   "label": "Left Moro",
+   "max_height": "40px"
   },
   {
    "fieldname": "section_break_ahtyk",
@@ -415,7 +466,7 @@
    "fieldname": "diagnosis",
    "fieldtype": "Select",
    "label": "Diagnosis",
-   "options": "Type 1 RDS\nType II RDS\nARDS\nVAP\nCongenital Pneumonia\nCPAM\nCongenital Diaphragmatic Hernia\nEventeration\nPulmonary Hypoplasia\nDelayed Perinatal Transition\nTransient Tachypnoea of Newborn\nTracheo-Oesophageal Atresia\nPneumothorax\nPleural Effusion\nChylothorax\nOthers"
+   "options": "No Concerns\nType 1 RDS\nType II RDS\nARDS\nVAP\nCongenital Pneumonia\nCPAM\nCongenital Diaphragmatic Hernia\nEventeration\nPulmonary Hypoplasia\nDelayed Perinatal Transition\nTransient Tachypnoea of Newborn\nTracheo-Oesophageal Atresia\nPneumothorax\nPleural Effusion\nChylothorax\nOthers"
   },
   {
    "depends_on": "eval:in_list([\"VAP\"],doc.diagnosis)",
@@ -508,8 +559,7 @@
   },
   {
    "fieldname": "column_break_xwhjf",
-   "fieldtype": "Section Break",
-   "label": "Admission blood gas"
+   "fieldtype": "Section Break"
   },
   {
    "fieldname": "cva",
@@ -519,58 +569,58 @@
   },
   {
    "fieldname": "ph_column",
-   "fieldtype": "Column Break",
-   "label": "Ph"
+   "fieldtype": "Column Break"
   },
   {
    "columns": 6,
    "fieldname": "c_ph",
-   "fieldtype": "Data"
+   "fieldtype": "Data",
+   "label": "Ph"
   },
   {
    "fieldname": "pco2_column",
-   "fieldtype": "Column Break",
-   "label": "Pco2"
+   "fieldtype": "Column Break"
   },
   {
    "fieldname": "c_pco2",
-   "fieldtype": "Data"
+   "fieldtype": "Data",
+   "label": "Pco2"
   },
   {
    "fieldname": "hco3_column",
-   "fieldtype": "Column Break",
-   "label": "HCO3"
+   "fieldtype": "Column Break"
   },
   {
    "fieldname": "c_hco3",
-   "fieldtype": "Data"
+   "fieldtype": "Data",
+   "label": "HCO3"
   },
   {
    "fieldname": "be_column",
-   "fieldtype": "Column Break",
-   "label": "BE"
+   "fieldtype": "Column Break"
   },
   {
    "fieldname": "c_be",
-   "fieldtype": "Data"
+   "fieldtype": "Data",
+   "label": "BE"
   },
   {
    "fieldname": "lactate_column",
-   "fieldtype": "Column Break",
-   "label": "Lactate"
+   "fieldtype": "Column Break"
   },
   {
    "fieldname": "c_lactate",
-   "fieldtype": "Data"
+   "fieldtype": "Data",
+   "label": "Lactate"
   },
   {
    "fieldname": "blood_sugar_column",
-   "fieldtype": "Column Break",
-   "label": "BloodSugar"
+   "fieldtype": "Column Break"
   },
   {
    "fieldname": "c_bloodsugar",
-   "fieldtype": "Data"
+   "fieldtype": "Data",
+   "label": "BloodSugar"
   },
   {
    "fieldname": "section_break_x6ozq",
@@ -590,7 +640,7 @@
    "fieldname": "diagnosis_cardio",
    "fieldtype": "Select",
    "label": "Diagnosis",
-   "options": "Cyanotic Congenital Heart Disease\nAcyanotci Heart Disease\nHypotension\nPersistent Pulmonary Hpertension of Newborn\nHeart failure\nHypertension\nAberrant right sub-clavian artery\nVascular ring\nPremature Atrial Contraction\nPremature Ventricular Contraction\nTachy arrythmias\nBrady Arrythmias\nOthers"
+   "options": "No Concerns\nCyanotic Congenital Heart Disease\nAcyanotci Heart Disease\nHypotension\nPersistent Pulmonary Hpertension of Newborn\nHeart failure\nHypertension\nAberrant right sub-clavian artery\nVascular ring\nPremature Atrial Contraction\nPremature Ventricular Contraction\nTachy arrythmias\nBrady Arrythmias\nOthers"
   },
   {
    "depends_on": "eval:in_list([\"Cyanotic Congenital Heart Disease\"],doc.diagnosis_cardio)",
@@ -650,19 +700,13 @@
    "label": "Gastro Intestinal"
   },
   {
-   "fieldname": "text_gastro",
-   "fieldtype": "Text",
-   "label": "Diagnosis"
-  },
-  {
    "fieldname": "cns_section",
    "fieldtype": "Section Break",
    "label": "CNS"
   },
   {
    "fieldname": "cns_text",
-   "fieldtype": "Text",
-   "label": "CNS"
+   "fieldtype": "Text"
   },
   {
    "fieldname": "section_break_anccs",
@@ -739,7 +783,7 @@
    "fieldname": "chd_1",
    "fieldtype": "Select",
    "label": "Congenital Heart Disease CHD",
-   "options": "ASD\nVSD\nAVSD\nTGA\nTetrology of Fallots\nDORV"
+   "options": "ASD\nVSD\nAVSD\nTGA\nTetrology of Fallots\nDORV\nOther"
   },
   {
    "depends_on": "eval:in_list([\"Hydrops\"],doc.reason_1)",
@@ -784,7 +828,7 @@
    "fieldname": "chd_2",
    "fieldtype": "Select",
    "label": "Congenital Heart Disease CHD",
-   "options": "ASD\nVSD\nAVSD\nTGA\nTetrology of Fallots\nDORV"
+   "options": "ASD\nVSD\nAVSD\nTGA\nTetrology of Fallots\nDORV\nOther"
   },
   {
    "depends_on": "eval:in_list([\"Hydrops\"],doc.reason_2)",
@@ -829,7 +873,7 @@
    "fieldname": "chd_3",
    "fieldtype": "Select",
    "label": "Congenital Heart Disease CHD",
-   "options": "ASD\nVSD\nAVSD\nTGA\nTetrology of Fallots\nDORV"
+   "options": "ASD\nVSD\nAVSD\nTGA\nTetrology of Fallots\nDORV\nOther"
   },
   {
    "depends_on": "eval:in_list([\"Hydrops\"],doc.reason_3)",
@@ -874,11 +918,147 @@
    "fieldname": "goto_maternal",
    "fieldtype": "Button",
    "label": "Go to Maternal"
+  },
+  {
+   "fieldname": "bp_diastolic",
+   "fieldtype": "Float",
+   "label": "BP (Diastolic)"
+  },
+  {
+   "fieldname": "bp_mean",
+   "fieldtype": "Float",
+   "label": "BP (Mean)"
+  },
+  {
+   "depends_on": "eval:(doc.chd_1==\"Other\")",
+   "fieldname": "chd_other",
+   "fieldtype": "Data"
+  },
+  {
+   "depends_on": "eval:(doc.chd_2==\"Other\")",
+   "fieldname": "chd_other_2",
+   "fieldtype": "Data"
+  },
+  {
+   "depends_on": "eval:(doc.chd_3==\"Other\")",
+   "fieldname": "chd_other_3",
+   "fieldtype": "Data"
+  },
+  {
+   "depends_on": "eval:doc.genitalia==\"Male\"",
+   "fieldname": "testes_descended",
+   "fieldtype": "Select",
+   "label": "Testes Descended",
+   "options": "Right\nLeft\nBoth\nNone"
+  },
+  {
+   "fieldname": "gastro_test",
+   "fieldtype": "Text"
+  },
+  {
+   "fieldname": "discharge",
+   "fieldtype": "Select",
+   "label": "Diagnosis",
+   "options": "No Concerns\nFeed Intolerance\nNEC- BELLS Staging\nAtresia\nDuplication cyst\nPerforation\nBiliary Atresia\nMeconium Ileus\nMalrotation\nVolvulus\nAnorectal malformation\nDisorders of sex Development\nInguinal Hernia\nHydrocoel\nCholedocal cyst\nOther"
+  },
+  {
+   "fieldname": "column_break_zqxla",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:in_list([\"Atresia\"],doc.last24)",
+   "fieldname": "atresia1",
+   "fieldtype": "Select",
+   "options": "Pyloric\nDuodenal\nIleal\ncolonic"
+  },
+  {
+   "depends_on": "eval:in_list([\"NEC- BELLS Staging\"],doc.last24)",
+   "fieldname": "nec_bells",
+   "fieldtype": "Select",
+   "options": "IA\nIB\nIIA\nIIB\nIIIA\nIIIB"
+  },
+  {
+   "depends_on": "eval:in_list([\"Other\",\"Perforation\",\"Duplication cyst\"],doc.last24)",
+   "fieldname": "gi_text",
+   "fieldtype": "Data"
+  },
+  {
+   "depends_on": "eval:in_list([\"Inguinal Hernia\",\"Hydrocoel\"],doc.last24)",
+   "fieldname": "inguinalhernia_hydrocoel1",
+   "fieldtype": "Select",
+   "options": "Right\nLeft\nBilateral"
+  },
+  {
+   "fieldname": "new_diagnosis_past_24_hours",
+   "fieldtype": "Select",
+   "label": "Diagnosis",
+   "options": "No Concerns\nIntraventricular Haemorrhage\nPost Haemorrhagic Ventricular Dilatation\nHydrocephalous\nPeriventricular Leucomalacia\nAbsent Corpus Callosum\nPartial Agenisis of Corpus Callosum\nArnold- Chiari Malformation\nMeningocoel\nMeningomyelocoel\nHypoxic Ischaemic Encephalopathy\nSeizures\nOther"
+  },
+  {
+   "depends_on": "eval:doc.new_diagnosis_past_24_hours == \"Intraventricular Haemorrhage\"",
+   "fieldname": "grade",
+   "fieldtype": "Select",
+   "options": "Right-Grade\nLeft-Grade"
+  },
+  {
+   "depends_on": "eval:doc.new_diagnosis_past_24_hours == \"Intraventricular Haemorrhage\"",
+   "fieldname": "ihrg",
+   "fieldtype": "Select",
+   "options": "I\nII\nIII\nIV"
+  },
+  {
+   "depends_on": "eval:doc.new_diagnosis_past_24_hours == \"Hydrocephalous\"",
+   "fieldname": "hydro",
+   "fieldtype": "Select",
+   "options": "Conservative management\nVentriculo-sub Galeal shunt\nVentriculo- peritoneal Shunt\nCSF Tapping"
+  },
+  {
+   "depends_on": "eval:doc.new_diagnosis_past_24_hours == \"Hypoxic Ischaemic Encephalopathy\"",
+   "fieldname": "grade_hie",
+   "fieldtype": "Select",
+   "options": "1\n2\n3"
+  },
+  {
+   "depends_on": "eval:doc.new_diagnosis_past_24_hours == \"Hypoxic Ischaemic Encephalopathy\"",
+   "fieldname": "history_of",
+   "fieldtype": "Small Text",
+   "label": "History of"
+  },
+  {
+   "depends_on": "eval:doc.new_diagnosis_past_24_hours == \"Hypoxic Ischaemic Encephalopathy\"",
+   "fieldname": "therapeutic_cooling",
+   "fieldtype": "Small Text",
+   "label": "Therapeutic Cooling"
+  },
+  {
+   "depends_on": "eval:in_list([\"Other\",\"Seizures\"],doc.new_diagnosis_past_24_hours)",
+   "fieldname": "text2",
+   "fieldtype": "Small Text"
+  },
+  {
+   "fieldname": "section_break_6werp",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "miscellaneous_system",
+   "fieldtype": "Check",
+   "label": "Miscellaneous System"
+  },
+  {
+   "depends_on": "eval:doc.miscellaneous_system==1",
+   "fieldname": "mis_text",
+   "fieldtype": "Small Text"
+  },
+  {
+   "fieldname": "plans_on_admission",
+   "fieldtype": "Data",
+   "label": "Plans on Admission"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-06-17 18:22:55.861632",
+ "modified": "2023-08-01 17:49:21.629052",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Admission",

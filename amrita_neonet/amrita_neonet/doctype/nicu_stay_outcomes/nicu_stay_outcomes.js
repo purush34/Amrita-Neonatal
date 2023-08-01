@@ -240,8 +240,9 @@ frappe.ui.form.on('NICU Stay Outcomes', {
 			callback: function(r) {
 				// console.log("Hello", r.message)
 				if(r.message) {
-					var data = JSON.parse(r.message);
-					frm.set_value("admission_details", Object.keys(data));
+					// var data = JSON.parse(r.message);
+					// frm.set_value("admission_details", Object.keys(data));
+					frm.set_value("admission_details", (r.message));
 				}
 			}
 		});

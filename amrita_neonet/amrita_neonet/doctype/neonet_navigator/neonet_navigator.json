@@ -20,11 +20,11 @@
   "mother_mrd",
   "section_break_puihb",
   "date_of_birth",
-  "column_break_csh3l",
   "date_of_admission",
-  "column_break_vcoq6",
+  "column_break_csh3l",
+  "gestational_age_at_birth",
   "current_gestational_age",
-  "column_break_1zsoz",
+  "column_break_vcoq6",
   "day_of_life",
   "section_break_k9thm",
   "edit_reminders",
@@ -497,7 +497,7 @@
   },
   {
    "fieldname": "day_of_life",
-   "fieldtype": "Int",
+   "fieldtype": "Data",
    "label": "Day of Life",
    "read_only": 1
   },
@@ -510,10 +510,6 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "column_break_1zsoz",
-   "fieldtype": "Column Break"
-  },
-  {
    "fieldname": "section_break_k9thm",
    "fieldtype": "Section Break"
   },
@@ -521,12 +517,18 @@
    "fieldname": "catheterization",
    "fieldtype": "Button",
    "label": "Urinary Catheterization"
+  },
+  {
+   "fieldname": "gestational_age_at_birth",
+   "fieldtype": "Data",
+   "label": "Gestational age at Birth",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2023-07-31 14:34:13.096416",
+ "modified": "2023-08-01 20:03:45.055140",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Neonet_Navigator",
