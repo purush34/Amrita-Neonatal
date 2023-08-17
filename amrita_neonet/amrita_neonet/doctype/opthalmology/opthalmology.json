@@ -44,7 +44,7 @@
   {
    "fieldname": "opthalmology",
    "fieldtype": "Heading",
-   "label": "OPTHALMOLOGY"
+   "label": "OPHTHALMOLOGY "
   },
   {
    "fieldname": "text_box_for_discharge",
@@ -93,7 +93,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-04-19 22:18:37.085975",
+ "modified": "2023-08-02 21:12:08.425133",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Opthalmology",

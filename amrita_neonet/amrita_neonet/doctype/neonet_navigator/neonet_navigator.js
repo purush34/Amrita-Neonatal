@@ -390,6 +390,10 @@ frappe.ui.form.on('Neonet_Navigator', {
 		}
 		frappe.set_route("Form", "Antenatal-2", frm.doc.mother_mrd)
 	},
+	birth_and_resuscitation: function(frm){
+		if(verifyID(frm)) return;
+		frappe.set_route("Form", "Birth and resuscitation", frm.doc.baby_id)
+	},
 	discharge_examination: function (frm) {
 		// console.log(frm.doc.baby_id);
         if(verifyID(frm)) return;

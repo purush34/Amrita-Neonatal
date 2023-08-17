@@ -60,10 +60,11 @@ class Gastrointestinal(Document):
 		self.total_no_of_tpn_days = total_no_of_tpn_days
 		self.day_to_reach_full_feeds = day_to_reach_full_feeds
 		self.day_to_reach_full_feeds_orally = day_to_reach_full_feeds_orally
-		self.average_kcalories_per_day_during_stay = average_kcalories_per_day_during_stay / lengthOfStay
-		self.average_gir_content_per_day_during_stay = average_gir_content_per_day_during_stay / lengthOfStay
-		self.average_protein_content_per_day_during_stay = average_protein_content_per_day_during_stay / lengthOfStay
-		self.average_lipid_content_per_day_during_stay = average_lipid_content_per_day_during_stay / lengthOfStay
+		if  lengthOfStay:
+			self.average_kcalories_per_day_during_stay = average_kcalories_per_day_during_stay / lengthOfStay
+			self.average_gir_content_per_day_during_stay = average_gir_content_per_day_during_stay / lengthOfStay
+			self.average_protein_content_per_day_during_stay = average_protein_content_per_day_during_stay / lengthOfStay
+			self.average_lipid_content_per_day_during_stay = average_lipid_content_per_day_during_stay / lengthOfStay
 		self.maximum_bilirubin = maximum_bilirubin
 		self.total_no_of_days_of_phototherapy = total_no_of_days_of_phototherapy
 		

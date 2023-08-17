@@ -1,12 +1,15 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:{baby_id} {mother_name}",
  "creation": "2023-03-19 16:03:03.132557",
  "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+  "baby_id",
+  "mother_name",
   "previous_reports",
   "consents",
   "reports"
@@ -26,14 +29,25 @@
    "fieldname": "reports",
    "fieldtype": "Heading",
    "label": "Reports"
+  },
+  {
+   "fieldname": "baby_id",
+   "fieldtype": "Data",
+   "label": "Baby ID"
+  },
+  {
+   "fieldname": "mother_name",
+   "fieldtype": "Data",
+   "label": "Mother name"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-03-19 16:07:28.869795",
+ "modified": "2023-08-07 22:52:15.855079",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Baby Documents",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

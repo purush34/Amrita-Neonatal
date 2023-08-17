@@ -9,7 +9,14 @@
  "engine": "InnoDB",
  "field_order": [
   "outcome",
+  "column_break_3v38i",
+  "discharge_examination",
+  "discharge_checklist",
+  "column_break_lv4wc",
+  "discharge_completed",
+  "column_break_imhvt",
   "refresh_data",
+  "section_break_rujfn",
   "discharge_letter",
   "death_summary",
   "section_break_kzfwt",
@@ -422,11 +429,45 @@
    "fieldname": "admission_details",
    "fieldtype": "Text Editor",
    "label": "Admission Details"
+  },
+  {
+   "fieldname": "column_break_3v38i",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "discharge_examination",
+   "fieldtype": "Check",
+   "label": "Discharge examination"
+  },
+  {
+   "fieldname": "column_break_lv4wc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "discharge_checklist",
+   "fieldtype": "Check",
+   "label": "Discharge Checklist"
+  },
+  {
+   "fieldname": "section_break_rujfn",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_imhvt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "discharge_completed",
+   "fieldtype": "Check",
+   "label": "Discharge completed"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-06-20 00:44:04.477231",
+ "modified": "2023-08-10 10:30:23.665010",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "NICU Stay Outcomes",

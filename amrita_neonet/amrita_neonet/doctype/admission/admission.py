@@ -9,47 +9,51 @@ import json
 class Admission(Document):
 	
     def before_save(self):
-        dischargeExamination = frappe.get_doc('Discharge examination',{'baby_id':self.baby_id})
-        d = [
-            "facies",
-            "scalp",
-            "hairline",
-            "mouth",
-            "cry",
-            "anterior_fontanelle",
-            "posterior_fontanelle",
-            "palate",
-            "abdomen",
-            "tone",
-            "neck",
-            "chest",
-            "spine",
-            "activity",
-            "genitalia",
-            "umbilical_cord",
-            "suck",
-            "grasp",
-            "anus",
-            "testes_descended",
-            "eyes",
-            "right_eye",
-            "left_eye",
-            "right_ear",
-            "left_ear",
-            "hips_column",
-            "right_hip",
-            "left_hip",
-            "moros_column",
-            "right_moro",
-            "left_moro"
-        ]
-        for i in d:
-            try:
-                dischargeExamination.set(i,self.get(i))
-            except:
-                frappe.throw("Error in discharge examination"+i)
-            
-        dischargeExamination.save()
+        # if self is new doc then create opening page
+        if not self.is_new():
+            dischargeExamination = frappe.get_doc('Discharge examination',{'baby_id':self.baby_id})
+            d = [
+                "facies",
+                "scalp",
+                "hairline",
+                "mouth",
+                "cry",
+                "anterior_fontanelle",
+                "posterior_fontanelle",
+                "palate",
+                "abdomen",
+                "tone",
+                "neck",
+                "chest",
+                "spine",
+                "activity",
+                "genitalia",
+                "umbilical_cord",
+                "suck",
+                "grasp",
+                "anus",
+                "testes_descended",
+                "eyes",
+                "right_eye",
+                "left_eye",
+                "right_ear",
+                "left_ear",
+                "hips_column",
+                "right_hip",
+                "left_hip",
+                "moros_column",
+                "right_moro",
+                "left_moro"
+            ]
+            for i in d:
+                try:
+                    dischargeExamination.set(i,self.get(i))
+                except:
+                    frappe.throw("Error in discharge examination"+i)
+                
+            dischargeExamination.save()
+        # except:
+        #     pass
 
 
 

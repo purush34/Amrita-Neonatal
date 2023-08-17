@@ -36,6 +36,7 @@
   "maternal",
   "antenatal_1",
   "antenatal_2",
+  "birth_and_resuscitation",
   "cooling_criteria",
   "cooling_documentation",
   "crib_ii_score",
@@ -496,8 +497,9 @@
    "read_only": 1
   },
   {
+   "default": "0",
    "fieldname": "day_of_life",
-   "fieldtype": "Data",
+   "fieldtype": "Int",
    "label": "Day of Life",
    "read_only": 1
   },
@@ -523,12 +525,17 @@
    "fieldtype": "Data",
    "label": "Gestational age at Birth",
    "read_only": 1
+  },
+  {
+   "fieldname": "birth_and_resuscitation",
+   "fieldtype": "Button",
+   "label": "Birth and Resuscitation"
   }
  ],
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2023-08-01 20:03:45.055140",
+ "modified": "2023-08-13 12:12:52.249395",
  "modified_by": "Administrator",
  "module": "Amrita Neonet",
  "name": "Neonet_Navigator",

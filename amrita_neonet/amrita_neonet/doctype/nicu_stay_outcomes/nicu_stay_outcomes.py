@@ -1269,23 +1269,34 @@ def getAntenatalHistory(baby_id):
             htmlText += "Both :" + final_dict["text_f_m"] + linebreak
     htmlText += "Anaesthesia :" + final_dict["anaesthesia"] + linebreak
 
-    htmlText += "Cried soon after birth :" + final_dict["cried_soon_after_birth"] + linebreak
-    htmlText += "Need for Resuscitation :" + final_dict["need_for_resuscitation"] + linebreak
-    if final_dict["need_for_resuscitation"]=="Yes":
-        htmlText += "Stimulation :" + final_dict["stimulation"] + linebreak
-        htmlText += "Bag and Mask :" + final_dict["bag_and_mask"] + linebreak
-        if final_dict["bag_and_mask"]=="Yes":
-            htmlText += "NOC :" + final_dict["noc"] + linebreak
-        htmlText += "Intubation :" + final_dict["intubation"] + linebreak
-        if final_dict["intubation"]=="Yes":
-            htmlText += "Age in min :" + final_dict["age_in_min"] + " " + "Size :" + final_dict["size"] + " " + "Fixed at :" + final_dict["fixed_at"] + linebreak
+    birthr = frappe.get_doc("Birth and resuscitation", {'baby_id': baby_id})
+
+    birthdict = birthr.as_dict()
+    htmlText += "Cried soon after birth :" + \
+        birthdict["cried_soon_after_birth"] + linebreak
+    htmlText += "Need for Resuscitation :" + \
+        birthdict["need_for_resuscitation"] + linebreak
+    if birthdict["need_for_resuscitation"]=="Yes":
+        htmlText += "Stimulation :" + birthdict["stimulation"] + linebreak
+        htmlText += "Bag and Mask :" + birthdict["bag_and_mask"] + linebreak
+        if birthdict["bag_and_mask"]=="Yes":
+            htmlText += "NOC :" + birthdict["noc"] + linebreak
+        htmlText += "Intubation :" + birthdict["intubation"] + linebreak
+        if birthdict["intubation"] == "Yes":
+            htmlText += "Age in min :" + birthdict["age_in_min"] + " " + "Size :" + \
+                birthdict["size"] + " " + "Fixed at :" + \
+                birthdict["fixed_at"] + linebreak
         
-        htmlText += "C-Comp :" + final_dict["c_comp"] + linebreak
-        if final_dict["c_comp"]=="Yes":
-            htmlText += "Started at age in min :" + final_dict["started_at_age_in_min"] + " " + "No of cycles :" + final_dict["no_of_cycles"] + linebreak
-            htmlText += "Adrenaline Doses :" + final_dict["adrenaline_doses"] + linebreak
-            if final_dict["adrenaline_doses"]=="Yes":
-                htmlText += "ET 1 :" + final_dict["et_1"] + " " + "IV :" + final_dict["iv"] + linebreak
+        htmlText += "C-Comp :" + birthdict["c_comp"] + linebreak
+        if birthdict["c_comp"]=="Yes":
+            htmlText += "Started at age in min :" + \
+                birthdict["started_at_age_in_min"] + " " + \
+                "No of cycles :" + birthdict["no_of_cycles"] + linebreak
+            htmlText += "Adrenaline Doses :" + birthdict["adrenaline_doses"] + linebreak
+            if birthdict["adrenaline_doses"]=="Yes":
+                htmlText += "ET 1 :" + \
+                    birthdict["et_1"] + " " + "IV :" + \
+                    birthdict["iv"] + linebreak
     
     colHead = '<td>'
     colHeadEnd = '</td>'
@@ -1302,80 +1313,71 @@ def getAntenatalHistory(baby_id):
     htmlText += rowEnd
 
     htmlText += row
-    
+
     htmlText += col + "Spontaneous breathing" + colEnd
-    htmlText += col + final_dict["sb_1"] + colEnd
-    htmlText += col + final_dict["sb_5"] + colEnd
-    htmlText += col + final_dict["sb_10"] + colEnd
-    htmlText += col + final_dict["sb_15"] + colEnd
-    htmlText += col + final_dict["sb_20"] + colEnd
+    htmlText += col + birthdict["sb_1"] + colEnd
+    htmlText += col + birthdict["sb_5"] + colEnd
+    htmlText += col + birthdict["sb_10"] + colEnd
+    htmlText += col + birthdict["sb_15"] + colEnd
+    htmlText += col + birthdict["sb_20"] + colEnd
     htmlText += rowEnd
 
     htmlText += row
     htmlText += col + "Heart Rate" + colEnd
-    htmlText += col + final_dict["hr_1"] + colEnd
-    htmlText += col + final_dict["hr_5"] + colEnd
-    htmlText += col + final_dict["hr_10"] + colEnd
-    htmlText += col + final_dict["hr_15"] + colEnd
-    htmlText += col + final_dict["hr_20"] + colEnd
+    htmlText += col + birthdict["hr_1"] + colEnd
+    htmlText += col + birthdict["hr_5"] + colEnd
+    htmlText += col + birthdict["hr_10"] + colEnd
+    htmlText += col + birthdict["hr_15"] + colEnd
+    htmlText += col + birthdict["hr_20"] + colEnd
     htmlText += rowEnd
 
     htmlText += row
     htmlText += col + "Colour" + colEnd
-    htmlText += col + final_dict["c_1"] + colEnd
-    htmlText += col + final_dict["c_5"] + colEnd
-    htmlText += col + final_dict["c_10"] + colEnd
-    htmlText += col + final_dict["c_15"] + colEnd
-    htmlText += col + final_dict["c_20"] + colEnd
+    htmlText += col + birthdict["c_1"] + colEnd
+    htmlText += col + birthdict["c_5"] + colEnd
+    htmlText += col + birthdict["c_10"] + colEnd
+    htmlText += col + birthdict["c_15"] + colEnd
+    htmlText += col + birthdict["c_20"] + colEnd
     htmlText += rowEnd
 
     htmlText += row
     htmlText += col + "Tone" + colEnd
-    htmlText += col + final_dict["t_1"] + colEnd
-    htmlText += col + final_dict["t_5"] + colEnd
-    htmlText += col + final_dict["t_10"] + colEnd
-    htmlText += col + final_dict["t_15"] + colEnd
-    htmlText += col + final_dict["t_20"] + colEnd
+    htmlText += col + birthdict["t_1"] + colEnd
+    htmlText += col + birthdict["t_5"] + colEnd
+    htmlText += col + birthdict["t_10"] + colEnd
+    htmlText += col + birthdict["t_15"] + colEnd
+    htmlText += col + birthdict["t_20"] + colEnd
     htmlText += rowEnd
 
     htmlText += row
     htmlText += col + "Respiratory Effort" + colEnd
-    htmlText += col + final_dict["r_1"] + colEnd
-    htmlText += col + final_dict["r_5"] + colEnd
-    htmlText += col + final_dict["r_10"] + colEnd
-    htmlText += col + final_dict["r_15"] + colEnd
-    htmlText += col + final_dict["r_20"] + colEnd
+    htmlText += col + birthdict["r_1"] + colEnd
+    htmlText += col + birthdict["r_5"] + colEnd
+    htmlText += col + birthdict["r_10"] + colEnd
+    htmlText += col + birthdict["r_15"] + colEnd
+    htmlText += col + birthdict["r_20"] + colEnd
     htmlText += rowEnd
 
     htmlText += row
     htmlText += col + "Total" + colEnd
-    htmlText += col + final_dict["total_1"] + colEnd
-    htmlText += col + final_dict["total_5"] + colEnd
-    htmlText += col + final_dict["total_10"] + colEnd
-    htmlText += col + final_dict["total_15"] + colEnd
-    htmlText += col + final_dict["total_20"] + colEnd
+    htmlText += col + birthdict["total_1"] + colEnd
+    htmlText += col + birthdict["total_5"] + colEnd
+    htmlText += col + birthdict["total_10"] + colEnd
+    htmlText += col + birthdict["total_15"] + colEnd
+    htmlText += col + birthdict["total_20"] + colEnd
     htmlText += rowEnd
 
     htmlText += tableEnd
-    
 
     htmlText += linebreak
-
-    
-
-
-
-    
-
-        
-        
 
     htmlText += linebreak
     htmlText += linebreak
 
-    htmlText += "Passive Cooling :" + final_dict["passive_cooling"] + linebreak
-    if final_dict["passive_cooling"]=="Yes":
-        htmlText += "Age in minutes :" + final_dict["age_in_minutes"] + linebreak
+    htmlText += "Passive Cooling :" + birthdict["passive_cooling"] + linebreak
+    if birthdict["passive_cooling"] == "Yes":
+        htmlText += "Age in minutes :" + \
+            birthdict["age_in_minutes"] + linebreak
     """
     "arterial",
     "ph_column",
@@ -1406,30 +1408,27 @@ def getAntenatalHistory(baby_id):
     "resuscitation"
     """
     htmlText += linebreak
-    if final_dict["arterial"]:
+    if birthdict["arterial"]:
         htmlText += "Arterial :" + linebreak
-        htmlText += "Ph :" +  final_dict["ph"] + linebreak
-        htmlText += "PCO2 :" +  final_dict["pco2"] + linebreak
-        htmlText += "HCO3 :" +  final_dict["hco3"] + linebreak
-        htmlText += "BE :" +  final_dict["be"] + linebreak
-        htmlText += "Lactate :" +  final_dict["lactate"] + linebreak
+        htmlText += "Ph :" + birthdict["ph"] + linebreak
+        htmlText += "PCO2 :" + birthdict["pco2"] + linebreak
+        htmlText += "HCO3 :" + birthdict["hco3"] + linebreak
+        htmlText += "BE :" + birthdict["be"] + linebreak
+        htmlText += "Lactate :" + birthdict["lactate"] + linebreak
     htmlText += linebreak
-    if final_dict["venous"]:
+    if birthdict["venous"]:
         htmlText += "Venous :" + linebreak
-        htmlText += "Ph :" +  final_dict["ph_d"] + linebreak
-        htmlText += "PCO2 :" +  final_dict["pco2_vd"] + linebreak
-        htmlText += "HCO3 :" +  final_dict["hco3_vd"] + linebreak
-        htmlText += "BE :" +  final_dict["be_vd"] + linebreak
-        htmlText += "Lactate :" +  final_dict["lactate_vd"] + linebreak
+        htmlText += "Ph :" + birthdict["ph_d"] + linebreak
+        htmlText += "PCO2 :" + birthdict["pco2_vd"] + linebreak
+        htmlText += "HCO3 :" + birthdict["hco3_vd"] + linebreak
+        htmlText += "BE :" + birthdict["be_vd"] + linebreak
+        htmlText += "Lactate :" + birthdict["lactate_vd"] + linebreak
     htmlText += linebreak
 
-    htmlText += "Delayed Cord Clamping :" + final_dict["delayed_cord_clamping"] + linebreak
-    htmlText += "Resuscitation :" + final_dict["resuscitation"] + linebreak
+    htmlText += "Delayed Cord Clamping :" + \
+        birthdict["delayed_cord_clamping"] + linebreak
+    htmlText += "Resuscitation :" + birthdict["resuscitation"] + linebreak
 
-
-
-
-    
     return htmlText
 
 

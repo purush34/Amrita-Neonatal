@@ -10,6 +10,7 @@ class Openingpage(Document):
         'Admission': 'admission',
         # 'Antibiotics': 'antibiotics',
         'Baby Documents': 'baby_documents',
+        'Birth and resuscitation' : 'birth_and _resuscitation',
         'Blood culture': 'blood_culture',
         'Catheterisation': 'catheterisation',
         'Chest drain': 'chest_drain',

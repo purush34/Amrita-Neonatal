@@ -6,6 +6,9 @@ frappe.ui.form.on('Admission', {
 
 	// }
 	onload:function(frm){
+		if (! frm.doc.baby_id) {
+			return
+		}
 		frappe.call({
 			method: "amrita_neonet.amrita_neonet.doctype.admission.admission.getWeight",
 			args: {
